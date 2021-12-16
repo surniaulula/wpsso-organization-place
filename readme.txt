@@ -19,9 +19,9 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <!-- about -->
 
-**Manage Organizations for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.**
+**Manage any number of Organizations for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.**
 
-**Manage Places for Open Graph place meta tags, Schema Place markup, and Schema organization location, event location, and job location properties.**
+**Manage any number of Places for Open Graph place meta tags, Schema Place markup, and Schema organization location, event location, and job location properties.**
 
 <!-- /about -->
 
@@ -96,6 +96,9 @@ WPSSO Organization and Place Manager (WPSSO OPM) is an add-on for the [WPSSO Cor
 == Frequently Asked Questions ==
 
 == Screenshots ==
+
+01. The Organization editing page.
+01. The Place editing page.
 
 == Changelog ==
 
