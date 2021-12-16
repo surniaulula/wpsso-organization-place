@@ -30,7 +30,9 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
-msgid "Manage organizations and places."
+msgid ""
+"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
+"Pinterest, and Google local business markup."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -954,7 +956,9 @@ msgid "https://wpsso.com/extend/plugins/wpsso-organization-place/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Manage organizations and places."
+msgid ""
+"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
+"Pinterest, and Google local business markup."
 msgstr ""
 
 #. Author of the plugin/theme

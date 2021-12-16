@@ -10,7 +10,7 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Manage organizations and places.
+ * Description: Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
