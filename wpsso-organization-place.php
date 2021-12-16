@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 
 			new WpssoOpmFilters( $this->p, $this );
 
-			if ( class_exists( 'WpssoOpmPost' ) ) {		// Extends on WpssoPost.
+			if ( class_exists( 'WpssoOpmPost' ) ) {		// Extends on WpssoPost, which may be missing if WPSSO Core is deactivated.
 
 				new WpssoOpmPost( $this->p, $this );
 			}
