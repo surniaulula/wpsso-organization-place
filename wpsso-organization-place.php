@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WPSSO Organization and Place Manager
+ * Plugin Name: WPSSO Organization Place
  * Plugin Slug: wpsso-organization-place
  * Text Domain: wpsso-organization-place
  * Domain Path: /languages
@@ -14,7 +14,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
- * Version: 1.0.0-dev.6
+ * Version: 1.0.0
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
