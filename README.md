@@ -1,4 +1,4 @@
-<h1>WPSSO Organization Place</h1>
+<h1>WPSSO Organization and Place Manager</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Organization and Place Manager</td></tr>

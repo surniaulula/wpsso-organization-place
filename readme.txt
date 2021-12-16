@@ -1,4 +1,4 @@
-=== WPSSO Organization Place ===
+=== WPSSO Organization and Place Manager ===
 Plugin Name: WPSSO Organization and Place Manager
 Plugin Slug: wpsso-organization-place
 Text Domain: wpsso-organization-place
