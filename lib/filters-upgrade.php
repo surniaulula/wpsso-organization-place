@@ -162,7 +162,6 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 		private function convert_numeric_org_ids( $opts ) {
 
 			foreach ( array(
-				'org_place_id',
 				'schema_pub_org_id',
 				'schema_prov_org_id',
 				'schema_movie_prodco_org_id',
@@ -191,6 +190,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 		private function convert_numeric_place_ids( $opts ) {
 
 			foreach ( array(
+				'org_place_id',
 				'site_org_place_id',
 				'schema_event_location_id',
 				'schema_job_location_id',
