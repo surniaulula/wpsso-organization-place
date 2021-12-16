@@ -13,15 +13,74 @@ Requires At Least: 5.2
 Tested Up To: 5.8.2
 Stable Tag: 1.0.0
 
-Manage organizations and places.
+Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
 
 == Description ==
 
 <!-- about -->
 
-Manage organizations and places.
+**Manage Organizations for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.**
+
+**Manage Places for Open Graph place meta tags, Schema Place markup, and Schema organization location, event location, and job location properties.**
 
 <!-- /about -->
+
+**The Organization editing page includes:**
+
+* Organization Name
+* Organization Alternate Name
+* Organization Description
+* Organization WebSite URL
+* Organization Logo URL
+* Organization Banner URL
+* Organization Schema Type
+* Organization Location
+* Google's Knowledge Graph:
+	* Behance Business Page URL
+	* Facebook Business Page URL
+	* Instagram Business Page URL
+	* LinkedIn Company Page URL
+	* Medium Business Page URL
+	* Myspace Business Page URL
+	* Pinterest Company Page URL
+	* Soundcloud Business Page URL
+	* TikTok Business Page URL
+	* Tumblr Business Page URL
+	* Twitter Business @username
+	* Wikipedia Organization Page URL
+	* YouTube Business Channel URL
+
+**The Place editing page includes:**
+
+* Place Name
+* Place Alternate Name
+* Place Description
+* Place Schema Type
+* Street Address
+* P.O. Box Number
+* City / Locality
+* State / Province
+* Zip / Postal Code
+* Country
+* Telephone
+* Place Latitude
+* Place Longitude
+* Place Altitude
+* Place Image ID
+* or Place Image URL
+* Place Timezone
+* Open Days / Hours
+* Seasonal Dates
+* Local Business:
+	* Service Radius
+	* Currencies Accepted
+	* Payment Accepted
+	* Price Range
+* Food Establishment:
+	* Accepts Reservations
+	* Serves Cuisine
+	* Food Menu URL
+	* Order Action URL(s)
 
 <h3>WPSSO Core Required</h3>
 
@@ -62,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-dev.6 (TBD)**
+**Version 1.0.0-dev.6 (2021/12/16)**
 
 * **New Features**
 	* First release.
@@ -81,5 +140,5 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.0.0-dev.6 =
 
-(TBD) First release.
+(2021/12/16) First release.
 
