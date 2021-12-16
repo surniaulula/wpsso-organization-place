@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WPSSO Organization Place
+ * Plugin Name: WPSSO Organization and Place Manager
  * Plugin Slug: wpsso-organization-place
  * Text Domain: wpsso-organization-place
  * Domain Path: /languages
