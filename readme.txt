@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* Fixed an options version check for cases where the WPSSO ORG and WPSSO PLM add-ons were updated first.
 * **Developer Notes**
-	* None.
+	* Added a call to `WpssoOptions->set_version()` after upgrading the options, to make sure the upgrade is only run once.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
