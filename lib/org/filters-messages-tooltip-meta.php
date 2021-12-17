@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersMessagesTooltipMeta' ) ) {
 
 				case 'tooltip-meta-org_place_id':
 
-					$text = __( 'Select an optional place (aka location) for this organization.', 'wpsso-organization-place' );
+					$text = __( 'Select an optional place (ie. location) for this organization.', 'wpsso-organization-place' );
 
 					break;
 			}

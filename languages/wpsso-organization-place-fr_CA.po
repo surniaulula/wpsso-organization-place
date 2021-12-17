@@ -1,970 +1,910 @@
-# Copyright (C) 2021 WPSSO Organization and Place Manager
-# This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Organization and Place Manager 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
-"organization-place\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-12-16 16:20-0800\n"
+"Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:213
 msgid "The %1$s add-on requires the %2$s plugin."
-msgstr ""
+msgstr "L'ajout %1$s requiert l'extension %2$s."
 
 #: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:227
-msgid ""
-"The %1$s add-on requires %2$s version %3$s or newer (version %4$s is "
-"currently installed)."
-msgstr ""
+msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
+msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "plugin name"
 msgid "WPSSO Organization and Place Manager"
-msgstr ""
+msgstr "WPSSO gestionnaire d'organisation et d'endroit"
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
-msgid ""
-"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
-"Pinterest, and Google local business markup."
-msgstr ""
+msgid "Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup."
+msgstr "Gérez les organisations (éditeur, organisateur, etc.) et les endroits pour le balisage d'entreprises locales Facebook, Pinterest et Google."
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
 msgid "WPSSO Core"
-msgstr ""
+msgstr "WPSSO Core"
 
 #: lib/abstracts/wp-meta.php:1071
 msgctxt "metabox tab"
 msgid "Customize"
-msgstr ""
+msgstr "Personnaliser"
 
 #: lib/abstracts/wp-meta.php:1072
 msgctxt "metabox tab"
 msgid "Priority Media"
-msgstr ""
+msgstr "Média prioritaire"
 
 #: lib/abstracts/wp-meta.php:1076
 msgctxt "metabox tab"
 msgid "Robots Meta"
-msgstr ""
+msgstr "Méta robots"
 
 #: lib/abstracts/wp-meta.php:1077
 msgctxt "metabox tab"
 msgid "Social Preview"
-msgstr ""
+msgstr "Aperçu social"
 
 #: lib/abstracts/wp-meta.php:1078
 msgctxt "metabox tab"
 msgid "oEmbed Preview"
-msgstr ""
+msgstr "Aperçu oEmbed"
 
 #: lib/abstracts/wp-meta.php:1079
 msgctxt "metabox tab"
 msgid "Head Markup"
-msgstr ""
+msgstr "Balisage d'entête"
 
 #: lib/abstracts/wp-meta.php:1080
 msgctxt "metabox tab"
 msgid "Validators"
-msgstr ""
+msgstr "Validateurs"
 
 #: lib/abstracts/wp-meta.php:1550
 msgid "Nonce token validation failed for the submitted form (update ignored)."
-msgstr ""
+msgstr "La validation du jeton nonce pour le formulaire soumis a échoué (mise à jour ignorée)."
 
 #: lib/abstracts/wp-meta.php:1877
 msgid "A claim review cannot be the subject of another claim review."
-msgstr ""
+msgstr "Un examen d'évaluation ne peut pas être le sujet d'un autre examen d'évaluation."
 
 #: lib/abstracts/wp-meta.php:1879
-msgid ""
-"Please select a subject webpage type that better describes the subject of "
-"the webpage (ie. the content) being reviewed."
-msgstr ""
+msgid "Please select a subject webpage type that better describes the subject of the webpage (ie. the content) being reviewed."
+msgstr "SVP sélectionner un type de page Web du sujet qui décrit mieux le sujet de la page Web (c'est-à-dire le contenu) en cours de révision."
 
 #: lib/abstracts/wp-meta.php:2632
 msgid "adding schema images"
-msgstr ""
+msgstr "ajout d'images schéma"
 
 #: lib/filters-upgrade.php:151
-msgid ""
-"%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s "
-"post type ID %5$d."
-msgstr ""
+msgid "%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s post type ID %5$d."
+msgstr "%1$s \"%2$s\" ID %3$d des réglages d'extension a été converti en type d'article %4$s ID %5$d."
 
 #: lib/org/filters-edit.php:47
 msgctxt "option label"
 msgid "Organization Name"
-msgstr ""
+msgstr "Nom de l'organisation"
 
 #: lib/org/filters-edit.php:52
 msgctxt "option label"
 msgid "Organization Alternate Name"
-msgstr ""
+msgstr "Autre nom de l'organisation"
 
 #: lib/org/filters-edit.php:57
 msgctxt "option label"
 msgid "Organization Description"
-msgstr ""
+msgstr "Description de l'organisation"
 
 #: lib/org/filters-edit.php:62
 msgctxt "option label"
 msgid "Organization WebSite URL"
-msgstr ""
+msgstr "URL du site de l'organisation"
 
 #: lib/org/filters-edit.php:68
 msgctxt "option label"
 msgid "Organization Logo URL"
-msgstr ""
+msgstr "URL logo de organisation"
 
 #: lib/org/filters-edit.php:74
 msgctxt "option label"
 msgid "Organization Banner URL"
-msgstr ""
+msgstr "URL bannière d'organisation"
 
 #: lib/org/filters-edit.php:79
 msgctxt "option label"
 msgid "Organization Schema Type"
-msgstr ""
+msgstr "Type de Schéma d'organisation"
 
 #: lib/org/filters-edit.php:86
 msgctxt "option label"
 msgid "Organization Location"
-msgstr ""
+msgstr "Emplacement de l'organisation"
 
 #: lib/org/filters-edit.php:91
 msgctxt "metabox title"
 msgid "Google's Knowledge Graph"
-msgstr ""
+msgstr "Knowledge Graph de Google"
 
 #: lib/org/filters-messages-tooltip-meta.php:39
 msgid "The complete or common name for the organization."
-msgstr ""
+msgstr "Le nom complet ou commun de l'organisation."
 
 #: lib/org/filters-messages-tooltip-meta.php:45
-msgid ""
-"An alternate name for the organization that you would like Google to "
-"consider."
-msgstr ""
+msgid "An alternate name for the organization that you would like Google to consider."
+msgstr "Un autre nom pour l’organisation que vous souhaitez que Google considère."
 
 #: lib/org/filters-messages-tooltip-meta.php:51
 msgid "A description for the organization."
-msgstr ""
+msgstr "Une description de l'organisation."
 
 #: lib/org/filters-messages-tooltip-meta.php:57
 msgid "The website URL for the organization."
-msgstr ""
+msgstr "L'URL du site Web de l'organisation."
 
 #: lib/org/filters-messages-tooltip-meta.php:75
-msgid ""
-"You may optionally choose a more accurate Schema type for this organization "
-"(default is Organization)."
-msgstr ""
+msgid "You may optionally choose a more accurate Schema type for this organization (default is Organization)."
+msgstr "Vous pouvez aussi choisir un type de schéma plus précis pour cette organisation (la valeur par défaut est Organisation)."
 
 #: lib/org/filters-messages-tooltip-meta.php:81
 msgid "Select an optional place (ie. location) for this organization."
-msgstr ""
+msgstr "Sélectionnez un endroit (c'est-à-dire un emplacement) facultatif pour cette organisation."
 
 #: lib/org/filters-options.php:89 lib/org.php:53
 msgctxt "option value"
 msgid "Organization #%d"
-msgstr ""
+msgstr "Organisation #%d"
 
 #: lib/org/filters-options.php:180
-msgid ""
-"The \"%s\" organization banner URL image dimensions cannot be determined."
-msgstr ""
+msgid "The \"%s\" organization banner URL image dimensions cannot be determined."
+msgstr "Les dimensions d'image de l'URL bannière d'organisation \"%s\" ne peuvent pas être déterminées."
 
 #: lib/org/filters-options.php:183
-msgid ""
-"Please make sure this site can access %s using the PHP getimagesize() "
-"function."
-msgstr ""
+msgid "Please make sure this site can access %s using the PHP getimagesize() function."
+msgstr "Assurez-vous que ce site peut accéder à %s en utilisant la fonction PHP getimagesize()."
 
 #: lib/org/filters-options.php:188
-msgid ""
-"The \"%1$s\" organization banner URL image dimensions are %2$s and must be "
-"exactly %3$s."
-msgstr ""
+msgid "The \"%1$s\" organization banner URL image dimensions are %2$s and must be exactly %3$s."
+msgstr "Les dimensions de l'image pour l'URL de la bannière d'organisation \"%1$s\" sont %2$s et doivent être exactement %3$s."
 
 #: lib/org/filters-options.php:191
 msgid "Please correct the %s banner image."
-msgstr ""
+msgstr "Veuillez corriger l'image bannière %s."
 
 #: lib/place/filters-edit.php:91
 msgctxt "option label"
 msgid "Place Name"
-msgstr ""
+msgstr "Nom de l'endroit"
 
 #: lib/place/filters-edit.php:96
 msgctxt "option label"
 msgid "Place Alternate Name"
-msgstr ""
+msgstr "Autre nom de l'endroit"
 
 #: lib/place/filters-edit.php:101
 msgctxt "option label"
 msgid "Place Description"
-msgstr ""
+msgstr "Description de l'endroit"
 
 #: lib/place/filters-edit.php:107
 msgctxt "option label"
 msgid "Place Schema Type"
-msgstr ""
+msgstr "Type de Schéma de l'endroit"
 
 #: lib/place/filters-edit.php:115
 msgctxt "option label"
 msgid "Street Address"
-msgstr ""
+msgstr "Adresse de rue"
 
 #: lib/place/filters-edit.php:120
 msgctxt "option label"
 msgid "P.O. Box Number"
-msgstr ""
+msgstr "Num. boîte postale"
 
 #: lib/place/filters-edit.php:125
 msgctxt "option label"
 msgid "City / Locality"
-msgstr ""
+msgstr "Ville / localité"
 
 #: lib/place/filters-edit.php:130
 msgctxt "option label"
 msgid "State / Province"
-msgstr ""
+msgstr "État / Province"
 
 #: lib/place/filters-edit.php:135
 msgctxt "option label"
 msgid "Zip / Postal Code"
-msgstr ""
+msgstr "Zip / code postal"
 
 #: lib/place/filters-edit.php:140
 msgctxt "option label"
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: lib/place/filters-edit.php:145
 msgctxt "option label"
 msgid "Telephone"
-msgstr ""
+msgstr "Téléphone"
 
 #: lib/place/filters-edit.php:150
 msgctxt "option label"
 msgid "Place Latitude"
-msgstr ""
+msgstr "Latitude de l'endroit"
 
 #: lib/place/filters-edit.php:153 lib/place/filters-edit.php:159
 msgctxt "option comment"
 msgid "decimal degrees"
-msgstr ""
+msgstr "degrés décimaux"
 
 #: lib/place/filters-edit.php:156
 msgctxt "option label"
 msgid "Place Longitude"
-msgstr ""
+msgstr "Longitude de l'endroit"
 
 #: lib/place/filters-edit.php:162
 msgctxt "option label"
 msgid "Place Altitude"
-msgstr ""
+msgstr "Altitude de l'endroit"
 
 #: lib/place/filters-edit.php:165
 msgctxt "option comment"
 msgid "meters above sea level"
-msgstr ""
+msgstr "mètres au-dessus du niveau de mer"
 
 #: lib/place/filters-edit.php:170
 msgctxt "option label"
 msgid "Place Image ID"
-msgstr ""
+msgstr "ID d'image de l'endroit"
 
 #: lib/place/filters-edit.php:175
 msgctxt "option label"
 msgid "or Place Image URL"
-msgstr ""
+msgstr "ou URL d'image de l'endroit"
 
 #: lib/place/filters-edit.php:181
 msgctxt "option label"
 msgid "Place Timezone"
-msgstr ""
+msgstr "Fuseau horaire de l'endroit"
 
 #: lib/place/filters-edit.php:210
 msgid "Opens at"
-msgstr ""
+msgstr "Ouvre à"
 
 #: lib/place/filters-edit.php:212
 msgid "and closes at"
-msgstr ""
+msgstr "et ferme à"
 
 #: lib/place/filters-edit.php:218
 msgid "Every Midday"
-msgstr ""
+msgstr "Chaque mi-journée"
 
 #: lib/place/filters-edit.php:219
 msgid "Closes at"
-msgstr ""
+msgstr "Ferme à"
 
 #: lib/place/filters-edit.php:221
 msgid "and re-opens at"
-msgstr ""
+msgstr "et rouvre à"
 
 #: lib/place/filters-edit.php:228
 msgctxt "option label"
 msgid "Open Days / Hours"
-msgstr ""
+msgstr "Jours / heures d'ouverture"
 
 #: lib/place/filters-edit.php:233
 msgctxt "option label"
 msgid "Seasonal Dates"
-msgstr ""
+msgstr "Dates saisonnières"
 
 #: lib/place/filters-edit.php:236
 msgid "Open from"
-msgstr ""
+msgstr "Ouvert de"
 
 #: lib/place/filters-edit.php:238
 msgid "until"
-msgstr ""
+msgstr "jusqu’à"
 
 #: lib/place/filters-edit.php:240
 msgid "inclusively"
-msgstr ""
+msgstr "inclusivement"
 
 #: lib/place/filters-edit.php:245
 msgctxt "metabox title"
 msgid "Local Business"
-msgstr ""
+msgstr "Entreprise locale"
 
 #: lib/place/filters-edit.php:248
 msgctxt "option label"
 msgid "Service Radius"
-msgstr ""
+msgstr "Rayon de service"
 
 #: lib/place/filters-edit.php:251
 msgctxt "option comment"
 msgid "meters from location"
-msgstr ""
+msgstr "mètres de l'emplacement"
 
 #: lib/place/filters-edit.php:254
 msgctxt "option label"
 msgid "Currencies Accepted"
-msgstr ""
+msgstr "Devises acceptées"
 
 #: lib/place/filters-edit.php:259
 msgctxt "option label"
 msgid "Payment Accepted"
-msgstr ""
+msgstr "Paiement accepté"
 
 #: lib/place/filters-edit.php:264
 msgctxt "option label"
 msgid "Price Range"
-msgstr ""
+msgstr "Échelle de prix"
 
 #: lib/place/filters-edit.php:270
 msgctxt "metabox title"
 msgid "Food Establishment"
-msgstr ""
+msgstr "Établissement alimentaire"
 
 #: lib/place/filters-edit.php:273
 msgctxt "option label"
 msgid "Accepts Reservations"
-msgstr ""
+msgstr "Accepte des réservations"
 
 #: lib/place/filters-edit.php:278
 msgctxt "option label"
 msgid "Serves Cuisine"
-msgstr ""
+msgstr "Cuisine servie"
 
 #: lib/place/filters-edit.php:283
 msgctxt "option label"
 msgid "Food Menu URL"
-msgstr ""
+msgstr "URL du menu alimentaire"
 
 #: lib/place/filters-edit.php:288
 msgctxt "option label"
 msgid "Order Action URL(s)"
-msgstr ""
+msgstr "URL(s) d'action de commande"
 
 #: lib/place/filters-messages-tooltip-meta.php:39
 msgid "A name for this place (required)."
-msgstr ""
+msgstr "Un nom pour cet endroit (obligatoire)."
 
 #: lib/place/filters-messages-tooltip-meta.php:41
-msgid ""
-"The place name may appear in forms and in the Schema Place \"name\" property."
-msgstr ""
+msgid "The place name may appear in forms and in the Schema Place \"name\" property."
+msgstr "Le nom de l'endroit peut apparaître dans des formulaires et dans la propriété de Schéma Place \"nom\"."
 
 #: lib/place/filters-messages-tooltip-meta.php:47
 msgid "An alternate name for this place."
-msgstr ""
+msgstr "Un autre nom pour cet endroit."
 
 #: lib/place/filters-messages-tooltip-meta.php:49
-msgid ""
-"The place alternate name may appear in the Schema Place \"alternateName\" "
-"property."
-msgstr ""
+msgid "The place alternate name may appear in the Schema Place \"alternateName\" property."
+msgstr "L'autre nom de l'endroit peut apparaître dans la propriété de Schéma Place \"alternateName\"."
 
 #: lib/place/filters-messages-tooltip-meta.php:55
 msgid "A description for this place."
-msgstr ""
+msgstr "Une description de cet endroit."
 
 #: lib/place/filters-messages-tooltip-meta.php:57
-msgid ""
-"The place description may appear in the Schema Place \"description\" "
-"property."
-msgstr ""
+msgid "The place description may appear in the Schema Place \"description\" property."
+msgstr "La description de l'endroit peut apparaître dans la propriété de Schéma Place \"description\"."
 
 #: lib/place/filters-messages-tooltip-meta.php:63
-msgid ""
-"You may optionally choose a different Schema type for this place (default is "
-"LocalBusiness)."
-msgstr ""
+msgid "You may optionally choose a different Schema type for this place (default is LocalBusiness)."
+msgstr "Vous pouvez choisir un type de schéma différent pour cet endroit (LocalBusiness par défaut)."
 
 #: lib/place/filters-messages-tooltip-meta.php:69
-msgid ""
-"An optional street address for Pinterest Rich Pin / Schema Place meta tags "
-"and related markup."
-msgstr ""
+msgid "An optional street address for Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Une adresse municipale optionnel pour les balises méta Pinterest Rich Pin / Schema Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:75
-msgid ""
-"An optional post office box number for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
+msgid "An optional post office box number for the Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Un numéro de boîte postale optionnel pour les balises méta Pinterest Rich Pin / Schema Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:81
-msgid ""
-"An optional city name for the Pinterest Rich Pin / Schema Place meta tags "
-"and related markup."
-msgstr ""
+msgid "An optional city name for the Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Un nom de ville optionnel pour les balises méta Pinterest Rich Pin / Schema Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:87
-msgid ""
-"An optional state or province name for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
+msgid "An optional state or province name for the Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Un nom d'État ou de Province optionnel pour les balises méta Pinterest Rich Pin / Schéma Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:93
-msgid ""
-"An optional postal or zip code for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
+msgid "An optional postal or zip code for the Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Un code postal ou zip optionnel pour les balises méta Pinterest Rich Pin / Schéma Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:99
-msgid ""
-"An optional country for the Pinterest Rich Pin / Schema Place meta tags and "
-"related markup."
-msgstr ""
+msgid "An optional country for the Pinterest Rich Pin / Schema Place meta tags and related markup."
+msgstr "Un nom de pays optionnel pour les balises méta Pinterest Rich Pin / Schema Place et balisage associées."
 
 #: lib/place/filters-messages-tooltip-meta.php:105
 msgid "An optional telephone number for this place."
-msgstr ""
+msgstr "Un numéro de téléphone optionnel pour cet endroit."
 
 #: lib/place/filters-messages-tooltip-meta.php:110
 msgid "The numeric decimal degrees latitude for this place (required)."
-msgstr ""
+msgstr "Les degrés décimaux numérique de latitude pour cet endroit (requis)"
 
 #: lib/place/filters-messages-tooltip-meta.php:112
 #: lib/place/filters-messages-tooltip-meta.php:120
-msgid ""
-"You may use a service like <a href=\"http://www.gps-coordinates.net/"
-"\">Google Maps GPS Coordinates</a> (as an example), to find the approximate "
-"GPS coordinates of a street address."
-msgstr ""
+msgid "You may use a service like <a href=\"http://www.gps-coordinates.net/\">Google Maps GPS Coordinates</a> (as an example), to find the approximate GPS coordinates of a street address."
+msgstr "Vous pouvez utiliser un service comme le <a href=\"http://www.coordonnees-gps.fr/conversion-coordonnees-gps\">Convertisseur de coordonnées GPS</a> (par exemple), pour trouver les coordonnées GPS approximatives d'une adresse postale."
 
 #: lib/place/filters-messages-tooltip-meta.php:118
 msgid "The numeric decimal degrees longitude for this place (required)."
-msgstr ""
+msgstr "Les degrés décimaux numérique de longitude pour cet endroit (requis)."
 
 #: lib/place/filters-messages-tooltip-meta.php:126
-msgid ""
-"An optional numeric altitude (in meters above sea level) for this place."
-msgstr ""
+msgid "An optional numeric altitude (in meters above sea level) for this place."
+msgstr "Une altitude numérique optionnel (en mètres au-dessus du niveau de mer) pour cet endroit."
 
 #: lib/place/filters-messages-tooltip-meta.php:132
-msgid ""
-"An image of this place (ie. an image of the business storefront or location)."
-msgstr ""
+msgid "An image of this place (ie. an image of the business storefront or location)."
+msgstr "Une image de cet endroit (c'est-à-dire une image de la devanture ou de l'emplacement de l'entreprise)."
 
 #: lib/place/filters-messages-tooltip-meta.php:134
 msgid "This option is disabled if a place image URL is entered."
-msgstr ""
+msgstr "Cette option est désactivée si une URL d'image d'endroit est fournie."
 
 #: lib/place/filters-messages-tooltip-meta.php:140
-msgid ""
-"You can enter a place image URL (including the http:// prefix) instead of "
-"selecting an image ID."
-msgstr ""
+msgid "You can enter a place image URL (including the http:// prefix) instead of selecting an image ID."
+msgstr "Vous pouvez saisir une URL d'image d'endroit (y compris le préfixe http://) au lieu de sélectionner un ID d'image."
 
 #: lib/place/filters-messages-tooltip-meta.php:142
-msgid ""
-"The image URL option allows you to specify an image URL outside of the "
-"WordPress Media Library and/or a smaller logo style image."
-msgstr ""
+msgid "The image URL option allows you to specify an image URL outside of the WordPress Media Library and/or a smaller logo style image."
+msgstr "L'option URL de l'image vous permet de spécifier une URL d'image en dehors de la médiathèque WordPress et/ou une image de style logo plus petite."
 
 #: lib/place/filters-messages-tooltip-meta.php:144
 msgid "This option is disabled if a place image ID is selected."
-msgstr ""
+msgstr "Cette option est désactivée si un ID d'image d'endroit est sélectionné."
 
 #: lib/place/filters-messages-tooltip-meta.php:150
 msgid "A timezone for the place open and close hours."
-msgstr ""
+msgstr "Un fuseau horaire pour les heures d'ouverture et de fermeture de l'endroit."
 
 #: lib/place/filters-messages-tooltip-meta.php:152
 msgid "The default timezone is provided by WordPress."
-msgstr ""
+msgstr "Le fuseau horaire par défaut est fourni par WordPress."
 
 #: lib/place/filters-messages-tooltip-meta.php:158
 msgid "Select the days and hours this place is open."
-msgstr ""
+msgstr "Sélectionnez les jours et heures, que cet endroit est ouvert."
 
 #: lib/place/filters-messages-tooltip-meta.php:164
-msgid ""
-"If this place is open seasonally, select the open and close dates of the "
-"season."
-msgstr ""
+msgid "If this place is open seasonally, select the open and close dates of the season."
+msgstr "Si cet endroit est ouvert en saison, sélectionnez les dates d'ouverture et de fermeture de la saison."
 
 #: lib/place/filters-messages-tooltip-meta.php:170
-msgid ""
-"The geographic area where a service is provided, in meters around the "
-"location."
-msgstr ""
+msgid "The geographic area where a service is provided, in meters around the location."
+msgstr "La zone géographique où un service est fourni, en mètres autour de l'emplacement."
 
 #: lib/place/filters-messages-tooltip-meta.php:176
-msgid ""
-"A comma-delimited list of <a href=\"%1$s\">ISO 4217 currency codes</a> "
-"accepted by the local business (example: %2$s)."
-msgstr ""
+msgid "A comma-delimited list of <a href=\"%1$s\">ISO 4217 currency codes</a> accepted by the local business (example: %2$s)."
+msgstr "Une liste séparée par des virgules des <a href=\"%1$s\">codes ISO 4217 des devises</a> acceptées par l’entreprise locale (exemple: %2$s)."
 
 #: lib/place/filters-messages-tooltip-meta.php:182
-msgid ""
-"A comma-delimited list of payment options accepted by the local business "
-"(example: Cash, Credit Card)."
-msgstr ""
+msgid "A comma-delimited list of payment options accepted by the local business (example: Cash, Credit Card)."
+msgstr "Une liste séparée par des virgules des modes de paiement acceptés par l’entreprise locale (exemple: Cash, Credit Card)."
 
 #: lib/place/filters-messages-tooltip-meta.php:188
-msgid ""
-"The relative price of goods or services provided by the local business "
-"(example: $, $$, $$$, or $$$$)."
-msgstr ""
+msgid "The relative price of goods or services provided by the local business (example: $, $$, $$$, or $$$$)."
+msgstr "Le prix relatif des biens ou services fournis par l'entreprise locale (exemple: $, $$, $$$, ou $$$$)."
 
 #: lib/place/filters-messages-tooltip-meta.php:194
 msgid "This food establishment accepts reservations."
-msgstr ""
+msgstr "Cet établissement alimentaire accepte des réservations."
 
 #: lib/place/filters-messages-tooltip-meta.php:200
 msgid "The menu URL for this food establishment."
-msgstr ""
+msgstr "L'URL du menu de cet établissement de restauration."
 
 #: lib/place/filters-messages-tooltip-meta.php:206
 msgid "The cuisine served by this food establishment."
-msgstr ""
+msgstr "La cuisine servie par cet établissement alimentaire."
 
 #: lib/place/filters-messages-tooltip-meta.php:212
-msgid ""
-"A comma-delimited list of website and mobile app URLs to order products."
-msgstr ""
+msgid "A comma-delimited list of website and mobile app URLs to order products."
+msgstr "Une liste délimitée par des virgules d'URL de site Web et d'application mobile pour commander des produits."
 
 #: lib/place/filters-messages-tooltip-meta.php:214
-msgid ""
-"These order action URL(s) will be used in the Schema potentialAction "
-"property."
-msgstr ""
+msgid "These order action URL(s) will be used in the Schema potentialAction property."
+msgstr "Ces URL d'action de commande seront utilisées dans la propriété de Schéma potentialAction."
 
 #: lib/place/filters-options.php:95 lib/place.php:53
 msgctxt "option value"
 msgid "Place #%d"
-msgstr ""
+msgstr "Endroit #%d"
 
 #: lib/post.php:84
 msgctxt "metabox title"
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: lib/post.php:93
 msgctxt "metabox title"
 msgid "Place"
-msgstr ""
+msgstr "Endroit"
 
 #: lib/register.php:163
 msgctxt "Post type general name"
 msgid "Organizations"
-msgstr ""
+msgstr "Organisations"
 
 #: lib/register.php:164
 msgctxt "Post type singular name"
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: lib/register.php:165 lib/register.php:166
 msgid "Add Organization"
-msgstr ""
+msgstr "Ajouter une organisation"
 
 #: lib/register.php:167
 msgid "Edit Organization"
-msgstr ""
+msgstr "Modifier l'organisation"
 
 #: lib/register.php:168
 msgid "New Organization"
-msgstr ""
+msgstr "Nouvelle organisation"
 
 #: lib/register.php:169
 msgid "View Organization"
-msgstr ""
+msgstr "Voir l'organisation"
 
 #: lib/register.php:170
 msgid "View Organizations"
-msgstr ""
+msgstr "Voir les organisations"
 
 #: lib/register.php:171
 msgid "Search Organizations"
-msgstr ""
+msgstr "Rechercher dans les organisations"
 
 #: lib/register.php:172
 msgid "No organizations found"
-msgstr ""
+msgstr "Aucune organisation trouvée"
 
 #: lib/register.php:173
 msgid "No organizations found in Trash"
-msgstr ""
+msgstr "Aucune organisation trouvée dans corbeille"
 
 #: lib/register.php:174
 msgid "Parent Organization:"
-msgstr ""
+msgstr "Organisation parente:"
 
 #: lib/register.php:175
 msgid "All Organizations"
-msgstr ""
+msgstr "Toutes les organisations"
 
 #: lib/register.php:176
 msgid "Organization Archives"
-msgstr ""
+msgstr "Archives d'organisations"
 
 #: lib/register.php:177
 msgid "Organization Attributes"
-msgstr ""
+msgstr "Attributs de l'organisation"
 
 #: lib/register.php:178
 msgid "Insert into organization"
-msgstr ""
+msgstr "Insérer dans l'organisation"
 
 #: lib/register.php:179
 msgid "Uploaded to this organization"
-msgstr ""
+msgstr "Téléchargé à cette organisation"
 
 #: lib/register.php:180
 msgid "Organization Image"
-msgstr ""
+msgstr "Image de l'organisation"
 
 #: lib/register.php:181
 msgid "Set organization image"
-msgstr ""
+msgstr "Définir l'image de l'organisation"
 
 #: lib/register.php:182
 msgid "Remove organization image"
-msgstr ""
+msgstr "Supprimer l'image de l'organisation"
 
 #: lib/register.php:183
 msgid "Use as organization image"
-msgstr ""
+msgstr "Utiliser comme image d'organisation"
 
 #: lib/register.php:184
 msgctxt "admin menu name"
 msgid "Organizations"
-msgstr ""
+msgstr "Organisations"
 
 #: lib/register.php:185
 msgid "Filter organizations"
-msgstr ""
+msgstr "Filtrer les organisations"
 
 #: lib/register.php:186
 msgid "Organizations list navigation"
-msgstr ""
+msgstr "Navigation de la liste des organisations"
 
 #: lib/register.php:187
 msgid "Organizations list"
-msgstr ""
+msgstr "Liste des organisations"
 
 #: lib/register.php:188
 msgctxt "admin bar name"
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: lib/register.php:189
 msgid "Organization published."
-msgstr ""
+msgstr "Organisation publiée."
 
 #: lib/register.php:190
 msgid "Organization published privately."
-msgstr ""
+msgstr "Organisation publiée en privé."
 
 #: lib/register.php:191
 msgid "Organization reverted to draft."
-msgstr ""
+msgstr "Organisation remis en brouillon."
 
 #: lib/register.php:192
 msgid "Organization scheduled."
-msgstr ""
+msgstr "Organisation planifiée."
 
 #: lib/register.php:193
 msgid "Organization updated."
-msgstr ""
+msgstr "Organisation mise à jour."
 
 #: lib/register.php:208
 msgctxt "Post type label"
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: lib/register.php:210
 msgctxt "Post type description"
 msgid "Organization"
-msgstr ""
+msgstr "Organisation"
 
 #: lib/register.php:242 lib/register.php:365
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 #: lib/register.php:243 lib/register.php:366
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: lib/register.php:244 lib/register.php:367
 msgctxt "admin menu name"
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 #: lib/register.php:245 lib/register.php:368
 msgid "All Categories"
-msgstr ""
+msgstr "Toutes catégories"
 
 #: lib/register.php:246 lib/register.php:369
 msgid "Edit Category"
-msgstr ""
+msgstr "Modifier la catégorie"
 
 #: lib/register.php:247 lib/register.php:370
 msgid "View Category"
-msgstr ""
+msgstr "Voir la catégorie"
 
 #: lib/register.php:248 lib/register.php:371
 msgid "Update Category"
-msgstr ""
+msgstr "Mettre à jour la catégorie"
 
 #: lib/register.php:249 lib/register.php:372
 msgid "Add New Category"
-msgstr ""
+msgstr "Ajouter une nouvelle catégorie"
 
 #: lib/register.php:250 lib/register.php:373
 msgid "New Category Name"
-msgstr ""
+msgstr "Nom de la nouvelle catégorie"
 
 #: lib/register.php:251 lib/register.php:374
 msgid "Parent Category"
-msgstr ""
+msgstr "Catégorie parente"
 
 #: lib/register.php:252 lib/register.php:375
 msgid "Parent Category:"
-msgstr ""
+msgstr "Catégorie parente:"
 
 #: lib/register.php:253 lib/register.php:376
 msgid "Search Categories"
-msgstr ""
+msgstr "Rechercher dans les catégories"
 
 #: lib/register.php:254 lib/register.php:377
 msgid "Popular Categories"
-msgstr ""
+msgstr "Catégories populaires"
 
 #: lib/register.php:255 lib/register.php:378
 msgid "Separate categories with commas"
-msgstr ""
+msgstr "Séparez les catégories avec des virgules"
 
 #: lib/register.php:256 lib/register.php:379
 msgid "Add or remove categories"
-msgstr ""
+msgstr "Ajouter ou retirer des catégories"
 
 #: lib/register.php:257 lib/register.php:380
 msgid "Choose from the most used"
-msgstr ""
+msgstr "Choisir parmi les plus utilisées"
 
 #: lib/register.php:258 lib/register.php:381
 msgid "No categories found."
-msgstr ""
+msgstr "Aucune catégorie trouvée."
 
 #: lib/register.php:259 lib/register.php:382
 msgid "← Back to categories"
-msgstr ""
+msgstr "← Retour aux catégories"
 
 #: lib/register.php:263 lib/register.php:386
 msgctxt "Taxonomy label"
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 #: lib/register.php:274
 msgctxt "Taxonomy description"
 msgid "Categories for Organizations"
-msgstr ""
+msgstr "Catégories pour les organisations"
 
 #: lib/register.php:286
 msgctxt "Post type general name"
 msgid "Places"
-msgstr ""
+msgstr "Endroits"
 
 #: lib/register.php:287
 msgctxt "Post type singular name"
 msgid "Place"
-msgstr ""
+msgstr "Endroit"
 
 #: lib/register.php:288 lib/register.php:289
 msgid "Add Place"
-msgstr ""
+msgstr "Ajouter un endroit"
 
 #: lib/register.php:290
 msgid "Edit Place"
-msgstr ""
+msgstr "Modifier le lieu"
 
 #: lib/register.php:291
 msgid "New Place"
-msgstr ""
+msgstr "Nouvel endroit"
 
 #: lib/register.php:292
 msgid "View Place"
-msgstr ""
+msgstr "Voir l'endroit"
 
 #: lib/register.php:293
 msgid "View Places"
-msgstr ""
+msgstr "Voir les endroits"
 
 #: lib/register.php:294
 msgid "Search Places"
-msgstr ""
+msgstr "Rechercher dans les endroits"
 
 #: lib/register.php:295
 msgid "No places found"
-msgstr ""
+msgstr "Aucun endroit trouvé"
 
 #: lib/register.php:296
 msgid "No places found in Trash"
-msgstr ""
+msgstr "Aucun endroit trouvé dans la corbeille"
 
 #: lib/register.php:297
 msgid "Parent Place:"
-msgstr ""
+msgstr "Endroit parent:"
 
 #: lib/register.php:298
 msgid "All Places"
-msgstr ""
+msgstr "Tous les endroits"
 
 #: lib/register.php:299
 msgid "Place Archives"
-msgstr ""
+msgstr "Archives des endroits"
 
 #: lib/register.php:300
 msgid "Place Attributes"
-msgstr ""
+msgstr "Attributs de l'endroit"
 
 #: lib/register.php:301
 msgid "Insert into place"
-msgstr ""
+msgstr "Insérer dans l'endroit"
 
 #: lib/register.php:302
 msgid "Uploaded to this place"
-msgstr ""
+msgstr "Téléchargé à cet endroit"
 
 #: lib/register.php:303
 msgid "Place Image"
-msgstr ""
+msgstr "Image de l'endroit"
 
 #: lib/register.php:304
 msgid "Set place image"
-msgstr ""
+msgstr "Définir l'image de l'endroit"
 
 #: lib/register.php:305
 msgid "Remove place image"
-msgstr ""
+msgstr "Supprimer l'image de l'endroit"
 
 #: lib/register.php:306
 msgid "Use as place image"
-msgstr ""
+msgstr "Utiliser comme image d'endroit"
 
 #: lib/register.php:307
 msgctxt "admin menu name"
 msgid "Places"
-msgstr ""
+msgstr "Endroits"
 
 #: lib/register.php:308
 msgid "Filter places"
-msgstr ""
+msgstr "Filtrer les endroits"
 
 #: lib/register.php:309
 msgid "Places list navigation"
-msgstr ""
+msgstr "Navigation de la liste des endroits"
 
 #: lib/register.php:310
 msgid "Places list"
-msgstr ""
+msgstr "Liste des endroits"
 
 #: lib/register.php:311
 msgctxt "admin bar name"
 msgid "Place"
-msgstr ""
+msgstr "Endroit"
 
 #: lib/register.php:312
 msgid "Place published."
-msgstr ""
+msgstr "Endroit publié."
 
 #: lib/register.php:313
 msgid "Place published privately."
-msgstr ""
+msgstr "Endroit publié en privé."
 
 #: lib/register.php:314
 msgid "Place reverted to draft."
-msgstr ""
+msgstr "Endroit remis au brouillon."
 
 #: lib/register.php:315
 msgid "Place scheduled."
-msgstr ""
+msgstr "Endoit planifié."
 
 #: lib/register.php:316
 msgid "Place updated."
-msgstr ""
+msgstr "Endroit mis à jour."
 
 #: lib/register.php:331
 msgctxt "Post type label"
 msgid "Place"
-msgstr ""
+msgstr "Endroit"
 
 #: lib/register.php:333
 msgctxt "Post type description"
 msgid "Location, place, or venue"
-msgstr ""
+msgstr "Emplacement, endroit ou lieu"
 
 #: lib/register.php:397
 msgctxt "Taxonomy description"
 msgid "Categories for Places"
-msgstr ""
+msgstr "Catégories d'endroits"
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Organization and Place Manager"
-msgstr ""
+msgstr "WPSSO gestionnaire d'organisation et d'endroit"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wpsso.com/extend/plugins/wpsso-organization-place/"
-msgstr ""
+msgstr "https://wpsso.com/extend/plugins/wpsso-organization-place/"
 
 #. Description of the plugin/theme
-msgid ""
-"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
-"Pinterest, and Google local business markup."
-msgstr ""
+msgid "Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup."
+msgstr "Gérez les organisations (éditeur, organisateur, etc.) et les endroits pour le balisage d'entreprises locales Facebook, Pinterest et Google."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
-msgstr ""
+msgstr "JS Morisset"
 
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
-msgstr ""
+msgstr "https://wpsso.com/"
