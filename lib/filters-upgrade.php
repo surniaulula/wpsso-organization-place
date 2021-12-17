@@ -152,7 +152,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 				}
 
 				$post_id = wp_insert_post( array(	// Returns a post ID on success.
-					'ID'           => $post_id,
+					'ID'           => $post_id,	// 0 or existing post ID.
 					'post_title'   => $post_name,
 					'post_content' => $post_desc,
 					'post_type'    => $post_type,
