@@ -124,6 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.1.0-dev.1 (2021/12/17)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added updating of the post content as well when saving an organization / place.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.12.2-dev.1.
+
 **Version 1.0.0 (2021/12/16)**
 
 * **New Features**
@@ -140,6 +155,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.1.0-dev.1 =
+
+(2021/12/17) Added updating of the post content as well when saving an organization / place.
 
 = 1.0.0 =
 
