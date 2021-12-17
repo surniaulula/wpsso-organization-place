@@ -110,7 +110,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			} else {
 
 				$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
-			
+
 				if ( 'custom' !== $place_id ) {
 
 					$md_opts = SucomUtil::preg_grep_keys( '/^place_/', $md_opts, $invert = true );

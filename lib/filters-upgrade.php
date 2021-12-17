@@ -41,12 +41,20 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssoorg' );	// Returns 'opt_version'.
 
+			/**
+			 * WPSSO ORG may have been uninstalled and its 'opt_version' value may be missing from the options array,
+			 * so check for any previous version, including 0 (ie. no 'opt_version').
+			 */
 			if ( $prev_version <= $this->org_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'org', $md_prefix = 'org', WPSSOOPM_ORG_POST_TYPE );
 				$opts = $this->convert_numeric_org_ids( $opts );
 
-				$this->p->opt->set_version( $opts, 'wpssoorg', $this->org_last_version + 1 );	// Upgrade only once.
+				/**
+				 * Set the WPSSO ORG 'opt_version' - whether the add-on is/was active or not - so we don't try to
+				 * convert its options again.
+				 */
+				$this->p->opt->set_version( $opts, 'wpssoorg', $this->org_last_version + 1 );
 			}
 
 			/**
@@ -54,12 +62,20 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssoplm' );	// Returns 'opt_version'.
 
+			/**
+			 * WPSSO PLM may have been uninstalled and its 'opt_version' value may be missing from the options array,
+			 * so check for any previous version, including 0 (ie. no 'opt_version').
+			 */
 			if ( $prev_version <= $this->plm_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'plm_place', $md_prefix = 'place', WPSSOOPM_PLACE_POST_TYPE );
 				$opts = $this->convert_numeric_place_ids( $opts );
 
-				$this->p->opt->set_version( $opts, 'wpssoplm', $this->plm_last_version + 1 );	// Upgrade only once.
+				/**
+				 * Set the WPSSO PLM 'opt_version' - whether the add-on is/was active or not - so we don't try to
+				 * convert its options again.
+				 */
+				$this->p->opt->set_version( $opts, 'wpssoplm', $this->plm_last_version + 1 );
 			}
 
 			return $opts;
@@ -72,11 +88,19 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $md_opts, 'wpssoorg' );	// Returns 'opt_version'.
 
+			/**
+			 * WPSSO ORG may have been uninstalled and its 'opt_version' value may be missing from the options array,
+			 * so check for any previous version, including 0 (ie. no 'opt_version').
+			 */
 			if ( $prev_version <= $this->org_last_version ) {
 
 				$md_opts = $this->convert_numeric_org_ids( $md_opts );
-			
-				$this->p->opt->set_version( $md_opts, 'wpssoorg', $this->org_last_version + 1 );	// Upgrade only once.
+
+				/**
+				 * Set the WPSSO ORG 'opt_version' - whether the add-on is/was active or not - so we don't try to
+				 * convert its options again.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoorg', $this->org_last_version + 1 );
 			}
 
 			/**
@@ -84,6 +108,10 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $md_opts, 'wpssoplm' );	// Returns 'opt_version'.
 
+			/**
+			 * WPSSO PLM may have been uninstalled and its 'opt_version' value may be missing from the options array,
+			 * so check for any previous version, including 0 (ie. no 'opt_version').
+			 */
 			if ( $prev_version <= $this->plm_last_version ) {
 
 				foreach ( SucomUtil::get_opts_begin( 'plm_place_', $md_opts ) as $md_key => $val ) {
@@ -97,7 +125,11 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 				$md_opts = $this->convert_numeric_place_ids( $md_opts );
 
-				$this->p->opt->set_version( $md_opts, 'wpssoplm', $this->plm_last_version + 1 );	// Upgrade only once.
+				/**
+				 * Set the WPSSO PLM 'opt_version' - whether the add-on is/was active or not - so we don't try to
+				 * convert its options again.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoplm', $this->plm_last_version + 1 );
 			}
 
 			return $md_opts;

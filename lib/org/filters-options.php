@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		public function filter_get_organization_options( $org_opts, $mod, $org_id ) {
 
 			if ( false === $org_opts ) {	// First come, first served.
-			
+
 				if ( 0 === strpos( $org_id, 'org-' ) ) {
 
 					$org_opts = WpssoOpmOrg::get_id( $org_id, $mod );

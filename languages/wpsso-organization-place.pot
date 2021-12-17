@@ -93,7 +93,7 @@ msgstr ""
 msgid "adding schema images"
 msgstr ""
 
-#: lib/filters-upgrade.php:166
+#: lib/filters-upgrade.php:198
 msgid ""
 "%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s "
 "post type ID %5$d."
