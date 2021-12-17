@@ -93,7 +93,7 @@ msgstr ""
 msgid "adding schema images"
 msgstr ""
 
-#: lib/filters-upgrade.php:151
+#: lib/filters-upgrade.php:156
 msgid ""
 "%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s "
 "post type ID %5$d."
@@ -177,24 +177,24 @@ msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
 
-#: lib/org/filters-options.php:180
+#: lib/org/filters-options.php:185
 msgid ""
 "The \"%s\" organization banner URL image dimensions cannot be determined."
 msgstr ""
 
-#: lib/org/filters-options.php:183
+#: lib/org/filters-options.php:188
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
-#: lib/org/filters-options.php:188
+#: lib/org/filters-options.php:193
 msgid ""
 "The \"%1$s\" organization banner URL image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
-#: lib/org/filters-options.php:191
+#: lib/org/filters-options.php:196
 msgid "Please correct the %s banner image."
 msgstr ""
 

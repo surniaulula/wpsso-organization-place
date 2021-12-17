@@ -108,51 +108,55 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 				foreach ( $deprecated_opts as $key_part => $val ) {
 
-					$md_key  = $md_prefix . '_' . $key_part;
 					$opt_key = $opt_prefix . '_' . $key_part . '_' . $id;
+					$md_key  = $md_prefix . '_' . $key_part;
 
 					$converted_opts[ $md_key ] = SucomUtil::get_key_value( $opt_key, $opts );
 				}
 
-				if ( ! empty( $converted_opts[ $md_prefix . '_name' ] ) ) {	// Just in case.
+				if ( empty( $converted_opts[ $md_prefix . '_name' ] ) ) {	// Just in case.
 
-					/**
-					 * Just in case, check if this organization / place has already been converted, and if so,
-					 * then simply strip its options.
-					 */
-					if ( ! empty( $opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ] ) ) {
+					continue;
+				}
 
-						$opts = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_.*_' . $id . '([#:].*)?$/', $opts, $invert = true );
+				$post_id   = 0;
+				$post_name = $converted_opts[ $md_prefix . '_name' ];
+				$post_desc = isset( $converted_opts[ $md_prefix . '_desc' ] ) ? $converted_opts[ $md_prefix . '_desc' ] : '';
 
-						continue;	// Get the next $id => $name pair.
-					}
+				/**
+				 * Just in case, check if this organization / place has already been converted, and if so,
+				 * then update the existing post ID instead of creating a new one.
+				 */
+				if ( ! empty( $opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ] ) ) {
 
-					$post_name = $converted_opts[ $md_prefix . '_name' ];
+					$post_id = $opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ];
+				}
 
-					$post_id = wp_insert_post( array(	// Returns a post ID on success.
-						'post_title'  => $post_name,
-						'post_type'   => $post_type,
-						'post_status' => 'publish',
-						'meta_input'  => array( WPSSO_META_NAME => $converted_opts ),
-					) );
+				$post_id = wp_insert_post( array(	// Returns a post ID on success.
+					'ID'           => $post_id,
+					'post_title'   => $post_name,
+					'post_type'    => $post_type,
+					'post_status'  => 'publish',
+					'post_content' => $post_desc,
+					'meta_input'   => array( WPSSO_META_NAME => $converted_opts ),
+				) );
 
-					/**
-					 * If successful, save the post ID and issue a notice about the update.
-					 */
-					if ( is_numeric( $post_id ) ) {
+				/**
+				 * If successful, save the post ID and issue a notice about the update.
+				 */
+				if ( is_numeric( $post_id ) ) {
 
-						$opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ] = $post_id;
+					$opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ] = $post_id;
 
-						$opts = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_.*_' . $id . '([#:].*)?$/', $opts, $invert = true );
+					$opts = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_.*_' . $id . '([#:].*)?$/', $opts, $invert = true );
 
-						$post_type_obj  = get_post_type_object( $post_type );
-						$post_type_name = $post_type_obj->labels->singular_name;
+					$post_type_obj  = get_post_type_object( $post_type );
+					$post_type_name = $post_type_obj->labels->singular_name;
 
-						$notice_msg = sprintf( __( '%1$s "%2$s" ID %3$d from the plugin settings has been converted to %4$s post type ID %5$d.',
-							'wpsso-organization-place' ), $post_type_name, $post_name, $id, $post_type, $post_id );
+					$notice_msg = sprintf( __( '%1$s "%2$s" ID %3$d from the plugin settings has been converted to %4$s post type ID %5$d.',
+						'wpsso-organization-place' ), $post_type_name, $post_name, $id, $post_type, $post_id );
 
-						$this->p->notice->upd( $notice_msg );
-					}
+					$this->p->notice->upd( $notice_msg );
 				}
 			}
 

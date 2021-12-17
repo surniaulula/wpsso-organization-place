@@ -89,10 +89,15 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					$md_opts[ 'org_name' ] = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
 				}
 
+				if ( ! isset( $md_opts[ 'org_desc' ] ) ) {	// Just in case.
+
+					$md_opts[ 'org_desc' ] = '';
+				}
+
 				/**
 				 * Always keep the post title and slug updated.
 				 */
-				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'org_name' ] );
+				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
 
 				$this->check_banner_image_size( $md_opts );
 			}

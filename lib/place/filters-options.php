@@ -95,10 +95,15 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					$md_opts[ 'place_name' ] = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
 				}
 
+				if ( ! isset( $md_opts[ 'place_desc' ] ) ) {	// Just in case.
+
+					$md_opts[ 'place_desc' ] = '';
+				}
+
 				/**
 				 * Always keep the post title and slug updated.
 				 */
-				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'place_name' ] );
+				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
 
 				$this->check_place_image_sizes( $md_opts );
 
