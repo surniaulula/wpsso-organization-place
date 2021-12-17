@@ -129,9 +129,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added updating of the post content as well when saving an organization / place.
+	* Added updating of the post object content, along with the title, when saving an organization / place.
 * **Bugfixes**
-	* None.
+	* Fixed an options version check for cases where the WPSSO ORG and WPSSO PLM add-ons were updated first.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.1.0-b.1 =
 
-(2021/12/17) Added updating of the post content as well when saving an organization / place.
+(2021/12/17) Fixed an options version check for cases where the WPSSO ORG and WPSSO PLM add-ons were updated first.
 
 = 1.0.0 =
 
