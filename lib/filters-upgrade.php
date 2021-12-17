@@ -41,7 +41,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssoorg' );	// Returns 'opt_version'.
 
-			if ( $prev_version > 0 && $prev_version <= $this->org_last_version ) {
+			if ( $prev_version <= $this->org_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'org', $md_prefix = 'org', WPSSOOPM_ORG_POST_TYPE );
 				$opts = $this->convert_numeric_org_ids( $opts );
@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssoplm' );	// Returns 'opt_version'.
 
-			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
+			if ( $prev_version <= $this->plm_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'plm_place', $md_prefix = 'place', WPSSOOPM_PLACE_POST_TYPE );
 				$opts = $this->convert_numeric_place_ids( $opts );
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $md_opts, 'wpssoorg' );	// Returns 'opt_version'.
 
-			if ( $prev_version > 0 && $prev_version <= $this->org_last_version ) {
+			if ( $prev_version <= $this->org_last_version ) {
 
 				$md_opts = $this->convert_numeric_org_ids( $md_opts );
 			
@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			$prev_version = $this->p->opt->get_version( $md_opts, 'wpssoplm' );	// Returns 'opt_version'.
 
-			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
+			if ( $prev_version <= $this->plm_last_version ) {
 
 				foreach ( SucomUtil::get_opts_begin( 'plm_place_', $md_opts ) as $md_key => $val ) {
 
