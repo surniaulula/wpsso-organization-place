@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'org', $md_prefix = 'org', WPSSOOPM_ORG_POST_TYPE );
 				$opts = $this->convert_numeric_org_ids( $opts );
 
-				$this->p->opt->set_version( $md_opts, 'wpssoorg', $this->org_last_version + 1 );	// Upgrade only once.
+				$this->p->opt->set_version( $opts, 'wpssoorg', $this->org_last_version + 1 );	// Upgrade only once.
 			}
 
 			/**
@@ -59,7 +59,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'plm_place', $md_prefix = 'place', WPSSOOPM_PLACE_POST_TYPE );
 				$opts = $this->convert_numeric_place_ids( $opts );
 
-				$this->p->opt->set_version( $md_opts, 'wpssoplm', $this->plm_last_version + 1 );	// Upgrade only once.
+				$this->p->opt->set_version( $opts, 'wpssoplm', $this->plm_last_version + 1 );	// Upgrade only once.
 			}
 
 			return $opts;
