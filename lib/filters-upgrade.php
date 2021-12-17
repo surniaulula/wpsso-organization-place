@@ -44,8 +44,12 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			if ( $prev_version > 0 && $prev_version <= $this->org_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'org', $md_prefix = 'org', WPSSOOPM_ORG_POST_TYPE );
-
 				$opts = $this->convert_numeric_org_ids( $opts );
+
+				/**
+				 * Upgrade the options only once.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoorg', $this->org_last_version + 1 );
 			}
 
 			/**
@@ -56,8 +60,12 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
 
 				$opts = $this->convert_multi_opts_to_post( $opts, $opt_prefix = 'plm_place', $md_prefix = 'place', WPSSOOPM_PLACE_POST_TYPE );
-
 				$opts = $this->convert_numeric_place_ids( $opts );
+
+				/**
+				 * Upgrade the options only once.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoplm', $this->plm_last_version + 1 );
 			}
 
 			return $opts;
@@ -73,6 +81,11 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			if ( $prev_version > 0 && $prev_version <= $this->org_last_version ) {
 
 				$md_opts = $this->convert_numeric_org_ids( $md_opts );
+			
+				/**
+				 * Upgrade the options only once.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoorg', $this->org_last_version + 1 );
 			}
 
 			/**
@@ -92,6 +105,11 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 				}
 
 				$md_opts = $this->convert_numeric_place_ids( $md_opts );
+
+				/**
+				 * Upgrade the options only once.
+				 */
+				$this->p->opt->set_version( $md_opts, 'wpssoplm', $this->plm_last_version + 1 );
 			}
 
 			return $md_opts;
@@ -103,7 +121,8 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 			foreach ( $names as $id => $name ) {
 
-				$deprecated_opts = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_(.*)_' . $id . '([#:].*)?$/', $opts, $invert = false, $replace = '$1' );
+				$deprecated_rexp = '/^' . $opt_prefix . '_(.*)_' . $id . '([#:].*)?$/';
+				$deprecated_opts = SucomUtil::preg_grep_keys( $deprecated_rexp, $opts, $invert = false, $replace = '$1' );
 				$converted_opts  = array();
 
 				foreach ( $deprecated_opts as $key_part => $val ) {
@@ -135,9 +154,9 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 				$post_id = wp_insert_post( array(	// Returns a post ID on success.
 					'ID'           => $post_id,
 					'post_title'   => $post_name,
+					'post_content' => $post_desc,
 					'post_type'    => $post_type,
 					'post_status'  => 'publish',
-					'post_content' => $post_desc,
 					'meta_input'   => array( WPSSO_META_NAME => $converted_opts ),
 				) );
 
@@ -148,7 +167,10 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 					$opts[ 'opm_' . $md_prefix . '_' . $id . '_post_id' ] = $post_id;
 
-					$opts = SucomUtil::preg_grep_keys( '/^' . $opt_prefix . '_.*_' . $id . '([#:].*)?$/', $opts, $invert = true );
+					/**
+					 * Remove the deprecated options using the same regular expression used to find them.
+					 */
+					$opts = SucomUtil::preg_grep_keys( $deprecated_rexp, $opts, $invert = true );
 
 					$post_type_obj  = get_post_type_object( $post_type );
 					$post_type_name = $post_type_obj->labels->singular_name;

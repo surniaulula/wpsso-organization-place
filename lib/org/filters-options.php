@@ -95,9 +95,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				}
 
 				/**
-				 * Always keep the post title and slug updated.
+				 * Always keep the post title, slug, and content updated.
 				 */
-				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
+				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
 
 				$this->check_banner_image_size( $md_opts );
 			}

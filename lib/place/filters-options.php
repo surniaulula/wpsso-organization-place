@@ -101,9 +101,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				}
 
 				/**
-				 * Always keep the post title and slug updated.
+				 * Always keep the post title, slug, and content updated.
 				 */
-				SucomUtilWP::raw_update_post_title( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
+				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
 
 				$this->check_place_image_sizes( $md_opts );
 
