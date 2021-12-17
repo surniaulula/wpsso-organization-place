@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoOpm class object.
 
-		private $org_last_version = 9;
-		private $plm_last_version = 49;
+		private $org_last_version = 10;
+		private $plm_last_version = 50;
 
 		/**
 		 * Instantiated by WpssoOpmFilters->__construct().
