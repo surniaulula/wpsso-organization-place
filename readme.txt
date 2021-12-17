@@ -19,9 +19,9 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <!-- about -->
 
-**Manage any number of organizations for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.**
+**Manage any number of organizations** for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.
 
-**Manage any number of places, locations, and venues for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.**
+**Manage any number of places, locations, and venues** for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.
 
 <!-- /about -->
 
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-b.2 (2021/12/16)**
+**Version 1.0.0-rc.1 (2021/12/16)**
 
 * **New Features**
 	* First release.
@@ -137,11 +137,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.12.0-b.2.
+	* WPSSO Core v9.12.0-rc.1.
 
 == Upgrade Notice ==
 
-= 1.0.0-b.2 =
+= 1.0.0-rc.1 =
 
 (2021/12/16) First release.
 
