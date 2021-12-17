@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.1.0-b.2 (2021/12/17)**
+**Version 1.1.0-b.3 (2021/12/17)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.12.2-b.2.
+	* WPSSO Core v9.12.2-b.3.
 
 **Version 1.0.0 (2021/12/16)**
 
@@ -156,7 +156,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.1.0-b.2 =
+= 1.1.0-b.3 =
 
 (2021/12/17) Fixed an options version check for cases where the WPSSO ORG and WPSSO PLM add-ons were updated first.
 
