@@ -19,9 +19,9 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <!-- about -->
 
-**Manage any number of organizations** for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.
+**Manage any number of Organizations** for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.
 
-**Manage any number of places, locations, and venues** for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.
+**Manage any number of Places, Locations, and Venues** for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.
 
 <!-- /about -->
 
