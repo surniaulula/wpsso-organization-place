@@ -34,7 +34,12 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			) );
 		}
 
-		public function filter_upgraded_options( $opts, $defs ) {
+		public function filter_upgraded_options( array $opts, $defs ) {
+
+			if ( ! is_admin() ) {
+
+				return $opts;
+			}
 
 			/**
 			 * Get the current options version number for checks to follow.
@@ -81,7 +86,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			return $opts;
 		}
 
-		public function filter_upgraded_md_options( $md_opts ) {
+		public function filter_upgraded_md_options( array $md_opts ) {
 
 			/**
 			 * Get the current options version number for checks to follow.
@@ -191,6 +196,11 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 					 * Remove the deprecated options using the same regular expression used to find them.
 					 */
 					$opts = SucomUtil::preg_grep_keys( $deprecated_rexp, $opts, $invert = true );
+
+					/**
+					 * Just in case - save the settings now to prevent competing conversions.
+					 */
+					update_option( WPSSO_OPTIONS_NAME, $opts );
 
 					$post_type_obj  = get_post_type_object( $post_type );
 					$post_type_name = $post_type_obj->labels->singular_name;
