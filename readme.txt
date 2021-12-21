@@ -124,6 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.1.1 (2021/12/21)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed an incorrect text domain for some migrated help messages.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.12.2.
+
 **Version 1.1.0 (2021/12/17)**
 
 * **New Features**
@@ -155,6 +170,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+
+(2021/12/21) Fixed an incorrect text domain for some migrated help messages.
 
 = 1.1.0 =
 
