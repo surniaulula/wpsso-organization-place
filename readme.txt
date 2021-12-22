@@ -124,6 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.2.0-dev.1 (2021/12/22)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added notice messages for selected but deleted or unpublished organization and place IDs.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.12.3.
+
 **Version 1.1.1 (2021/12/21)**
 
 * **New Features**
@@ -170,6 +185,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.2.0-dev.1 =
+
+(2021/12/22) Added notice messages for selected but deleted or unpublished organization and place IDs.
 
 = 1.1.1 =
 
