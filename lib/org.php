@@ -94,7 +94,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$post_id  = substr( $org_id, 4 );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
-				if ( $post_mod[ 'is_post' ] && $post_mod[ 'id' ] && 'publish' === $post_mod[ 'post_status' ] ) {
+				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
 					$org_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
 					$org_sameas = array();
@@ -117,14 +117,34 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 							$org_sameas[] = $url;
 						}
 					}
-	
+
 					if ( ! empty( $org_sameas ) ) {
 	
 						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
+
+				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {
+
+					$org_page_link = get_edit_post_link( $post_id );
+
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= ' ';
+					$notice_msg .= $org_page_link ? '<a href="' . $org_page_link . '">' : '';
+					$notice_msg .= sprintf( __( 'Please publish organization ID #%s or select another organization.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= $org_page_link ? '</a>' : '';
+
+					$wpsso->notice->err( $notice_msg );
+
+				} else {
+
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= ' ';
+					$notice_msg .= sprintf( __( 'Organization ID #%s is missing or invalid.', 'wpsso-organization-place' ), $post_id );
+
+					$wpsso->notice->err( $notice_msg );
 				}
 			}
-
+	
 			if ( ! empty( $org_opts ) ) {
 
 				$org_opts[ 'org_id' ] = $org_id;

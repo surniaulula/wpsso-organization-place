@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.1.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.2.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
@@ -196,6 +196,18 @@ msgstr ""
 
 #: lib/org/filters-options.php:196
 msgid "Please correct the %s banner image."
+msgstr ""
+
+#: lib/org.php:130 lib/org.php:140
+msgid "Unable to provide information for organization ID #%s."
+msgstr ""
+
+#: lib/org.php:133
+msgid "Please publish organization ID #%s or select another organization."
+msgstr ""
+
+#: lib/org.php:142
+msgid "Organization ID #%s is missing or invalid."
 msgstr ""
 
 #: lib/place/filters-edit.php:91
@@ -579,6 +591,18 @@ msgstr ""
 #: lib/place/filters-options.php:95 lib/place.php:53
 msgctxt "option value"
 msgid "Place #%d"
+msgstr ""
+
+#: lib/place.php:118 lib/place.php:128
+msgid "Unable to provide information for place ID #%s."
+msgstr ""
+
+#: lib/place.php:121
+msgid "Please publish place ID #%s or select another place."
+msgstr ""
+
+#: lib/place.php:130
+msgid "Place ID #%s is missing or invalid."
 msgstr ""
 
 #: lib/post.php:84
