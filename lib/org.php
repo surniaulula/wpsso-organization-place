@@ -91,32 +91,37 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 			} elseif ( 0 === strpos( $org_id, 'org-' ) ) {
 
-				$post_id    = substr( $org_id, 4 );
-				$org_opts   = $wpsso->post->get_options( $post_id );
-				$org_sameas = array();
+				$post_id  = substr( $org_id, 4 );
+				$post_mod = $wpsso->post->get_mod( $post_id );
 
-				foreach ( SucomUtil::get_opts_begin( 'org_sameas_', $org_opts ) as $key => $url ) {	// Don't use $opt_key variable name.
+				if ( $post_mod[ 'is_post' ] && $post_mod[ 'id' ] && 'publish' === $post_mod[ 'post_status' ] ) {
 
-					unset( $org_opts[ $key ] );
+					$org_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+					$org_sameas = array();
 
-					if ( empty( $url ) ) {
+					foreach ( SucomUtil::get_opts_begin( 'org_sameas_', $org_opts ) as $key => $url ) {	// Don't use $opt_key variable name.
 
-						continue;
-
-					} elseif ( $key === 'org_sameas_tc_site' ) {	// Convert Twitter username to a URL.
-
-						$url = 'https://twitter.com/' . preg_replace( '/^@/', '', $url );
+						unset( $org_opts[ $key ] );
+	
+						if ( empty( $url ) ) {
+	
+							continue;
+	
+						} elseif ( $key === 'org_sameas_tc_site' ) {	// Convert Twitter username to a URL.
+	
+							$url = 'https://twitter.com/' . preg_replace( '/^@/', '', $url );
+						}
+	
+						if ( false !== filter_var( $url, FILTER_VALIDATE_URL ) ) {	// Just in case.
+	
+							$org_sameas[] = $url;
+						}
 					}
-
-					if ( false !== filter_var( $url, FILTER_VALIDATE_URL ) ) {	// Just in case.
-
-						$org_sameas[] = $url;
+	
+					if ( ! empty( $org_sameas ) ) {
+	
+						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
-				}
-
-				if ( ! empty( $org_sameas ) ) {
-
-					$org_opts[ 'org_sameas' ] = $org_sameas;
 				}
 			}
 
@@ -128,7 +133,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				 * Merging the defaults array also makes sure 'org_schema_type' is defined.
 				 */
 				$org_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'org_md_defaults' ], $org_opts );	// Complete the array.
-
 				$org_opts = SucomUtil::preg_grep_keys( '/^org_/', $org_opts );
 			}
 

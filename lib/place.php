@@ -104,8 +104,13 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
 
-				$post_id    = substr( $place_id, 6 );
-				$place_opts = $wpsso->post->get_options( $post_id );
+				$post_id  = substr( $place_id, 6 );
+				$post_mod = $wpsso->post->get_mod( $post_id );
+
+				if ( $post_mod[ 'is_post' ] && $post_mod[ 'id' ] && 'publish' === $post_mod[ 'post_status' ] ) {
+
+					$place_opts = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+				}
 			}
 
 			if ( ! empty( $place_opts ) ) {
@@ -116,7 +121,6 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				 * Merging the defaults array also makes sure 'place_schema_type' is defined.
 				 */
 				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );
-
 				$place_opts = SucomUtil::preg_grep_keys( '/^place_/', $place_opts );
 
 				/**
