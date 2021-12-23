@@ -123,7 +123,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
 
-				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {
+				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
 					$org_page_link = get_edit_post_link( $post_id );
 

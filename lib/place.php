@@ -111,7 +111,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 					$place_opts = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
 
-				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {
+				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
 					$place_page_link = get_edit_post_link( $post_id );
 
