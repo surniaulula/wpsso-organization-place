@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.2.0-dev.1 (2021/12/22)**
+**Version 1.2.0-dev.2 (2021/12/22)**
 
 * **New Features**
 	* None.
@@ -186,7 +186,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.2.0-dev.1 =
+= 1.2.0-dev.2 =
 
 (2021/12/22) Added notice messages for selected but deleted or unpublished organization and place IDs.
 
