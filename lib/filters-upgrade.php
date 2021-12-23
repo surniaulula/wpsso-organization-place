@@ -205,7 +205,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 					$post_type_obj  = get_post_type_object( $post_type );
 					$post_type_name = $post_type_obj->labels->singular_name;
 
-					$notice_msg = sprintf( __( '%1$s "%2$s" ID %3$d from the plugin settings has been converted to %4$s post type ID %5$d.',
+					$notice_msg = sprintf( __( '%1$s "%2$s" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s.',
 						'wpsso-organization-place' ), $post_type_name, $post_name, $id, $post_type, $post_id );
 
 					$this->p->notice->upd( $notice_msg );

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.1.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-21 08:24-0800\n"
+"PO-Revision-Date: 2021-12-23 09:30-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -88,8 +88,8 @@ msgid "adding schema images"
 msgstr "ajout d'images schéma"
 
 #: lib/filters-upgrade.php:208
-msgid "%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s post type ID %5$d."
-msgstr "%1$s \"%2$s\" ID %3$d des réglages d'extension a été converti en type d'article %4$s ID %5$d."
+msgid "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s."
+msgstr "%1$s \"%2$s\" ID #%3$s des réglages d'extension a été converti en type d'article %4$s ID #%5$s."
 
 #: lib/org/filters-edit.php:47
 msgctxt "option label"
@@ -180,6 +180,22 @@ msgstr "Les dimensions de l'image pour l'URL de la bannière d'organisation \"%1
 #: lib/org/filters-options.php:196
 msgid "Please correct the %s banner image."
 msgstr "Veuillez corriger l'image bannière %s."
+
+#: lib/org.php:130 lib/org.php:140
+msgid "Unable to provide information for organization ID #%s."
+msgstr "Impossible de fournir des informations pour l'organisation ID #%s."
+
+#: lib/org.php:133
+msgid "Please publish organization ID #%s or select a different organization."
+msgstr "Veuillez publier l'organisation ID #%s ou sélectionner une autre organisation."
+
+#: lib/org.php:142
+msgid "Organization ID #%s does not exist."
+msgstr "L'organisation ID #%s n'existe pas."
+
+#: lib/org.php:144
+msgid "Please select a different organization."
+msgstr "Veuillez sélectionner une autre organisation."
 
 #: lib/place/filters-edit.php:91
 msgctxt "option label"
@@ -522,6 +538,22 @@ msgstr "Ces URL d'action de commande seront utilisées dans la propriété de Sc
 msgctxt "option value"
 msgid "Place #%d"
 msgstr "Endroit #%d"
+
+#: lib/place.php:118 lib/place.php:128
+msgid "Unable to provide information for place ID #%s."
+msgstr "Impossible de fournir des informations pour l'endroit ID #%s."
+
+#: lib/place.php:121
+msgid "Please publish place ID #%s or select a different place."
+msgstr "Veuillez publier l'endroit ID #%s ou sélectionner un autre endroit."
+
+#: lib/place.php:130
+msgid "Place ID #%s does not exist."
+msgstr "L'endroit ID #%s n'existe pas."
+
+#: lib/place.php:132
+msgid "Please select a different place."
+msgstr "Veuillez sélectionner un autre endroit."
 
 #: lib/post.php:84
 msgctxt "metabox title"

@@ -95,8 +95,8 @@ msgstr ""
 
 #: lib/filters-upgrade.php:208
 msgid ""
-"%1$s \"%2$s\" ID %3$d from the plugin settings has been converted to %4$s "
-"post type ID %5$d."
+"%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s "
+"post type ID #%5$s."
 msgstr ""
 
 #: lib/org/filters-edit.php:47
@@ -203,11 +203,15 @@ msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
 #: lib/org.php:133
-msgid "Please publish organization ID #%s or select another organization."
+msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
 #: lib/org.php:142
-msgid "Organization ID #%s is missing or invalid."
+msgid "Organization ID #%s does not exist."
+msgstr ""
+
+#: lib/org.php:144
+msgid "Please select a different organization."
 msgstr ""
 
 #: lib/place/filters-edit.php:91
@@ -598,11 +602,15 @@ msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
 #: lib/place.php:121
-msgid "Please publish place ID #%s or select another place."
+msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
 #: lib/place.php:130
-msgid "Place ID #%s is missing or invalid."
+msgid "Place ID #%s does not exist."
+msgstr ""
+
+#: lib/place.php:132
+msgid "Please select a different place."
 msgstr ""
 
 #: lib/post.php:84

@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.', 'wpsso-organization-place' ), $post_id );
 					$notice_msg .= ' ';
 					$notice_msg .= $place_page_link ? '<a href="' . $place_page_link . '">' : '';
-					$notice_msg .= sprintf( __( 'Please publish place ID #%s or select another place.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= sprintf( __( 'Please publish place ID #%s or select a different place.', 'wpsso-organization-place' ), $post_id );
 					$notice_msg .= $place_page_link ? '</a>' : '';
 
 					$wpsso->notice->err( $notice_msg );
@@ -127,7 +127,9 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.', 'wpsso-organization-place' ), $post_id );
 					$notice_msg .= ' ';
-					$notice_msg .= sprintf( __( 'Place ID #%s is missing or invalid.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= sprintf( __( 'Place ID #%s does not exist.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= ' ';
+					$notice_msg .= __( 'Please select a different place.', 'wpsso-organization-place' );
 
 					$wpsso->notice->err( $notice_msg );
 				}
