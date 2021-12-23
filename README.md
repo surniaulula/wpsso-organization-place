@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Organization and Place Manager</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.1.1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.2.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.8.2</td></tr>
