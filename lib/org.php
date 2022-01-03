@@ -102,24 +102,24 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					foreach ( SucomUtil::get_opts_begin( 'org_sameas_', $org_opts ) as $sameas_key => $sameas_url ) {
 
 						unset( $org_opts[ $sameas_key ] );
-	
+
 						if ( empty( $sameas_url ) ) {
-	
+
 							continue;
-	
+
 						} elseif ( 'org_sameas_tc_site' === $sameas_key ) {	// Convert Twitter username to a URL.
-	
+
 							$sameas_url = 'https://twitter.com/' . preg_replace( '/^@/', '', $sameas_url );
 						}
-	
+
 						if ( false !== filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) {	// Just in case.
-	
+
 							$org_sameas[] = $sameas_url;
 						}
 					}
 
 					if ( ! empty( $org_sameas ) ) {
-	
+
 						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
 
@@ -146,7 +146,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					$wpsso->notice->err( $notice_msg );
 				}
 			}
-	
+
 			if ( ! empty( $org_opts ) ) {
 
 				$org_opts[ 'org_id' ] = $org_id;
