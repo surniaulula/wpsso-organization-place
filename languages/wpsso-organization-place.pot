@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.2.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.2.1-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -168,7 +168,15 @@ msgid ""
 "(default is Organization)."
 msgstr ""
 
-#: lib/org/filters-messages-tooltip-meta.php:81
+#: lib/org/filters-messages-tooltip-meta.php:77
+msgid ""
+"Note that Google does not recognize most Schema Organization sub-types as "
+"valid organizations, so do not change this value unless you are certain that "
+"your selected Schema Organization sub-type will be recognized as a valid "
+"Organization by Google."
+msgstr ""
+
+#: lib/org/filters-messages-tooltip-meta.php:83
 msgid "Select an optional place (ie. location) for this organization."
 msgstr ""
 
