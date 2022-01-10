@@ -124,6 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.2.1-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.12.3.
+
 **Version 1.2.0 (2021/12/23)**
 
 * **New Features**
@@ -185,6 +200,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.2.1-dev.1 =
+
+(TBD) None.
 
 = 1.2.0 =
 
