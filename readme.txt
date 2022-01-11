@@ -124,12 +124,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.2.1-dev.1 (TBD)**
+**Version 1.2.1-dev.1 (2022/01/11)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Updated "Organization Schema Type" option help text.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -203,7 +203,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.2.1-dev.1 =
 
-(TBD) None.
+(2022/01/11) Updated "Organization Schema Type" option help text.
 
 = 1.2.0 =
 
