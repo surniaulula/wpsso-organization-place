@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.2.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
-"POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-23 09:30-0800\n"
+"POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-01-10 16:17-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -156,7 +156,11 @@ msgstr "L'URL du site Web de l'organisation."
 msgid "You may optionally choose a more accurate Schema type for this organization (default is Organization)."
 msgstr "Vous pouvez aussi choisir un type de schéma plus précis pour cette organisation (la valeur par défaut est Organisation)."
 
-#: lib/org/filters-messages-tooltip-meta.php:81
+#: lib/org/filters-messages-tooltip-meta.php:77
+msgid "Note that Google does not recognize most Schema Organization sub-types as valid organizations, so do not change this value unless you are certain that your selected Schema Organization sub-type will be recognized as a valid Organization by Google."
+msgstr "Notez que Google ne reconnaît pas tous les sous-types de Schéma Organisation comme des organisations valides. Par conséquent, ne modifiez pas cette valeur, sauf si vous êtes certain que le sous-types de Schéma Organisation que vous avez sélectionné sera reconnu comme une organisation valide par Google."
+
+#: lib/org/filters-messages-tooltip-meta.php:83
 msgid "Select an optional place (ie. location) for this organization."
 msgstr "Sélectionnez un endroit (c'est-à-dire un emplacement) facultatif pour cette organisation."
 
