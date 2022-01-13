@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.2.1-rc.1 (2022/01/13)**
+**Version 1.2.1 (2022/01/13)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.13.1-rc.1.
+	* WPSSO Core v9.13.1.
 
 **Version 1.2.0 (2021/12/23)**
 
@@ -201,7 +201,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.2.1-rc.1 =
+= 1.2.1 =
 
 (2022/01/13) Updated "Organization Schema Type" option help text.
 
