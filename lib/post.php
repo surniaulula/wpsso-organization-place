@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 		}
 
 		/**
-		 * Use $post_obj = false to extend WpssoWpMeta->add_meta_boxes().
+		 * Use $post_obj = false to extend WpssoAbstractWpMeta->add_meta_boxes().
 		 */
 		public function add_meta_boxes( $post_type, $post_obj = false ) {
 
