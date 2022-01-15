@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.3.0-dev.2\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.3.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -42,32 +42,32 @@ msgstr ""
 
 #: lib/abstract/wp-meta.php:1071
 msgctxt "metabox tab"
-msgid "Customize"
+msgid "Edit General"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1072
 msgctxt "metabox tab"
-msgid "Priority Media"
+msgid "Edit Media"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1076
 msgctxt "metabox tab"
-msgid "Robots Meta"
+msgid "Edit Visibility"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1077
 msgctxt "metabox tab"
-msgid "Social Preview"
+msgid "Preview Social"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1078
 msgctxt "metabox tab"
-msgid "oEmbed Preview"
+msgid "Preview oEmbed"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1079
 msgctxt "metabox tab"
-msgid "Head Markup"
+msgid "Preview Markup"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1080
