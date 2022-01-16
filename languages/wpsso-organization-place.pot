@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.3.0-dev.4\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.3.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -67,29 +67,24 @@ msgstr ""
 
 #: lib/abstract/wp-meta.php:1079
 msgctxt "metabox tab"
-msgid "Preview Markup"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1080
-msgctxt "metabox tab"
 msgid "Validators"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1550
+#: lib/abstract/wp-meta.php:1549
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1875
+#: lib/abstract/wp-meta.php:1874
 msgid "A claim review cannot be the subject of another claim review."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1877
+#: lib/abstract/wp-meta.php:1876
 msgid ""
 "Please select a subject webpage type that better describes the subject of "
 "the webpage (ie. the content) being reviewed."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:2633
+#: lib/abstract/wp-meta.php:2632
 msgid "adding schema images"
 msgstr ""
 
