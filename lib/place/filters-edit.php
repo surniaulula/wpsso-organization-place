@@ -26,9 +26,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'form_cache_place_names'             => 1,
-				'metabox_place_meta_rows'            => 4,
-				'metabox_sso_edit_general_schema_rows' => 4,
+				'form_cache_place_names'       => 1,
+				'metabox_place_meta_rows'      => 4,
+				'metabox_sso_edit_schema_rows' => 4,
 			) );
 		}
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 		/**
 		 * Document SSO metabox options.
 		 */
-		public function filter_metabox_sso_edit_general_schema_rows( $table_rows, $form, $head_info, $mod ) {
+		public function filter_metabox_sso_edit_schema_rows( $table_rows, $form, $head_info, $mod ) {
 
 			return $this->get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = true );
 		}
