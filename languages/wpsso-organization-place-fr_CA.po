@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.2.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-01-13 10:05-0800\n"
+"PO-Revision-Date: 2022-01-18 14:58-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:213
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:227
+#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -36,54 +36,54 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: lib/abstracts/wp-meta.php:1071
+#: lib/abstract/wp-meta.php:1071
 msgctxt "metabox tab"
-msgid "Customize"
-msgstr "Personnaliser"
+msgid "Edit General"
+msgstr "Modifier général"
 
-#: lib/abstracts/wp-meta.php:1072
+#: lib/abstract/wp-meta.php:1072
 msgctxt "metabox tab"
-msgid "Priority Media"
-msgstr "Média prioritaire"
+msgid "Edit Schema"
+msgstr "Modifier Schéma"
 
-#: lib/abstracts/wp-meta.php:1076
+#: lib/abstract/wp-meta.php:1073
 msgctxt "metabox tab"
-msgid "Robots Meta"
-msgstr "Méta robots"
+msgid "Edit Media"
+msgstr "Modifier médias"
 
-#: lib/abstracts/wp-meta.php:1077
+#: lib/abstract/wp-meta.php:1077
 msgctxt "metabox tab"
-msgid "Social Preview"
+msgid "Edit Visibility"
+msgstr "Modifier visibilité"
+
+#: lib/abstract/wp-meta.php:1078
+msgctxt "metabox tab"
+msgid "Preview Social"
 msgstr "Aperçu social"
 
-#: lib/abstracts/wp-meta.php:1078
+#: lib/abstract/wp-meta.php:1079
 msgctxt "metabox tab"
-msgid "oEmbed Preview"
+msgid "Preview oEmbed"
 msgstr "Aperçu oEmbed"
 
-#: lib/abstracts/wp-meta.php:1079
-msgctxt "metabox tab"
-msgid "Head Markup"
-msgstr "Balisage d'entête"
-
-#: lib/abstracts/wp-meta.php:1080
+#: lib/abstract/wp-meta.php:1080
 msgctxt "metabox tab"
 msgid "Validators"
 msgstr "Validateurs"
 
-#: lib/abstracts/wp-meta.php:1550
+#: lib/abstract/wp-meta.php:1550
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr "La validation du jeton nonce pour le formulaire soumis a échoué (mise à jour ignorée)."
 
-#: lib/abstracts/wp-meta.php:1875
+#: lib/abstract/wp-meta.php:1875
 msgid "A claim review cannot be the subject of another claim review."
 msgstr "Un examen d'évaluation ne peut pas être le sujet d'un autre examen d'évaluation."
 
-#: lib/abstracts/wp-meta.php:1877
+#: lib/abstract/wp-meta.php:1877
 msgid "Please select a subject webpage type that better describes the subject of the webpage (ie. the content) being reviewed."
 msgstr "SVP sélectionner un type de page Web du sujet qui décrit mieux le sujet de la page Web (c'est-à-dire le contenu) en cours de révision."
 
-#: lib/abstracts/wp-meta.php:2633
+#: lib/abstract/wp-meta.php:2633
 msgid "adding schema images"
 msgstr "ajout d'images schéma"
 
@@ -201,194 +201,199 @@ msgstr "L'organisation ID #%s n'existe pas."
 msgid "Please select a different organization."
 msgstr "Veuillez sélectionner une autre organisation."
 
-#: lib/place/filters-edit.php:91
+#: lib/place/filters-edit.php:38
+msgctxt "option value"
+msgid "[Custom Place]"
+msgstr "[Endroit personnalisé]"
+
+#: lib/place/filters-edit.php:105
 msgctxt "option label"
 msgid "Place Name"
 msgstr "Nom de l'endroit"
 
-#: lib/place/filters-edit.php:96
+#: lib/place/filters-edit.php:110
 msgctxt "option label"
 msgid "Place Alternate Name"
 msgstr "Autre nom de l'endroit"
 
-#: lib/place/filters-edit.php:101
+#: lib/place/filters-edit.php:115
 msgctxt "option label"
 msgid "Place Description"
 msgstr "Description de l'endroit"
 
-#: lib/place/filters-edit.php:107
+#: lib/place/filters-edit.php:121
 msgctxt "option label"
 msgid "Place Schema Type"
 msgstr "Type de Schéma de l'endroit"
 
-#: lib/place/filters-edit.php:115
+#: lib/place/filters-edit.php:129
 msgctxt "option label"
 msgid "Street Address"
 msgstr "Adresse de rue"
 
-#: lib/place/filters-edit.php:120
+#: lib/place/filters-edit.php:134
 msgctxt "option label"
 msgid "P.O. Box Number"
 msgstr "Num. boîte postale"
 
-#: lib/place/filters-edit.php:125
+#: lib/place/filters-edit.php:139
 msgctxt "option label"
 msgid "City / Locality"
 msgstr "Ville / localité"
 
-#: lib/place/filters-edit.php:130
+#: lib/place/filters-edit.php:144
 msgctxt "option label"
 msgid "State / Province"
 msgstr "État / Province"
 
-#: lib/place/filters-edit.php:135
+#: lib/place/filters-edit.php:149
 msgctxt "option label"
 msgid "Zip / Postal Code"
 msgstr "Zip / code postal"
 
-#: lib/place/filters-edit.php:140
+#: lib/place/filters-edit.php:154
 msgctxt "option label"
 msgid "Country"
 msgstr "Pays"
 
-#: lib/place/filters-edit.php:145
+#: lib/place/filters-edit.php:159
 msgctxt "option label"
 msgid "Telephone"
 msgstr "Téléphone"
 
-#: lib/place/filters-edit.php:150
+#: lib/place/filters-edit.php:164
 msgctxt "option label"
 msgid "Place Latitude"
 msgstr "Latitude de l'endroit"
 
-#: lib/place/filters-edit.php:153 lib/place/filters-edit.php:159
+#: lib/place/filters-edit.php:167 lib/place/filters-edit.php:173
 msgctxt "option comment"
 msgid "decimal degrees"
 msgstr "degrés décimaux"
 
-#: lib/place/filters-edit.php:156
+#: lib/place/filters-edit.php:170
 msgctxt "option label"
 msgid "Place Longitude"
 msgstr "Longitude de l'endroit"
 
-#: lib/place/filters-edit.php:162
+#: lib/place/filters-edit.php:176
 msgctxt "option label"
 msgid "Place Altitude"
 msgstr "Altitude de l'endroit"
 
-#: lib/place/filters-edit.php:165
+#: lib/place/filters-edit.php:179
 msgctxt "option comment"
 msgid "meters above sea level"
 msgstr "mètres au-dessus du niveau de mer"
 
-#: lib/place/filters-edit.php:170
+#: lib/place/filters-edit.php:184
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr "ID d'image de l'endroit"
 
-#: lib/place/filters-edit.php:175
+#: lib/place/filters-edit.php:189
 msgctxt "option label"
 msgid "or Place Image URL"
 msgstr "ou URL d'image de l'endroit"
 
-#: lib/place/filters-edit.php:181
+#: lib/place/filters-edit.php:195
 msgctxt "option label"
 msgid "Place Timezone"
 msgstr "Fuseau horaire de l'endroit"
 
-#: lib/place/filters-edit.php:210
+#: lib/place/filters-edit.php:224
 msgid "Opens at"
 msgstr "Ouvre à"
 
-#: lib/place/filters-edit.php:212
+#: lib/place/filters-edit.php:226
 msgid "and closes at"
 msgstr "et ferme à"
 
-#: lib/place/filters-edit.php:218
+#: lib/place/filters-edit.php:232
 msgid "Every Midday"
 msgstr "Chaque mi-journée"
 
-#: lib/place/filters-edit.php:219
+#: lib/place/filters-edit.php:233
 msgid "Closes at"
 msgstr "Ferme à"
 
-#: lib/place/filters-edit.php:221
+#: lib/place/filters-edit.php:235
 msgid "and re-opens at"
 msgstr "et rouvre à"
 
-#: lib/place/filters-edit.php:228
+#: lib/place/filters-edit.php:242
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr "Jours / heures d'ouverture"
 
-#: lib/place/filters-edit.php:233
+#: lib/place/filters-edit.php:247
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr "Dates saisonnières"
 
-#: lib/place/filters-edit.php:236
+#: lib/place/filters-edit.php:250
 msgid "Open from"
 msgstr "Ouvert de"
 
-#: lib/place/filters-edit.php:238
+#: lib/place/filters-edit.php:252
 msgid "until"
 msgstr "jusqu’à"
 
-#: lib/place/filters-edit.php:240
+#: lib/place/filters-edit.php:254
 msgid "inclusively"
 msgstr "inclusivement"
 
-#: lib/place/filters-edit.php:245
+#: lib/place/filters-edit.php:259
 msgctxt "metabox title"
-msgid "Local Business"
-msgstr "Entreprise locale"
+msgid "Schema Local Business Information"
+msgstr "Informations de Schéma d'entreprise locale"
 
-#: lib/place/filters-edit.php:248
+#: lib/place/filters-edit.php:263
 msgctxt "option label"
 msgid "Service Radius"
 msgstr "Rayon de service"
 
-#: lib/place/filters-edit.php:251
+#: lib/place/filters-edit.php:266
 msgctxt "option comment"
 msgid "meters from location"
 msgstr "mètres de l'emplacement"
 
-#: lib/place/filters-edit.php:254
+#: lib/place/filters-edit.php:269
 msgctxt "option label"
 msgid "Currencies Accepted"
 msgstr "Devises acceptées"
 
-#: lib/place/filters-edit.php:259
+#: lib/place/filters-edit.php:274
 msgctxt "option label"
 msgid "Payment Accepted"
 msgstr "Paiement accepté"
 
-#: lib/place/filters-edit.php:264
+#: lib/place/filters-edit.php:279
 msgctxt "option label"
 msgid "Price Range"
 msgstr "Échelle de prix"
 
-#: lib/place/filters-edit.php:270
+#: lib/place/filters-edit.php:285
 msgctxt "metabox title"
-msgid "Food Establishment"
-msgstr "Établissement alimentaire"
+msgid "Schema Food Establishment Information"
+msgstr "Informations de Schéma d'établissement alimentaire"
 
-#: lib/place/filters-edit.php:273
+#: lib/place/filters-edit.php:289
 msgctxt "option label"
 msgid "Accepts Reservations"
 msgstr "Accepte des réservations"
 
-#: lib/place/filters-edit.php:278
+#: lib/place/filters-edit.php:294
 msgctxt "option label"
 msgid "Serves Cuisine"
 msgstr "Cuisine servie"
 
-#: lib/place/filters-edit.php:283
+#: lib/place/filters-edit.php:299
 msgctxt "option label"
 msgid "Food Menu URL"
 msgstr "URL du menu alimentaire"
 
-#: lib/place/filters-edit.php:288
+#: lib/place/filters-edit.php:304
 msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr "URL(s) d'action de commande"
