@@ -26,10 +26,20 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'form_cache_place_names'       => 1,
-				'metabox_place_meta_rows'      => 4,
-				'metabox_sso_edit_schema_rows' => 4,
+				'form_cache_place_names'        => 1,
+				'form_cache_place_names_custom' => 1,
+				'metabox_place_meta_rows'       => 4,
+				'metabox_sso_edit_schema_rows'  => 4,
 			) );
+		}
+
+		public function filter_form_cache_place_names_custom( $mixed ) {
+
+			$custom = array( 'custom' => _x( '[Custom Place]', 'option value', 'wpsso-organization-place' ) );
+
+			$place_names = $this->filter_form_cache_place_names( $mixed );	// Always returns an array.
+
+			return $custom + $place_names;
 		}
 
 		public function filter_form_cache_place_names( $mixed ) {
@@ -69,6 +79,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$tr_hide_food_establishment_html = '<tr class="hide_schema_place_id ' . $this->p->schema->get_children_css_class( 'food.establishment',
 					'hide_place_schema_type' ) . '" style="display:none;">';
 
+				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_show_unhide_rows' );
+
 			} else {
 
 				$th_css_class = '';
@@ -80,6 +92,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 				$tr_hide_food_establishment_html = '<tr class="' . $this->p->schema->get_children_css_class( 'food.establishment',
 					'hide_place_schema_type' ) . '" style="display:none;">';
+
+				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
 
 			$place_types_select = $this->p->util->get_form_cache( 'place_types_select' );
@@ -108,7 +122,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					$th_css_class, $css_id = 'meta-place_schema_type' ) .  
 				'<td>' . $form->get_select( 'place_schema_type', $place_types_select,
 					$css_class = 'schema_type', $css_id = '', $is_assoc = true, $is_disabled = false,
-						$selected = false, $event_names = array( 'on_focus_load_json', 'on_show_unhide_rows' ),
+						$selected = false, $place_schema_type_event_names,
 							$event_args = 'schema_place_types' ) . '</td>';
 
 			$table_rows[ 'place_street_address' ] = $tr_hide_place_html . 
@@ -241,8 +255,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'</p></td>';
 
 			$table_rows[ 'subsection_local_business' ] = $tr_hide_local_business_html .
-				'<th class="' . $th_css_class . '"></th>' . 
-				'<td class="subsection"><h5>' . _x( 'Local Business', 'metabox title', 'wpsso-organization-place' ) . '</h5></td>';
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Schema Local Business Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
 
 			$table_rows[ 'place_service_radius' ] = $tr_hide_local_business_html .
 				$form->get_th_html( _x( 'Service Radius', 'option label', 'wpsso-organization-place' ),
@@ -266,8 +281,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td>' . $form->get_input( 'place_price_range' ) . '</td>';
 
 			$table_rows[ 'subsection_food_establishment' ] = $tr_hide_food_establishment_html .
-				'<th class="' . $th_css_class . '"></th>' . 
-				'<td class="subsection"><h5>' . _x( 'Food Establishment', 'metabox title', 'wpsso-organization-place' ) . '</h5></td>';
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Schema Food Establishment Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
 
 			$table_rows[ 'place_accept_res' ] = $tr_hide_food_establishment_html . 
 				$form->get_th_html( _x( 'Accepts Reservations', 'option label', 'wpsso-organization-place' ),
