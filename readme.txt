@@ -124,14 +124,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.3.0-dev.7 (2022/01/17)**
+**Version 1.3.0-b.1 (2022/01/18)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* None.
+	* Fixed showing Local Business and Food Establishment options when editing a place.
 * **Developer Notes**
 	* Renamed the lib/abstracts/ folder to lib/abstract/.
 	* Renamed the `SucomAddOn` class to `SucomAbstractAddOn`.
@@ -140,7 +140,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.14.0-dev.7.
+	* WPSSO Core v9.14.0-b.1.
 
 **Version 1.2.1 (2022/01/13)**
 
@@ -219,9 +219,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.3.0-dev.7 =
+= 1.3.0-b.1 =
 
-(2022/01/17) Renamed the lib/abstracts/ folder and its classes.
+(2022/01/18) Fixed showing Local Business and Food Establishment options when editing a place. Renamed the lib/abstracts/ folder and its classes.
 
 = 1.2.1 =
 
