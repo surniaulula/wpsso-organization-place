@@ -10,7 +10,7 @@ Tags: schema, organization, place, location, local seo, local business, publishe
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 5.8.3
+Tested Up To: 5.9.0
 Stable Tag: 1.3.0
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
