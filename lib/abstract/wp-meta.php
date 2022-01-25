@@ -269,16 +269,7 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 
 			$md_defs =& $local_cache[ $obj_id ];	// Shortcut variable name.
 
-			$is_cache_allowed = WpssoOptions::is_cache_allowed();
-			$is_opt_filtered  = WpssoOptions::is_filtered( $md_defs );
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log( 'cache allowed is ' . ( $is_cache_allowed ? 'true' : 'false' ) );
-				$this->p->debug->log( 'opt filtered is ' . ( $is_opt_filtered ? 'true' : 'false' ) );
-			}
-
-			if ( ! $is_opt_filtered  ) {
+			if ( empty( $md_defs[ 'opt_filtered' ] ) ) {
 
 				$mod = $this->get_mod( $obj_id );
 
@@ -309,7 +300,6 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					'plugin_checksum'   => '',	// Checksum of plugin versions.
 					'opt_checksum'      => '',	// Checksum of option versions.
 					'opt_versions'      => array(),
-					'opt_filtered'      => 0,
 					'attach_img_crop_x' => 'none',
 					'attach_img_crop_y' => 'none',
 
@@ -657,6 +647,16 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				);
 
 				/**
+				 * Set before calling filters to prevent recursion.
+				 */
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'setting opt_filtered to 1' );
+				}
+
+				$md_defs[ 'opt_filtered' ] = 1;
+
+				/**
 				 * See https://developers.google.com/search/reference/robots_meta_tag.
 				 */
 				$directives = SucomUtilRobots::get_default_directives();
@@ -705,6 +705,7 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				 * Filter 'wpsso_inherit_custom_images' added in WPSSO Core v9.10.0.
 				 */
 				$inherit_custom = empty( $this->p->options[ 'plugin_inherit_custom' ] ) ? false : $mod[ 'is_public' ];
+
 				$inherit_custom = apply_filters( 'wpsso_inherit_custom_images', $inherit_custom, $mod );
 
 				if ( $inherit_custom ) {
@@ -733,24 +734,19 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				}
 
 				/**
-				 * Set before calling filters to prevent recursion.
-				 */
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'setting opt_filtered to 1' );
-				}
-
-				$md_defs[ 'opt_filtered' ] = 1;
-
-				/**
 				 * The 'import_custom_fields' filter is executed before the 'wpsso_get_md_options' and
 				 * 'wpsso_get_post_options' filters, so values retrieved from custom fields may get overwritten by
 				 * later filters.
 				 *
 				 * The 'import_custom_fields' filter is also executed before the 'wpsso_get_md_defaults' and
-				 * 'wpsso_get_post_defaults' filters, so submitted form values that are identical can be removed.
+				 * 'wpsso_get_post_defaults' filters, so submitted form values that are identical to their defaults
+				 * can be removed before saving the options array.
 				 *
+				 * See WpssoPost->get_options().
+				 * See WpssoAbstractWpMeta->get_defaults().
 				 * See WpssoUtilCustomFields->filter_import_custom_fields().
+				 * See WpssoProEcomWoocommerce->add_mt_product() - imports variation metadata.
+				 * See WpssoProEcomWooAddGtin->filter_wc_variation_cf_meta_keys().
 				 */
 				if ( 'post' === $mod[ 'name' ] ) {
 
@@ -790,11 +786,11 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				$md_defs = apply_filters( 'wpsso_sanitize_md_defaults', $md_defs, $mod );
 
 				/**
-				 * Caching is not allowed yet, so re-apply the filters on next method call.
+				 * If caching is not allowed yet, re-apply the filters on next method call.
 				 */
-				if ( ! $is_cache_allowed ) {
+				if ( ! WpssoOptions::is_cache_allowed() ) {
 
-					$md_defs[ 'opt_filtered' ] = 0;
+					unset( $md_defs[ 'opt_filtered' ] );
 				}
 
 			} elseif ( $this->p->debug->enabled ) {
