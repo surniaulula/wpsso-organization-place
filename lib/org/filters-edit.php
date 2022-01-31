@@ -64,7 +64,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				'<td>' . $form->get_input( 'org_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_logo_url' ] = '' .
-				$form->get_th_html( '<a href="https://developers.google.com/structured-data/customize/logos">' . 
+				$form->get_th_html( '<a href="https://developers.google.com/search/docs/advanced/structured-data/logo">' . 
 				_x( 'Organization Logo URL', 'option label', 'wpsso-organization-place' ) . '</a>',
 					$css_class = '', $css_id = 'meta-org_logo_url' ) . 
 				'<td>' . $form->get_input( 'org_logo_url', $css_class = 'wide is_required' ) . '</td>';
