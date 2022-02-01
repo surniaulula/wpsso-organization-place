@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.0-b.2 (2022/02/01)**
+**Version 1.4.0-b.3 (2022/02/01)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.0.0-b.2.
+	* WPSSO Core v10.0.0-b.3.
 
 **Version 1.3.0 (2022/01/19)**
 
@@ -234,7 +234,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.0-b.2 =
+= 1.4.0-b.3 =
 
 (2022/02/01) Refactored the `WpssoOpmOrgFiltersOptions->check_org_image_sizes()` method to check both logo and banner images.
 
