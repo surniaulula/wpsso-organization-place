@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.0
-Stable Tag: 1.3.0
+Stable Tag: 1.4.0
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
 
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.0 (2022/02/01)**
+**Version 1.4.0 (2022/02/02)**
 
 * **New Features**
 	* None.
@@ -236,7 +236,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.0 =
 
-(2022/02/01) Refactored the `WpssoOpmOrgFiltersOptions->check_org_image_sizes()` method to check both logo and banner images.
+(2022/02/02) Refactored the `WpssoOpmOrgFiltersOptions->check_org_image_sizes()` method to check both logo and banner images.
 
 = 1.3.0 =
 
