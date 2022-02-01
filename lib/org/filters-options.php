@@ -183,7 +183,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 							'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
 
 						$this->p->notice->err( $notice_msg );
-						
+
 					} elseif ( 'org_banner' === $img_pre ) {
 
 						// translators: %s is the organization name.
@@ -194,7 +194,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					}
 
 				} else {
-				
+
 					$image_href   = '<a href="' . $first_image_url . '">' . $first_image_url . '</a>';
 					$image_width  = $mt_single_image[ 'og:image:width' ];
 					$image_height = $mt_single_image[ 'og:image:height' ];
@@ -203,7 +203,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 					if ( 'org_logo' === $img_pre ) {
 
-						$minimum_dims = '112x112px';
+						$min_width    = $this->p->cf[ 'head' ][ 'limit_min' ][ 'org_logo_width' ];
+						$min_height   = $this->p->cf[ 'head' ][ 'limit_min' ][ 'org_logo_height' ];
+						$minimum_dims = $min_width . 'x' . $min_height . 'px';
 
 						if ( '-1x-1px' === $image_dims ) {
 
@@ -217,7 +219,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 							$this->p->notice->err( $notice_msg, null, $notice_key );
 
-						} elseif ( $image_width < 112 || $image_height < 112 ) {
+						} elseif ( $image_width < $min_width || $image_height < $min_height ) {
 
 							// translators: %1$s is the organization name.
 							$notice_msg = sprintf( __( 'The "%1$s" organization logo image dimensions are %2$s and must be greater than %3$s.',
@@ -226,13 +228,15 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please correct the %s logo image or select a different logo image.',
 								'wpsso-organization-place' ), $image_href );
-						
+
 							$this->p->notice->err( $notice_msg, null, $notice_key );
 						}
 
 					} elseif ( 'org_banner' === $img_pre ) {
 
-						$required_dims = '600x60px';
+						$min_width     = $this->p->cf[ 'head' ][ 'limit' ][ 'org_banner_width' ];
+						$min_height    = $this->p->cf[ 'head' ][ 'limit' ][ 'org_banner_height' ];
+						$required_dims = $min_width . 'x' . $min_height . 'px';
 
 						if ( '-1x-1px' === $image_dims ) {
 
@@ -255,7 +259,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please correct the %s banner image or select a different banner image.',
 								'wpsso-organization-place' ), $image_href );
-						
+
 							$this->p->notice->err( $notice_msg, null, $notice_key );
 						}
 					}
