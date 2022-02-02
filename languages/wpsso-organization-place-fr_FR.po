@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Organization and Place Manager 1.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-01 09:39-0800\n"
+"PO-Revision-Date: 2022-02-01 20:24-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -505,70 +505,74 @@ msgid "An image of this place (ie. an image of the business storefront or locati
 msgstr "Une image de cet endroit (c'est-à-dire une image de la devanture ou de l'emplacement de l'entreprise)."
 
 #: lib/place/filters-messages-tooltip-meta.php:134
+msgid "The image you select should show the physical location of this place (ie. the latitude and longitude entered below)."
+msgstr "L'image que vous sélectionnez doit montrer l'emplacement physique de ce lieu (c'est-à-dire la latitude et la longitude saisies ci-dessous)."
+
+#: lib/place/filters-messages-tooltip-meta.php:136
 msgid "This option is disabled if a place image URL is entered."
 msgstr "Cette option est désactivée si une URL d'image d'endroit est fournie."
 
-#: lib/place/filters-messages-tooltip-meta.php:140
+#: lib/place/filters-messages-tooltip-meta.php:142
 msgid "You can enter a place image URL (including the http:// prefix) instead of selecting an image ID."
 msgstr "Vous pouvez saisir une URL d'image d'endroit (y compris le préfixe http://) au lieu de sélectionner un ID d'image."
 
-#: lib/place/filters-messages-tooltip-meta.php:142
-msgid "The image URL option allows you to specify an image URL outside of the WordPress Media Library and/or a smaller logo style image."
-msgstr "L'option URL de l'image vous permet de spécifier une URL d'image en dehors de la médiathèque WordPress et/ou une image de style logo plus petite."
-
 #: lib/place/filters-messages-tooltip-meta.php:144
+msgid "The image URL option allows you to choose an image outside of the WordPress Media Library and/or a smaller logo style image."
+msgstr "L'option URL d'image vous permet de choisir une image en dehors de la médiathèque WordPress et/ou une image plus petite de style logo."
+
+#: lib/place/filters-messages-tooltip-meta.php:146
 msgid "This option is disabled if a place image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image d'endroit est sélectionné."
 
-#: lib/place/filters-messages-tooltip-meta.php:150
+#: lib/place/filters-messages-tooltip-meta.php:152
 msgid "A timezone for the place open and close hours."
 msgstr "Un fuseau horaire pour les heures d'ouverture et de fermeture de l'endroit."
 
-#: lib/place/filters-messages-tooltip-meta.php:152
+#: lib/place/filters-messages-tooltip-meta.php:154
 msgid "The default timezone is provided by WordPress."
 msgstr "Le fuseau horaire par défaut est fourni par WordPress."
 
-#: lib/place/filters-messages-tooltip-meta.php:158
+#: lib/place/filters-messages-tooltip-meta.php:160
 msgid "Select the days and hours this place is open."
 msgstr "Sélectionnez les jours et heures, que cet endroit est ouvert."
 
-#: lib/place/filters-messages-tooltip-meta.php:164
+#: lib/place/filters-messages-tooltip-meta.php:166
 msgid "If this place is open seasonally, select the open and close dates of the season."
 msgstr "Si cet endroit est ouvert en saison, sélectionnez les dates d'ouverture et de fermeture de la saison."
 
-#: lib/place/filters-messages-tooltip-meta.php:170
+#: lib/place/filters-messages-tooltip-meta.php:172
 msgid "The geographic area where a service is provided, in meters around the location."
 msgstr "La zone géographique où un service est fourni, en mètres autour de l'emplacement."
 
-#: lib/place/filters-messages-tooltip-meta.php:176
+#: lib/place/filters-messages-tooltip-meta.php:178
 msgid "A comma-delimited list of <a href=\"%1$s\">ISO 4217 currency codes</a> accepted by the local business (example: %2$s)."
 msgstr "Une liste séparée par des virgules des <a href=\"%1$s\">codes ISO 4217 des devises</a> acceptées par l’entreprise locale (exemple: %2$s)."
 
-#: lib/place/filters-messages-tooltip-meta.php:182
+#: lib/place/filters-messages-tooltip-meta.php:184
 msgid "A comma-delimited list of payment options accepted by the local business (example: Cash, Credit Card)."
 msgstr "Une liste séparée par des virgules des modes de paiement acceptés par l’entreprise locale (exemple: Cash, Credit Card)."
 
-#: lib/place/filters-messages-tooltip-meta.php:188
+#: lib/place/filters-messages-tooltip-meta.php:190
 msgid "The relative price of goods or services provided by the local business (example: $, $$, $$$, or $$$$)."
 msgstr "Le prix relatif des biens ou services fournis par l'entreprise locale (exemple: $, $$, $$$, ou $$$$)."
 
-#: lib/place/filters-messages-tooltip-meta.php:194
+#: lib/place/filters-messages-tooltip-meta.php:196
 msgid "This food establishment accepts reservations."
 msgstr "Cet établissement alimentaire accepte des réservations."
 
-#: lib/place/filters-messages-tooltip-meta.php:200
+#: lib/place/filters-messages-tooltip-meta.php:202
 msgid "The menu URL for this food establishment."
 msgstr "L'URL du menu de cet établissement de restauration."
 
-#: lib/place/filters-messages-tooltip-meta.php:206
+#: lib/place/filters-messages-tooltip-meta.php:208
 msgid "The cuisine served by this food establishment."
 msgstr "La cuisine servie par cet établissement alimentaire."
 
-#: lib/place/filters-messages-tooltip-meta.php:212
+#: lib/place/filters-messages-tooltip-meta.php:214
 msgid "A comma-delimited list of website and mobile app URLs to order products."
 msgstr "Une liste délimitée par des virgules d'URL de site Web et d'application mobile pour commander des produits."
 
-#: lib/place/filters-messages-tooltip-meta.php:214
+#: lib/place/filters-messages-tooltip-meta.php:216
 msgid "These order action URL(s) will be used in the Schema potentialAction property."
 msgstr "Ces URL d'action de commande seront utilisées dans la propriété de Schéma potentialAction."
 
