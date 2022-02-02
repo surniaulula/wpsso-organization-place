@@ -551,85 +551,91 @@ msgid ""
 msgstr ""
 
 #: lib/place/filters-messages-tooltip-meta.php:134
+msgid ""
+"The image you select should show the physical location of this place (ie. "
+"the latitude and longitude entered below)."
+msgstr ""
+
+#: lib/place/filters-messages-tooltip-meta.php:136
 msgid "This option is disabled if a place image URL is entered."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:140
+#: lib/place/filters-messages-tooltip-meta.php:142
 msgid ""
 "You can enter a place image URL (including the http:// prefix) instead of "
 "selecting an image ID."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:142
+#: lib/place/filters-messages-tooltip-meta.php:144
 msgid ""
-"The image URL option allows you to specify an image URL outside of the "
-"WordPress Media Library and/or a smaller logo style image."
+"The image URL option allows you to choose an image outside of the WordPress "
+"Media Library and/or a smaller logo style image."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:144
+#: lib/place/filters-messages-tooltip-meta.php:146
 msgid "This option is disabled if a place image ID is selected."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:150
+#: lib/place/filters-messages-tooltip-meta.php:152
 msgid "A timezone for the place open and close hours."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:152
+#: lib/place/filters-messages-tooltip-meta.php:154
 msgid "The default timezone is provided by WordPress."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:158
+#: lib/place/filters-messages-tooltip-meta.php:160
 msgid "Select the days and hours this place is open."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:164
+#: lib/place/filters-messages-tooltip-meta.php:166
 msgid ""
 "If this place is open seasonally, select the open and close dates of the "
 "season."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:170
+#: lib/place/filters-messages-tooltip-meta.php:172
 msgid ""
 "The geographic area where a service is provided, in meters around the "
 "location."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:176
+#: lib/place/filters-messages-tooltip-meta.php:178
 msgid ""
 "A comma-delimited list of <a href=\"%1$s\">ISO 4217 currency codes</a> "
 "accepted by the local business (example: %2$s)."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:182
+#: lib/place/filters-messages-tooltip-meta.php:184
 msgid ""
 "A comma-delimited list of payment options accepted by the local business "
 "(example: Cash, Credit Card)."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:188
+#: lib/place/filters-messages-tooltip-meta.php:190
 msgid ""
 "The relative price of goods or services provided by the local business "
 "(example: $, $$, $$$, or $$$$)."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:194
+#: lib/place/filters-messages-tooltip-meta.php:196
 msgid "This food establishment accepts reservations."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:200
+#: lib/place/filters-messages-tooltip-meta.php:202
 msgid "The menu URL for this food establishment."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:206
+#: lib/place/filters-messages-tooltip-meta.php:208
 msgid "The cuisine served by this food establishment."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:212
+#: lib/place/filters-messages-tooltip-meta.php:214
 msgid ""
 "A comma-delimited list of website and mobile app URLs to order products."
 msgstr ""
 
-#: lib/place/filters-messages-tooltip-meta.php:214
+#: lib/place/filters-messages-tooltip-meta.php:216
 msgid ""
 "These order action URL(s) will be used in the Schema potentialAction "
 "property."
