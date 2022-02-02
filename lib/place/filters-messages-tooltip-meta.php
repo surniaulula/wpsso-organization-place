@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersMessagesTooltipMeta' ) ) {
 
 					$text = __( 'An image of this place (ie. an image of the business storefront or location).', 'wpsso-organization-place' ) . ' ';
 
-					$text = __( 'The image you select should show the physical location of this place (ie. the latitude and longitude entered below).', 'wpsso-organization-place' ) . ' ';
+					$text .= __( 'The image you select should show the physical location of this place (ie. the latitude and longitude entered below).', 'wpsso-organization-place' ) . ' ';
 
 					$text .= '<em>' . __( 'This option is disabled if a place image URL is entered.', 'wpsso-organization-place' ) . '</em>';
 
