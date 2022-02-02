@@ -104,12 +104,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$table_rows[ 'place_name' ] = $tr_hide_place_html . 
 					$form->get_th_html( _x( 'Place Name', 'option label', 'wpsso-organization-place' ),
 						$th_css_class, $css_id = 'meta-place_name' ) .
-					'<td>' . $form->get_input( 'place_name', $css_class = 'long_name is_required' ) . '</td>';
+					'<td>' . $form->get_input( 'place_name', $css_class = 'wide is_required' ) . '</td>';
 
 				$table_rows[ 'place_name_alt' ] = $tr_hide_place_html . 
 					$form->get_th_html( _x( 'Place Alternate Name', 'option label', 'wpsso-organization-place' ),
 						$th_css_class, $css_id = 'meta-place_name_alt' ) .
-					'<td>' . $form->get_input( 'place_name_alt', $css_class = 'long_name' ) . '</td>';
+					'<td>' . $form->get_input( 'place_name_alt', $css_class = 'wide' ) . '</td>';
 
 				$table_rows[ 'place_desc' ] = $tr_hide_place_html . 
 					$form->get_th_html( _x( 'Place Description', 'option label', 'wpsso-organization-place' ),
@@ -160,24 +160,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					$th_css_class, $css_id = 'meta-place_phone' ) .  
 				'<td>' . $form->get_input( 'place_phone' ) . '</td>';
 
-			$table_rows[ 'place_latitude' ] = $tr_hide_place_html . 
-				$form->get_th_html( _x( 'Place Latitude', 'option label', 'wpsso-organization-place' ),
-					$th_css_class, $css_id = 'meta-place_latitude' ) .  
-				'<td>' . $form->get_input( 'place_latitude', 'is_required' ) . ' ' . 
-				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
-
-			$table_rows[ 'place_longitude' ] = $tr_hide_place_html . 
-				$form->get_th_html( _x( 'Place Longitude', 'option label', 'wpsso-organization-place' ),
-					$th_css_class, $css_id = 'meta-place_longitude' ) .  
-				'<td>' . $form->get_input( 'place_longitude', 'is_required' ) . ' ' . 
-				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
-
-			$table_rows[ 'place_altitude' ] = $tr_hide_place_html . 
-				$form->get_th_html( _x( 'Place Altitude', 'option label', 'wpsso-organization-place' ),
-					$th_css_class, $css_id = 'meta-place_altitude' ) .  
-				'<td>' . $form->get_input( 'place_altitude' ) . ' ' . 
-				_x( 'meters above sea level', 'option comment', 'wpsso-organization-place' ) . '</td>';
-
 			if ( ! $is_custom ) {
 
 				$table_rows[ 'place_img_id' ] = $tr_hide_place_html . 
@@ -190,6 +172,24 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						$th_css_class, $css_id = 'meta-place_img_url' ) .
 					'<td>' . $form->get_input_image_url( 'place_img' ) . '</td>';
 			}
+
+			$table_rows[ 'place_latitude' ] = $tr_hide_place_html . 
+				$form->get_th_html( _x( 'Place Latitude', 'option label', 'wpsso-organization-place' ),
+					$th_css_class, $css_id = 'meta-place_latitude' ) .  
+				'<td>' . $form->get_input( 'place_latitude', $css_class = 'latitude is_required' ) . ' ' . 
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'place_longitude' ] = $tr_hide_place_html . 
+				$form->get_th_html( _x( 'Place Longitude', 'option label', 'wpsso-organization-place' ),
+					$th_css_class, $css_id = 'meta-place_longitude' ) .  
+				'<td>' . $form->get_input( 'place_longitude', $css_class = 'longitude is_required' ) . ' ' . 
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'place_altitude' ] = $tr_hide_place_html . 
+				$form->get_th_html( _x( 'Place Altitude', 'option label', 'wpsso-organization-place' ),
+					$th_css_class, $css_id = 'meta-place_altitude' ) .  
+				'<td>' . $form->get_input( 'place_altitude', $css_class = 'altitude' ) . ' ' . 
+				_x( 'meters above sea level', 'option comment', 'wpsso-organization-place' ) . '</td>';
 
 			$table_rows[ 'place_timezone' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Place Timezone', 'option label', 'wpsso-organization-place' ),

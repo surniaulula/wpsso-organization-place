@@ -312,39 +312,39 @@ msgctxt "option label"
 msgid "Telephone"
 msgstr ""
 
-#: lib/place/filters-edit.php:164
-msgctxt "option label"
-msgid "Place Latitude"
-msgstr ""
-
-#: lib/place/filters-edit.php:167 lib/place/filters-edit.php:173
-msgctxt "option comment"
-msgid "decimal degrees"
-msgstr ""
-
-#: lib/place/filters-edit.php:170
-msgctxt "option label"
-msgid "Place Longitude"
-msgstr ""
-
-#: lib/place/filters-edit.php:176
-msgctxt "option label"
-msgid "Place Altitude"
-msgstr ""
-
-#: lib/place/filters-edit.php:179
-msgctxt "option comment"
-msgid "meters above sea level"
-msgstr ""
-
-#: lib/place/filters-edit.php:184
+#: lib/place/filters-edit.php:166
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr ""
 
-#: lib/place/filters-edit.php:189
+#: lib/place/filters-edit.php:171
 msgctxt "option label"
 msgid "or Place Image URL"
+msgstr ""
+
+#: lib/place/filters-edit.php:177
+msgctxt "option label"
+msgid "Place Latitude"
+msgstr ""
+
+#: lib/place/filters-edit.php:180 lib/place/filters-edit.php:186
+msgctxt "option comment"
+msgid "decimal degrees"
+msgstr ""
+
+#: lib/place/filters-edit.php:183
+msgctxt "option label"
+msgid "Place Longitude"
+msgstr ""
+
+#: lib/place/filters-edit.php:189
+msgctxt "option label"
+msgid "Place Altitude"
+msgstr ""
+
+#: lib/place/filters-edit.php:192
+msgctxt "option comment"
+msgid "meters above sea level"
 msgstr ""
 
 #: lib/place/filters-edit.php:195
