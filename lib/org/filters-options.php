@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			return $md_defs;
 		}
 
-		public function filter_get_post_options( $md_opts, $mod ) {
+		public function filter_get_post_options( array $md_opts, $post_id, array $mod ) {
 
 			$org_id = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
 
