@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.1-dev.5 (2022/02/09)**
+**Version 1.4.1-b.1 (2022/02/09)**
 
 * **New Features**
 	* None.
@@ -249,7 +249,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.1-dev.5 =
+= 1.4.1-b.1 =
 
 (2022/02/09) Fixed the 'wpsso_get_post_options' argument count.
 
