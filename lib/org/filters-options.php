@@ -29,7 +29,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				'get_organization_options' => 3,
 				'get_post_defaults'        => 4,
 				'get_post_options'         => 3,
-				'save_post_options'        => 4,
+				'save_post_options'        => 3,
 				'option_type'              => 2,
 			) );
 		}
@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			return $md_opts;
 		}
 
-		public function filter_save_post_options( $md_opts, $post_id, $rel, $mod ) {
+		public function filter_save_post_options( array $md_opts, $post_id, array $mod ) {
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
