@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.4.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-01 20:24-0800\n"
+"PO-Revision-Date: 2022-02-10 08:50-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -36,54 +36,54 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: lib/abstract/wp-meta.php:1074
+#: lib/abstract/wp-meta.php:1085
 msgctxt "metabox tab"
 msgid "Edit General"
 msgstr "Modifier général"
 
-#: lib/abstract/wp-meta.php:1075
+#: lib/abstract/wp-meta.php:1086
 msgctxt "metabox tab"
 msgid "Edit Schema"
 msgstr "Modifier Schéma"
 
-#: lib/abstract/wp-meta.php:1076
+#: lib/abstract/wp-meta.php:1087
 msgctxt "metabox tab"
 msgid "Edit Media"
 msgstr "Modifier médias"
 
-#: lib/abstract/wp-meta.php:1080
+#: lib/abstract/wp-meta.php:1091
 msgctxt "metabox tab"
 msgid "Edit Visibility"
 msgstr "Modifier visibilité"
 
-#: lib/abstract/wp-meta.php:1081
+#: lib/abstract/wp-meta.php:1092
 msgctxt "metabox tab"
 msgid "Preview Social"
 msgstr "Aperçu social"
 
-#: lib/abstract/wp-meta.php:1082
+#: lib/abstract/wp-meta.php:1093
 msgctxt "metabox tab"
 msgid "Preview oEmbed"
 msgstr "Aperçu oEmbed"
 
-#: lib/abstract/wp-meta.php:1083
+#: lib/abstract/wp-meta.php:1094
 msgctxt "metabox tab"
 msgid "Validators"
 msgstr "Validateurs"
 
-#: lib/abstract/wp-meta.php:1553
+#: lib/abstract/wp-meta.php:1414
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr "La validation du jeton nonce pour le formulaire soumis a échoué (mise à jour ignorée)."
 
-#: lib/abstract/wp-meta.php:1884
+#: lib/abstract/wp-meta.php:1745
 msgid "A claim review cannot be the subject of another claim review."
 msgstr "Un examen d'évaluation ne peut pas être le sujet d'un autre examen d'évaluation."
 
-#: lib/abstract/wp-meta.php:1886
+#: lib/abstract/wp-meta.php:1747
 msgid "Please select a subject webpage type that better describes the subject of the webpage (ie. the content) being reviewed."
 msgstr "SVP sélectionner un type de page Web du sujet qui décrit mieux le sujet de la page Web (c'est-à-dire le contenu) en cours de révision."
 
-#: lib/abstract/wp-meta.php:2642
+#: lib/abstract/wp-meta.php:2503
 msgid "adding schema images"
 msgstr "ajout d'images schéma"
 
@@ -290,40 +290,40 @@ msgctxt "option label"
 msgid "Telephone"
 msgstr "Téléphone"
 
-#: lib/place/filters-edit.php:164
-msgctxt "option label"
-msgid "Place Latitude"
-msgstr "Latitude de l'endroit"
-
-#: lib/place/filters-edit.php:167 lib/place/filters-edit.php:173
-msgctxt "option comment"
-msgid "decimal degrees"
-msgstr "degrés décimaux"
-
-#: lib/place/filters-edit.php:170
-msgctxt "option label"
-msgid "Place Longitude"
-msgstr "Longitude de l'endroit"
-
-#: lib/place/filters-edit.php:176
-msgctxt "option label"
-msgid "Place Altitude"
-msgstr "Altitude de l'endroit"
-
-#: lib/place/filters-edit.php:179
-msgctxt "option comment"
-msgid "meters above sea level"
-msgstr "mètres au-dessus du niveau de mer"
-
-#: lib/place/filters-edit.php:184
+#: lib/place/filters-edit.php:166
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr "ID d'image de l'endroit"
 
-#: lib/place/filters-edit.php:189
+#: lib/place/filters-edit.php:171
 msgctxt "option label"
 msgid "or Place Image URL"
 msgstr "ou URL d'image de l'endroit"
+
+#: lib/place/filters-edit.php:177
+msgctxt "option label"
+msgid "Place Latitude"
+msgstr "Latitude de l'endroit"
+
+#: lib/place/filters-edit.php:180 lib/place/filters-edit.php:186
+msgctxt "option comment"
+msgid "decimal degrees"
+msgstr "degrés décimaux"
+
+#: lib/place/filters-edit.php:183
+msgctxt "option label"
+msgid "Place Longitude"
+msgstr "Longitude de l'endroit"
+
+#: lib/place/filters-edit.php:189
+msgctxt "option label"
+msgid "Place Altitude"
+msgstr "Altitude de l'endroit"
+
+#: lib/place/filters-edit.php:192
+msgctxt "option comment"
+msgid "meters above sea level"
+msgstr "mètres au-dessus du niveau de mer"
 
 #: lib/place/filters-edit.php:195
 msgctxt "option label"
