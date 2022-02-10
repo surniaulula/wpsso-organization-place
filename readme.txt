@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.1-b.1 (2022/02/09)**
+**Version 1.4.1-b.1 (2022/02/10)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.0.0.
+	* WPSSO Core v10.3.0-b.1.
 
 **Version 1.4.0 (2022/02/02)**
 
@@ -251,7 +251,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.1-b.1 =
 
-(2022/02/09) Fixed the 'wpsso_get_post_options' argument count.
+(2022/02/10) Fixed the 'wpsso_get_post_options' argument count.
 
 = 1.4.0 =
 
