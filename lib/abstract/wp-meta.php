@@ -207,7 +207,7 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 		}
 
 		public function get_mod_wp_object( array $mod ) {
-			
+
 			return self::must_be_extended( $ret_val = false );
 		}
 
@@ -425,8 +425,8 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					 */
 					'schema_type'      => $def_schema_type,	// Schema Type.
 					'schema_title'     => '',		// Schema Name.
-					'schema_title_alt' => '',		// Alternate Name.
-					'schema_bc_title'  => '',		// Breadcrumb Name.
+					'schema_title_alt' => '',		// Schema Alternate Name.
+					'schema_bc_title'  => '',		// Schema Breadcrumb Name.
 					'schema_desc'      => '',		// Schema Description.
 
 					/**
