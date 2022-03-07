@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.1-rc.1 (2022/03/07)**
+**Version 1.5.1 (2022/03/07)**
 
 Maintenance release.
 
@@ -139,7 +139,7 @@ Maintenance release.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.5.0-rc.1.
+	* WPSSO Core v11.5.0.
 
 **Version 1.5.0 (2022/02/17)**
 
@@ -281,7 +281,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.1-rc.1 =
+= 1.5.1 =
 
 (2022/03/07) Maintenance release.
 
