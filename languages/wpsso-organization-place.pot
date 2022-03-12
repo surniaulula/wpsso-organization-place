@@ -93,10 +93,6 @@ msgid ""
 "the webpage (ie. the content) being reviewed."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:2514
-msgid "adding schema images"
-msgstr ""
-
 #: lib/filters-upgrade.php:208
 msgid ""
 "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s "
