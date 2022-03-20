@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Replaced call to `$wpsso->post->get_public_ids()` by `WpssoPost::get_public_ids()`.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -298,7 +298,7 @@ Maintenance release.
 
 = 1.5.2-dev.2 =
 
-(2022/03/20) None.
+(2022/03/20) Replaced call to `$wpsso->post->get_public_ids()` by `WpssoPost::get_public_ids()`.
 
 = 1.5.1 =
 
