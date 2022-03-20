@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$local_cache[ $schema_type ] = array();
 
 			$children = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
-			$org_ids  = $wpsso->post->get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
+			$org_ids  = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
 
 			foreach ( $org_ids as $post_id ) {
 
