@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.2
-Stable Tag: 1.5.1
+Stable Tag: 1.5.2
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
 
@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.2 (2022/03/22)**
+**Version 1.5.2 (2022/03/23)**
 
 * **New Features**
 	* None.
@@ -298,7 +298,7 @@ Maintenance release.
 
 = 1.5.2 =
 
-(2022/03/22) Replaced call to `$wpsso->post->get_public_ids()` by `WpssoPost::get_public_ids()`.
+(2022/03/23) Replaced call to `$wpsso->post->get_public_ids()` by `WpssoPost::get_public_ids()`.
 
 = 1.5.1 =
 
