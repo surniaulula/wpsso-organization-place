@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.2-rc.5 (2022/03/22)**
+**Version 1.5.2 (2022/03/22)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.7.2-rc.5.
+	* WPSSO Core v11.7.2.
 
 **Version 1.5.1 (2022/03/07)**
 
@@ -296,7 +296,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.2-rc.5 =
+= 1.5.2 =
 
 (2022/03/22) Replaced call to `$wpsso->post->get_public_ids()` by `WpssoPost::get_public_ids()`.
 
