@@ -112,7 +112,14 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 							$sameas_url = 'https://twitter.com/' . preg_replace( '/^@/', '', $sameas_url );
 						}
 
-						if ( false !== filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) {	// Just in case.
+						if ( false === filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) {	// Just in case.
+
+							if ( $wpsso->debug->enabled ) {
+
+								$wpsso->debug->log( 'skipping ' . $sameas_key . ': url "' . $sameas_url . '" is invalid' );
+							}
+
+						} else {
 
 							$org_sameas[] = $sameas_url;
 						}
