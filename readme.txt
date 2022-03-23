@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.3-dev.2 (2022/03/23)**
+**Version 1.5.3-dev.3 (2022/03/23)**
 
 * **New Features**
 	* None.
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v12.0.0-dev.2.
+	* WPSSO Core v12.0.0-dev.3.
 
 **Version 1.5.2 (2022/03/23)**
 
@@ -311,7 +311,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.3-dev.2 =
+= 1.5.3-dev.3 =
 
 (2022/03/23) Removed `$check_dupes` from all methods arguments.
 
