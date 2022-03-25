@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.5.2\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.5.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-22 11:08-0700\n"
+"PO-Revision-Date: 2022-03-24 07:49-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -214,19 +214,19 @@ msgstr "Les dimensions de l'image bannière de l'organisation \"%1$s\" sont %2$s
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr "Veuillez corriger l'image bannière %s ou sélectionner une autre image bannière."
 
-#: lib/org.php:130 lib/org.php:140
+#: lib/org.php:137 lib/org.php:147
 msgid "Unable to provide information for organization ID #%s."
 msgstr "Impossible de fournir des informations pour l'organisation ID #%s."
 
-#: lib/org.php:133
+#: lib/org.php:140
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr "Veuillez publier l'organisation ID #%s ou sélectionner une autre organisation."
 
-#: lib/org.php:142
+#: lib/org.php:149
 msgid "Organization ID #%s does not exist."
 msgstr "L'organisation ID #%s n'existe pas."
 
-#: lib/org.php:144
+#: lib/org.php:151
 msgid "Please select a different organization."
 msgstr "Veuillez sélectionner une autre organisation."
 
