@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.3-rc.1 (2022/03/25)**
+**Version 1.5.3 (2022/03/26)**
 
 * **New Features**
 	* None.
@@ -311,9 +311,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.3-rc.1 =
+= 1.5.3 =
 
-(2022/03/25) Removed `$check_dupes` from all methods arguments.
+(2022/03/26) Removed `$check_dupes` from all methods arguments.
 
 = 1.5.2 =
 
