@@ -879,6 +879,9 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				}
 			}
 
+			if ( $prev_version > 0 && $prev_version <= 910 ) {
+			}
+
 			/**
 			 * Maybe add any new / missing options keys.
 			 */
