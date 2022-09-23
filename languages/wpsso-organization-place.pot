@@ -40,54 +40,54 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1080
+#: lib/abstract/wp-meta.php:1081
 msgid "checking meta tags"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1148
-msgctxt "metabox tab"
-msgid "Edit General"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1149
 msgctxt "metabox tab"
-msgid "Edit Schema"
+msgid "Edit General"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1150
 msgctxt "metabox tab"
-msgid "Edit Media"
+msgid "Edit Schema"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1154
+#: lib/abstract/wp-meta.php:1151
 msgctxt "metabox tab"
-msgid "Edit Visibility"
+msgid "Edit Media"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1155
 msgctxt "metabox tab"
-msgid "Preview Social"
+msgid "Edit Visibility"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1156
 msgctxt "metabox tab"
-msgid "Preview oEmbed"
+msgid "Preview Social"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1157
 msgctxt "metabox tab"
+msgid "Preview oEmbed"
+msgstr ""
+
+#: lib/abstract/wp-meta.php:1158
+msgctxt "metabox tab"
 msgid "Validators"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1477
+#: lib/abstract/wp-meta.php:1478
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1808
+#: lib/abstract/wp-meta.php:1809
 msgid "A claim review cannot be the subject of another claim review."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1810
+#: lib/abstract/wp-meta.php:1811
 msgid ""
 "Please select a subject webpage type that better describes the subject of "
 "the webpage (ie. the content) being reviewed."
