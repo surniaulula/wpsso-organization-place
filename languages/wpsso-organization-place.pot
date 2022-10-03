@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.5.3\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.6.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -40,54 +40,54 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1081
+#: lib/abstract/wp-meta.php:1101
 msgid "checking meta tags"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1149
+#: lib/abstract/wp-meta.php:1169
 msgctxt "metabox tab"
 msgid "Edit General"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1150
+#: lib/abstract/wp-meta.php:1170
 msgctxt "metabox tab"
 msgid "Edit Schema"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1151
+#: lib/abstract/wp-meta.php:1171
 msgctxt "metabox tab"
 msgid "Edit Media"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1155
+#: lib/abstract/wp-meta.php:1175
 msgctxt "metabox tab"
 msgid "Edit Visibility"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1156
+#: lib/abstract/wp-meta.php:1176
 msgctxt "metabox tab"
 msgid "Preview Social"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1157
+#: lib/abstract/wp-meta.php:1177
 msgctxt "metabox tab"
 msgid "Preview oEmbed"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1158
+#: lib/abstract/wp-meta.php:1178
 msgctxt "metabox tab"
 msgid "Validators"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1478
+#: lib/abstract/wp-meta.php:1498
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1809
+#: lib/abstract/wp-meta.php:1829
 msgid "A claim review cannot be the subject of another claim review."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1811
+#: lib/abstract/wp-meta.php:1831
 msgid ""
 "Please select a subject webpage type that better describes the subject of "
 "the webpage (ie. the content) being reviewed."
@@ -142,42 +142,6 @@ msgstr ""
 #: lib/org/filters-edit.php:91
 msgctxt "metabox title"
 msgid "Google's Knowledge Graph"
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:39
-msgid "The complete or common name for the organization."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:45
-msgid ""
-"An alternate name for the organization that you would like Google to "
-"consider."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:51
-msgid "A description for the organization."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:57
-msgid "The website URL for the organization."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:75
-msgid ""
-"You may optionally choose a more accurate Schema type for this organization "
-"(default is Organization)."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:77
-msgid ""
-"Note that Google does not recognize most Schema Organization sub-types as "
-"valid organizations, so do not change this value unless you are certain that "
-"your selected Schema Organization sub-type will be recognized as a valid "
-"Organization by Google."
-msgstr ""
-
-#: lib/org/filters-messages-tooltip-meta.php:83
-msgid "Select an optional place (ie. location) for this organization."
 msgstr ""
 
 #: lib/org/filters-options.php:89 lib/org.php:53
@@ -447,198 +411,6 @@ msgstr ""
 #: lib/place/filters-edit.php:304
 msgctxt "option label"
 msgid "Order Action URL(s)"
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:39
-msgid "A name for this place (required)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:41
-msgid ""
-"The place name may appear in forms and in the Schema Place \"name\" property."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:47
-msgid "An alternate name for this place."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:49
-msgid ""
-"The place alternate name may appear in the Schema Place \"alternateName\" "
-"property."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:55
-msgid "A description for this place."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:57
-msgid ""
-"The place description may appear in the Schema Place \"description\" "
-"property."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:63
-msgid ""
-"You may optionally choose a different Schema type for this place (default is "
-"LocalBusiness)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:69
-msgid ""
-"An optional street address for Pinterest Rich Pin / Schema Place meta tags "
-"and related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:75
-msgid ""
-"An optional post office box number for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:81
-msgid ""
-"An optional city name for the Pinterest Rich Pin / Schema Place meta tags "
-"and related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:87
-msgid ""
-"An optional state or province name for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:93
-msgid ""
-"An optional postal or zip code for the Pinterest Rich Pin / Schema Place "
-"meta tags and related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:99
-msgid ""
-"An optional country for the Pinterest Rich Pin / Schema Place meta tags and "
-"related markup."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:105
-msgid "An optional telephone number for this place."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:110
-msgid "The numeric decimal degrees latitude for this place (required)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:112
-#: lib/place/filters-messages-tooltip-meta.php:120
-msgid ""
-"You may use a service like <a href=\"http://www.gps-coordinates.net/"
-"\">Google Maps GPS Coordinates</a> (as an example), to find the approximate "
-"GPS coordinates of a street address."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:118
-msgid "The numeric decimal degrees longitude for this place (required)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:126
-msgid ""
-"An optional numeric altitude (in meters above sea level) for this place."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:132
-msgid ""
-"An image of this place (ie. an image of the business storefront or location)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:134
-msgid ""
-"The image you select should show the physical location of this place (ie. "
-"the latitude and longitude entered below)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:136
-msgid "This option is disabled if a place image URL is entered."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:142
-msgid ""
-"You can enter a place image URL (including the http:// prefix) instead of "
-"selecting an image ID."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:144
-msgid ""
-"The image URL option allows you to choose an image outside of the WordPress "
-"Media Library and/or a smaller logo style image."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:146
-msgid "This option is disabled if a place image ID is selected."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:152
-msgid "A timezone for the place open and close hours."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:154
-msgid "The default timezone is provided by WordPress."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:160
-msgid "Select the days and hours this place is open."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:166
-msgid ""
-"If this place is open seasonally, select the open and close dates of the "
-"season."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:172
-msgid ""
-"The geographic area where a service is provided, in meters around the "
-"location."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:178
-msgid ""
-"A comma-delimited list of <a href=\"%1$s\">ISO 4217 currency codes</a> "
-"accepted by the local business (example: %2$s)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:184
-msgid ""
-"A comma-delimited list of payment options accepted by the local business "
-"(example: Cash, Credit Card)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:190
-msgid ""
-"The relative price of goods or services provided by the local business "
-"(example: $, $$, $$$, or $$$$)."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:196
-msgid "This food establishment accepts reservations."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:202
-msgid "The menu URL for this food establishment."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:208
-msgid "The cuisine served by this food establishment."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:214
-msgid ""
-"A comma-delimited list of website and mobile app URLs to order products."
-msgstr ""
-
-#: lib/place/filters-messages-tooltip-meta.php:216
-msgid ""
-"These order action URL(s) will be used in the Schema potentialAction "
-"property."
 msgstr ""
 
 #: lib/place/filters-options.php:95 lib/place.php:53

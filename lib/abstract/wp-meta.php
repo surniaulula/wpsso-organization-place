@@ -107,10 +107,10 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					'product_sku' => 'product_retailer_part_no',
 				),
 				696 => array(
-					'og_art_section' => 'article_section',
+					'og_art_section' => 'schema_article_section',
 				),
 				701 => array(
-					'article_topic' => 'article_section',
+					'article_topic' => 'schema_article_section',
 				),
 				725 => array(
 					'product_volume_value' => 'product_fluid_volume_value',
@@ -132,6 +132,10 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 				),
 				829 => array(
 					'book_isbn' => 'schema_book_isbn',
+				),
+				920 => array(
+					'article_section' => 'schema_article_section',	// Renamed for WPSSO Core v13.5.0.
+					'reading_mins'    => 'schema_reading_mins',	// Renamed for WPSSO Core v13.5.0.
 				),
 			),
 		);
@@ -302,8 +306,8 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 
 				$def_img_id_lib      = isset( $opts[ 'og_def_img_id_lib' ] ) ? $opts[ 'og_def_img_id_lib' ] : 'wp';
 				$def_currency        = isset( $opts[ 'og_def_currency' ] ) ? $opts[ 'og_def_currency' ] : 'USD';
-				$def_article_section = isset( $opts[ 'og_def_article_section' ] ) ? $opts[ 'og_def_article_section' ] : 'none';
 
+				$def_article_section = isset( $opts[ 'schema_def_article_section' ] ) ? $opts[ 'schema_def_article_section' ] : 'none';
 				$def_adult_oriented  = isset( $opts[ 'schema_def_product_adult_oriented' ] ) ? $opts[ 'schema_def_product_adult_oriented' ] : 'none';
 				$def_age_group       = isset( $opts[ 'schema_def_product_age_group' ] ) ? $opts[ 'schema_def_product_age_group' ] : 'none';
 				$def_product_cat     = isset( $opts[ 'schema_def_product_category' ] ) ? $opts[ 'schema_def_product_category' ] : 'none';
@@ -344,8 +348,6 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					/**
 					 * Edit General.
 					 */
-					'article_section' => $def_article_section,	// Article Section.
-					'reading_mins'    => $def_reading_mins,		// Est. Reading Time.
 					'primary_term_id' => $def_primary_term_id,	// Primary Category.
 					'seo_title'       => '',			// SEO Title Tag.
 					'seo_desc'        => '',			// SEO Meta Description.
@@ -451,6 +453,12 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					'schema_prov_person_id'  => $opts[ 'schema_def_prov_person_id' ],	// Service Prov. Person.
 					'schema_pub_org_id'      => $opts[ 'schema_def_pub_org_id' ],		// Publisher Org.
 					'schema_pub_person_id'   => $opts[ 'schema_def_pub_person_id' ],	// Publisher Person.
+
+					/**
+					 * Schema Article.
+					 */
+					'schema_article_section' => $def_article_section,	// Article Section.
+					'schema_reading_mins'    => $def_reading_mins,		// Est. Reading Time.
 
 					/**
 					 * Schema Book.
@@ -617,15 +625,15 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					'schema_review_rating_alt_name' => '',		// Rating Value Name.
 
 					/**
-					 * Schema Reviewed Subject.
+					 * Schema Review Subject.
 					 */
 					'schema_review_item_name' => '',					// Subject Name.
 					'schema_review_item_desc' => '',					// Subject Description.
-					'schema_review_item_type' => $opts[ 'schema_def_review_item_type' ],	// Subject Webpage Type.
 					'schema_review_item_url'  => '',					// Subject Webpage URL.
+					'schema_review_item_type' => $opts[ 'schema_def_review_item_type' ],	// Subject Schema Type.
 
 					/**
-					 * Schema Reviewed Subject: Creative Work.
+					 * Schema Review Subject: Creative Work.
 					 */
 					'schema_review_item_cw_author_type'      => 'none',		// Subject Author Type.
 					'schema_review_item_cw_author_name'      => '',			// Subject Author Name.
@@ -638,19 +646,31 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 					'schema_review_item_cw_created_timezone' => $def_timezone,	// Subject Created Timezone.
 
 					/**
-					 * Schema Reviewed Subject: Book.
+					 * Schema Review Subject: Creative Work / Book.
 					 */
 					'schema_review_item_cw_book_isbn' => '',	// Subject Book ISBN.
 
 					/**
-					 * Schema Reviewed Subject: Product.
+					 * Schema Review Subject: Creative Work / Movie.
+					 */
+
+					/**
+					 * Schema Review Subject: Place.
+					 */
+
+					/**
+					 * Schema Review Subject: Place / Food Establishment.
+					 */
+
+					/**
+					 * Schema Review Subject: Product.
 					 */
 					'schema_review_item_product_brand'            => '',	// Product Brand.
 					'schema_review_item_product_retailer_part_no' => '',	// Product SKU.
 					'schema_review_item_product_mfr_part_no'      => '',	// Product MPN.
 
 					/**
-					 * Schema Reviewed Subject: Software Application.
+					 * Schema Review Subject: Software Application.
 					 */
 					'schema_review_item_software_app_cat' => '',	// Application Category.
 					'schema_review_item_software_app_os'  => '',	// Operating System.

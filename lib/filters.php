@@ -47,10 +47,6 @@ if ( ! class_exists( 'WpssoOpmFilters' ) ) {
 				require_once WPSSOOPM_PLUGINDIR . 'lib/filters-edit.php';
 
 				new WpssoOpmFiltersEdit( $plugin, $addon );
-
-				require_once WPSSOOPM_PLUGINDIR . 'lib/filters-messages.php';
-
-				new WpssoOpmFiltersMessages( $plugin, $addon );
 			}
 
 			require_once WPSSOOPM_PLUGINDIR . 'lib/place/filters-og.php';
