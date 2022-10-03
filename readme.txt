@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.6.0-dev.4 (TBD)**
+**Version 1.6.0-dev.4 (2022/10/03)**
 
 * **New Features**
 	* None.
@@ -328,7 +328,7 @@ Maintenance release.
 
 = 1.6.0-dev.4 =
 
-(TBD) Moved organization and place tooltip messages to the WPSSO Core plugin.
+(2022/10/03) Moved organization and place tooltip messages to the WPSSO Core plugin.
 
 = 1.5.3 =
 
