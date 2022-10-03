@@ -124,6 +124,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.6.0-dev.4 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.8.0.
+
 **Version 1.5.3 (2022/03/26)**
 
 * **New Features**
@@ -310,6 +325,10 @@ Maintenance release.
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.6.0-dev.4 =
+
+(TBD) None.
 
 = 1.5.3 =
 
