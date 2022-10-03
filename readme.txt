@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Moved organization and place tooltip messages to the WPSSO Core plugin.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -328,7 +328,7 @@ Maintenance release.
 
 = 1.6.0-dev.4 =
 
-(TBD) None.
+(TBD) Moved organization and place tooltip messages to the WPSSO Core plugin.
 
 = 1.5.3 =
 
