@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->log_args( array( 
+				$wpsso->debug->log_args( array(
 					'place_id' => $place_id,
 					'mod'      => $mod,
 				) );
@@ -202,7 +202,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$address = '';
 
-			foreach ( array( 
+			foreach ( array(
 				'place_street_address',
 				'place_po_box_number',
 				'place_city',

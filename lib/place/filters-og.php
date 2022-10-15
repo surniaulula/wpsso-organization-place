@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'og_type' => 3,
 				'og_seed' => 2,
 			) );
@@ -166,7 +166,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 			 * og:longitude
 			 * og:altitude
 			 */
-			if ( isset( $place_opts[ 'place_latitude' ] ) && '' !== $place_opts[ 'place_latitude' ] && 
+			if ( isset( $place_opts[ 'place_latitude' ] ) && '' !== $place_opts[ 'place_latitude' ] &&
 				isset( $place_opts[ 'place_longitude' ] ) && '' !== $place_opts[ 'place_longitude' ] ) {
 
 				foreach( array( 'place:location', 'og' ) as $mt_pre ) {

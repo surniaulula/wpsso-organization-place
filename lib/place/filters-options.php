@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'get_place_options' => 3,
 				'get_post_defaults' => 4,
 				'get_post_options'  => 3,

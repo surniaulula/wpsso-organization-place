@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'upgraded_options'    => 2,
 				'upgraded_md_options' => 1,
 			) );

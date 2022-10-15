@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersSchema' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'json_array_schema_type_ids'                 => 2,
 				'json_prop_https_schema_org_potentialaction' => 5,
 			) );
