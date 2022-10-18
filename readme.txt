@@ -8,6 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-organization-place/assets/
 Tags: schema, organization, place, location, local seo, local business, publisher
 Contributors: jsmoriss
+Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.0
