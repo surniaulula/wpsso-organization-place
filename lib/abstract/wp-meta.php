@@ -2273,14 +2273,14 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'inherit md images for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] . ' is enabled' );
+					$this->p->debug->log( 'inherit md images is enabled' );
 				}
 
 			} else {
 
 				if ( $this->p->debug->enabled ) {
 
-					$this->p->debug->log( 'inherit md images for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] . ' is disabled' );
+					$this->p->debug->log( 'inherit md images is disabled' );
 				}
 
 				$inherit_opts = SucomUtil::preg_grep_keys( '/_img_/', $inherit_opts, $invert = true );
@@ -2406,7 +2406,7 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 
 					if ( $this->p->debug->enabled ) {
 
-						$this->p->debug->log( 'using custom ' . $opt_pre . ' image ID = "' . $pid . '"', get_class( $this ) );
+						$this->p->debug->log( 'using custom ' . $opt_pre . ' image id = ' . $pid, get_class( $this ) );
 					}
 
 					$mt_images = $this->p->media->get_mt_pid_images( $pid, $size_names, $mt_pre );
@@ -2416,7 +2416,7 @@ if ( ! class_exists( 'WpssoAbstractWpMeta' ) ) {
 
 					if ( $this->p->debug->enabled ) {
 
-						$this->p->debug->log( 'using custom ' . $opt_pre . ' image URL = "' . $url . '"', get_class( $this ) );
+						$this->p->debug->log( 'using custom ' . $opt_pre . ' image url = ' . $url, get_class( $this ) );
 					}
 
 					$img_width  = $this->get_options( $mod[ 'id' ], $opt_pre . '_img_url:width' );
