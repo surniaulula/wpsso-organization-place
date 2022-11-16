@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 6.1.0
+Tested Up To: 6.1.1
 Stable Tag: 1.6.0
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
