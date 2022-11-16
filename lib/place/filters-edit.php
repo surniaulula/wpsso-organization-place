@@ -123,7 +123,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td>' . $form->get_select( 'place_schema_type', $place_types_select,
 					$css_class = 'schema_type', $css_id = '', $is_assoc = true, $is_disabled = false,
 						$selected = false, $place_schema_type_event_names,
-							$event_args = 'schema_place_types' ) . '</td>';
+							$event_args = array( 'json_var' => 'schema_place_types' ) ) . '</td>';
 
 			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),

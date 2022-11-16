@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					$css_class = '', $css_id = 'meta-org_schema_type' ) .
 				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, $event_names = array( 'on_focus_load_json' ),
-						$event_args = 'schema_org_types' ) . '</td>';
+						$event_args = array( 'json_var' => 'schema_org_types' ) ) . '</td>';
 
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
