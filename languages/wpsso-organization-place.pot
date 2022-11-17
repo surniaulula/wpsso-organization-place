@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.7.0-dev.5\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.7.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -40,54 +40,54 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1109
+#: lib/abstract/wp-meta.php:1116
 msgid "checking meta tags"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1177
-msgctxt "metabox tab"
-msgid "Edit General"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1181
-msgctxt "metabox tab"
-msgid "Edit Schema"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1184
 msgctxt "metabox tab"
-msgid "Edit Media"
+msgid "Edit General"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1188
 msgctxt "metabox tab"
-msgid "Edit Visibility"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1189
-msgctxt "metabox tab"
-msgid "Preview Social"
-msgstr ""
-
-#: lib/abstract/wp-meta.php:1190
-msgctxt "metabox tab"
-msgid "Preview oEmbed"
+msgid "Edit Schema"
 msgstr ""
 
 #: lib/abstract/wp-meta.php:1191
 msgctxt "metabox tab"
+msgid "Edit Media"
+msgstr ""
+
+#: lib/abstract/wp-meta.php:1195
+msgctxt "metabox tab"
+msgid "Edit Visibility"
+msgstr ""
+
+#: lib/abstract/wp-meta.php:1196
+msgctxt "metabox tab"
+msgid "Preview Social"
+msgstr ""
+
+#: lib/abstract/wp-meta.php:1197
+msgctxt "metabox tab"
+msgid "Preview oEmbed"
+msgstr ""
+
+#: lib/abstract/wp-meta.php:1198
+msgctxt "metabox tab"
 msgid "Validators"
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1519
+#: lib/abstract/wp-meta.php:1526
 msgid "Nonce token validation failed for the submitted form (update ignored)."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1850
+#: lib/abstract/wp-meta.php:1857
 msgid "A claim review cannot be the subject of another claim review."
 msgstr ""
 
-#: lib/abstract/wp-meta.php:1852
+#: lib/abstract/wp-meta.php:1859
 msgid ""
 "Please select a subject webpage type that better describes the subject of "
 "the webpage (ie. the content) being reviewed."
