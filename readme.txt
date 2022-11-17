@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.7.0-dev.6 (2022/11/16)**
+**Version 1.7.0-dev.7 (2022/11/17)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.10.0-dev.6.
+	* WPSSO Core v13.10.0-dev.7.
 
 **Version 1.6.0 (2022/10/04)**
 
@@ -342,9 +342,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.7.0-dev.6 =
+= 1.7.0-dev.7 =
 
-(2022/11/16) Updated `SucomForm->get_select()` arguments for WPSSO Core v13.10.0.
+(2022/11/17) Updated `SucomForm->get_select()` arguments for WPSSO Core v13.10.0.
 
 = 1.6.0 =
 
