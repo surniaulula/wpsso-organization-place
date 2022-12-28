@@ -83,7 +83,11 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 			}
 
 			$this->filters = new WpssoOpmFilters( $this->p, $this );
-			$this->post    = new WpssoOpmPost( $this->p, $this );
+
+			if ( class_exists( 'WpssoOpmPost' ) ) {
+
+				$this->post = new WpssoOpmPost( $this->p, $this );
+			}
 		}
 	}
 
