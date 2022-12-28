@@ -434,12 +434,12 @@ msgstr ""
 msgid "Please select a different place."
 msgstr ""
 
-#: lib/post.php:89
+#: lib/post.php:84
 msgctxt "metabox title"
 msgid "Organization"
 msgstr ""
 
-#: lib/post.php:98
+#: lib/post.php:93
 msgctxt "metabox title"
 msgid "Place"
 msgstr ""

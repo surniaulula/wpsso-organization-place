@@ -14,15 +14,10 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 
 	if ( defined( 'WPSSO_PLUGINDIR' ) ) {
 
-		require_once WPSSO_PLUGINDIR . '/lib/post.php';
+		require_once WPSSO_PLUGINDIR . 'lib/post.php';
 	}
 }
 
-/**
- * The WpssoOpmPost class extends the WpssoPost class, which extends the WpssoAbstractWpMeta class.
- *
- * The abstract/wp-meta.php file path included by WpssoPost is relative to the current file folder.
- */
 if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 
 	class WpssoOpmPost extends WpssoPost {
