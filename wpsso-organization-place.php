@@ -41,6 +41,9 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 
 	class WpssoOpm extends WpssoAbstractAddOn {
 
+		public $filters;	// WpssoOpmFilters class object.
+		public $post;		// WpssoOpmPost class object.
+
 		protected $p;		// Wpsso class object.
 
 		private static $instance = null;	// WpssoOpm class object.
@@ -79,12 +82,8 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 				return;	// Stop here.
 			}
 
-			new WpssoOpmFilters( $this->p, $this );
-
-			if ( class_exists( 'WpssoOpmPost' ) ) {		// Extends on WpssoPost, which may be missing if WPSSO Core is deactivated.
-
-				new WpssoOpmPost( $this->p, $this );
-			}
+			$this->filters = new WpssoOpmFilters( $this->p, $this );
+			$this->post    = new WpssoOpmPost( $this->p, $this );
 		}
 	}
 
