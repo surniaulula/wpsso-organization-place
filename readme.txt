@@ -125,6 +125,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.8.0 (2022/12/28)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Update for the `WpssoAbstractWpMeta` class from WPSSO Core v14.0.0.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.10.0.
+
 **Version 1.7.0 (2022/11/19)**
 
 * **New Features**
@@ -341,6 +356,10 @@ Maintenance release.
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.8.0 =
+
+(2022/12/28) Update for the `WpssoAbstractWpMeta` class from WPSSO Core v14.0.0.
 
 = 1.7.0 =
 
