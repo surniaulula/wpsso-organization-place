@@ -18,6 +18,11 @@ if ( ! class_exists( 'WpssoPost' ) ) {
 	}
 }
 
+/**
+ * The WpssoOpmPost class extends the WpssoPost class, which extends the WpssoAbstractWpMeta class.
+ *
+ * The abstract/wp-meta.php file path included by WpssoPost is relative to the current file folder.
+ */
 if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 
 	class WpssoOpmPost extends WpssoPost {
