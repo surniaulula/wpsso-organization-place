@@ -15,7 +15,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
- * Version: 1.9.0-dev.2
+ * Version: 1.9.0-dev.3
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -68,6 +68,11 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 			load_plugin_textdomain( 'wpsso-organization-place', false, 'wpsso-organization-place/languages/' );
 		}
 
+		/**
+		 * Require library files with functions or static methods in require_libs().
+		 *
+		 * Require and instantiate library files with dynamic methods in init_objects().
+		 */
 		public function init_objects() {
 
 			$this->p =& Wpsso::get_instance();
@@ -82,12 +87,13 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 				return;	// Stop here.
 			}
 
+			require_once WPSSOOPM_PLUGINDIR . 'lib/filters.php';
+
 			$this->filters = new WpssoOpmFilters( $this->p, $this );
 
-			if ( class_exists( 'WpssoOpmPost' ) ) {
+			require_once WPSSOOPM_PLUGINDIR . 'lib/post.php';
 
-				$this->post = new WpssoOpmPost( $this->p, $this );
-			}
+			$this->post = new WpssoOpmPost( $this->p, $this );	// Depends on WpssoPost and WpssoAbstractWpMeta.
 		}
 	}
 

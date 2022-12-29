@@ -23,7 +23,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 	class WpssoOpmPost extends WpssoPost {
 
 		/**
-		 * Instantiated by WpssoAm->init_objects().
+		 * Instantiated by WpssoOpm->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
 

@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '1.9.0-dev.2',	// Plugin version.
+					'version'     => '1.9.0-dev.3',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.1.0-dev.2',
+							'min_version'   => '14.1.0-dev.3',
 						),
 					),
 
@@ -203,12 +203,15 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			return $var_const;
 		}
 
+		/**
+		 * Require library files with functions or static methods in require_libs().
+		 *
+		 * Require and instantiate library files with dynamic methods in init_objects().
+		 */
 		public static function require_libs( $plugin_file ) {
 
-			require_once WPSSOOPM_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/org.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/place.php';
-			require_once WPSSOOPM_PLUGINDIR . 'lib/post.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/register.php';
 
 			add_filter( 'wpssoopm_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
