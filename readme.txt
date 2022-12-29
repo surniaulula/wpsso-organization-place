@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0-dev.2 (2022/12/28)**
+**Version 1.9.0-dev.3 (2022/12/28)**
 
 * **New Features**
 	* None.
@@ -372,7 +372,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.9.0-dev.2 =
+= 1.9.0-dev.3 =
 
 (2022/12/28) Removed the now unnecessary `WpssoAbstractWpMeta` class.
 
