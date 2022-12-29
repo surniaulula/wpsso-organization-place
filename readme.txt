@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0-dev.3 (2022/12/28)**
+**Version 1.9.0-b.1 (2022/12/29)**
 
 * **New Features**
 	* None.
@@ -134,11 +134,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Removed the now unnecessary `WpssoAbstractWpMeta` class.
+	* Removed the unnecessary lib/abstract/wp-meta.php library file.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.1.0.
+	* WPSSO Core v14.1.0-b.1.
 
 **Version 1.8.0 (2022/12/28)**
 
@@ -372,9 +372,9 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.9.0-dev.3 =
+= 1.9.0-b.1 =
 
-(2022/12/28) Removed the now unnecessary `WpssoAbstractWpMeta` class.
+(2022/12/29) Removed the unnecessary lib/abstract/wp-meta.php library file.
 
 = 1.8.0 =
 
