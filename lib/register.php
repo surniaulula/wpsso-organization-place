@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 
 				self::register_place_category_taxonomy();
 
-				flush_rewrite_rules();
+				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
 			}
 		}
 
@@ -150,7 +150,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				unregister_taxonomy( WPSSOOPM_PLACE_CATEGORY_TAXONOMY );
 			}
 
-			flush_rewrite_rules();
+			flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
 		}
 
 		private static function uninstall_plugin() {}
