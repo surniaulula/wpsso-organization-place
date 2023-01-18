@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.9.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.10.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
-"POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-29 09:21-0800\n"
+"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-01-18 11:56-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,79 +13,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:206
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:220
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
-#: gettext/gettext-lib-config.php:6
+#: gettext/gettext-lib-config.php:5
 msgctxt "plugin name"
 msgid "WPSSO Organization and Place Manager"
 msgstr "WPSSO gestionnaire d'organisation et d'endroit"
 
-#: gettext/gettext-lib-config.php:7
+#: gettext/gettext-lib-config.php:6
 msgctxt "plugin description"
 msgid "Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup."
 msgstr "Gérez les organisations (éditeur, organisateur, etc.) et les endroits pour le balisage d'entreprises locales Facebook, Pinterest et Google."
 
-#: gettext/gettext-lib-config.php:8
+#: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
-
-#: lib/abstract/wp-meta.php:1116
-msgid "checking meta tags"
-msgstr "vérification des balises méta"
-
-#: lib/abstract/wp-meta.php:1184
-msgctxt "metabox tab"
-msgid "Edit General"
-msgstr "Modifier général"
-
-#: lib/abstract/wp-meta.php:1188
-msgctxt "metabox tab"
-msgid "Edit Schema"
-msgstr "Modifier Schéma"
-
-#: lib/abstract/wp-meta.php:1191
-msgctxt "metabox tab"
-msgid "Edit Media"
-msgstr "Modifier médias"
-
-#: lib/abstract/wp-meta.php:1195
-msgctxt "metabox tab"
-msgid "Edit Visibility"
-msgstr "Modifier visibilité"
-
-#: lib/abstract/wp-meta.php:1196
-msgctxt "metabox tab"
-msgid "Preview Social"
-msgstr "Aperçu social"
-
-#: lib/abstract/wp-meta.php:1197
-msgctxt "metabox tab"
-msgid "Preview oEmbed"
-msgstr "Aperçu oEmbed"
-
-#: lib/abstract/wp-meta.php:1198
-msgctxt "metabox tab"
-msgid "Validators"
-msgstr "Validateurs"
-
-#: lib/abstract/wp-meta.php:1526
-msgid "Nonce token validation failed for the submitted form (update ignored)."
-msgstr "La validation du jeton nonce pour le formulaire soumis a échoué (mise à jour ignorée)."
-
-#: lib/abstract/wp-meta.php:1857
-msgid "A claim review cannot be the subject of another claim review."
-msgstr "Un examen d'évaluation ne peut pas être le sujet d'un autre examen d'évaluation."
-
-#: lib/abstract/wp-meta.php:1859
-msgid "Please select a subject webpage type that better describes the subject of the webpage (ie. the content) being reviewed."
-msgstr "SVP sélectionner un type de page Web du sujet qui décrit mieux le sujet de la page Web (c'est-à-dire le contenu) en cours de révision."
 
 #: lib/filters-upgrade.php:208
 msgid "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s."
