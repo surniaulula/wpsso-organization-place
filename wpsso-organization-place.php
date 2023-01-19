@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: WPSSO Organization and Place Manager
  * Plugin Slug: wpsso-organization-place
  * Text Domain: wpsso-organization-place
@@ -15,7 +15,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
- * Version: 1.10.0-rc.1
+ * Version: 1.10.0-rc.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 			load_plugin_textdomain( 'wpsso-organization-place', false, 'wpsso-organization-place/languages/' );
 		}
 
-		/**
+		/*
 		 * Require library files with functions or static methods in require_libs().
 		 *
 		 * Require and instantiate library files with dynamic methods in init_objects().

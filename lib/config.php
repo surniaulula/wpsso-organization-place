@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2014-2022 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '1.10.0-rc.1',	// Plugin version.
+					'version'     => '1.10.0-rc.2',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'text_domain' => 'wpsso-organization-place',
 					'domain_path' => '/languages',
 
-					/**
+					/*
 					 * Required plugin and its version.
 					 */
 					'req' => array(
@@ -37,16 +37,16 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.5.0-rc.1',
+							'min_version'   => '14.5.0-rc.2',
 						),
 					),
 
-					/**
+					/*
 					 * URLs or relative paths to plugin banners and icons.
 					 */
 					'assets' => array(
 
-						/**
+						/*
 						 * Icon image array keys are '1x' and '2x'.
 						 */
 						'icons' => array(
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 				),
 			),
 
-			/**
+			/*
 			 * Additional add-on setting options.
 			 */
 			'opt' => array(
@@ -144,7 +144,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 
 			$info =& self::$cf[ 'plugin' ][ 'wpssoopm' ];
 
-			/**
+			/*
 			 * Define fixed constants.
 			 */
 			define( 'WPSSOOPM_FILEPATH', $plugin_file );
@@ -157,7 +157,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			define( 'WPSSOOPM_ORG_POST_TYPE', 'organization' );
 			define( 'WPSSOOPM_PLACE_POST_TYPE', 'place' );
 
-			/**
+			/*
 			 * Define variable constants.
 			 */
 			self::set_variable_constants();
@@ -170,7 +170,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 				$var_const = (array) self::get_variable_constants();
 			}
 
-			/**
+			/*
 			 * Define the variable constants, if not already defined.
 			 */
 			foreach ( $var_const as $name => $value ) {
@@ -189,7 +189,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]   = false;
 			$var_const[ 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ] = false;
 
-			/**
+			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
 			 */
 			foreach ( $var_const as $name => $value ) {
@@ -203,7 +203,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			return $var_const;
 		}
 
-		/**
+		/*
 		 * Require library files with functions or static methods in require_libs().
 		 *
 		 * Require and instantiate library files with dynamic methods in init_objects().
