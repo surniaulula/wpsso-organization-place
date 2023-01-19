@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoOpm class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoOpmFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -125,12 +125,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 				$this->p->debug->log( 'creating meta tags for place' );
 			}
 
-			/**
+			/*
 			 * og:type
 			 */
 			$mt_og[ 'og:type' ] = 'place';	// Pre-define to optimize.
 
-			/**
+			/*
 			 * place:name
 			 * place:name_alt
 			 * place:description
@@ -158,7 +158,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 				$mt_og[ $mt_name ] = isset( $place_opts[ $key ] ) && 'none' !== $place_opts[ $key ] ? $place_opts[ $key ] : '';
 			}
 
-			/**
+			/*
 			 * place:location:latitude
 			 * place:location:longitude
 			 * place:location:altitude
@@ -181,7 +181,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 				}
 			}
 
-			/**
+			/*
 			 * Non-standard meta tags for internal use.
 			 */
 			$business_weekdays = $this->p->cf[ 'form' ][ 'weekdays' ];

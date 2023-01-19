@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoOpm class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoOpmFiltersEdit->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -49,7 +49,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			return is_array( $mixed ) ? $mixed + $place_names : $place_names;
 		}
 
-		/**
+		/*
 		 * Post type 'place' metabox options.
 		 */
 		public function filter_metabox_place_meta_rows( $table_rows, $form, $head_info, $mod ) {
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			return $this->get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = false );
 		}
 
-		/**
+		/*
 		 * Document SSO metabox options.
 		 */
 		public function filter_metabox_sso_edit_schema_rows( $table_rows, $form, $head_info, $mod ) {
@@ -196,7 +196,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					$th_css_class, $css_id = 'meta-place_timezone' ) .
 				'<td>' . $form->get_select_timezone( 'place_timezone' ) . '</td>';
 
-			/**
+			/*
 			 * Example $business_weekdays = array(
 			 *	'sunday'         => 'Sunday',
 			 *	'monday'         => 'Monday',

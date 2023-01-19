@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoOpm class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoOpmFiltersOptions->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -100,7 +100,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					$md_opts[ 'place_desc' ] = '';
 				}
 
-				/**
+				/*
 				 * Always keep the post title, slug, and content updated.
 				 */
 				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
@@ -176,7 +176,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 		private function check_place_image_sizes( $md_opts ) {
 
-			/**
+			/*
 			 * Skip if notices have already been shown.
 			 */
 			if ( ! $this->p->notice->is_admin_pre_notices() ) {

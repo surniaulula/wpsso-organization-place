@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -22,7 +22,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 
 	class WpssoOpmPost extends WpssoPost {
 
-		/**
+		/*
 		 * Instantiated by WpssoOpm->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -40,13 +40,13 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_PLACE_POST_TYPE ]               = 0;
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_PLACE_POST_TYPE . ':disabled' ] = true;
 
-			/**
+			/*
 			 * This hook is fired once WP, all plugins, and the theme are fully loaded and instantiated.
 			 */
 			add_action( 'wp_loaded', array( $this, 'add_wp_hooks' ) );
 		}
 
-		/**
+		/*
 		 * Add WordPress action and filters hooks.
 		 */
 		public function add_wp_hooks() {
@@ -59,7 +59,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Use $post_obj = false to extend WpssoAbstractWpMeta->add_meta_boxes().
 		 */
 		public function add_meta_boxes( $post_type, $post_obj = false ) {

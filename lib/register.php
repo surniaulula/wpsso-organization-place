@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ), 30, 0 );
 		}
 
-		/**
+		/*
 		 * Fires immediately after a new site is created.
 		 */
 		public function wpmu_new_blog( $blog_id, $user_id, $domain, $path, $site_id, $meta ) {
@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			restore_current_blog();
 		}
 
-		/**
+		/*
 		 * Fires immediately after a site is activated (not called when users and sites are created by a Super Admin).
 		 */
 		public function wpmu_activate_blog( $blog_id, $user_id, $password, $signup_title, $meta ) {
@@ -70,14 +70,14 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			self::do_multisite( $sitewide, array( $this, 'deactivate_plugin' ) );
 		}
 
-		/**
+		/*
 		 * uninstall.php defines constants before calling network_uninstall().
 		 */
 		public static function network_uninstall() {
 
 			$sitewide = true;
 
-			/**
+			/*
 			 * Uninstall from the individual blogs first.
 			 */
 			self::do_multisite( $sitewide, array( __CLASS__, 'uninstall_plugin' ) );
@@ -112,7 +112,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 
 			if ( class_exists( 'Wpsso' ) ) {
 
-				/**
+				/*
 				 * Register plugin install, activation, update times.
 				 */
 				if ( class_exists( 'WpssoUtilReg' ) ) { // Since WPSSO Core v6.13.1.

@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -23,7 +23,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			return array_keys( $org_names );
 		}
 
-		/**
+		/*
 		 * Return an associative array of organization IDs and names.
 		 */
 		public static function get_names( $schema_type = '' ) {
@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$org_name = empty( $org_opts[ 'org_name' ] ) ? $def_name : $org_opts[ 'org_name' ];
 				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? 'organization' : $org_opts[ 'org_schema_type' ];
 
-				/**
+				/*
 				 * If we have $schema_type children, skip organization schema types that are not a sub-type of $schema_type.
 				 */
 				if ( $children && ! in_array( $org_type, $children ) ) {
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			return $local_cache[ $schema_type ];
 		}
 
-		/**
+		/*
 		 * Get a specific organization id.
 		 */
 		public static function get_id( $org_id, $mixed = 'current', $opt_key = false ) {
@@ -158,7 +158,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				$org_opts[ 'org_id' ] = $org_id;
 
-				/**
+				/*
 				 * Merging the defaults array also makes sure 'org_schema_type' is defined.
 				 */
 				$org_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'org_md_defaults' ], $org_opts );	// Complete the array.

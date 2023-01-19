@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2021-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -23,7 +23,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			return array_keys( $place_names );
 		}
 
-		/**
+		/*
 		 * Return an associative array of place IDs and names.
 		 */
 		public static function get_names( $schema_type = '' ) {
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_name = empty( $place_opts[ 'place_name' ] ) ? $def_name : $place_opts[ 'place_name' ];
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
 
-				/**
+				/*
 				 * If we have $schema_type children, skip place schema types that are not a sub-type of $schema_type.
 				 */
 				if ( $children && ! in_array( $place_type, $children ) ) {
@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			return $local_cache[ $schema_type ];
 		}
 
-		/**
+		/*
 		 * Get a specific place id.
 		 */
 		public static function get_id( $place_id, $mod = false, $opt_key = false ) {
@@ -139,13 +139,13 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 				$place_opts[ 'place_id' ] = $place_id;
 
-				/**
+				/*
 				 * Merging the defaults array also makes sure 'place_schema_type' is defined.
 				 */
 				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );
 				$place_opts = SucomUtil::preg_grep_keys( '/^place_/', $place_opts );
 
-				/**
+				/*
 				 * If not a local business or food establishment, remove local business or food establishment options.
 				 */
 				if ( $wpsso->schema->is_schema_type_child( $place_opts[ 'place_schema_type' ], 'local.business' ) ) {
@@ -188,7 +188,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			return $place_opts;
 		}
 
-		/**
+		/*
 		 * Return a text a value for the https://schema.org/address property.
 		 */
 		public static function get_address( array $place_opts ) {
