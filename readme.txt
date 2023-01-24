@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.1-dev.2 (2023/01/24)**
+**Version 1.10.1-dev.3 (2023/01/24)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.6.1-dev.2.
+	* WPSSO Core v14.6.1-dev.3.
 
 **Version 1.10.0 (2023/01/20)**
 
@@ -402,7 +402,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.10.1-dev.2 =
+= 1.10.1-dev.3 =
 
 (2023/01/24) Updated the `WpssoAbstractAddOn` library class.
 
