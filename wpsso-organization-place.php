@@ -69,9 +69,11 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 		}
 
 		/*
+		 * Called by Wpsso->set_objects which runs at init priority 10.
+		 *
 		 * Require library files with functions or static methods in require_libs().
 		 *
-		 * Require and instantiate library files with dynamic methods in init_objects().
+		 * Require library files with dynamic methods and instantiate the class object in init_objects().
 		 */
 		public function init_objects() {
 
