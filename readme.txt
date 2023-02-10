@@ -127,6 +127,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.11.0-dev.1 (2023/02/10)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for the new Place tab options in the SSO &gt; Advanced Settings &gt; Schema Defaults metabox.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.2.0-dev.1
+
 **Version 1.10.1 (2023/01/26)**
 
 * **New Features**
@@ -403,6 +418,10 @@ Maintenance release.
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.11.0-dev.1 =
+
+(2023/02/10) Added support for the new Place tab options in the SSO &gt; Advanced Settings &gt; Schema Defaults metabox.
 
 = 1.10.1 =
 
