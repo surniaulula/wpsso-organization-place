@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '1.10.1',	// Plugin version.
+					'version'     => '1.11.0-dev.1',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.7.0',
+							'min_version'   => '15.2.0-dev.1',
 						),
 					),
 
@@ -92,10 +92,10 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_latitude'                 => '',			// Place Latitude.
 					'place_longitude'                => '',			// Place Longitude.
 					'place_altitude'                 => '',			// Place Altitude.
+					'place_timezone'                 => 'UTC',		// Place Timezone.
 					'place_img_id'                   => '',			// Place Image ID.
 					'place_img_id_lib'               => 'wp',
 					'place_img_url'                  => '',			// or Place Image URL.
-					'place_timezone'                 => 'UTC',		// Place Timezone.
 					'place_day_sunday_open'          => 'none',
 					'place_day_sunday_close'         => 'none',
 					'place_day_monday_open'          => 'none',

@@ -51,6 +51,13 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
 
+			/*
+			 * Since WPSSO OPM v1.11.0.
+			 */
+			$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
+			$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
+			$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
+
 			return $md_defs;
 		}
 

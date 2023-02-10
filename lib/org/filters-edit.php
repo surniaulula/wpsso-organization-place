@@ -80,7 +80,13 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					$css_class = '', $css_id = 'meta-org_schema_type' ) .
 				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, $event_names = array( 'on_focus_load_json' ),
-						$event_args = array( 'json_var' => 'schema_org_types' ) ) . '</td>';
+						$event_args = array(
+							'json_var' => 'schema_org_types',
+							'exp_secs'  => WPSSO_CACHE_SELECT_JSON_EXP_SECS,	// Create and read from a javascript URL.
+							'is_transl' => true,					// No label translation required.
+							'is_sorted' => true,					// No label sorting required.
+						)
+					) . '</td>';
 
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
