@@ -127,6 +127,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.11.1-dev.3 (2023/02/16)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Removed the 'is_required' CSS class from input fields.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.3.1-dev.2.
+
 **Version 1.11.0 (2023/02/11)**
 
 * **New Features**
@@ -418,6 +433,10 @@ Maintenance release.
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.11.1-dev.3 =
+
+(2023/02/16) Removed the 'is_required' CSS class from input fields.
 
 = 1.11.0 =
 
