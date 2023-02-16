@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_name' ) .
-				'<td>' . $form->get_input( 'org_name', $css_class = 'long_name is_required' ) . '</td>';
+				'<td>' . $form->get_input( 'org_name', $css_class = 'long_name' ) . '</td>';
 
 			$table_rows[ 'org_name_alt' ] = '' .
 				$form->get_th_html( _x( 'Organization Alternate Name', 'option label', 'wpsso-organization-place' ),
@@ -67,13 +67,13 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				$form->get_th_html( '<a href="https://developers.google.com/search/docs/advanced/structured-data/logo">' .
 				_x( 'Organization Logo URL', 'option label', 'wpsso-organization-place' ) . '</a>',
 					$css_class = '', $css_id = 'meta-org_logo_url' ) .
-				'<td>' . $form->get_input( 'org_logo_url', $css_class = 'wide is_required' ) . '</td>';
+				'<td>' . $form->get_input( 'org_logo_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_banner_url' ] = '' .
 				$form->get_th_html( '<a href="https://developers.google.com/search/docs/data-types/article#logo-guidelines">' .
 				_x( 'Organization Banner URL', 'option label', 'wpsso-organization-place' ) . '</a>',
 					$css_class = '', $css_id = 'meta-org_banner_url' ) .
-				'<td>' . $form->get_input( 'org_banner_url', $css_class = 'wide is_required' ) . '</td>';
+				'<td>' . $form->get_input( 'org_banner_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
