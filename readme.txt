@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.1 (2023/02/18)**
+**Version 1.11.1 (2023/02/17)**
 
 * **New Features**
 	* None.
@@ -436,7 +436,7 @@ Maintenance release.
 
 = 1.11.1 =
 
-(2023/02/18) Removed the 'is_required' CSS class from input fields.
+(2023/02/17) Removed the 'is_required' CSS class from input fields.
 
 = 1.11.0 =
 
