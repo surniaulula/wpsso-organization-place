@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 * WPSSO ORG may have been uninstalled and its 'opt_version' value may be missing from the options array,
 			 * so check for any previous version, including 0 (ie. no 'opt_version').
 			 */
-			if ( $prev_version <= $this->org_last_version ) {
+			if ( $prev_version > 0 && $prev_version <= $this->org_last_version ) {
 
 				$md_opts = $this->convert_numeric_org_ids( $md_opts );
 
@@ -117,7 +117,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 * WPSSO PLM may have been uninstalled and its 'opt_version' value may be missing from the options array,
 			 * so check for any previous version, including 0 (ie. no 'opt_version').
 			 */
-			if ( $prev_version <= $this->plm_last_version ) {
+			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
 
 				foreach ( SucomUtil::get_opts_begin( 'plm_place_', $md_opts ) as $md_key => $val ) {
 
