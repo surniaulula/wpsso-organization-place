@@ -10,7 +10,7 @@ Tags: schema, organization, place, location, local seo, local business, publishe
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
-Requires At Least: 5.4
+Requires At Least: 5.5
 Tested Up To: 6.2.0
 Stable Tag: 1.11.1
 
@@ -139,7 +139,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Removed the 'is_required' CSS class from input fields.
 * **Requires At Least**
 	* PHP v7.2.
-	* WordPress v5.4.
+	* WordPress v5.5.
 	* WPSSO Core v15.3.1.
 
 **Version 1.11.0 (2023/02/11)**
