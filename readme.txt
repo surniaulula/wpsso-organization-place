@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-organization-place/assets/
 Tags: schema, organization, place, location, local seo, local business, publisher
 Contributors: jsmoriss
 Requires Plugins: wpsso
-Requires PHP: 7.2
+Requires PHP: 7.2.5
 Requires At Least: 5.5
 Tested Up To: 6.2.0
 Stable Tag: 1.11.1
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Removed the 'is_required' CSS class from input fields.
 * **Requires At Least**
-	* PHP v7.2.
+	* PHP v7.2.5.
 	* WordPress v5.5.
 	* WPSSO Core v15.3.1.
 
