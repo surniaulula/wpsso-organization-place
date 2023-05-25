@@ -127,6 +127,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.0-dev.5 (2023/05/25)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Renamed the "Organizations" menu item to "SSO - Orgs".
+	* Renamed the "Places" menu item to "SSO - Places".
+	* Moved menu items below the "SSO" settings menu item.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.5.
+	* WordPress v5.5.
+	* WPSSO Core v15.12.0-dev.5.
+
 **Version 1.11.1 (2023/02/17)**
 
 * **New Features**
@@ -433,6 +450,10 @@ Maintenance release.
 	* WPSSO Core v9.12.0.
 
 == Upgrade Notice ==
+
+= 1.12.0-dev.5 =
+
+(2023/05/25) Renamed and moved the "Organizations" and "Places" menu items.
 
 = 1.11.1 =
 
