@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.11.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.12.0-dev.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -475,7 +475,7 @@ msgstr ""
 
 #: lib/register.php:184
 msgctxt "admin menu name"
-msgid "Organizations"
+msgid "SSO - Orgs"
 msgstr ""
 
 #: lib/register.php:185
@@ -692,7 +692,7 @@ msgstr ""
 
 #: lib/register.php:307
 msgctxt "admin menu name"
-msgid "Places"
+msgid "SSO - Places"
 msgstr ""
 
 #: lib/register.php:308

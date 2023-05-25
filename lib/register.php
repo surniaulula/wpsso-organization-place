@@ -27,13 +27,13 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				add_action( 'wpmu_activate_blog', array( $this, 'wpmu_activate_blog' ), 10, 5 );
 			}
 
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ), 20, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
 
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ), 20, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
 
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ), 30, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
 
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ), 30, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
 		}
 
 		/*
@@ -181,7 +181,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'set_featured_image'       => __( 'Set organization image', 'wpsso-organization-place' ),
 				'remove_featured_image'    => __( 'Remove organization image', 'wpsso-organization-place' ),
 				'use_featured_image'       => __( 'Use as organization image', 'wpsso-organization-place' ),
-				'menu_name'                => _x( 'Organizations', 'admin menu name', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO - Orgs', 'admin menu name', 'wpsso-organization-place' ),
 				'filter_items_list'        => __( 'Filter organizations', 'wpsso-organization-place' ),
 				'items_list_navigation'    => __( 'Organizations list navigation', 'wpsso-organization-place' ),
 				'items_list'               => __( 'Organizations list', 'wpsso-organization-place' ),
@@ -215,7 +215,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'show_in_nav_menus'     => true,
 				'show_in_menu'          => true,
 				'show_in_admin_bar'     => true,
-				'menu_position'         => 20,
+				'menu_position'         => WPSSOOPM_ORG_MENU_ORDER,
 				'menu_icon'             => 'dashicons-groups',
 				'capability_type'       => 'page',
 				'hierarchical'          => false,
@@ -304,7 +304,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'set_featured_image'       => __( 'Set place image', 'wpsso-organization-place' ),
 				'remove_featured_image'    => __( 'Remove place image', 'wpsso-organization-place' ),
 				'use_featured_image'       => __( 'Use as place image', 'wpsso-organization-place' ),
-				'menu_name'                => _x( 'Places', 'admin menu name', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO - Places', 'admin menu name', 'wpsso-organization-place' ),
 				'filter_items_list'        => __( 'Filter places', 'wpsso-organization-place' ),
 				'items_list_navigation'    => __( 'Places list navigation', 'wpsso-organization-place' ),
 				'items_list'               => __( 'Places list', 'wpsso-organization-place' ),
@@ -338,7 +338,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'show_in_nav_menus'     => true,
 				'show_in_menu'          => true,
 				'show_in_admin_bar'     => true,
-				'menu_position'         => 20,
+				'menu_position'         => WPSSOOPM_PLACE_MENU_ORDER,
 				'menu_icon'             => 'dashicons-location',
 				'capability_type'       => 'page',
 				'hierarchical'          => false,

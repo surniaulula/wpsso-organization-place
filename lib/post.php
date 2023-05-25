@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 
 			$is_admin = is_admin();	// Only check once.
 
-			if ( ! empty( $_GET ) || basename( $_SERVER[ 'PHP_SELF' ] ) === 'post-new.php' ) {
+			if ( ! empty( $_GET ) || 'post-new' === basename( $_SERVER[ 'PHP_SELF' ], '.php' ) ) {
 
 				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 2 );
 			}

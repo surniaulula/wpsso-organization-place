@@ -18,7 +18,7 @@ if ( ! class_exists( 'WpssoOpmFiltersEdit' ) ) {
 		private $a;	// WpssoOpm class object.
 
 		/*
-		 * Instantiated by WpssoOpm->init_objects().
+		 * Instantiated by WpssoOpmFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
 
