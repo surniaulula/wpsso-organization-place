@@ -160,8 +160,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			$is_public = false;
 
 			$labels = array(
-				'name'                     => _x( 'Organizations', 'Post type general name', 'wpsso-organization-place' ),
-				'singular_name'            => _x( 'Organization', 'Post type singular name', 'wpsso-organization-place' ),
+				'name'                     => _x( 'Organizations', 'post type general name', 'wpsso-organization-place' ),
+				'singular_name'            => _x( 'Organization', 'post type singular name', 'wpsso-organization-place' ),
 				'add_new'                  => __( 'Add Organization', 'wpsso-organization-place' ),
 				'add_new_item'             => __( 'Add Organization', 'wpsso-organization-place' ),
 				'edit_item'                => __( 'Edit Organization', 'wpsso-organization-place' ),
@@ -181,7 +181,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'set_featured_image'       => __( 'Set organization image', 'wpsso-organization-place' ),
 				'remove_featured_image'    => __( 'Remove organization image', 'wpsso-organization-place' ),
 				'use_featured_image'       => __( 'Use as organization image', 'wpsso-organization-place' ),
-				'menu_name'                => _x( 'SSO - Orgs', 'admin menu name', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO Orgs', 'admin menu name', 'wpsso-organization-place' ),
 				'filter_items_list'        => __( 'Filter organizations', 'wpsso-organization-place' ),
 				'items_list_navigation'    => __( 'Organizations list navigation', 'wpsso-organization-place' ),
 				'items_list'               => __( 'Organizations list', 'wpsso-organization-place' ),
@@ -205,9 +205,9 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			}
 
 			$args = array(
-				'label'                 => _x( 'Organization', 'Post type label', 'wpsso-organization-place' ),
+				'label'                 => _x( 'Organization', 'post type label', 'wpsso-organization-place' ),
 				'labels'                => $labels,
-				'description'           => _x( 'Organization', 'Post type description', 'wpsso-organization-place' ),
+				'description'           => _x( 'Organization', 'post type description', 'wpsso-organization-place' ),
 				'exclude_from_search'   => false,	// Must be false for get_posts() queries.
 				'public'                => $is_public,
 				'publicly_queryable'    => $is_public,
@@ -260,7 +260,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			);
 
 			$args = array(
-				'label'              => _x( 'Categories', 'Taxonomy label', 'wpsso-organization-place' ),
+				'label'              => _x( 'Categories', 'taxonomy label', 'wpsso-organization-place' ),
 				'labels'             => $labels,
 				'public'             => $is_public,
 				'publicly_queryable' => $is_public,
@@ -271,7 +271,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'show_tagcloud'      => false,
 				'show_in_quick_edit' => true,
 				'show_admin_column'  => true,
-				'description'        => _x( 'Categories for Organizations', 'Taxonomy description', 'wpsso-organization-place' ),
+				'description'        => _x( 'Categories for Organizations', 'taxonomy description', 'wpsso-organization-place' ),
 				'hierarchical'       => true,
 			);
 
@@ -283,8 +283,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			$is_public = false;
 
 			$labels = array(
-				'name'                     => _x( 'Places', 'Post type general name', 'wpsso-organization-place' ),
-				'singular_name'            => _x( 'Place', 'Post type singular name', 'wpsso-organization-place' ),
+				'name'                     => _x( 'Places', 'post type general name', 'wpsso-organization-place' ),
+				'singular_name'            => _x( 'Place', 'post type singular name', 'wpsso-organization-place' ),
 				'add_new'                  => __( 'Add Place', 'wpsso-organization-place' ),
 				'add_new_item'             => __( 'Add Place', 'wpsso-organization-place' ),
 				'edit_item'                => __( 'Edit Place', 'wpsso-organization-place' ),
@@ -304,7 +304,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'set_featured_image'       => __( 'Set place image', 'wpsso-organization-place' ),
 				'remove_featured_image'    => __( 'Remove place image', 'wpsso-organization-place' ),
 				'use_featured_image'       => __( 'Use as place image', 'wpsso-organization-place' ),
-				'menu_name'                => _x( 'SSO - Places', 'admin menu name', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO Places', 'admin menu name', 'wpsso-organization-place' ),
 				'filter_items_list'        => __( 'Filter places', 'wpsso-organization-place' ),
 				'items_list_navigation'    => __( 'Places list navigation', 'wpsso-organization-place' ),
 				'items_list'               => __( 'Places list', 'wpsso-organization-place' ),
@@ -328,9 +328,9 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			}
 
 			$args = array(
-				'label'                 => _x( 'Place', 'Post type label', 'wpsso-organization-place' ),
+				'label'                 => _x( 'Place', 'post type label', 'wpsso-organization-place' ),
 				'labels'                => $labels,
-				'description'           => _x( 'Location, place, or venue', 'Post type description', 'wpsso-organization-place' ),
+				'description'           => _x( 'Location, place, or venue', 'post type description', 'wpsso-organization-place' ),
 				'exclude_from_search'   => false,	// Must be false for get_posts() queries.
 				'public'                => $is_public,
 				'publicly_queryable'    => $is_public,
@@ -383,7 +383,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			);
 
 			$args = array(
-				'label'              => _x( 'Categories', 'Taxonomy label', 'wpsso-organization-place' ),
+				'label'              => _x( 'Categories', 'taxonomy label', 'wpsso-organization-place' ),
 				'labels'             => $labels,
 				'public'             => $is_public,
 				'publicly_queryable' => $is_public,
@@ -394,7 +394,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'show_tagcloud'      => false,
 				'show_in_quick_edit' => true,
 				'show_admin_column'  => true,
-				'description'        => _x( 'Categories for Places', 'Taxonomy description', 'wpsso-organization-place' ),
+				'description'        => _x( 'Categories for Places', 'taxonomy description', 'wpsso-organization-place' ),
 				'hierarchical'       => true,
 			);
 

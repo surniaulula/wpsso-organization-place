@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.10.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.12.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-01-18 11:56-0800\n"
+"PO-Revision-Date: 2023-05-26 04:13-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,20 +11,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:206
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:220
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:223
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
 #: gettext/gettext-lib-config.php:5
 msgctxt "plugin name"
 msgid "WPSSO Organization and Place Manager"
-msgstr "WPSSO gestionnaire d'organisation et d'endroit"
+msgstr "WPSSO Gestionnaire d'organisation et d'endroit"
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "plugin description"
@@ -75,12 +75,12 @@ msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr "Type de Schéma d'organisation"
 
-#: lib/org/filters-edit.php:86
+#: lib/org/filters-edit.php:92
 msgctxt "option label"
 msgid "Organization Location"
 msgstr "Emplacement de l'organisation"
 
-#: lib/org/filters-edit.php:91
+#: lib/org/filters-edit.php:97
 msgctxt "metabox title"
 msgid "Google's Knowledge Graph"
 msgstr "Knowledge Graph de Google"
@@ -156,199 +156,199 @@ msgctxt "option value"
 msgid "[Custom Place]"
 msgstr "[Endroit personnalisé]"
 
-#: lib/place/filters-edit.php:105
+#: lib/place/filters-edit.php:109
 msgctxt "option label"
 msgid "Place Name"
 msgstr "Nom de l'endroit"
 
-#: lib/place/filters-edit.php:110
+#: lib/place/filters-edit.php:114
 msgctxt "option label"
 msgid "Place Alternate Name"
 msgstr "Autre nom de l'endroit"
 
-#: lib/place/filters-edit.php:115
+#: lib/place/filters-edit.php:119
 msgctxt "option label"
 msgid "Place Description"
 msgstr "Description de l'endroit"
 
-#: lib/place/filters-edit.php:121
+#: lib/place/filters-edit.php:125
 msgctxt "option label"
 msgid "Place Schema Type"
 msgstr "Type de Schéma de l'endroit"
 
-#: lib/place/filters-edit.php:129
+#: lib/place/filters-edit.php:138
 msgctxt "option label"
 msgid "Street Address"
 msgstr "Adresse de rue"
 
-#: lib/place/filters-edit.php:134
+#: lib/place/filters-edit.php:143
 msgctxt "option label"
 msgid "P.O. Box Number"
 msgstr "Num. boîte postale"
 
-#: lib/place/filters-edit.php:139
+#: lib/place/filters-edit.php:148
 msgctxt "option label"
 msgid "City / Locality"
 msgstr "Ville / localité"
 
-#: lib/place/filters-edit.php:144
+#: lib/place/filters-edit.php:153
 msgctxt "option label"
 msgid "State / Province"
 msgstr "État / Province"
 
-#: lib/place/filters-edit.php:149
+#: lib/place/filters-edit.php:158
 msgctxt "option label"
 msgid "Zip / Postal Code"
 msgstr "Zip / code postal"
 
-#: lib/place/filters-edit.php:154
+#: lib/place/filters-edit.php:163
 msgctxt "option label"
 msgid "Country"
 msgstr "Pays"
 
-#: lib/place/filters-edit.php:159
+#: lib/place/filters-edit.php:168
 msgctxt "option label"
 msgid "Telephone"
 msgstr "Téléphone"
 
-#: lib/place/filters-edit.php:166
+#: lib/place/filters-edit.php:175
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr "ID d'image de l'endroit"
 
-#: lib/place/filters-edit.php:171
+#: lib/place/filters-edit.php:180
 msgctxt "option label"
 msgid "or Place Image URL"
 msgstr "ou URL d'image de l'endroit"
 
-#: lib/place/filters-edit.php:177
+#: lib/place/filters-edit.php:186
 msgctxt "option label"
 msgid "Place Latitude"
 msgstr "Latitude de l'endroit"
 
-#: lib/place/filters-edit.php:180 lib/place/filters-edit.php:186
+#: lib/place/filters-edit.php:189 lib/place/filters-edit.php:195
 msgctxt "option comment"
 msgid "decimal degrees"
 msgstr "degrés décimaux"
 
-#: lib/place/filters-edit.php:183
+#: lib/place/filters-edit.php:192
 msgctxt "option label"
 msgid "Place Longitude"
 msgstr "Longitude de l'endroit"
 
-#: lib/place/filters-edit.php:189
+#: lib/place/filters-edit.php:198
 msgctxt "option label"
 msgid "Place Altitude"
 msgstr "Altitude de l'endroit"
 
-#: lib/place/filters-edit.php:192
+#: lib/place/filters-edit.php:201
 msgctxt "option comment"
 msgid "meters above sea level"
 msgstr "mètres au-dessus du niveau de mer"
 
-#: lib/place/filters-edit.php:195
+#: lib/place/filters-edit.php:204
 msgctxt "option label"
 msgid "Place Timezone"
 msgstr "Fuseau horaire de l'endroit"
 
-#: lib/place/filters-edit.php:224
+#: lib/place/filters-edit.php:233
 msgid "Opens at"
 msgstr "Ouvre à"
 
-#: lib/place/filters-edit.php:226
+#: lib/place/filters-edit.php:235
 msgid "and closes at"
 msgstr "et ferme à"
 
-#: lib/place/filters-edit.php:232
+#: lib/place/filters-edit.php:241
 msgid "Every Midday"
 msgstr "Chaque mi-journée"
 
-#: lib/place/filters-edit.php:233
+#: lib/place/filters-edit.php:242
 msgid "Closes at"
 msgstr "Ferme à"
 
-#: lib/place/filters-edit.php:235
+#: lib/place/filters-edit.php:244
 msgid "and re-opens at"
 msgstr "et rouvre à"
 
-#: lib/place/filters-edit.php:242
+#: lib/place/filters-edit.php:251
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr "Jours / heures d'ouverture"
 
-#: lib/place/filters-edit.php:247
+#: lib/place/filters-edit.php:256
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr "Dates saisonnières"
 
-#: lib/place/filters-edit.php:250
+#: lib/place/filters-edit.php:259
 msgid "Open from"
 msgstr "Ouvert de"
 
-#: lib/place/filters-edit.php:252
+#: lib/place/filters-edit.php:261
 msgid "until"
 msgstr "jusqu’à"
 
-#: lib/place/filters-edit.php:254
+#: lib/place/filters-edit.php:263
 msgid "inclusively"
 msgstr "inclusivement"
 
-#: lib/place/filters-edit.php:259
+#: lib/place/filters-edit.php:268
 msgctxt "metabox title"
 msgid "Schema Local Business Information"
 msgstr "Informations de Schéma d'entreprise locale"
 
-#: lib/place/filters-edit.php:263
+#: lib/place/filters-edit.php:272
 msgctxt "option label"
 msgid "Service Radius"
 msgstr "Rayon de service"
 
-#: lib/place/filters-edit.php:266
+#: lib/place/filters-edit.php:275
 msgctxt "option comment"
 msgid "meters from location"
 msgstr "mètres de l'emplacement"
 
-#: lib/place/filters-edit.php:269
+#: lib/place/filters-edit.php:278
 msgctxt "option label"
 msgid "Currencies Accepted"
 msgstr "Devises acceptées"
 
-#: lib/place/filters-edit.php:274
+#: lib/place/filters-edit.php:283
 msgctxt "option label"
 msgid "Payment Accepted"
 msgstr "Paiement accepté"
 
-#: lib/place/filters-edit.php:279
+#: lib/place/filters-edit.php:288
 msgctxt "option label"
 msgid "Price Range"
 msgstr "Échelle de prix"
 
-#: lib/place/filters-edit.php:285
+#: lib/place/filters-edit.php:294
 msgctxt "metabox title"
 msgid "Schema Food Establishment Information"
 msgstr "Informations de Schéma d'établissement alimentaire"
 
-#: lib/place/filters-edit.php:289
+#: lib/place/filters-edit.php:298
 msgctxt "option label"
 msgid "Accepts Reservations"
 msgstr "Accepte des réservations"
 
-#: lib/place/filters-edit.php:294
+#: lib/place/filters-edit.php:303
 msgctxt "option label"
 msgid "Serves Cuisine"
 msgstr "Cuisine servie"
 
-#: lib/place/filters-edit.php:299
+#: lib/place/filters-edit.php:308
 msgctxt "option label"
 msgid "Food Menu URL"
 msgstr "URL du menu alimentaire"
 
-#: lib/place/filters-edit.php:304
+#: lib/place/filters-edit.php:313
 msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr "URL(s) d'action de commande"
 
-#: lib/place/filters-options.php:95 lib/place.php:53
+#: lib/place/filters-options.php:102 lib/place.php:53
 msgctxt "option value"
 msgid "Place #%d"
 msgstr "Endroit #%d"
@@ -380,12 +380,12 @@ msgid "Place"
 msgstr "Endroit"
 
 #: lib/register.php:163
-msgctxt "Post type general name"
+msgctxt "post type general name"
 msgid "Organizations"
 msgstr "Organisations"
 
 #: lib/register.php:164
-msgctxt "Post type singular name"
+msgctxt "post type singular name"
 msgid "Organization"
 msgstr "Organisation"
 
@@ -463,8 +463,8 @@ msgstr "Utiliser comme image d'organisation"
 
 #: lib/register.php:184
 msgctxt "admin menu name"
-msgid "Organizations"
-msgstr "Organisations"
+msgid "SSO Orgs"
+msgstr "SSO Orgs"
 
 #: lib/register.php:185
 msgid "Filter organizations"
@@ -504,12 +504,12 @@ msgid "Organization updated."
 msgstr "Organisation mise à jour."
 
 #: lib/register.php:208
-msgctxt "Post type label"
+msgctxt "post type label"
 msgid "Organization"
 msgstr "Organisation"
 
 #: lib/register.php:210
-msgctxt "Post type description"
+msgctxt "post type description"
 msgid "Organization"
 msgstr "Organisation"
 
@@ -587,22 +587,22 @@ msgid "← Back to categories"
 msgstr "← Retour aux catégories"
 
 #: lib/register.php:263 lib/register.php:386
-msgctxt "Taxonomy label"
+msgctxt "taxonomy label"
 msgid "Categories"
 msgstr "Catégories"
 
 #: lib/register.php:274
-msgctxt "Taxonomy description"
+msgctxt "taxonomy description"
 msgid "Categories for Organizations"
 msgstr "Catégories pour les organisations"
 
 #: lib/register.php:286
-msgctxt "Post type general name"
+msgctxt "post type general name"
 msgid "Places"
 msgstr "Endroits"
 
 #: lib/register.php:287
-msgctxt "Post type singular name"
+msgctxt "post type singular name"
 msgid "Place"
 msgstr "Endroit"
 
@@ -680,8 +680,8 @@ msgstr "Utiliser comme image d'endroit"
 
 #: lib/register.php:307
 msgctxt "admin menu name"
-msgid "Places"
-msgstr "Endroits"
+msgid "SSO Places"
+msgstr "SSO Endroits"
 
 #: lib/register.php:308
 msgid "Filter places"
@@ -721,23 +721,23 @@ msgid "Place updated."
 msgstr "Endroit mis à jour."
 
 #: lib/register.php:331
-msgctxt "Post type label"
+msgctxt "post type label"
 msgid "Place"
 msgstr "Endroit"
 
 #: lib/register.php:333
-msgctxt "Post type description"
+msgctxt "post type description"
 msgid "Location, place, or venue"
 msgstr "Emplacement, endroit ou lieu"
 
 #: lib/register.php:397
-msgctxt "Taxonomy description"
+msgctxt "taxonomy description"
 msgid "Categories for Places"
-msgstr "Catégories d'endroits"
+msgstr "Catégories pour les endroits"
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Organization and Place Manager"
-msgstr "WPSSO gestionnaire d'organisation et d'endroit"
+msgstr "WPSSO Gestionnaire d'organisation et d'endroit"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wpsso.com/extend/plugins/wpsso-organization-place/"

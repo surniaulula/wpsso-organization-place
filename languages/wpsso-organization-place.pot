@@ -392,12 +392,12 @@ msgid "Place"
 msgstr ""
 
 #: lib/register.php:163
-msgctxt "Post type general name"
+msgctxt "post type general name"
 msgid "Organizations"
 msgstr ""
 
 #: lib/register.php:164
-msgctxt "Post type singular name"
+msgctxt "post type singular name"
 msgid "Organization"
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 
 #: lib/register.php:184
 msgctxt "admin menu name"
-msgid "SSO - Orgs"
+msgid "SSO Orgs"
 msgstr ""
 
 #: lib/register.php:185
@@ -516,12 +516,12 @@ msgid "Organization updated."
 msgstr ""
 
 #: lib/register.php:208
-msgctxt "Post type label"
+msgctxt "post type label"
 msgid "Organization"
 msgstr ""
 
 #: lib/register.php:210
-msgctxt "Post type description"
+msgctxt "post type description"
 msgid "Organization"
 msgstr ""
 
@@ -599,22 +599,22 @@ msgid "← Back to categories"
 msgstr ""
 
 #: lib/register.php:263 lib/register.php:386
-msgctxt "Taxonomy label"
+msgctxt "taxonomy label"
 msgid "Categories"
 msgstr ""
 
 #: lib/register.php:274
-msgctxt "Taxonomy description"
+msgctxt "taxonomy description"
 msgid "Categories for Organizations"
 msgstr ""
 
 #: lib/register.php:286
-msgctxt "Post type general name"
+msgctxt "post type general name"
 msgid "Places"
 msgstr ""
 
 #: lib/register.php:287
-msgctxt "Post type singular name"
+msgctxt "post type singular name"
 msgid "Place"
 msgstr ""
 
@@ -692,7 +692,7 @@ msgstr ""
 
 #: lib/register.php:307
 msgctxt "admin menu name"
-msgid "SSO - Places"
+msgid "SSO Places"
 msgstr ""
 
 #: lib/register.php:308
@@ -733,17 +733,17 @@ msgid "Place updated."
 msgstr ""
 
 #: lib/register.php:331
-msgctxt "Post type label"
+msgctxt "post type label"
 msgid "Place"
 msgstr ""
 
 #: lib/register.php:333
-msgctxt "Post type description"
+msgctxt "post type description"
 msgid "Location, place, or venue"
 msgstr ""
 
 #: lib/register.php:397
-msgctxt "Taxonomy description"
+msgctxt "taxonomy description"
 msgid "Categories for Places"
 msgstr ""
 
