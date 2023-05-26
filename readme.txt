@@ -132,8 +132,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Renamed the "Organizations" menu item to "SSO - Orgs".
-	* Renamed the "Places" menu item to "SSO - Places".
+	* Renamed the "Organizations" menu item to "SSO Orgs".
+	* Renamed the "Places" menu item to "SSO Places".
 	* Moved menu items below the "SSO" settings menu item.
 * **Bugfixes**
 	* None.
