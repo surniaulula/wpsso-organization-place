@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.0-rc.1 (2023/05/26)**
+**Version 1.12.0 (2023/05/26)**
 
 * **New Features**
 	* None.
@@ -142,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.5.
 	* WordPress v5.5.
-	* WPSSO Core v15.12.0-rc.1.
+	* WPSSO Core v15.12.0.
 
 **Version 1.11.1 (2023/02/17)**
 
@@ -451,7 +451,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.12.0-rc.1 =
+= 1.12.0 =
 
 (2023/05/26) Renamed and moved the "Organizations" and "Places" menu items.
 
