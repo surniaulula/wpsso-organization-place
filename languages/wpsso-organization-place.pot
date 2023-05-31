@@ -147,7 +147,7 @@ msgstr ""
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
-#: lib/org.php:137 lib/org.php:147
+#: lib/org.php:137 lib/org.php:148
 msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
@@ -155,11 +155,11 @@ msgstr ""
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
-#: lib/org.php:149
+#: lib/org.php:150
 msgid "Organization ID #%s does not exist."
 msgstr ""
 
-#: lib/org.php:151
+#: lib/org.php:152
 msgid "Please select a different organization."
 msgstr ""
 
@@ -365,7 +365,7 @@ msgctxt "option value"
 msgid "Place #%d"
 msgstr ""
 
-#: lib/place.php:118 lib/place.php:128
+#: lib/place.php:118 lib/place.php:129
 msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
@@ -373,11 +373,11 @@ msgstr ""
 msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
-#: lib/place.php:130
+#: lib/place.php:131
 msgid "Place ID #%s does not exist."
 msgstr ""
 
-#: lib/place.php:132
+#: lib/place.php:133
 msgid "Please select a different place."
 msgstr ""
 

@@ -134,21 +134,23 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 					$org_page_link = get_edit_post_link( $post_id );
 
-					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $post_id );
-					$notice_msg .= ' ';
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
+						'wpsso-organization-place' ), $post_id ) . ' ';
 					$notice_msg .= $org_page_link ? '<a href="' . $org_page_link . '">' : '';
-					$notice_msg .= sprintf( __( 'Please publish organization ID #%s or select a different organization.', 'wpsso-organization-place' ), $post_id );
+					$notice_msg .= sprintf( __( 'Please publish organization ID #%s or select a different organization.',
+						'wpsso-organization-place' ), $post_id );
 					$notice_msg .= $org_page_link ? '</a>' : '';
 
 					$wpsso->notice->err( $notice_msg );
 
 				} else {
 
-					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $post_id );
-					$notice_msg .= ' ';
-					$notice_msg .= sprintf( __( 'Organization ID #%s does not exist.', 'wpsso-organization-place' ), $post_id );
-					$notice_msg .= ' ';
-					$notice_msg .= __( 'Please select a different organization.', 'wpsso-organization-place' );
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
+						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg .= sprintf( __( 'Organization ID #%s does not exist.',
+						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg .= __( 'Please select a different organization.',
+						'wpsso-organization-place' );
 
 					$wpsso->notice->err( $notice_msg );
 				}
