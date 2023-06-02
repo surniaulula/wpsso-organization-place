@@ -205,25 +205,25 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			}
 
 			$args = array(
-				'label'                 => _x( 'Organization', 'post type label', 'wpsso-organization-place' ),
-				'labels'                => $labels,
-				'description'           => _x( 'Organization', 'post type description', 'wpsso-organization-place' ),
-				'exclude_from_search'   => false,	// Must be false for get_posts() queries.
-				'public'                => $is_public,
-				'publicly_queryable'    => $is_public,
-				'show_ui'               => true,
-				'show_in_nav_menus'     => true,
-				'show_in_menu'          => true,
-				'show_in_admin_bar'     => true,
-				'menu_position'         => WPSSOOPM_ORG_MENU_ORDER,
-				'menu_icon'             => 'dashicons-groups',
-				'capability_type'       => 'page',
-				'hierarchical'          => false,
-				'supports'              => $supports,
-				'taxonomies'            => $taxonomies,
-				'has_archive'           => 'orgs',
-				'can_export'            => true,
-				'show_in_rest'          => true,
+				'label'               => _x( 'Organization', 'post type label', 'wpsso-organization-place' ),
+				'labels'              => $labels,
+				'description'         => _x( 'Organization', 'post type description', 'wpsso-organization-place' ),
+				'exclude_from_search' => false,	// Must be false for get_posts() queries.
+				'public'              => $is_public,
+				'publicly_queryable'  => $is_public,
+				'show_ui'             => true,
+				'show_in_nav_menus'   => true,
+				'show_in_menu'        => true,
+				'show_in_admin_bar'   => true,
+				'menu_position'       => WPSSOOPM_ORG_MENU_ORDER,
+				'menu_icon'           => 'dashicons-groups',
+				'capability_type'     => 'page',
+				'hierarchical'        => false,
+				'supports'            => $supports,
+				'taxonomies'          => $taxonomies,
+				'has_archive'         => 'orgs',
+				'can_export'          => true,
+				'show_in_rest'        => true,
 			);
 
 			register_post_type( WPSSOOPM_ORG_POST_TYPE, $args );
@@ -328,25 +328,25 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			}
 
 			$args = array(
-				'label'                 => _x( 'Place', 'post type label', 'wpsso-organization-place' ),
-				'labels'                => $labels,
-				'description'           => _x( 'Location, place, or venue', 'post type description', 'wpsso-organization-place' ),
-				'exclude_from_search'   => false,	// Must be false for get_posts() queries.
-				'public'                => $is_public,
-				'publicly_queryable'    => $is_public,
-				'show_ui'               => true,
-				'show_in_nav_menus'     => true,
-				'show_in_menu'          => true,
-				'show_in_admin_bar'     => true,
-				'menu_position'         => WPSSOOPM_PLACE_MENU_ORDER,
-				'menu_icon'             => 'dashicons-location',
-				'capability_type'       => 'page',
-				'hierarchical'          => false,
-				'supports'              => $supports,
-				'taxonomies'            => $taxonomies,
-				'has_archive'           => 'places',
-				'can_export'            => true,
-				'show_in_rest'          => true,
+				'label'               => _x( 'Place', 'post type label', 'wpsso-organization-place' ),
+				'labels'              => $labels,
+				'description'         => _x( 'Location, place, or venue', 'post type description', 'wpsso-organization-place' ),
+				'exclude_from_search' => false,	// Must be false for get_posts() queries.
+				'public'              => $is_public,
+				'publicly_queryable'  => $is_public,
+				'show_ui'             => true,
+				'show_in_nav_menus'   => true,
+				'show_in_menu'        => true,
+				'show_in_admin_bar'   => true,
+				'menu_position'       => WPSSOOPM_PLACE_MENU_ORDER,
+				'menu_icon'           => 'dashicons-location',
+				'capability_type'     => 'page',
+				'hierarchical'        => false,
+				'supports'            => $supports,
+				'taxonomies'          => $taxonomies,
+				'has_archive'         => 'places',
+				'can_export'          => true,
+				'show_in_rest'        => true,
 			);
 
 			register_post_type( WPSSOOPM_PLACE_POST_TYPE, $args );
