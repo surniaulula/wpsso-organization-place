@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				) );
 			}
 
-			$place_opts = false;	// Return false by defaults.
+			$place_opts = false;	// Return false by default.
 
 			if ( 'custom' === $place_id ) {	// Read place options from the post, term, or user object.
 
@@ -141,10 +141,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 				$place_opts[ 'place_id' ] = $place_id;
 
-				/*
-				 * Merging the defaults array also makes sure 'place_schema_type' is defined.
-				 */
-				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );
+				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );	// Complete the array.
 				$place_opts = SucomUtil::preg_grep_keys( '/^place_/', $place_opts );
 
 				/*

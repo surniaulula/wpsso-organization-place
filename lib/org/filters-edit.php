@@ -46,12 +46,12 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_name' ) .
-				'<td>' . $form->get_input( 'org_name', $css_class = 'long_name' ) . '</td>';
+				'<td>' . $form->get_input( 'org_name', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_name_alt' ] = '' .
 				$form->get_th_html( _x( 'Organization Alternate Name', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_name_alt' ) .
-				'<td>' . $form->get_input( 'org_name_alt', $css_class = 'long_name' ) . '</td>';
+				'<td>' . $form->get_input( 'org_name_alt', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_desc' ] = '' .
 				$form->get_th_html( _x( 'Organization Description', 'option label', 'wpsso-organization-place' ),
@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_place_id' ) .
-				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'long_name', $css_id = '', $is_assoc = true ) . '</td>';
+				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
 
 			$table_rows[ 'subsection_google_knowledgegraph' ] = '<td colspan="2" class="subsection"><h4>' .
 				_x( 'Google\'s Knowledge Graph', 'metabox title', 'wpsso-organization-place' ) . '</h4></td>';

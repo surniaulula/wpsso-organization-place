@@ -83,7 +83,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				) );
 			}
 
-			$org_opts = false;	// Return false by defaults.
+			$org_opts = false;	// Return false by default.
 
 			if ( 'site' === $org_id ) {
 
@@ -160,9 +160,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				$org_opts[ 'org_id' ] = $org_id;
 
-				/*
-				 * Merging the defaults array also makes sure 'org_schema_type' is defined.
-				 */
 				$org_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'org_md_defaults' ], $org_opts );	// Complete the array.
 				$org_opts = SucomUtil::preg_grep_keys( '/^org_/', $org_opts );
 			}
