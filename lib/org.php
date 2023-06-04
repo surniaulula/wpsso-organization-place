@@ -161,6 +161,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$org_opts[ 'org_id' ] = $org_id;
 
 				$org_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'org_md_defaults' ], $org_opts );	// Complete the array.
+
 				$org_opts = SucomUtil::preg_grep_keys( '/^org_/', $org_opts );
 			}
 

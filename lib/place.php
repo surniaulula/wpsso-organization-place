@@ -142,6 +142,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_opts[ 'place_id' ] = $place_id;
 
 				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );	// Complete the array.
+
 				$place_opts = SucomUtil::preg_grep_keys( '/^place_/', $place_opts );
 
 				/*
