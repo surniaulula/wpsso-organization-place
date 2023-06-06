@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '1.13.0-dev.1',	// Plugin version.
+					'version'     => '1.13.0-dev.2',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '15.13.1-dev.1',
+							'min_version'   => '15.13.1-dev.2',
 						),
 					),
 
@@ -68,14 +68,19 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 */
 			'opt' => array(
 				'org_md_defaults' => array(
-					'org_name'        => '',
-					'org_name_alt'    => '',
-					'org_desc'        => '',
-					'org_url'         => '',
-					'org_logo_url'    => '',
-					'org_banner_url'  => '',
-					'org_schema_type' => 'organization',
-					'org_place_id'    => 'none',
+					'org_name'                          => '',
+					'schema_def_pub_org_id'             => 0,
+					'schema_def_prov_org_id'            => 0,
+					'schema_def_event_organizer_org_id' => 0,
+					'schema_def_event_performer_org_id' => 0,
+					'schema_def_job_hiring_org_id'      => 0,
+					'org_name_alt'                      => '',
+					'org_desc'                          => '',
+					'org_url'                           => '',
+					'org_logo_url'                      => '',
+					'org_banner_url'                    => '',
+					'org_schema_type'                   => 'organization',
+					'org_place_id'                      => 'none',
 				),
 				'place_md_defaults' => array(
 					'place_schema_type'                     => 'local.business',	// Place Schema Type.

@@ -116,7 +116,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						// Translators: Please ignore - translation uses a different text domain.
 						'schema_def_event_location_id' => _x( 'Default Event Venue', 'option label', 'wpsso' ),
 						// Translators: Please ignore - translation uses a different text domain.
-						'schema_def_job_location_id'   => _x( 'Default Job Location', 'option label', 'wpsso' ),
+						'schema_def_job_location_id' => _x( 'Default Job Location', 'option label', 'wpsso' ),
 					) ) . '</td>';
 
 				$table_rows[ 'place_name_alt' ] = $tr_hide_place_html .

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.13.0-dev.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.13.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -51,42 +51,72 @@ msgctxt "option label"
 msgid "Organization Name"
 msgstr ""
 
-#: lib/org/filters-edit.php:52
+#. Translators: Please ignore - translation uses a different text domain.
+#: lib/org/filters-edit.php:55
+msgctxt "option label"
+msgid "Default Publisher Organization"
+msgstr ""
+
+#. Translators: Please ignore - translation uses a different text domain.
+#: lib/org/filters-edit.php:57
+msgctxt "option label"
+msgid "Default Service Provider Org."
+msgstr ""
+
+#. Translators: Please ignore - translation uses a different text domain.
+#: lib/org/filters-edit.php:59
+msgctxt "option label"
+msgid "Default Event Organizer Org."
+msgstr ""
+
+#. Translators: Please ignore - translation uses a different text domain.
+#: lib/org/filters-edit.php:61
+msgctxt "option label"
+msgid "Default Event Performer Org."
+msgstr ""
+
+#. Translators: Please ignore - translation uses a different text domain.
+#: lib/org/filters-edit.php:63
+msgctxt "option label"
+msgid "Default Job Hiring Organization"
+msgstr ""
+
+#: lib/org/filters-edit.php:67
 msgctxt "option label"
 msgid "Organization Alternate Name"
 msgstr ""
 
-#: lib/org/filters-edit.php:57
+#: lib/org/filters-edit.php:72
 msgctxt "option label"
 msgid "Organization Description"
 msgstr ""
 
-#: lib/org/filters-edit.php:62
+#: lib/org/filters-edit.php:77
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:68
+#: lib/org/filters-edit.php:83
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:74
+#: lib/org/filters-edit.php:89
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:79
+#: lib/org/filters-edit.php:94
 msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr ""
 
-#: lib/org/filters-edit.php:92
+#: lib/org/filters-edit.php:107
 msgctxt "option label"
 msgid "Organization Location"
 msgstr ""
 
-#: lib/org/filters-edit.php:97
+#: lib/org/filters-edit.php:112
 msgctxt "metabox title"
 msgid "Google's Knowledge Graph"
 msgstr ""
