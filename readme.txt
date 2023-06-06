@@ -127,12 +127,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.0-dev.1 (2023/06/05)**
+**Version 1.13.0-dev.2 (2023/06/06)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added options to the Organization editing page:
+		* Default Publisher Organization
+		* Default Service Provider Org.
+		* Default Event Organizer Org.
+		* Default Event Performer Org.
+		* Default Job Hiring Organization
+	* Added options to the Place editing page:
+		* Default Event Venue
+		* Default Job Location
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -140,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.5.
 	* WordPress v5.5.
-	* WPSSO Core v15.13.1-dev.1.
+	* WPSSO Core v15.13.1-dev.2.
 
 **Version 1.12.0 (2023/05/26)**
 
@@ -221,9 +229,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.13.0-dev.1 =
+= 1.13.0-dev.2 =
 
-(2023/06/05) None.
+(2023/06/06) Added options to the Organization and Place editing pages.
 
 = 1.12.0 =
 
