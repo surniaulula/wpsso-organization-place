@@ -110,6 +110,15 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						$th_css_class, $css_id = 'meta-place_name' ) .
 					'<td>' . $form->get_input( 'place_name', $css_class = 'wide' ) . '</td>';
 
+				$table_rows[ 'place_defaults' ] = $tr_hide_place_html .
+					$form->get_th_html( '', $th_css_class ) . '<td>' .
+					$form->get_checklist( 'place_is', array(
+						// Translators: Please ignore - translation uses a different text domain.
+						'schema_def_event_location_id' => _x( 'Default Event Venue', 'option label', 'wpsso' ),
+						// Translators: Please ignore - translation uses a different text domain.
+						'schema_def_job_location_id'   => _x( 'Default Job Location', 'option label', 'wpsso' ),
+					) ) . '</td>';
+
 				$table_rows[ 'place_name_alt' ] = $tr_hide_place_html .
 					$form->get_th_html( _x( 'Place Alternate Name', 'option label', 'wpsso-organization-place' ),
 						$th_css_class, $css_id = 'meta-place_name_alt' ) .
