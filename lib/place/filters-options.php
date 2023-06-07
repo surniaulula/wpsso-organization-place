@@ -49,6 +49,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 		public function filter_get_post_defaults( $md_defs, $post_id, $rel, $mod ) {
 
+			$place_id = 'place-' . $mod[ 'id' ];
+
 			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
 
 			/*
@@ -57,6 +59,14 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
 			$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
 			$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
+
+			/*
+			 * Check if this place ID is in some default options.
+			 */
+			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
+
+				$md_defs[ 'place_is_' . $opts_key ] = $place_id === $this->p->options[ $opts_key ] ? 1 : 0;
+			}
 
 			return $md_defs;
 		}
@@ -97,6 +107,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
+				$place_id = 'place-' . $mod[ 'id' ];
+
 				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
 
 					$md_opts[ 'place_name' ] = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
@@ -111,6 +123,26 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				 * Always keep the post title, slug, and content updated.
 				 */
 				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
+
+				/*
+				 * Check if some default options need to be updated.
+				 */
+				foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
+
+					if ( empty( $md_opts[ 'place_is_' . $opts_key ] ) ) {	// Checkbox is unchecked.
+
+						if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
+
+							WpssoUtilReg::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );
+						}
+
+					} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
+
+						WpssoUtilReg::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );
+					}
+
+					unset( $md_opts[ 'place_is_' . $opts_key ] );
+				}
 
 				$this->check_place_image_sizes( $md_opts );
 
@@ -140,22 +172,22 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			switch ( $base_key ) {
 
-				case ( preg_match( '/^place_(country|schema_type)$/', $base_key ) ? true : false ):
-
-					return 'not_blank';
-
 				case ( preg_match( '/^place_(name|name_alt|desc|phone|street_address|city|state|postal_code|zipcode)$/', $base_key ) ? true : false ):
 				case ( preg_match( '/^place_(phone|price_range|cuisine)$/', $base_key ) ? true : false ):
 
 					return 'ok_blank';
 
-				case ( preg_match( '/^place_(currencies_accepted|payment_accepted)$/', $base_key ) ? true : false ):
+				case ( preg_match( '/^place_(country|schema_type)$/', $base_key ) ? true : false ):
 
-					return 'csv_blank';
+					return 'not_blank';
 
 				case ( preg_match( '/^place_(latitude|longitude|altitude|service_radius|po_box_number)$/', $base_key ) ? true : false ):
 
 					return 'blank_num';
+
+				case ( preg_match( '/^place_(currencies_accepted|payment_accepted)$/', $base_key ) ? true : false ):
+
+					return 'csv_blank';
 
 				case ( preg_match( '/^place_(day_[a-z]+|midday)_(open|close)$/', $base_key ) ? true : false ):
 
@@ -174,6 +206,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					return 'csv_urls';
 
 				case 'place_accept_res':
+				case ( 0 === strpos( $base_key, 'place_is_' ) ? true : false ):
 
 					return 'checkbox';
 			}

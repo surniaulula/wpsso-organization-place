@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Organization and Place Manager 1.12.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-05-26 04:13-0700\n"
+"PO-Revision-Date: 2023-06-05 11:53-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -714,7 +714,7 @@ msgstr "Endroit remis au brouillon."
 
 #: lib/register.php:315
 msgid "Place scheduled."
-msgstr "Endoit planifié."
+msgstr "Endroit planifié."
 
 #: lib/register.php:316
 msgid "Place updated."

@@ -48,20 +48,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					$css_class = '', $css_id = 'meta-org_name' ) .
 				'<td>' . $form->get_input( 'org_name', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_defaults' ] = '' .
-				$form->get_th_html( '' ) . '<td>' .
-				$form->get_checklist( 'org_is', array(
-					// Translators: Please ignore - translation uses a different text domain.
-					'schema_def_pub_org_id' => _x( 'Default Publisher Organization', 'option label', 'wpsso' ),
-					// Translators: Please ignore - translation uses a different text domain.
-					'schema_def_prov_org_id' => _x( 'Default Service Provider Org.', 'option label', 'wpsso' ),
-					// Translators: Please ignore - translation uses a different text domain.
-					'schema_def_event_organizer_org_id' => _x( 'Default Event Organizer Org.', 'option label', 'wpsso' ),
-					// Translators: Please ignore - translation uses a different text domain.
-					'schema_def_event_performer_org_id' => _x( 'Default Event Performer Org.', 'option label', 'wpsso' ),
-					// Translators: Please ignore - translation uses a different text domain.
-					'schema_def_job_hiring_org_id' => _x( 'Default Job Hiring Organization', 'option label', 'wpsso' ),
-				) ) . '</td>';
+			$table_rows[ 'org_is_defaults' ] = '' .
+				$form->get_th_html( '' ) .
+				'<td>' . $form->get_checklist( 'org_is', $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) . '</td>';
 
 			$table_rows[ 'org_name_alt' ] = '' .
 				$form->get_th_html( _x( 'Organization Alternate Name', 'option label', 'wpsso-organization-place' ),

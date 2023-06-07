@@ -49,7 +49,17 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 		public function filter_get_post_defaults( $md_defs, $post_id, $rel, $mod ) {
 
+			$org_id = 'org-' . $mod[ 'id' ];
+
 			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
+
+			/*
+			 * Check if this organization ID is in some default options.
+			 */
+			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
+
+				$md_defs[ 'org_is_' . $opts_key ] = $org_id === $this->p->options[ $opts_key ] ? 1 : 0;
+			}
 
 			return $md_defs;
 		}
@@ -84,6 +94,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
+				$org_id = 'org-' . $mod[ 'id' ];
+
 				if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
 
 					$md_opts[ 'org_name' ] = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
@@ -98,6 +110,26 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				 * Always keep the post title, slug, and content updated.
 				 */
 				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
+
+				/*
+				 * Check if some default options need to be updated.
+				 */
+				foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
+
+					if ( empty( $md_opts[ 'org_is_' . $opts_key ] ) ) {	// Checkbox is unchecked.
+
+						if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
+
+							WpssoUtilReg::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );
+						}
+
+					} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
+
+						WpssoUtilReg::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );
+					}
+
+					unset( $md_opts[ 'org_is_' . $opts_key ] );
+				}
 
 				$this->check_org_image_sizes( $md_opts );
 			}
@@ -118,16 +150,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			switch ( $base_key ) {
 
-				case 'org_desc':
 				case 'org_name':
 				case 'org_name_alt':
+				case 'org_desc':
 
 					return 'ok_blank';
-
-				case 'org_banner_url':
-				case 'org_logo_url':
-
-					return 'img_url';
 
 				case 'org_place_id':
 				case 'org_schema_type':
@@ -135,12 +162,18 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					return 'not_blank';
 
 				case 'org_url':
-
-					return 'url';
-
 				case ( strpos( $base_key, '_url' ) && isset( $this->p->cf[ 'form' ][ 'social_accounts' ][ substr( $base_key, 4 ) ] ) ? true : false ):
 
 					return 'url';
+
+				case 'org_banner_url':
+				case 'org_logo_url':
+
+					return 'img_url';
+
+				case ( 0 === strpos( $base_key, 'org_is_' ) ? true : false ):
+
+					return 'checkbox';
 			}
 
 			return $type;
