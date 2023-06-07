@@ -126,59 +126,59 @@ msgctxt "metabox title"
 msgid "Google's Knowledge Graph"
 msgstr ""
 
-#: lib/org/filters-options.php:101 lib/org.php:53
+#: lib/org/filters-options.php:102 lib/org.php:53
 msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:215
+#: lib/org/filters-options.php:226
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:223
+#: lib/org/filters-options.php:234
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:246
+#: lib/org/filters-options.php:257
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:250 lib/org/filters-options.php:281
+#: lib/org/filters-options.php:261 lib/org/filters-options.php:292
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:258
+#: lib/org/filters-options.php:269
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:262
+#: lib/org/filters-options.php:273
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:277
+#: lib/org/filters-options.php:288
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:289
+#: lib/org/filters-options.php:300
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:293
+#: lib/org/filters-options.php:304
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
@@ -395,7 +395,7 @@ msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
 
-#: lib/place/filters-options.php:114 lib/place.php:53
+#: lib/place/filters-options.php:115 lib/place.php:53
 msgctxt "option value"
 msgid "Place #%d"
 msgstr ""

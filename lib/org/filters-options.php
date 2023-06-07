@@ -26,11 +26,12 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'get_organization_options' => 3,
-				'get_post_defaults'        => 4,
-				'get_post_options'         => 3,
-				'save_post_options'        => 3,
-				'option_type'              => 2,
+				'get_organization_options'        => 3,
+				'get_post_defaults'               => 4,
+				'get_post_options'                => 3,
+				'save_post_options'               => 3,
+				'option_type'                     => 2,
+				'plugin_upgrade_advanced_exclude' => 1,
 			) );
 		}
 
@@ -177,6 +178,16 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			}
 
 			return $type;
+		}
+
+		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
+
+			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
+			
+				$adv_exclude[] = $opts_key;
+			}
+
+			return $adv_exclude;
 		}
 
 		private function check_org_image_sizes( $md_opts ) {

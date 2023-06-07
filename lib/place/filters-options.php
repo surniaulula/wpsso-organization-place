@@ -26,11 +26,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'get_place_options' => 3,
-				'get_post_defaults' => 4,
-				'get_post_options'  => 3,
-				'save_post_options' => 3,
-				'option_type'       => 2,
+				'get_place_options'               => 3,
+				'get_post_defaults'               => 4,
+				'get_post_options'                => 3,
+				'save_post_options'               => 3,
+				'option_type'                     => 2,
+				'plugin_upgrade_advanced_exclude' => 1,
 			) );
 		}
 
@@ -212,6 +213,16 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			}
 
 			return $type;
+		}
+
+		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
+
+			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
+			
+				$adv_exclude[] = $opts_key;
+			}
+
+			return $adv_exclude;
 		}
 
 		private function check_place_image_sizes( $md_opts ) {
