@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.0-rc.1 (2023/06/06)**
+**Version 1.13.0 (2023/06/06)**
 
 * **New Features**
 	* None.
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.5.
 	* WordPress v5.5.
-	* WPSSO Core v15.13.1-rc.1.
+	* WPSSO Core v15.13.1.
 
 **Version 1.12.0 (2023/05/26)**
 
@@ -229,7 +229,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.13.0-rc.1 =
+= 1.13.0 =
 
 (2023/06/06) Added options to the Organization and Place editing pages.
 
