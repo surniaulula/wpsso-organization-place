@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-organization-place/assets/
 Tags: schema, organization, place, location, local seo, local business, publisher
 Contributors: jsmoriss
 Requires Plugins: wpsso
-Requires PHP: 7.2.5
+Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.2.2
 Stable Tag: 1.13.0
@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* None.
 * **Requires At Least**
-	* PHP v7.2.5.
+	* PHP v7.2.34.
 	* WordPress v5.5.
 	* WPSSO Core v15.13.1.
 
@@ -163,69 +163,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* None.
 * **Requires At Least**
-	* PHP v7.2.5.
+	* PHP v7.2.
 	* WordPress v5.5.
 	* WPSSO Core v15.12.0.
-
-**Version 1.11.1 (2023/02/17)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed the 'is_required' CSS class from input fields.
-* **Requires At Least**
-	* PHP v7.2.5.
-	* WordPress v5.5.
-	* WPSSO Core v15.3.1.
-
-**Version 1.11.0 (2023/02/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added support for the new Place tab options in the SSO &gt; Advanced Settings &gt; Schema Defaults metabox.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v15.2.0.
-
-**Version 1.10.1 (2023/01/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the minimum WordPress version from v5.2 to v5.5.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `WpssoAbstractAddOn` library class.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v14.7.0.
-
-**Version 1.10.0 (2023/01/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `SucomAbstractAddOn` common library class.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v14.5.0.
 
 == Upgrade Notice ==
 
@@ -236,20 +176,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 1.12.0 =
 
 (2023/05/26) Renamed and moved the "Organizations" and "Places" menu items.
-
-= 1.11.1 =
-
-(2023/02/17) Removed the 'is_required' CSS class from input fields.
-
-= 1.11.0 =
-
-(2023/02/11) Added support for the new Place tab options in the SSO &gt; Advanced Settings &gt; Schema Defaults metabox.
-
-= 1.10.1 =
-
-(2023/01/26) Updated the minimum WordPress version from v5.2 to v5.5.
-
-= 1.10.0 =
-
-(2023/01/20) Updated the `SucomAbstractAddOn` common library class.
 
