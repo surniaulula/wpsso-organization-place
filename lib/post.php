@@ -138,7 +138,7 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 
 			$filter_name = 'wpsso_metabox_' . $metabox_id . '_meta_rows';
 
-			$table_rows = (array) apply_filters( $filter_name, array(), $this->form, array(), $mod );
+			$table_rows = apply_filters( $filter_name, array(), $this->form, array(), $mod );
 
 			$metabox_html = "\n" . '<div id="' . $container_id . '">';
 			$metabox_html .= $this->p->util->metabox->get_table( $table_rows, 'wpsso-' . $metabox_id );
