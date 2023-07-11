@@ -162,15 +162,21 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 					return 'not_blank';
 
+				case 'org_logo_url':
+				case 'org_banner_url':
+
+					return 'img_url';
+
 				case 'org_url':
+				case 'org_pub_principles_url':
+				case 'org_corrections_policy_url':
+				case 'org_diversity_policy_url':
+				case 'org_ethics_policy_url':
+				case 'org_feedback_policy_url':
+				case 'org_sources_policy_url':
 				case ( strpos( $base_key, '_url' ) && isset( $this->p->cf[ 'form' ][ 'social_accounts' ][ substr( $base_key, 4 ) ] ) ? true : false ):
 
 					return 'url';
-
-				case 'org_banner_url':
-				case 'org_logo_url':
-
-					return 'img_url';
 
 				case ( 0 === strpos( $base_key, 'org_is_' ) ? true : false ):
 

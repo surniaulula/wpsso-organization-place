@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.13.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.14.0-b.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -113,17 +113,52 @@ msgstr ""
 
 #: lib/org/filters-edit.php:83
 msgctxt "option label"
-msgid "Organization Schema Type"
-msgstr ""
-
-#: lib/org/filters-edit.php:96
-msgctxt "option label"
 msgid "Organization Location"
 msgstr ""
 
-#: lib/org/filters-edit.php:101
+#: lib/org/filters-edit.php:88
+msgctxt "option label"
+msgid "Organization Schema Type"
+msgstr ""
+
+#: lib/org/filters-edit.php:105
 msgctxt "metabox title"
-msgid "Google's Knowledge Graph"
+msgid "Organization Principles and Policies"
+msgstr ""
+
+#: lib/org/filters-edit.php:109
+msgctxt "option label"
+msgid "Publishing Principles URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:114
+msgctxt "option label"
+msgid "Corrections Policy URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:119
+msgctxt "option label"
+msgid "Diversity Policy URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:124
+msgctxt "option label"
+msgid "Ethics Policy URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:129
+msgctxt "option label"
+msgid "Feedback Policy URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:134
+msgctxt "option label"
+msgid "Unnamed Sources Policy URL"
+msgstr ""
+
+#: lib/org/filters-edit.php:142
+msgctxt "metabox title"
+msgid "Organization Knowledge Graph"
 msgstr ""
 
 #: lib/org/filters-options.php:102 lib/org.php:53
@@ -132,53 +167,53 @@ msgid "Organization #%d"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:226
+#: lib/org/filters-options.php:232
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:234
+#: lib/org/filters-options.php:240
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:257
+#: lib/org/filters-options.php:263
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:261 lib/org/filters-options.php:292
+#: lib/org/filters-options.php:267 lib/org/filters-options.php:298
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:269
+#: lib/org/filters-options.php:275
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:273
+#: lib/org/filters-options.php:279
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:288
+#: lib/org/filters-options.php:294
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:300
+#: lib/org/filters-options.php:306
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:304
+#: lib/org/filters-options.php:310
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 

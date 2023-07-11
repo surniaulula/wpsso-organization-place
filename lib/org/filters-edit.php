@@ -79,6 +79,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					$css_class = '', $css_id = 'meta-org_banner_url' ) .
 				'<td>' . $form->get_input( 'org_banner_url', $css_class = 'wide' ) . '</td>';
 
+			$table_rows[ 'org_place_id' ] = '' .
+				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
+					$css_class = '', $css_id = 'meta-org_place_id' ) .
+				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
+
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_schema_type' ) .
@@ -92,13 +97,49 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 						)
 					) . '</td>';
 
-			$table_rows[ 'org_place_id' ] = '' .
-				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_place_id' ) .
-				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
+			/*
+			 * Organization Principles and Policies section.
+			 */
+			$table_rows[ 'subsection_org_policy_urls' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				'<td colspan="4" class="subsection"><h4>' .
+				_x( 'Organization Principles and Policies', 'metabox title', 'wpsso' ) .
+				'</h4></td>';
 
-			$table_rows[ 'subsection_google_knowledgegraph' ] = '<td colspan="2" class="subsection"><h4>' .
-				_x( 'Google\'s Knowledge Graph', 'metabox title', 'wpsso-organization-place' ) . '</h4></td>';
+			$table_rows[ 'org_pub_principles_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Publishing Principles URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_pub_principles_url' ) .
+				'<td>' . $form->get_input( 'org_pub_principles_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_corrections_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Corrections Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_corrections_policy_url' ) .
+				'<td>' . $form->get_input( 'org_corrections_policy_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_diversity_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Diversity Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_diversity_policy_url' ) .
+				'<td>' . $form->get_input( 'org_diversity_policy_url', $css_class = 'wide' ) . '</td>';
+		
+			$table_rows[ 'org_ethics_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Ethics Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_ethics_policy_url' ) .
+				'<td>' . $form->get_input( 'org_ethics_policy_url', $css_class = 'wide' ) . '</td>';
+		
+			$table_rows[ 'org_feedback_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Feedback Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_feedback_policy_url' ) .
+				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
+		
+			$table_rows[ 'org_sources_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+				$form->get_th_html( _x( 'Unnamed Sources Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'org_sources_policy_url' ) .
+				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';
+
+			/*
+			 * Organization Knowledge Graph section.
+			 */
+			$table_rows[ 'subsection_org_knowledgegraph' ] = '<td colspan="2" class="subsection"><h4>' .
+				_x( 'Organization Knowledge Graph', 'metabox title', 'wpsso-organization-place' ) . '</h4></td>';
 
 			foreach ( WpssoConfig::get_social_accounts() as $key => $label ) {
 
