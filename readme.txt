@@ -36,7 +36,14 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 * Organization Banner URL
 * Organization Schema Type
 * Organization Location
-* Google's Knowledge Graph:
+* Organization Principles and Policies:
+	* Publishing Principles URL
+	* Corrections Policy URL
+	* Diversity Policy URL
+	* Ethics Policy URL
+	* Feedback Policy URL
+	* Unnamed Sources Policy URL
+* Organization Knowledge Graph:
 	* Behance Business Page URL
 	* Facebook Business Page URL
 	* Instagram Business Page URL
@@ -127,6 +134,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.14.0-b.3 (2023/07/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v15.16.0-b.2.
+
 **Version 1.13.0 (2023/06/06)**
 
 * **New Features**
@@ -168,6 +190,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.12.0.
 
 == Upgrade Notice ==
+
+= 1.14.0-b.3 =
+
+(2023/07/11) None.
 
 = 1.13.0 =
 

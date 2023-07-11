@@ -33,7 +33,17 @@
 <li>Organization Banner URL</li>
 <li>Organization Schema Type</li>
 <li>Organization Location</li>
-<li>Google's Knowledge Graph:
+<li>Organization Principles and Policies:
+
+<ul>
+<li>Publishing Principles URL</li>
+<li>Corrections Policy URL</li>
+<li>Diversity Policy URL</li>
+<li>Ethics Policy URL</li>
+<li>Feedback Policy URL</li>
+<li>Unnamed Sources Policy URL</li>
+</ul></li>
+<li>Organization Knowledge Graph:
 
 <ul>
 <li>Behance Business Page URL</li>
