@@ -67,41 +67,27 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
+			$place_types_select            = $this->p->util->get_form_cache( 'place_types_select' );
+			$business_weekdays             = $this->p->cf[ 'form' ][ 'weekdays' ];
+			$hide_local_business_class     = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
+			$hide_food_establishment_class = $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' );
+
 			if ( $is_custom ) {
 
-				$th_css_class = 'medium';
-
-				$tr_hide_place_html = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
-
-				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' .
-					$this->p->schema->get_children_css_class( 'local.business',
-						'hide_place_schema_type' ) . '" style="display:none;">';
-
-				$tr_hide_food_establishment_html = '<tr class="hide_schema_place_id ' .
-					$this->p->schema->get_children_css_class( 'food.establishment',
-						'hide_place_schema_type' ) . '" style="display:none;">';
-
-				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_show_unhide_rows' );
+				$th_css_class                    = 'medium';
+				$tr_hide_place_html              = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
+				$tr_hide_local_business_html     = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
+				$tr_hide_food_establishment_html = '<tr class="hide_schema_place_id ' . $hide_food_establishment_class . '" style="display:none;">';
+				$place_schema_type_event_names   = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 
 			} else {
 
-				$th_css_class = '';
-
-				$tr_hide_place_html = '';
-
-				$tr_hide_local_business_html = '<tr class="' .
-					$this->p->schema->get_children_css_class( 'local.business',
-						'hide_place_schema_type' ) . '" style="display:none;">';
-
-				$tr_hide_food_establishment_html = '<tr class="' .
-					$this->p->schema->get_children_css_class( 'food.establishment',
-						'hide_place_schema_type' ) . '" style="display:none;">';
-
-				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
+				$th_css_class                    = '';
+				$tr_hide_place_html              = '';
+				$tr_hide_local_business_html     = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
+				$tr_hide_food_establishment_html = '<tr class="' . $hide_food_establishment_class . '" style="display:none;">';
+				$place_schema_type_event_names   = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
-
-			$place_types_select = $this->p->util->get_form_cache( 'place_types_select' );
-			$business_weekdays  = $this->p->cf[ 'form' ][ 'weekdays' ];
 
 			if ( ! $is_custom ) {
 
@@ -267,9 +253,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				__( 'inclusively', 'wpsso-organization-place' ) .	// Keep it short for translations.
 				'</p></td>';
 
+			/*
+			 * Local Business section.
+			 */
 			$table_rows[ 'subsection_local_business' ] = $tr_hide_local_business_html .
 				'<td class="subsection" colspan="2"><h5>' .
-				_x( 'Schema Local Business Information', 'metabox title', 'wpsso-organization-place' ) .
+				_x( 'Local Business Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
 			$table_rows[ 'place_service_radius' ] = $tr_hide_local_business_html .
@@ -293,9 +282,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					$th_css_class, $css_id = 'meta-place_price_range' ) .
 				'<td>' . $form->get_input( 'place_price_range' ) . '</td>';
 
+			/*
+			 * Food Establishment section.
+			 */
 			$table_rows[ 'subsection_food_establishment' ] = $tr_hide_food_establishment_html .
 				'<td class="subsection" colspan="2"><h5>' .
-				_x( 'Schema Food Establishment Information', 'metabox title', 'wpsso-organization-place' ) .
+				_x( 'Food Establishment Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
 			$table_rows[ 'place_accept_res' ] = $tr_hide_food_establishment_html .

@@ -40,8 +40,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_metabox_org_meta_rows( $table_rows, $form, $head_info, $mod ) {
 
-			$org_types_select = $this->p->util->get_form_cache( 'org_types_select' );
-			$place_names      = $this->p->util->get_form_cache( 'place_names', $add_none = true );
+			$org_types_select            = $this->p->util->get_form_cache( 'org_types_select' );
+			$place_names                 = $this->p->util->get_form_cache( 'place_names', $add_none = true );
+			$hide_news_media_org_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
+			$tr_hide_news_media_org_html = '<tr class="' . $hide_news_media_org_class . '" style="display:none;">';
+			$org_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
@@ -88,7 +91,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = '', $css_id = 'meta-org_schema_type' ) .
 				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
-					$is_assoc = true, $is_disabled = false, $selected = false, $event_names = array( 'on_focus_load_json' ),
+					$is_assoc = true, $is_disabled = false, $selected = false, $org_schema_type_event_names,
 						$event_args = array(
 							'json_var' => 'schema_org_types',
 							'exp_secs'  => WPSSO_CACHE_SELECT_JSON_EXP_SECS,	// Create and read from a javascript URL.
@@ -97,42 +100,62 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 						)
 					) . '</td>';
 
-			/*
-			 * Organization Principles and Policies section.
-			 */
-			$table_rows[ 'subsection_org_policy_urls' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
-				'<td colspan="4" class="subsection"><h4>' .
-				_x( 'Organization Principles and Policies', 'metabox title', 'wpsso' ) .
-				'</h4></td>';
-
-			$table_rows[ 'org_pub_principles_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			$table_rows[ 'org_pub_principles_url' ] = '' .
 				$form->get_th_html( _x( 'Publishing Principles URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_pub_principles_url' ) .
+					$css_class = '', $css_id = 'meta-org_pub_principles_url' ) .
 				'<td>' . $form->get_input( 'org_pub_principles_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_corrections_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			$table_rows[ 'org_corrections_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Corrections Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_corrections_policy_url' ) .
+					$css_class = '', $css_id = 'meta-org_corrections_policy_url' ) .
 				'<td>' . $form->get_input( 'org_corrections_policy_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_diversity_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			$table_rows[ 'org_diversity_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Diversity Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_diversity_policy_url' ) .
+					$css_class = '', $css_id = 'meta-org_diversity_policy_url' ) .
 				'<td>' . $form->get_input( 'org_diversity_policy_url', $css_class = 'wide' ) . '</td>';
 		
-			$table_rows[ 'org_ethics_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			$table_rows[ 'org_ethics_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Ethics Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_ethics_policy_url' ) .
+					$css_class = '', $css_id = 'meta-org_ethics_policy_url' ) .
 				'<td>' . $form->get_input( 'org_ethics_policy_url', $css_class = 'wide' ) . '</td>';
 		
-			$table_rows[ 'org_feedback_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			$table_rows[ 'org_fact_check_policy_url' ] = '' .
+				$form->get_th_html( _x( 'Fact Checking Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'meta-org_fact_check_policy_url' ) .
+				'<td>' . $form->get_input( 'org_fact_check_policy_url', $css_class = 'wide' ) . '</td>';
+		
+			$table_rows[ 'org_feedback_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Feedback Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_feedback_policy_url' ) .
+					$css_class = '', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
 		
-			$table_rows[ 'org_sources_policy_url' ] = $form->get_tr_on_change( 'site_pub_schema_type', 'organization' ) .
+			/*
+			 * News Media Organization section.
+			 */
+			$table_rows[ 'subsection_org_news_media_urls' ] = $tr_hide_news_media_org_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'News Media Organization Information', 'metabox title', 'wpsso' ) .
+				'</h5></td>';
+
+			$table_rows[ 'org_masthead_url' ] = $tr_hide_news_media_org_html .
+				$form->get_th_html( _x( 'Masthead Page URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'meta-org_masthead_url' ) .
+				'<td>' . $form->get_input( 'org_masthead_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_coverage_policy_url' ] = $tr_hide_news_media_org_html .
+				$form->get_th_html( _x( 'Coverage Priorities Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'meta-org_coverage_policy_url' ) .
+				'<td>' . $form->get_input( 'org_coverage_policy_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_no_bylines_policy_url' ] = $tr_hide_news_media_org_html .
+				$form->get_th_html( _x( 'No Bylines Policy URL', 'option label', 'wpsso' ),
+					$css_class = '', $css_id = 'meta-org_no_bylines_policy_url' ) .
+				'<td>' . $form->get_input( 'org_no_bylines_policy_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_sources_policy_url' ] = $tr_hide_news_media_org_html .
 				$form->get_th_html( _x( 'Unnamed Sources Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'org_sources_policy_url' ) .
+					$css_class = '', $css_id = 'meta-org_sources_policy_url' ) .
 				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';
 
 			/*

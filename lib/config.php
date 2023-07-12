@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '1.14.0-b.3',	// Plugin version.
+					'version'     => '1.14.0-b.4',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '15.16.0-b.3',
+							'min_version'   => '15.16.0-b.4',
 						),
 					),
 
@@ -78,9 +78,13 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'org_schema_type'            => 'organization',
 					'org_pub_principles_url'     => '',		// Publishing Principles URL.
 					'org_corrections_policy_url' => '',		// Corrections Policy URL.
-					'org_diversity_policy_url'   => '',		// Diversity URL.
+					'org_diversity_policy_url'   => '',		// Diversity Policy URL.
 					'org_ethics_policy_url'      => '',		// Ethics Policy URL.
+					'org_fact_check_policy_url'  => '',		// Fact Checking Policy URL.
 					'org_feedback_policy_url'    => '',		// Feedback Policy URL.
+					'org_masthead_url'           => '',		// Masthead Page URL.
+					'org_coverage_policy_url'    => '',		// Coverage Priorities Policy URL.
+					'org_no_bylines_policy_url'  => '',		// No Bylines Policy URL.
 					'org_sources_policy_url'     => '',		// Unnamed Sources Policy URL.
 				),
 				'place_md_defaults' => array(

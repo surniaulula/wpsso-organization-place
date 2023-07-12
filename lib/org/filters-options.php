@@ -168,12 +168,16 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					return 'img_url';
 
 				case 'org_url':
-				case 'org_pub_principles_url':
-				case 'org_corrections_policy_url':
-				case 'org_diversity_policy_url':
-				case 'org_ethics_policy_url':
-				case 'org_feedback_policy_url':
-				case 'org_sources_policy_url':
+				case 'org_pub_principles_url':		// Publishing Principles URL.
+				case 'org_corrections_policy_url':	// Corrections Policy URL.
+				case 'org_diversity_policy_url':	// Diversity Policy URL.
+				case 'org_ethics_policy_url':		// Ethics Policy URL.
+				case 'org_fact_check_policy_url':	// Fact Checking Policy URL.
+				case 'org_feedback_policy_url':		// Feedback Policy URL.
+				case 'org_masthead_url':		// Masthead Page URL.
+				case 'org_coverage_policy_url':		// Coverage Priorities Policy URL.
+				case 'org_no_bylines_policy_url':	// No Bylines Policy URL.
+				case 'org_sources_policy_url':		// Unnamed Sources Policy URL.
 				case ( strpos( $base_key, '_url' ) && isset( $this->p->cf[ 'form' ][ 'social_accounts' ][ substr( $base_key, 4 ) ] ) ? true : false ):
 
 					return 'url';
