@@ -42,17 +42,17 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "option value"
-msgid "Default Publisher Organization"
+msgid "Default Publisher Org."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:9
 msgctxt "option value"
-msgid "Default Service Provider Org."
+msgid "Default Provider Org."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:10
 msgctxt "option value"
-msgid "Default Event Organizer Org."
+msgid "Default Funder Org."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:11
@@ -62,15 +62,25 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:12
 msgctxt "option value"
-msgid "Default Job Hiring Organization"
+msgid "Default Event Organizer Org."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:13
 msgctxt "option value"
-msgid "Default Event Venue"
+msgid "Default Event Funder Org."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:14
+msgctxt "option value"
+msgid "Default Job Hiring Org."
+msgstr ""
+
+#: gettext/gettext-lib-config.php:15
+msgctxt "option value"
+msgid "Default Event Venue"
+msgstr ""
+
+#: gettext/gettext-lib-config.php:16
 msgctxt "option value"
 msgid "Default Job Location"
 msgstr ""

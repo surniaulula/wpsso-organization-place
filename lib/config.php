@@ -138,11 +138,13 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			),
 			'form' => array(
 				'org_is_defaults' => array(
-					'schema_def_pub_org_id'             => 'Default Publisher Organization',
-					'schema_def_prov_org_id'            => 'Default Service Provider Org.',
-					'schema_def_event_organizer_org_id' => 'Default Event Organizer Org.',
+					'schema_def_pub_org_id'             => 'Default Publisher Org.',
+					'schema_def_prov_org_id'            => 'Default Provider Org.',
+					'schema_def_fund_org_id'            => 'Default Funder Org.',
 					'schema_def_event_performer_org_id' => 'Default Event Performer Org.',
-					'schema_def_job_hiring_org_id'      => 'Default Job Hiring Organization',
+					'schema_def_event_organizer_org_id' => 'Default Event Organizer Org.',
+					'schema_def_event_fund_org_id'      => 'Default Event Funder Org.',
+					'schema_def_job_hiring_org_id'      => 'Default Job Hiring Org.',
 				),
 				'place_is_defaults' => array(
 					'schema_def_event_location_id' => 'Default Event Venue',

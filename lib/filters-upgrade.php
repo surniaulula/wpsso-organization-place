@@ -218,8 +218,8 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 		private function convert_numeric_org_ids( $opts ) {
 
 			foreach ( array(
-				'schema_pub_org_id',
-				'schema_prov_org_id',
+				'schema_pub_org_id',		// Publisher Org.
+				'schema_prov_org_id',		// Provider Org.
 				'schema_movie_prodco_org_id',
 				'schema_event_organizer_org_id',
 				'schema_event_performer_org_id',
