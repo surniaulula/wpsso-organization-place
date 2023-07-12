@@ -170,11 +170,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Improvements**
 	* Added options to the Organization editing page:
-		* Default Publisher Organization
+		* Default Publisher Org.
 		* Default Service Provider Org.
 		* Default Event Organizer Org.
 		* Default Event Performer Org.
-		* Default Job Hiring Organization
+		* Default Job Hiring Org.
 	* Added options to the Place editing page:
 		* Default Event Venue
 		* Default Job Location
