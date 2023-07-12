@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.14.0-b.4\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.14.0-b.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -126,67 +126,67 @@ msgctxt "option label"
 msgid "Organization Location"
 msgstr ""
 
-#: lib/org/filters-edit.php:91
+#: lib/org/filters-edit.php:92
 msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr ""
 
-#: lib/org/filters-edit.php:104
+#: lib/org/filters-edit.php:105
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:109
+#: lib/org/filters-edit.php:110
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:114
+#: lib/org/filters-edit.php:115
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:119
+#: lib/org/filters-edit.php:120
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:124
+#: lib/org/filters-edit.php:125
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:129
+#: lib/org/filters-edit.php:130
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:138
+#: lib/org/filters-edit.php:139
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr ""
 
-#: lib/org/filters-edit.php:142
+#: lib/org/filters-edit.php:143
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:147
+#: lib/org/filters-edit.php:148
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:152
+#: lib/org/filters-edit.php:153
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:157
+#: lib/org/filters-edit.php:158
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr ""
 
-#: lib/org/filters-edit.php:165
+#: lib/org/filters-edit.php:166
 msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr ""

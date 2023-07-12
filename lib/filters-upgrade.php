@@ -142,9 +142,9 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 		private function convert_multi_opts_to_post( $opts, $opt_prefix, $md_prefix, $post_type ) {
 
-			$names = SucomUtil::get_multi_key_locale( $opt_prefix . '_name', $opts, $add_none = false );
+			$opt_prefix_names = SucomUtil::get_multi_key_locale( $opt_prefix . '_name', $opts, $add_none = false );
 
-			foreach ( $names as $id => $name ) {
+			foreach ( $opt_prefix_names as $id => $name ) {
 
 				$deprecated_rexp = '/^' . $opt_prefix . '_(.*)_' . $id . '([#:].*)?$/';
 				$deprecated_opts = SucomUtil::preg_grep_keys( $deprecated_rexp, $opts, $invert = false, $replace = '$1' );
