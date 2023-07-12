@@ -36,12 +36,16 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 * Organization Banner URL
 * Organization Schema Type
 * Organization Location
-* Organization Principles and Policies:
-	* Publishing Principles URL
-	* Corrections Policy URL
-	* Diversity Policy URL
-	* Ethics Policy URL
-	* Feedback Policy URL
+* Publishing Principles URL
+* Corrections Policy URL
+* Diversity Policy URL
+* Ethics Policy URL
+* Fact Checking Policy URL
+* Feedback Policy URL
+* News Media Organization:
+	* Masthead Page URL
+	* Coverage Priorities Policy URL
+	* No Bylines Policy URL
 	* Unnamed Sources Policy URL
 * Organization Knowledge Graph:
 	* Behance Business Page URL
@@ -134,10 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.14.0-b.3 (2023/07/11)**
+**Version 1.14.0-b.4 (2023/07/12)**
 
 * **New Features**
-	* None.
+	* Added new Organization options:
+		* Publishing Principles URL
+		* Corrections Policy URL
+		* Diversity Policy URL
+		* Ethics Policy URL
+		* Fact Checking Policy URL
+		* Feedback Policy URL
+	* Added new NewsMediaOrganization options
+		* Masthead Page URL
+		* Coverage Priorities Policy URL
+		* No Bylines Policy URL
+		* Unnamed Sources Policy URL
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -147,7 +162,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v15.16.0-b.3.
+	* WPSSO Core v15.16.0-b.4.
 
 **Version 1.13.0 (2023/06/06)**
 
@@ -191,9 +206,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.14.0-b.3 =
+= 1.14.0-b.4 =
 
-(2023/07/11) None.
+(2023/07/12) Added new Organization and NewsMediaOrganization options.
 
 = 1.13.0 =
 
