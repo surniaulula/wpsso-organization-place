@@ -115,22 +115,22 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Diversity Policy URL', 'option label', 'wpsso' ),
 					$css_class = '', $css_id = 'meta-org_diversity_policy_url' ) .
 				'<td>' . $form->get_input( 'org_diversity_policy_url', $css_class = 'wide' ) . '</td>';
-		
+
 			$table_rows[ 'org_ethics_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Ethics Policy URL', 'option label', 'wpsso' ),
 					$css_class = '', $css_id = 'meta-org_ethics_policy_url' ) .
 				'<td>' . $form->get_input( 'org_ethics_policy_url', $css_class = 'wide' ) . '</td>';
-		
+
 			$table_rows[ 'org_fact_check_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Fact Checking Policy URL', 'option label', 'wpsso' ),
 					$css_class = '', $css_id = 'meta-org_fact_check_policy_url' ) .
 				'<td>' . $form->get_input( 'org_fact_check_policy_url', $css_class = 'wide' ) . '</td>';
-		
+
 			$table_rows[ 'org_feedback_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Feedback Policy URL', 'option label', 'wpsso' ),
 					$css_class = '', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
-		
+
 			/*
 			 * News Media Organization section.
 			 */
