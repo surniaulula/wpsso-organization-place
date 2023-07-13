@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.14.0-b.7 (2023/07/12)**
+**Version 1.14.0-rc.1 (2023/07/13)**
 
 * **New Features**
 	* Added new Organization options:
@@ -162,7 +162,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v15.16.0-b.7.
+	* WPSSO Core v15.16.0-rc.1.
 
 **Version 1.13.0 (2023/06/06)**
 
@@ -206,9 +206,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.14.0-b.7 =
+= 1.14.0-rc.1 =
 
-(2023/07/12) Added new Organization and NewsMediaOrganization options.
+(2023/07/13) Added new Organization and NewsMediaOrganization options.
 
 = 1.13.0 =
 
