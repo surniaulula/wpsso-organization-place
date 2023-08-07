@@ -117,7 +117,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 					$this->p->debug->log( 'exiting early: no place options found' );
 				}
 
-				return $mt_og;     // Stop here.
+				return $mt_og;	// Stop here.
 			}
 
 			if ( $this->p->debug->enabled ) {
