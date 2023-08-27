@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_place_options'               => 3,
-				'get_post_defaults'               => 4,
+				'get_post_defaults'               => 3,
 				'get_post_options'                => 3,
 				'save_post_options'               => 3,
 				'option_type'                     => 2,
@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			return $place_opts;
 		}
 
-		public function filter_get_post_defaults( $md_defs, $post_id, $rel, $mod ) {
+		public function filter_get_post_defaults( array $md_defs, $post_id, array $mod ) {
 
 			$place_id = 'place-' . $mod[ 'id' ];
 
