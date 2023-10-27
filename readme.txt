@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.16.0-dev.4 (2023/10/27)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Change for deprecated method.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Changed deprecated `WpssoUtilReg::update_options_key()` call for `WpssoUtilWP::update_options_key()`.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v16.5.0-dev.4.
+
 **Version 1.15.0 (2023/08/27)**
 
 * **New Features**
@@ -220,6 +235,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.12.0.
 
 == Upgrade Notice ==
+
+= 1.16.0-dev.4 =
+
+(2023/10/27) Change for deprecated method.
 
 = 1.15.0 =
 
