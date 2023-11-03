@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.16.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.17.0-dev.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -481,12 +481,12 @@ msgstr ""
 msgid "Please select a different place."
 msgstr ""
 
-#: lib/post.php:84
+#: lib/post.php:85
 msgctxt "metabox title"
 msgid "Organization"
 msgstr ""
 
-#: lib/post.php:93
+#: lib/post.php:94
 msgctxt "metabox title"
 msgid "Place"
 msgstr ""
