@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 1.16.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 1.17.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-10-27 09:19-0700\n"
+"PO-Revision-Date: 2023-11-03 21:29-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -469,12 +469,12 @@ msgstr "L'endroit ID #%s n'existe pas."
 msgid "Please select a different place."
 msgstr "Veuillez sélectionner un autre endroit."
 
-#: lib/post.php:84
+#: lib/post.php:85
 msgctxt "metabox title"
 msgid "Organization"
 msgstr "Organisation"
 
-#: lib/post.php:93
+#: lib/post.php:94
 msgctxt "metabox title"
 msgid "Place"
 msgstr "Endroit"
