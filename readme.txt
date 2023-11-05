@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.17.0-dev.11 (2021/11/05)**
+**Version 2.0.0-dev.13 (2021/11/05)**
 
 * **New Features**
 	* None.
@@ -147,11 +147,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Refactored the settings page load process.
+	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v16.7.0-dev.11.
+	* WPSSO Core v17.0.0-dev.13.
 
 **Version 1.16.0 (2023/10/28)**
 
@@ -168,110 +168,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 	* WPSSO Core v16.5.0.
 
-**Version 1.15.0 (2023/08/27)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the 'wpsso_get_post_defaults' filter arguments for WPSSO Core v15.21.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.21.0.
-
-**Version 1.14.0 (2023/07/13)**
-
-* **New Features**
-	* Added new Organization options:
-		* Publishing Principles URL
-		* Corrections Policy URL
-		* Diversity Policy URL
-		* Ethics Policy URL
-		* Fact Checking Policy URL
-		* Feedback Policy URL
-	* Added new NewsMediaOrganization options
-		* Masthead Page URL
-		* Coverage Priorities Policy URL
-		* No Bylines Policy URL
-		* Unnamed Sources Policy URL
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.16.0.
-
-**Version 1.13.0 (2023/06/06)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added options to the Organization editing page:
-		* Default Publisher Org.
-		* Default Service Provider Org.
-		* Default Event Organizer Org.
-		* Default Event Performer Org.
-		* Default Job Hiring Org.
-	* Added options to the Place editing page:
-		* Default Event Venue
-		* Default Job Location
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.13.1.
-
-**Version 1.12.0 (2023/05/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Renamed the "Organizations" menu item to "SSO Orgs".
-	* Renamed the "Places" menu item to "SSO Places".
-	* Moved menu items below the "SSO" settings menu item.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v15.12.0.
-
 == Upgrade Notice ==
 
-= 1.17.0-dev.11 =
+= 2.0.0-dev.13 =
 
-(2021/11/05) Refactored the settings page load process.
+(2021/11/05) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
 = 1.16.0 =
 
 (2023/10/28) Update for deprecated method.
-
-= 1.15.0 =
-
-(2023/08/27) Updated the 'wpsso_get_post_defaults' filter arguments for WPSSO Core v15.21.0.
-
-= 1.14.0 =
-
-(2023/07/13) Added new Organization and NewsMediaOrganization options.
-
-= 1.13.0 =
-
-(2023/06/06) Added options to the Organization and Place editing pages.
-
-= 1.12.0 =
-
-(2023/05/26) Renamed and moved the "Organizations" and "Places" menu items.
 
