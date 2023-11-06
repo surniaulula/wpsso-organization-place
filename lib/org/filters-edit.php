@@ -26,8 +26,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'form_cache_org_names'  => 1,
-				'metabox_org_meta_rows' => 4,
+				'form_cache_org_names' => 1,
+				'mb_org_rows'          => 4,
 			) );
 		}
 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			return is_array( $mixed ) ? $mixed + $org_names : $org_names;
 		}
 
-		public function filter_metabox_org_meta_rows( $table_rows, $form, $head_info, $mod ) {
+		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$org_types_select            = $this->p->util->get_form_cache( 'org_types_select' );
 			$place_names                 = $this->p->util->get_form_cache( 'place_names', $add_none = true );
@@ -48,49 +48,49 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_name' ) .
+					$css_class = 'medium', $css_id = 'meta-org_name' ) .
 				'<td>' . $form->get_input( 'org_name', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_is_defaults' ] = '' .
-				$form->get_th_html( '' ) .
+				$form->get_th_html( '', $css_class = 'medium' ) .
 				'<td>' . $form->get_checklist( 'org_is', $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) . '</td>';
 
 			$table_rows[ 'org_name_alt' ] = '' .
 				$form->get_th_html( _x( 'Organization Alternate Name', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_name_alt' ) .
+					$css_class = 'medium', $css_id = 'meta-org_name_alt' ) .
 				'<td>' . $form->get_input( 'org_name_alt', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_desc' ] = '' .
 				$form->get_th_html( _x( 'Organization Description', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_desc' ) .
+					$css_class = 'medium', $css_id = 'meta-org_desc' ) .
 				'<td>' . $form->get_textarea( 'org_desc' ) . '</td>';
 
 			$table_rows[ 'org_url' ] = '' .
 				$form->get_th_html( _x( 'Organization WebSite URL', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_url' ) .
 				'<td>' . $form->get_input( 'org_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_logo_url' ] = '' .
 				$form->get_th_html( '<a href="https://developers.google.com/search/docs/advanced/structured-data/logo">' .
 				_x( 'Organization Logo URL', 'option label', 'wpsso-organization-place' ) . '</a>',
-					$css_class = '', $css_id = 'meta-org_logo_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_logo_url' ) .
 				'<td>' . $form->get_input( 'org_logo_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_banner_url' ] = '' .
 				$form->get_th_html( '<a href="https://developers.google.com/search/docs/data-types/article#logo-guidelines">' .
 				_x( 'Organization Banner URL', 'option label', 'wpsso-organization-place' ) . '</a>',
-					$css_class = '', $css_id = 'meta-org_banner_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_banner_url' ) .
 				'<td>' . $form->get_input( 'org_banner_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_place_id' ) .
+					$css_class = 'medium', $css_id = 'meta-org_place_id' ) .
 				'<td>' . $form->get_select( 'org_place_id', $place_names,
 					$css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
 
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
-					$css_class = '', $css_id = 'meta-org_schema_type' ) .
+					$css_class = 'medium', $css_id = 'meta-org_schema_type' ) .
 				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, $org_schema_type_event_names,
 						$event_args = array(
@@ -103,32 +103,32 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 			$table_rows[ 'org_pub_principles_url' ] = '' .
 				$form->get_th_html( _x( 'Publishing Principles URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_pub_principles_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_pub_principles_url' ) .
 				'<td>' . $form->get_input( 'org_pub_principles_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_corrections_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Corrections Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_corrections_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_corrections_policy_url' ) .
 				'<td>' . $form->get_input( 'org_corrections_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_diversity_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Diversity Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_diversity_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_diversity_policy_url' ) .
 				'<td>' . $form->get_input( 'org_diversity_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_ethics_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Ethics Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_ethics_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_ethics_policy_url' ) .
 				'<td>' . $form->get_input( 'org_ethics_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_fact_check_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Fact Checking Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_fact_check_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_fact_check_policy_url' ) .
 				'<td>' . $form->get_input( 'org_fact_check_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_feedback_policy_url' ] = '' .
 				$form->get_th_html( _x( 'Feedback Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_feedback_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
 
 			/*
@@ -141,22 +141,22 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 			$table_rows[ 'org_masthead_url' ] = $tr_hide_news_media_org_html .
 				$form->get_th_html( _x( 'Masthead Page URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_masthead_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_masthead_url' ) .
 				'<td>' . $form->get_input( 'org_masthead_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_coverage_policy_url' ] = $tr_hide_news_media_org_html .
 				$form->get_th_html( _x( 'Coverage Priorities Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_coverage_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_coverage_policy_url' ) .
 				'<td>' . $form->get_input( 'org_coverage_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_no_bylines_policy_url' ] = $tr_hide_news_media_org_html .
 				$form->get_th_html( _x( 'No Bylines Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_no_bylines_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_no_bylines_policy_url' ) .
 				'<td>' . $form->get_input( 'org_no_bylines_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_sources_policy_url' ] = $tr_hide_news_media_org_html .
 				$form->get_th_html( _x( 'Unnamed Sources Policy URL', 'option label', 'wpsso' ),
-					$css_class = '', $css_id = 'meta-org_sources_policy_url' ) .
+					$css_class = 'medium', $css_id = 'meta-org_sources_policy_url' ) .
 				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';
 
 			/*
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 				$table_rows[ $opt_key ] = '' .
 					$form->get_th_html( _x( $label, 'option value', 'wpsso-organization-place' ),
-						$css_class = 'nowrap', $opt_key ) .
+						$css_class = 'medium nowrap', $opt_key ) .
 					'<td>' . $form->get_input( $opt_key, strpos( $opt_key, '_url' ) ? 'wide' : '' ) . '</td>';
 			}
 
