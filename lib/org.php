@@ -85,13 +85,21 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 			$org_opts = false;	// Return false by default.
 
-			if ( 'site' === $org_id ) {
+			/*
+			 * Check that the option value is not true, false, null, empty string, or 'none'.
+			 */
+			if ( ! SucomUtil::is_valid_option_value( $org_id ) ) {
+
+				return false === $opt_key ? $org_opts : null;
+
+			} elseif ( 'site' === $org_id ) {
 
 				$org_opts = WpssoSchema::get_site_organization( $mixed );
 
 			} elseif ( 0 === strpos( $org_id, 'org-' ) ) {
 
-				$post_id  = substr( $org_id, 4 );
+				$post_id = substr( $org_id, 4 );
+
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {

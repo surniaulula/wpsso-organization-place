@@ -86,7 +86,14 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$place_opts = false;	// Return false by default.
 
-			if ( 'custom' === $place_id ) {	// Read place options from the post, term, or user object.
+			/*
+			 * Check that the option value is not true, false, null, empty string, or 'none'.
+			 */
+			if ( ! SucomUtil::is_valid_option_value( $org_id ) ) {
+
+				return false === $opt_key ? $place_opts : null;
+
+			} elseif ( 'custom' === $place_id ) {	// Read place options from the post, term, or user object.
 
 				if ( ! empty( $mod[ 'obj' ] ) && ! empty( $mod[ 'id' ] ) ) {
 
@@ -256,7 +263,14 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$place_id = $mod[ 'obj' ]->get_options( $mod[ 'id' ], 'schema_place_id' );
 
-			if ( 'custom' === $place_id ) {	// Read place options from the post, term, or user object.
+			/*
+			 * Check that the option value is not true, false, null, empty string, or 'none'.
+			 */
+			if ( ! SucomUtil::is_valid_option_value( $place_id ) ) {
+
+				return false;
+
+			} elseif ( 'custom' === $place_id ) {	// Read place options from the post, term, or user object.
 
 				return self::get_id( $place_id, $mod );
 

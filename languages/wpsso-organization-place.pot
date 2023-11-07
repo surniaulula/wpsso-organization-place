@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 2.0.0-b.2\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 2.0.0-b.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -247,19 +247,19 @@ msgstr ""
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
-#: lib/org.php:137 lib/org.php:148
+#: lib/org.php:145 lib/org.php:156
 msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
-#: lib/org.php:140
+#: lib/org.php:148
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
-#: lib/org.php:150
+#: lib/org.php:158
 msgid "Organization ID #%s does not exist."
 msgstr ""
 
-#: lib/org.php:152
+#: lib/org.php:160
 msgid "Please select a different organization."
 msgstr ""
 
@@ -465,19 +465,19 @@ msgctxt "option value"
 msgid "Place #%d"
 msgstr ""
 
-#: lib/place.php:118 lib/place.php:129
+#: lib/place.php:125 lib/place.php:136
 msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
-#: lib/place.php:121
+#: lib/place.php:128
 msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
-#: lib/place.php:131
+#: lib/place.php:138
 msgid "Place ID #%s does not exist."
 msgstr ""
 
-#: lib/place.php:133
+#: lib/place.php:140
 msgid "Please select a different place."
 msgstr ""
 
