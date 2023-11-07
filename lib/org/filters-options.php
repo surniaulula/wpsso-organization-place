@@ -132,6 +132,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					unset( $md_opts[ 'org_is_' . $opts_key ] );
 				}
 
+				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
+
 				$this->check_org_image_sizes( $md_opts );
 			}
 
@@ -154,6 +156,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				case 'org_name':
 				case 'org_name_alt':
 				case 'org_desc':
+				case 'org_award':
 
 					return 'ok_blank';
 

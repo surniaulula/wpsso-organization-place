@@ -45,7 +45,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$local_cache[ $schema_type ] = array();
 
 			$children = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
-			$org_ids  = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
+
+			$org_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
 
 			foreach ( $org_ids as $post_id ) {
 
@@ -104,7 +105,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
-					$org_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+					$org_opts = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+
 					$org_sameas = array();
 
 					foreach ( SucomUtil::get_opts_begin( 'org_sameas_', $org_opts ) as $sameas_key => $sameas_url ) {
@@ -127,10 +129,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 								$wpsso->debug->log( 'skipping ' . $sameas_key . ': url "' . $sameas_url . '" is invalid' );
 							}
 
-						} else {
-
-							$org_sameas[] = $sameas_url;
-						}
+						} else $org_sameas[] = $sameas_url;
 					}
 
 					if ( ! empty( $org_sameas ) ) {
@@ -138,15 +137,20 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
 
+					$post_mod[ 'obj' ]->md_keys_multi_array( $org_opts, 'org_award', 'org_awards' );
+
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
 					$org_page_link = get_edit_post_link( $post_id );
 
 					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
 						'wpsso-organization-place' ), $post_id ) . ' ';
+
 					$notice_msg .= $org_page_link ? '<a href="' . $org_page_link . '">' : '';
+
 					$notice_msg .= sprintf( __( 'Please publish organization ID #%s or select a different organization.',
 						'wpsso-organization-place' ), $post_id );
+
 					$notice_msg .= $org_page_link ? '</a>' : '';
 
 					$wpsso->notice->err( $notice_msg );
@@ -155,8 +159,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
 						'wpsso-organization-place' ), $post_id ) . ' ';
+
 					$notice_msg .= sprintf( __( 'Organization ID #%s does not exist.',
 						'wpsso-organization-place' ), $post_id ) . ' ';
+
 					$notice_msg .= __( 'Please select a different organization.',
 						'wpsso-organization-place' );
 

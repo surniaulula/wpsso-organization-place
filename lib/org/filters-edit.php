@@ -40,11 +40,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
-			$org_types_select            = $this->p->util->get_form_cache( 'org_types_select' );
-			$place_names                 = $this->p->util->get_form_cache( 'place_names', $add_none = true );
-			$hide_news_media_org_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
-			$tr_hide_news_media_org_html = '<tr class="' . $hide_news_media_org_class . '" style="display:none;">';
-			$org_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
+			$org_types_select        = $this->p->util->get_form_cache( 'org_types_select' );
+			$place_names             = $this->p->util->get_form_cache( 'place_names', $add_none = true );
+			$hide_news_media_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
+			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
+			$awards_max              = SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 );
 
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_schema_type' ) .
 				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
-					$is_assoc = true, $is_disabled = false, $selected = false, $org_schema_type_event_names,
+					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
 						$event_args = array(
 							'json_var' => 'schema_org_types',
 							'exp_secs'  => WPSSO_CACHE_SELECT_JSON_EXP_SECS,	// Create and read from a javascript URL.
@@ -131,30 +131,36 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					$css_class = 'medium', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
 
+			$table_rows[ 'org_award' ] = ''.
+				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso' ),
+					$css_class = 'medium', $css_id = 'meta-org_award' ) .
+				'<td>' . $form->get_input_multi( 'org_award', $css_class = 'wide', $css_id = '',
+					$awards_max, $show_first = 1 ) . '</td>';
+
 			/*
 			 * News Media Organization section.
 			 */
-			$table_rows[ 'subsection_org_news_media_urls' ] = $tr_hide_news_media_org_html .
+			$table_rows[ 'subsection_org_news_media_urls' ] = $tr_hide_news_media_html .
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'News Media Organization Information', 'metabox title', 'wpsso' ) .
 				'</h5></td>';
 
-			$table_rows[ 'org_masthead_url' ] = $tr_hide_news_media_org_html .
+			$table_rows[ 'org_masthead_url' ] = $tr_hide_news_media_html .
 				$form->get_th_html( _x( 'Masthead Page URL', 'option label', 'wpsso' ),
 					$css_class = 'medium', $css_id = 'meta-org_masthead_url' ) .
 				'<td>' . $form->get_input( 'org_masthead_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_coverage_policy_url' ] = $tr_hide_news_media_org_html .
+			$table_rows[ 'org_coverage_policy_url' ] = $tr_hide_news_media_html .
 				$form->get_th_html( _x( 'Coverage Priorities Policy URL', 'option label', 'wpsso' ),
-					$css_class = 'medium', $css_id = 'meta-org_coverage_policy_url' ) .
+					$css_class = 'medium nowrap', $css_id = 'meta-org_coverage_policy_url' ) .
 				'<td>' . $form->get_input( 'org_coverage_policy_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_no_bylines_policy_url' ] = $tr_hide_news_media_org_html .
+			$table_rows[ 'org_no_bylines_policy_url' ] = $tr_hide_news_media_html .
 				$form->get_th_html( _x( 'No Bylines Policy URL', 'option label', 'wpsso' ),
 					$css_class = 'medium', $css_id = 'meta-org_no_bylines_policy_url' ) .
 				'<td>' . $form->get_input( 'org_no_bylines_policy_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_sources_policy_url' ] = $tr_hide_news_media_org_html .
+			$table_rows[ 'org_sources_policy_url' ] = $tr_hide_news_media_html .
 				$form->get_th_html( _x( 'Unnamed Sources Policy URL', 'option label', 'wpsso' ),
 					$css_class = 'medium', $css_id = 'meta-org_sources_policy_url' ) .
 				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';

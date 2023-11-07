@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			/*
 			 * Check that the option value is not true, false, null, empty string, or 'none'.
 			 */
-			if ( ! SucomUtil::is_valid_option_value( $org_id ) ) {
+			if ( ! SucomUtil::is_valid_option_value( $place_id ) ) {
 
 				return false === $opt_key ? $place_opts : null;
 
