@@ -44,7 +44,8 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$local_cache[ $schema_type ] = array();
 
-			$children  = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
+			$children = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
+
 			$place_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_PLACE_POST_TYPE ) );
 
 			foreach ( $place_ids as $post_id ) {

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 2.0.0-b.4\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 2.0.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -465,24 +465,24 @@ msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
 
-#: lib/place/filters-options.php:115 lib/place.php:53
+#: lib/place/filters-options.php:115 lib/place.php:54
 msgctxt "option value"
 msgid "Place #%d"
 msgstr ""
 
-#: lib/place.php:125 lib/place.php:136
+#: lib/place.php:126 lib/place.php:137
 msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
-#: lib/place.php:128
+#: lib/place.php:129
 msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
-#: lib/place.php:138
+#: lib/place.php:139
 msgid "Place ID #%s does not exist."
 msgstr ""
 
-#: lib/place.php:140
+#: lib/place.php:141
 msgid "Please select a different place."
 msgstr ""
 
