@@ -41,13 +41,13 @@ if ( ! class_exists( 'WpssoOpmPost' ) && class_exists( 'WpssoPost' ) ) {
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_PLACE_POST_TYPE . ':disabled' ] = true;
 
 			/*
-			 * This hook is fired once WP, all plugins, and the theme are fully loaded and instantiated.
+			 * This hook is fired once WordPress, plugins, and the theme are fully loaded and instantiated.
 			 */
 			add_action( 'wp_loaded', array( $this, 'add_wp_callbacks' ) );
 		}
 
 		/*
-		 * Add WordPress action and filters hooks.
+		 * Add WordPress action and filters callbacks.
 		 */
 		public function add_wp_callbacks() {
 
