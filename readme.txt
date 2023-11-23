@@ -153,28 +153,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 	* WPSSO Core v17.0.0.
 
-**Version 1.16.0 (2023/10/28)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Update for deprecated method.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Changed deprecated `WpssoUtilReg::update_options_key()` call for `WpssoUtilWP::update_options_key()`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v16.5.0.
-
 == Upgrade Notice ==
 
 = 2.0.0 =
 
 (2021/11/08) Added a new Edit Organization &gt; Organization Awards option. Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
-
-= 1.16.0 =
-
-(2023/10/28) Update for deprecated method.
 
