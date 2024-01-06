@@ -182,7 +182,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 			}
 
 			/*
-			 * Non-standard meta tags for internal use.
+			 * Internal meta tags.
 			 */
 			$business_weekdays = $this->p->cf[ 'form' ][ 'weekdays' ];
 
