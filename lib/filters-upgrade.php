@@ -119,7 +119,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
 
-				foreach ( SucomUtil::get_opts_begin( 'plm_place_', $md_opts ) as $md_key => $val ) {
+				foreach ( SucomUtil::get_opts_begin( $md_opts, 'plm_place_' ) as $md_key => $val ) {
 
 					$converted_key = preg_replace( '/^plm_place_/', 'place_', $md_key );
 
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 		private function convert_multi_opts_to_post( $opts, $opt_prefix, $md_prefix, $post_type ) {
 
-			$opt_prefix_names = SucomUtil::get_multi_key_locale( $opt_prefix . '_name', $opts, $add_none = false );
+			$opt_prefix_names = SucomUtil::get_key_values_multi( $opt_prefix . '_name', $opts, $add_none = false );
 
 			foreach ( $opt_prefix_names as $id => $name ) {
 
