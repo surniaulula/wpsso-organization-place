@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.4.2
-Stable Tag: 2.0.0
+Stable Tag: 2.2.0
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
 
@@ -138,6 +138,36 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.2.0 (2024/01/14)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Renamed `SucomUtil::get_multi_key_locale()` to `SucomUtil::get_key_values_multi()`.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.9.0.
+
+**Version 2.1.0 (2024/01/12)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.8.0.
+
 **Version 2.0.0 (2021/11/08)**
 
 * **New Features**
@@ -154,6 +184,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+
+(2024/01/14) Renamed `SucomUtil::get_multi_key_locale()` to `SucomUtil::get_key_values_multi()`.
+
+= 2.1.0 =
+
+(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
 
 = 2.0.0 =
 
