@@ -60,8 +60,8 @@
 <li>Soundcloud Business Page URL</li>
 <li>TikTok Business Page URL</li>
 <li>Tumblr Business Page URL</li>
-<li>Twitter Business @username</li>
 <li>Wikipedia Organization Page URL</li>
+<li>X (Twitter) Business @username</li>
 <li>YouTube Business Channel URL</li>
 </ul></li>
 </ul>

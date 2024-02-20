@@ -58,8 +58,8 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 	* Soundcloud Business Page URL
 	* TikTok Business Page URL
 	* Tumblr Business Page URL
-	* Twitter Business @username
 	* Wikipedia Organization Page URL
+	* X (Twitter) Business @username
 	* YouTube Business Channel URL
 
 **The Place editing page includes:**
