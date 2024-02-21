@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.3.0-rc.1 (2024/02/20)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.9.0.
+
 **Version 2.2.0 (2024/01/14)**
 
 * **New Features**
@@ -184,6 +199,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 2.3.0-rc.1 =
+
+(2024/02/20) Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
 
 = 2.2.0 =
 
