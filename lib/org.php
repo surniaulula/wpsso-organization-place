@@ -117,7 +117,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 							continue;
 
-						} elseif ( 'org_sameas_tc_site' === $sameas_key ) {	// Convert Twitter username to a URL.
+						} elseif ( 'org_sameas_tc_site' === $sameas_key ) {	// Convert X (Twitter) username to a URL.
 
 							$sameas_url = 'https://twitter.com/' . preg_replace( '/^@/', '', $sameas_url );
 						}

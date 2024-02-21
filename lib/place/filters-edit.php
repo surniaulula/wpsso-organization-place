@@ -64,6 +64,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
+			/*
+			 * Use 'place_types_select' for Google (includes all Schema Place sub-types).
+			 */
 			$place_types_select        = $this->p->util->get_form_cache( 'place_types_select' );
 			$business_weekdays         = $this->p->cf[ 'form' ][ 'weekdays' ];
 			$hide_local_business_class = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
