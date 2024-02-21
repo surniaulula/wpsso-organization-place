@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.3.0-rc.2 (2024/02/20)**
+**Version 2.3.0-rc.3 (2024/02/21)**
 
 * **New Features**
 	* None.
@@ -200,9 +200,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.3.0-rc.2 =
+= 2.3.0-rc.3 =
 
-(2024/02/20) Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
+(2024/02/21) Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
 
 = 2.2.0 =
 
