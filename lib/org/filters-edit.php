@@ -44,6 +44,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			 * Use 'strict_org_types_select' for Google (removes all Schema Place sub-types).
 			 */
 			$org_types_select        = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );
+			$org_types_msg           = $this->p->msgs->get( 'info-meta-org_schema_type' );
 			$place_names             = $this->p->util->get_form_cache( 'place_names', $add_none = true );
 			$hide_news_media_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
 			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
@@ -102,7 +103,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 							'is_transl' => true,					// No label translation required.
 							'is_sorted' => true,					// No label sorting required.
 						)
-					) . '</td>';
+					) . $org_types_msg . '</td>';
 
 			$table_rows[ 'org_pub_principles_url' ] = '' .
 				$form->get_th_html( _x( 'Publishing Principles URL', 'option label', 'wpsso' ),
