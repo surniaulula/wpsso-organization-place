@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Organization and Place Manager 2.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-02-20 19:05-0800\n"
+"PO-Revision-Date: 2024-02-21 01:36-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -85,107 +85,107 @@ msgstr "Emplacement de travail par défaut"
 msgid "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s."
 msgstr "%1$s \"%2$s\" ID #%3$s des réglages d'extension a été converti en type d'article %4$s ID #%5$s."
 
-#: lib/org/filters-edit.php:53
+#: lib/org/filters-edit.php:54
 msgctxt "option label"
 msgid "Organization Name"
 msgstr "Nom de l'organisation"
 
-#: lib/org/filters-edit.php:62
+#: lib/org/filters-edit.php:63
 msgctxt "option label"
 msgid "Organization Alternate Name"
 msgstr "Autre nom de l'organisation"
 
-#: lib/org/filters-edit.php:67
+#: lib/org/filters-edit.php:68
 msgctxt "option label"
 msgid "Organization Description"
 msgstr "Description de l'organisation"
 
-#: lib/org/filters-edit.php:72
+#: lib/org/filters-edit.php:73
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr "URL du site de l'organisation"
 
-#: lib/org/filters-edit.php:78
+#: lib/org/filters-edit.php:79
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr "URL logo de organisation"
 
-#: lib/org/filters-edit.php:84
+#: lib/org/filters-edit.php:85
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr "URL bannière d'organisation"
 
-#: lib/org/filters-edit.php:89
+#: lib/org/filters-edit.php:90
 msgctxt "option label"
 msgid "Organization Location"
 msgstr "Emplacement de l'organisation"
 
-#: lib/org/filters-edit.php:95
+#: lib/org/filters-edit.php:96
 msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr "Type de Schéma d'organisation"
 
-#: lib/org/filters-edit.php:108
+#: lib/org/filters-edit.php:109
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr "URL des principes de publication"
 
-#: lib/org/filters-edit.php:113
+#: lib/org/filters-edit.php:114
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr "URL politique de correction"
 
-#: lib/org/filters-edit.php:118
+#: lib/org/filters-edit.php:119
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr "URL politique de diversité"
 
-#: lib/org/filters-edit.php:123
+#: lib/org/filters-edit.php:124
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr "URL politique d'éthique"
 
-#: lib/org/filters-edit.php:128
+#: lib/org/filters-edit.php:129
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr "URL politique de vérification des faits"
 
-#: lib/org/filters-edit.php:133
+#: lib/org/filters-edit.php:134
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr "URL politique de commentaires"
 
-#: lib/org/filters-edit.php:138
+#: lib/org/filters-edit.php:139
 msgctxt "option label"
 msgid "Organization Awards"
 msgstr "Prix ​​de l'organisation"
 
-#: lib/org/filters-edit.php:148
+#: lib/org/filters-edit.php:149
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr "Informations d'organisation des médias d'information"
 
-#: lib/org/filters-edit.php:152
+#: lib/org/filters-edit.php:153
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr "URL page d'en-tête administratif"
 
-#: lib/org/filters-edit.php:157
+#: lib/org/filters-edit.php:158
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr "URL politique de priorités de couverture"
 
-#: lib/org/filters-edit.php:162
+#: lib/org/filters-edit.php:163
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr "URL politique de non-signature"
 
-#: lib/org/filters-edit.php:167
+#: lib/org/filters-edit.php:168
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr "URL politique de sources sans nom"
 
-#: lib/org/filters-edit.php:175
+#: lib/org/filters-edit.php:176
 msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr "Knowledge Graph de l'organisation"
