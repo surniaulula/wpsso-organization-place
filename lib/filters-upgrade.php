@@ -119,7 +119,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			 */
 			if ( $prev_version > 0 && $prev_version <= $this->plm_last_version ) {
 
-				foreach ( SucomUtil::get_opts_begin( $md_opts, 'plm_place_' ) as $md_key => $val ) {
+				foreach ( SucomUtilOptions::get_opts_begin( $md_opts, 'plm_place_' ) as $md_key => $val ) {
 
 					$converted_key = preg_replace( '/^plm_place_/', 'place_', $md_key );
 
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 
 		private function convert_multi_opts_to_post( $opts, $opt_prefix, $md_prefix, $post_type ) {
 
-			$opt_prefix_names = SucomUtil::get_key_values_multi( $opt_prefix . '_name', $opts, $add_none = false );
+			$opt_prefix_names = SucomUtilOptions::get_key_values_multi( $opt_prefix . '_name', $opts, $add_none = false );
 
 			foreach ( $opt_prefix_names as $id => $name ) {
 
@@ -155,7 +155,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 					$opt_key = $opt_prefix . '_' . $key_part . '_' . $id;
 					$md_key  = $md_prefix . '_' . $key_part;
 
-					$converted_opts[ $md_key ] = SucomUtil::get_key_value( $opt_key, $opts );
+					$converted_opts[ $md_key ] = SucomUtilOptions::get_key_value( $opt_key, $opts );
 				}
 
 				if ( empty( $converted_opts[ $md_prefix . '_name' ] ) ) {	// Just in case.

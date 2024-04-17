@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 					$org_sameas = array();
 
-					foreach ( SucomUtil::get_opts_begin( $org_opts, 'org_sameas_' ) as $sameas_key => $sameas_url ) {
+					foreach ( SucomUtilOptions::get_opts_begin( $org_opts, 'org_sameas_' ) as $sameas_key => $sameas_url ) {
 
 						unset( $org_opts[ $sameas_key ] );
 
