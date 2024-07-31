@@ -37,6 +37,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 		public function filter_get_organization_options( $org_opts, $mod, $org_id ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( false === $org_opts ) {	// First come, first served.
 
 				if ( 0 === strpos( $org_id, 'org-' ) ) {
@@ -49,6 +54,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		}
 
 		public function filter_get_post_defaults( array $md_defs, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$org_id = 'org-' . $mod[ 'id' ];
 
@@ -66,6 +76,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		}
 
 		public function filter_get_post_options( array $md_opts, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$org_id = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
 
@@ -92,6 +107,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		}
 
 		public function filter_save_post_options( array $md_opts, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
@@ -144,6 +164,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		 * Return the sanitation type for a given option key.
 		 */
 		public function filter_option_type( $type, $base_key ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			if ( ! empty( $type ) ) {	// Return early if we already have a type.
 
@@ -198,6 +223,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
 
 				$adv_exclude[] = $opts_key;
@@ -207,6 +237,11 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 		}
 
 		private function check_org_image_sizes( $md_opts ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			/*
 			 * Skip if notices have already been shown.

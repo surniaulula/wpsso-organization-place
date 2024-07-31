@@ -37,6 +37,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 		public function filter_get_place_options( $place_opts, $mod, $place_id ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( false === $place_opts ) {	// First come, first served.
 
 				if ( 0 === strpos( $place_id, 'place-' ) ) {
@@ -49,6 +54,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		}
 
 		public function filter_get_post_defaults( array $md_defs, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$place_id = 'place-' . $mod[ 'id' ];
 
@@ -73,6 +83,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		}
 
 		public function filter_get_post_options( array $md_opts, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
 
@@ -105,6 +120,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		}
 
 		public function filter_save_post_options( array $md_opts, $post_id, array $mod ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			if ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
@@ -165,6 +185,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		 */
 		public function filter_option_type( $type, $base_key ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( ! empty( $type ) ) {	// Return early if we already have a type.
 
 				return $type;
@@ -220,6 +245,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
 
 				$adv_exclude[] = $opts_key;
@@ -229,6 +259,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 		}
 
 		private function check_place_image_sizes( $md_opts ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			/*
 			 * Skip if notices have already been shown.
