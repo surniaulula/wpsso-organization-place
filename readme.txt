@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.4.1-dev.1 (2024/07/31)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed saving Organizations and Places as defaults.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.22.0-dev.1.
+
 **Version 2.4.0 (2024/04/23)**
 
 * **New Features**
@@ -214,6 +229,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 2.4.1-dev.1 =
+
+(2024/07/31) Fixed saving Organizations and Places as defaults.
 
 = 2.4.0 =
 
