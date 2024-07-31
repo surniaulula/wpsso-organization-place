@@ -141,15 +141,13 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 						if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );
+							$this->p->options[ $opts_key ] = 'none';
 						}
 
 					} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
 
-						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );
+						$this->p->options[ $opts_key ] = $org_id;
 					}
-
-					unset( $md_opts[ 'org_is_' . $opts_key ] );
 				}
 
 				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );

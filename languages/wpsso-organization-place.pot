@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 2.4.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 2.4.1-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
@@ -202,53 +202,53 @@ msgid "Organization #%d"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:277
+#: lib/org/filters-options.php:275
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:285
+#: lib/org/filters-options.php:283
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:308
+#: lib/org/filters-options.php:306
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:312 lib/org/filters-options.php:343
+#: lib/org/filters-options.php:310 lib/org/filters-options.php:341
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:320
+#: lib/org/filters-options.php:318
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:324
+#: lib/org/filters-options.php:322
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org/filters-options.php:339
+#: lib/org/filters-options.php:337
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org/filters-options.php:351
+#: lib/org/filters-options.php:349
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org/filters-options.php:355
+#: lib/org/filters-options.php:353
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
