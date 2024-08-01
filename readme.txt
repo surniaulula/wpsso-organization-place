@@ -138,10 +138,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.1 (2024/08/01)**
+**Version 3.0.0-dev.2 (2024/08/01)**
 
 * **New Features**
-	* Add places that are Schema Organization sub-types to organization selects.
+	* If a Schema Place sub-type is also a Schema Organization sub-type:
+		* Add the place to organization selects.
+		* Add checkboxes in the place editing page for default organization options.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -245,9 +247,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-dev.1 =
+= 3.0.0-dev.2 =
 
-(2024/08/01) Add places that are Schema Organization sub-types to organization selects.
+(2024/08/01) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for default organization options.
 
 = 2.4.1 =
 
