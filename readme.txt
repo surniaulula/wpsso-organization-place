@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.0-dev.1 (2024/08/01)**
+
+* **New Features**
+	* Add places that are Schema Organization sub-types to organization selects.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.22.0.
+
 **Version 2.4.1 (2024/08/01)**
 
 * **New Features**
@@ -229,6 +244,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 3.0.0-dev.1 =
+
+(2024/08/01) Add places that are Schema Organization sub-types to organization selects.
 
 = 2.4.1 =
 
