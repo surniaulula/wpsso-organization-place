@@ -44,7 +44,9 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$local_cache[ $schema_type ] = array();
 
-			$children = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
+			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'place';
+
+			$children = $wpsso->schema->get_schema_type_children( $schema_type );
 
 			$place_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_PLACE_POST_TYPE ) );
 
@@ -56,15 +58,12 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_name = empty( $place_opts[ 'place_name' ] ) ? $def_name : $place_opts[ 'place_name' ];
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
 
-				/*
-				 * If we have $schema_type children, skip place schema types that are not a sub-type of $schema_type.
-				 */
-				if ( $children && ! in_array( $place_type, $children ) ) {
+				if ( in_array( $place_type, $children ) ) {
 
-					continue;
+					list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $place_type );
+
+					$local_cache[ $schema_type ][ 'place-' . $post_id ] = sprintf( '%1$s [%2$s]', $place_name, $type_name );
 				}
-
-				$local_cache[ $schema_type ][ 'place-' . $post_id ] = $place_name;
 			}
 
 			return $local_cache[ $schema_type ];

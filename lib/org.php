@@ -44,7 +44,9 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 			$local_cache[ $schema_type ] = array();
 
-			$children = $schema_type && is_string( $schema_type ) ? $wpsso->schema->get_schema_type_children( $schema_type ) : false;
+			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'organization';
+
+			$children = $wpsso->schema->get_schema_type_children( $schema_type );
 
 			$org_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
 
@@ -55,16 +57,18 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$org_name = empty( $org_opts[ 'org_name' ] ) ? $def_name : $org_opts[ 'org_name' ];
 				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? 'organization' : $org_opts[ 'org_schema_type' ];
 
-				/*
-				 * If we have $schema_type children, skip organization schema types that are not a sub-type of $schema_type.
-				 */
-				if ( $children && ! in_array( $org_type, $children ) ) {
+				if ( in_array( $org_type, $children ) ) {
 
-					continue;
+					list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $org_type );
+
+					$local_cache[ $schema_type ][ 'org-' . $post_id ] = sprintf( '%1$s [%2$s]', $org_name, $type_name );
 				}
-
-				$local_cache[ $schema_type ][ 'org-' . $post_id ] = $org_name;
 			}
+
+			/*
+			 * Add places that are also sub-types of organization (or the requested schema type).
+			 */
+			$local_cache[ $schema_type ] = array_merge( $local_cache[ $schema_type ], WpssoOpmPlace::get_names( $schema_type ) );
 
 			return $local_cache[ $schema_type ];
 		}

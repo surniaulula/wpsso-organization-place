@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 2.4.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 3.0.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
@@ -196,7 +196,7 @@ msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr ""
 
-#: lib/org/filters-options.php:130 lib/org.php:54
+#: lib/org/filters-options.php:130 lib/org.php:56
 msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
@@ -252,19 +252,19 @@ msgstr ""
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
-#: lib/org.php:146 lib/org.php:160
+#: lib/org.php:150 lib/org.php:164
 msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
-#: lib/org.php:151
+#: lib/org.php:155
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
-#: lib/org.php:163
+#: lib/org.php:167
 msgid "Organization ID #%s does not exist."
 msgstr ""
 
-#: lib/org.php:166
+#: lib/org.php:170
 msgid "Please select a different organization."
 msgstr ""
 
@@ -465,24 +465,24 @@ msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
 
-#: lib/place/filters-options.php:143 lib/place.php:54
+#: lib/place/filters-options.php:143 lib/place.php:56
 msgctxt "option value"
 msgid "Place #%d"
 msgstr ""
 
-#: lib/place.php:126 lib/place.php:137
+#: lib/place.php:125 lib/place.php:136
 msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
-#: lib/place.php:129
+#: lib/place.php:128
 msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
-#: lib/place.php:139
+#: lib/place.php:138
 msgid "Place ID #%s does not exist."
 msgstr ""
 
-#: lib/place.php:141
+#: lib/place.php:140
 msgid "Please select a different place."
 msgstr ""
 
