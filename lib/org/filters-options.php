@@ -69,7 +69,16 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			 */
 			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
 
-				$md_defs[ 'org_is_' . $opts_key ] = $org_id === $this->p->options[ $opts_key ] ? 1 : 0;
+				if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
+
+					$md_defs[ 'org_is_' . $opts_key ] = 1;
+
+				} else $md_defs[ 'org_is_' . $opts_key ] = 0;
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'setting org_is_' . $opts_key . ' = ' . $md_defs[ 'org_is_' .  $opts_key ] );
+				}
 			}
 
 			return $md_defs;
@@ -115,16 +124,13 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
+				$md_opts = $this->filter_get_post_options( $md_opts, $post_id, $mod );	// Merge defaults.
+
 				$org_id = 'org-' . $mod[ 'id' ];
 
 				if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
 
 					$md_opts[ 'org_name' ] = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
-				}
-
-				if ( ! isset( $md_opts[ 'org_desc' ] ) ) {	// Just in case.
-
-					$md_opts[ 'org_desc' ] = '';
 				}
 
 				/*
@@ -148,6 +154,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 						$this->p->options[ $opts_key ] = $org_id;
 					}
+					
+					SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $this->p->options[ $opts_key ] );	// Save changes.
 				}
 
 				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );

@@ -76,7 +76,16 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			 */
 			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
 
-				$md_defs[ 'place_is_' . $opts_key ] = $place_id === $this->p->options[ $opts_key ] ? 1 : 0;
+				if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
+
+					$md_defs[ 'place_is_' . $opts_key ] = 1;
+
+				} else $md_defs[ 'place_is_' . $opts_key ] = 0;
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'setting place_is_' . $opts_key . ' = ' . $md_defs[ 'place_is_' .  $opts_key ] );
+				}
 			}
 
 			return $md_defs;
@@ -128,16 +137,13 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
+				$md_opts = $this->filter_get_post_options( $md_opts, $post_id, $mod );	// Merge defaults.
+
 				$place_id = 'place-' . $mod[ 'id' ];
 
 				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
 
 					$md_opts[ 'place_name' ] = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
-				}
-
-				if ( ! isset( $md_opts[ 'place_desc' ] ) ) {	// Just in case.
-
-					$md_opts[ 'place_desc' ] = '';
 				}
 
 				/*
@@ -161,6 +167,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 						$this->p->options[ $opts_key ] = $place_id;
 					}
+					
+					SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $this->p->options[ $opts_key ] );	// Save changes.
 				}
 
 				$this->check_place_image_sizes( $md_opts );
