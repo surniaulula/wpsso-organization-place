@@ -161,14 +161,16 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 						if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
 
 							$this->p->options[ $opts_key ] = 'none';
+						
+							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
 						}
 
 					} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
 
 						$this->p->options[ $opts_key ] = $place_id;
-					}
 					
-					SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $this->p->options[ $opts_key ] );	// Save changes.
+						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
+					}
 				}
 
 				$this->check_place_image_sizes( $md_opts );
