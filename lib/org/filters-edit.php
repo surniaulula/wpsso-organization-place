@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
-			$org_types_select        = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );	// Use strict for Google.
+			$strict_org_types        = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );	// Use strict for Google.
 			$org_types_msg           = $this->p->msgs->get( 'info-meta-org_schema_type' );
 			$place_names             = $this->p->util->get_form_cache( 'place_names', $add_none = true );
 			$hide_news_media_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_schema_type' ) .
-				'<td>' . $form->get_select( 'org_schema_type', $org_types_select, $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'org_schema_type', $strict_org_types, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
 						$event_args = array(
 							'json_var' => 'schema_org_types',

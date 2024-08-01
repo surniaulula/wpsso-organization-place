@@ -64,10 +64,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
-			/*
-			 * Use 'place_types_select' for Google (includes all Schema Place sub-types).
-			 */
-			$place_types_select        = $this->p->util->get_form_cache( 'place_types_select' );
+			$place_types               = $this->p->util->get_form_cache( 'place_types_select', $add_none = false );
 			$business_weekdays         = $this->p->cf[ 'form' ][ 'weekdays' ];
 			$hide_local_business_class = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
 			$hide_food_establish_class = $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' );
@@ -112,7 +109,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$table_rows[ 'place_schema_type' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Place Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_schema_type' ) .
-				'<td>' . $form->get_select( 'place_schema_type', $place_types_select, $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'place_schema_type', $place_types, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, $place_schema_type_event_names,
 						$event_args = array(
 							'json_var' => 'schema_place_types',
