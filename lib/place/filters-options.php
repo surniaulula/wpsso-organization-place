@@ -64,17 +64,20 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
 
-			/*
-			 * Since WPSSO OPM v1.11.0.
-			 */
 			$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
 			$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
 			$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
 
 			/*
 			 * Check if this place ID is in some default options.
+			 *
+			 * If the default place schema type is an organization, check the organization default options as well.
 			 */
-			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
+			$place_is_defaults = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
+				array_merge( $this->p->cf[ 'form' ][ 'place_is_defaults' ], $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) :
+				$this->p->cf[ 'form' ][ 'place_is_defaults' ];
+
+			foreach ( $place_is_defaults as $opts_key => $opts_label ) {
 
 				if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
 
@@ -151,7 +154,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				/*
 				 * Check if some default options need to be updated.
 				 */
-				foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
+				$place_is_defaults = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
+					array_merge( $this->p->cf[ 'form' ][ 'place_is_defaults' ], $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) :
+					$this->p->cf[ 'form' ][ 'place_is_defaults' ];
+
+				foreach ( $place_is_defaults as $opts_key => $opts_label ) {
 
 					if ( empty( $md_opts[ 'place_is_' . $opts_key ] ) ) {	// Checkbox is unchecked.
 

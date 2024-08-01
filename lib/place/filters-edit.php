@@ -68,12 +68,14 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$business_weekdays         = $this->p->cf[ 'form' ][ 'weekdays' ];
 			$hide_local_business_class = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
 			$hide_food_establish_class = $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' );
+			$hide_org_class            = $this->p->schema->get_children_css_class( 'organization', 'hide_place_schema_type' );
 
 			if ( $is_custom ) {
 
 				$tr_hide_place_html            = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
 				$tr_hide_local_business_html   = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
 				$tr_hide_food_establish_html   = '<tr class="hide_schema_place_id ' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_org_html              = '<tr class="hide_schema_place_id ' . $hide_org_class . '" style="display:none;">';
 				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 
 			} else {
@@ -81,6 +83,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$tr_hide_place_html            = '';
 				$tr_hide_local_business_html   = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
 				$tr_hide_food_establish_html   = '<tr class="' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_org_html              = '<tr class="' . $hide_org_class . '" style="display:none;">';
 				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
 
@@ -91,7 +94,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						$css_class = 'medium', $css_id = 'meta-place_name' ) .
 					'<td>' . $form->get_input( 'place_name', $css_class = 'wide' ) . '</td>';
 
-				$table_rows[ 'place_defaults' ] = $tr_hide_place_html .
+				$table_rows[ 'place_is_defaults' ] = $tr_hide_place_html .
 					$form->get_th_html( '', $css_class = 'medium' ) .
 					'<td>' . $form->get_checklist( 'place_is', $this->p->cf[ 'form' ][ 'place_is_defaults' ] ) . '</td>';
 
@@ -118,6 +121,15 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 							'is_sorted' => true,					// No label sorting required.
 						)
 					) . '</td>';
+
+			if ( ! $is_custom ) {
+
+				$place_is_defaults = array_diff_key( $this->p->cf[ 'form' ][ 'org_is_defaults' ], $this->p->cf[ 'form' ][ 'place_is_defaults' ] );
+
+				$table_rows[ 'place_org_is_defaults' ] = $tr_hide_org_html .
+					$form->get_th_html( '', $css_class = 'medium' ) .
+					'<td>' . $form->get_checklist( 'place_is', $place_is_defaults ) . '</td>';
+			}
 
 			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),
