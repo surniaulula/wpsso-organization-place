@@ -81,11 +81,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					$md_defs[ 'place_is_' . $opts_key ] = 1;
 
 				} else $md_defs[ 'place_is_' . $opts_key ] = 0;
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'setting place_is_' . $opts_key . ' = ' . $md_defs[ 'place_is_' .  $opts_key ] );
-				}
 			}
 
 			return $md_defs;
@@ -137,9 +132,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
-				$md_opts = $this->filter_get_post_options( $md_opts, $post_id, $mod );	// Merge defaults.
-
 				$place_id = 'place-' . $mod[ 'id' ];
+
+				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
+				
+				$md_opts = array_merge( $md_defs, $md_opts );
 
 				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
 
@@ -171,6 +168,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					
 						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
 					}
+
+					unset( $md_opts[ 'place_is_' . $opts_key ] );
 				}
 
 				$this->check_place_image_sizes( $md_opts );

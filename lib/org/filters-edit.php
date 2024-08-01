@@ -40,10 +40,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
-			/*
-			 * Use 'strict_org_types_select' for Google (removes all Schema Place sub-types).
-			 */
-			$org_types_select        = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );
+			$org_types_select        = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );	// Use strict for Google.
 			$org_types_msg           = $this->p->msgs->get( 'info-meta-org_schema_type' );
 			$place_names             = $this->p->util->get_form_cache( 'place_names', $add_none = true );
 			$hide_news_media_class   = $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
