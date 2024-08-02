@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.2 (2024/08/01)**
+**Version 3.0.0-dev.4 (2024/08/02)**
 
 * **New Features**
 	* If a Schema Place sub-type is also a Schema Organization sub-type:
@@ -153,7 +153,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.22.0.
+	* WPSSO Core v17.23.0-dev.4.
 
 **Version 2.4.1 (2024/08/01)**
 
@@ -247,9 +247,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-dev.2 =
+= 3.0.0-dev.4 =
 
-(2024/08/01) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for default organization options.
+(2024/08/02) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for default organization options.
 
 = 2.4.1 =
 
