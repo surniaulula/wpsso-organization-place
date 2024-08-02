@@ -138,18 +138,18 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.4 (2024/08/02)**
+**Version 3.0.0-dev.4 (TBD)**
 
 * **New Features**
 	* If a Schema Place sub-type is also a Schema Organization sub-type:
 		* Add the place to organization selects.
-		* Add checkboxes in the place editing page for default organization options.
+		* Add checkboxes in the place editing page for organization options.
 * **Improvements**
 	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new `WpssoOpmOrg::add_mb_org_rows()` method.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -249,7 +249,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0-dev.4 =
 
-(2024/08/02) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for default organization options.
+(TBD) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for organization options.
 
 = 2.4.1 =
 
