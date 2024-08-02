@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		public function filter_mb_place_rows( $table_rows, $form, $head_info, $mod ) {
 
-			return $this->get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = false );
+			return $this->get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = false );
 		}
 
 		/*
@@ -59,10 +59,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 		 */
 		public function filter_mb_sso_edit_schema_rows( $table_rows, $form, $head_info, $mod ) {
 
-			return $this->get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = true );
+			return $this->get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom = true );
 		}
 
-		private function get_metabox_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
+		private function get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
 			$place_types               = $this->p->util->get_form_cache( 'place_types_select', $add_none = false );
 			$business_weekdays         = $this->p->cf[ 'form' ][ 'weekdays' ];
@@ -94,10 +94,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						$css_class = 'medium', $css_id = 'meta-place_name' ) .
 					'<td>' . $form->get_input( 'place_name', $css_class = 'wide' ) . '</td>';
 
-				$table_rows[ 'place_is_defaults' ] = $tr_hide_place_html .
-					$form->get_th_html( '', $css_class = 'medium' ) .
-					'<td>' . $form->get_checklist( 'place_is', $this->p->cf[ 'form' ][ 'place_is_defaults' ] ) . '</td>';
-
 				$table_rows[ 'place_name_alt' ] = $tr_hide_place_html .
 					$form->get_th_html( _x( 'Place Alternate Name', 'option label', 'wpsso-organization-place' ),
 						$css_class = 'medium', $css_id = 'meta-place_name_alt' ) .
@@ -124,12 +120,21 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 			if ( ! $is_custom ) {
 
-				$place_is_defaults = array_diff_key( $this->p->cf[ 'form' ][ 'org_is_defaults' ], $this->p->cf[ 'form' ][ 'place_is_defaults' ] );
-
-				$table_rows[ 'place_org_is_defaults' ] = $tr_hide_org_html .
-					$form->get_th_html( '', $css_class = 'medium' ) .
-					'<td>' . $form->get_checklist( 'place_is', $place_is_defaults ) . '</td>';
+				$table_rows[ 'place_is_default' ] = $tr_hide_place_html .
+					$form->get_th_html( _x( 'Place Is Default', 'option label', 'wpsso-organization-place' ),
+						$css_class = 'medium', $css_id = 'meta-place_is_default' ) .
+					'<td>' . $form->get_checklist( 'place_is', $this->p->cf[ 'form' ][ 'place_is_defaults' ] ) . '</td>';
 			}
+
+			WpssoOpmOrg::add_mb_org_rows( $table_rows, $form, $head_info, $mod, $tr_hide_org_html );
+
+			/*
+			 * Place section.
+			 */
+			$table_rows[ 'subsection_place' ] = $tr_hide_local_business_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Place Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
 
 			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),

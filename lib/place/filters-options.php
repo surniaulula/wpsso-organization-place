@@ -73,17 +73,20 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			 *
 			 * If the default place schema type is an organization, check the organization default options as well.
 			 */
-			$place_is_defaults = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
-				array_merge( $this->p->cf[ 'form' ][ 'place_is_defaults' ], $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) :
-				$this->p->cf[ 'form' ][ 'place_is_defaults' ];
+			foreach ( array(
+				'org_is' => $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
+					$this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+				'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
+			) as $opt_prefix => $is_defaults ) {
 
-			foreach ( $place_is_defaults as $opts_key => $opts_label ) {
+				foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-				if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
-
-					$md_defs[ 'place_is_' . $opts_key ] = 1;
-
-				} else $md_defs[ 'place_is_' . $opts_key ] = 0;
+					if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
+	
+						$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
+	
+					} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
+				}
 			}
 
 			return $md_defs;
@@ -153,32 +156,37 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 				/*
 				 * Check if some default options need to be updated.
+				 *
+				 * If the default place schema type is an organization, check the organization default options as well.
 				 */
-				$place_is_defaults = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
-					array_merge( $this->p->cf[ 'form' ][ 'place_is_defaults' ], $this->p->cf[ 'form' ][ 'org_is_defaults' ] ) :
-					$this->p->cf[ 'form' ][ 'place_is_defaults' ];
+				foreach ( array(
+					'org_is' => $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
+						$this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
+				) as $opt_prefix => $is_defaults ) {
 
-				foreach ( $place_is_defaults as $opts_key => $opts_label ) {
-
-					if ( empty( $md_opts[ 'place_is_' . $opts_key ] ) ) {	// Checkbox is unchecked.
-
-						if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
-
-							$this->p->options[ $opts_key ] = 'none';
+					foreach ( $is_defaults as $opts_key => $opts_label ) {
+	
+						if ( empty( $md_opts[ $opt_prefix . '_' . $opts_key ] ) ) {	// Checkbox is unchecked.
+	
+							if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
+	
+								$this->p->options[ $opts_key ] = 'none';
+							
+								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+							}
+	
+						} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
+	
+							$this->p->options[ $opts_key ] = $place_id;
 						
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
 						}
-
-					} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
-
-						$this->p->options[ $opts_key ] = $place_id;
-					
-						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
+	
+						unset( $md_opts[ $opt_prefix . '_' . $opts_key ] );
 					}
-
-					unset( $md_opts[ 'place_is_' . $opts_key ] );
 				}
-
+	
 				$this->check_place_image_sizes( $md_opts );
 
 			} else {
