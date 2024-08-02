@@ -330,7 +330,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			}
 		}
 
-		public static function check_org_image_sizes( $md_opts ) {
+		public static function check_org_image_sizes( $md_opts, $name_key = 'org_name' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -372,7 +372,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 						// translators: %s is the organization name.
 						$notice_msg = sprintf( __( 'The "%s" organization logo image URL is missing and required.',
-							'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
+							'wpsso-organization-place' ), $md_opts[ $name_key ] ) . ' ';
 
 						$wpsso->notice->err( $notice_msg );
 
@@ -380,7 +380,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 						// translators: %s is the organization name.
 						$notice_msg = sprintf( __( 'The "%s" organization banner image URL is missing and required.',
-							'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
+							'wpsso-organization-place' ), $md_opts[ $name_key ] ) . ' ';
 
 						$wpsso->notice->err( $notice_msg );
 					}
@@ -403,7 +403,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 							// translators: %s is the organization name.
 							$notice_msg = sprintf( __( 'The "%s" organization logo image dimensions cannot be determined.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
+								'wpsso-organization-place' ), $md_opts[ $name_key ] ) . ' ';
 
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please make sure this site can access %s using the PHP getimagesize() function.',
@@ -415,7 +415,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 							// translators: %1$s is the organization name.
 							$notice_msg = sprintf( __( 'The "%1$s" organization logo image dimensions are %2$s and must be greater than %3$s.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ], $image_dims, $minimum_dims ) . ' ';
+								'wpsso-organization-place' ), $md_opts[ $name_key ], $image_dims, $minimum_dims ) . ' ';
 
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please correct the %s logo image or select a different logo image.',
@@ -434,7 +434,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 							// translators: %s is the organization name.
 							$notice_msg = sprintf( __( 'The "%s" organization banner image dimensions cannot be determined.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
+								'wpsso-organization-place' ), $md_opts[ $name_key ] ) . ' ';
 
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please make sure this site can access %s using the PHP getimagesize() function.',
@@ -446,7 +446,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 							// translators: %1$s is the organization name.
 							$notice_msg = sprintf( __( 'The "%1$s" organization banner image dimensions are %2$s and must be exactly %3$s.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ], $image_dims, $required_dims ) . ' ';
+								'wpsso-organization-place' ), $md_opts[ $name_key ], $image_dims, $required_dims ) . ' ';
 
 							// translators: %s is the image URL.
 							$notice_msg .= sprintf( __( 'Please correct the %s banner image or select a different banner image.',

@@ -191,7 +191,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				
 					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-					WpssoOpmOrg::check_org_image_sizes( $md_opts );
+					WpssoOpmOrg::check_org_image_sizes( $md_opts, $name_key = 'place_name' );
 				}
 	
 				WpssoOpmPlace::check_place_image_sizes( $md_opts );
