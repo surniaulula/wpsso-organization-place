@@ -161,7 +161,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-				$this->check_org_image_sizes( $md_opts );
+				WpssoOpmOrg::check_org_image_sizes( $md_opts );
 			}
 
 			return $md_opts;
@@ -241,132 +241,6 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			}
 
 			return $adv_exclude;
-		}
-
-		private function check_org_image_sizes( $md_opts ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			/*
-			 * Skip if notices have already been shown.
-			 */
-			if ( ! $this->p->notice->is_admin_pre_notices() ) {
-
-				return;
-			}
-
-			/*
-			 * Returns an image array:
-			 *
-			 * array(
-			 *	'og:image:url'       => null,
-			 *	'og:image:width'     => null,
-			 *	'og:image:height'    => null,
-			 *	'og:image:cropped'   => null,
-			 *	'og:image:id'        => null,
-			 *	'og:image:alt'       => null,
-			 *	'og:image:size_name' => null,
-			 * );
-			 */
-			foreach ( array ( 'org_logo', 'org_banner' ) as $img_pre ) {
-
-				$mt_single_image = $this->p->media->get_mt_img_pre_url( $md_opts, $img_pre );
-				$first_image_url = SucomUtil::get_first_mt_media_url( $mt_single_image );
-
-				if ( empty( $first_image_url ) ) {
-
-					if ( 'org_logo' === $img_pre ) {
-
-						// translators: %s is the organization name.
-						$notice_msg = sprintf( __( 'The "%s" organization logo image URL is missing and required.',
-							'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
-
-						$this->p->notice->err( $notice_msg );
-
-					} elseif ( 'org_banner' === $img_pre ) {
-
-						// translators: %s is the organization name.
-						$notice_msg = sprintf( __( 'The "%s" organization banner image URL is missing and required.',
-							'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
-
-						$this->p->notice->err( $notice_msg );
-					}
-
-				} else {
-
-					$image_href   = '<a href="' . $first_image_url . '">' . $first_image_url . '</a>';
-					$image_width  = $mt_single_image[ 'og:image:width' ];
-					$image_height = $mt_single_image[ 'og:image:height' ];
-					$image_dims   = $image_width . 'x' . $image_height . 'px';
-					$notice_key   = 'invalid-image-dimensions-' . $image_dims . '-' . $first_image_url;
-
-					if ( 'org_logo' === $img_pre ) {
-
-						$min_width    = $this->p->cf[ 'head' ][ 'limit_min' ][ 'org_logo_width' ];
-						$min_height   = $this->p->cf[ 'head' ][ 'limit_min' ][ 'org_logo_height' ];
-						$minimum_dims = $min_width . 'x' . $min_height . 'px';
-
-						if ( '-1x-1px' === $image_dims ) {
-
-							// translators: %s is the organization name.
-							$notice_msg = sprintf( __( 'The "%s" organization logo image dimensions cannot be determined.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
-
-							// translators: %s is the image URL.
-							$notice_msg .= sprintf( __( 'Please make sure this site can access %s using the PHP getimagesize() function.',
-								'wpsso-organization-place' ), $image_href );
-
-							$this->p->notice->err( $notice_msg, null, $notice_key );
-
-						} elseif ( $image_width < $min_width || $image_height < $min_height ) {
-
-							// translators: %1$s is the organization name.
-							$notice_msg = sprintf( __( 'The "%1$s" organization logo image dimensions are %2$s and must be greater than %3$s.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ], $image_dims, $minimum_dims ) . ' ';
-
-							// translators: %s is the image URL.
-							$notice_msg .= sprintf( __( 'Please correct the %s logo image or select a different logo image.',
-								'wpsso-organization-place' ), $image_href );
-
-							$this->p->notice->err( $notice_msg, null, $notice_key );
-						}
-
-					} elseif ( 'org_banner' === $img_pre ) {
-
-						$min_width     = $this->p->cf[ 'head' ][ 'limit' ][ 'org_banner_width' ];
-						$min_height    = $this->p->cf[ 'head' ][ 'limit' ][ 'org_banner_height' ];
-						$required_dims = $min_width . 'x' . $min_height . 'px';
-
-						if ( '-1x-1px' === $image_dims ) {
-
-							// translators: %s is the organization name.
-							$notice_msg = sprintf( __( 'The "%s" organization banner image dimensions cannot be determined.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ] ) . ' ';
-
-							// translators: %s is the image URL.
-							$notice_msg .= sprintf( __( 'Please make sure this site can access %s using the PHP getimagesize() function.',
-								'wpsso-organization-place' ), $image_href );
-
-							$this->p->notice->err( $notice_msg, null, $notice_key );
-
-						} elseif ( $image_dims !== $required_dims ) {
-
-							// translators: %1$s is the organization name.
-							$notice_msg = sprintf( __( 'The "%1$s" organization banner image dimensions are %2$s and must be exactly %3$s.',
-								'wpsso-organization-place' ), $md_opts[ 'org_name' ], $image_dims, $required_dims ) . ' ';
-
-							// translators: %s is the image URL.
-							$notice_msg .= sprintf( __( 'Please correct the %s banner image or select a different banner image.',
-								'wpsso-organization-place' ), $image_href );
-
-							$this->p->notice->err( $notice_msg, null, $notice_key );
-						}
-					}
-				}
-			}
 		}
 	}
 }

@@ -281,5 +281,25 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			return false;
 		}
+
+		public static function check_place_image_sizes( $md_opts ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			/*
+			 * Skip if notices have already been shown.
+			 */
+			if ( ! $wpsso->notice->is_admin_pre_notices() ) {
+
+				return;
+			}
+
+			$mt_images = $wpsso->media->get_mt_opts_images( $md_opts, $size_names = 'schema', $img_pre = 'place_img' );
+		}
 	}
 }

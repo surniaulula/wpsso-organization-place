@@ -186,8 +186,15 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 						unset( $md_opts[ $opt_prefix . '_' . $opts_key ] );
 					}
 				}
+
+				if ( $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ) {
+				
+					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
+
+					WpssoOpmOrg::check_org_image_sizes( $md_opts );
+				}
 	
-				$this->check_place_image_sizes( $md_opts );
+				WpssoOpmPlace::check_place_image_sizes( $md_opts );
 
 			} else {
 
@@ -278,24 +285,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			}
 
 			return $adv_exclude;
-		}
-
-		private function check_place_image_sizes( $md_opts ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			/*
-			 * Skip if notices have already been shown.
-			 */
-			if ( ! $this->p->notice->is_admin_pre_notices() ) {
-
-				return;
-			}
-
-			$mt_images = $this->p->media->get_mt_opts_images( $md_opts, $size_names = 'schema', $img_pre = 'place_img' );
 		}
 	}
 }
