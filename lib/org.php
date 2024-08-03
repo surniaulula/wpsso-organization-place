@@ -35,16 +35,21 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$wpsso->debug->mark();
 			}
 
+			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'organization';
+
 			static $local_cache = array();
 
 			if ( isset( $local_cache[ $schema_type ] ) ) {
+
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->log( 'returning cache entry for "' . $schema_type . '"' );
+				}
 
 				return $local_cache[ $schema_type ];
 			}
 
 			$local_cache[ $schema_type ] = array();
-
-			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'organization';
 
 			$children = $wpsso->schema->get_schema_type_children( $schema_type );
 
@@ -53,7 +58,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			foreach ( $org_ids as $post_id ) {
 
 				$org_opts = $wpsso->post->get_options( $post_id );
-				$def_name = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
+				$def_name = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), 'org-' . $post_id );
 				$org_name = empty( $org_opts[ 'org_name' ] ) ? $def_name : $org_opts[ 'org_name' ];
 				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? 'organization' : $org_opts[ 'org_schema_type' ];
 
@@ -70,13 +75,18 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			 */
 			$local_cache[ $schema_type ] = array_merge( $local_cache[ $schema_type ], WpssoOpmPlace::get_names( $schema_type ) );
 
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'saving cache entry for "' . $schema_type . '"' );
+			}
+
 			return $local_cache[ $schema_type ];
 		}
 
 		/*
 		 * Get a specific organization id.
 		 */
-		public static function get_id( $org_id, $mixed = 'current', $opt_key = false ) {
+		public static function get_id( $org_id, $mixed = 'current', $opt_key = false, $id_prefix = 'org' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -101,9 +111,9 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				$org_opts = WpssoSchema::get_site_organization( $mixed );
 
-			} elseif ( 0 === strpos( $org_id, 'org-' ) ) {
+			} elseif ( 0 === strpos( $org_id, $id_prefix . '-' ) ) {
 
-				$post_id = substr( $org_id, 4 );
+				$post_id = substr( $org_id, strlen( $id_prefix ) + 1 );
 
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
@@ -145,15 +155,14 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
-					$org_page_link = get_edit_post_link( $post_id );
+					$org_page_link = get_edit_post_link( $post_mod[ 'id' ] );
 
-					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $org_id ) . ' ';
 
 					$notice_msg .= $org_page_link ? '<a href="' . $org_page_link . '">' : '';
 
 					$notice_msg .= sprintf( __( 'Please publish organization ID #%s or select a different organization.',
-						'wpsso-organization-place' ), $post_id );
+						'wpsso-organization-place' ), $org_id );
 
 					$notice_msg .= $org_page_link ? '</a>' : '';
 
@@ -161,14 +170,11 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				} else {
 
-					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg = sprintf( __( 'Unable to provide information for organization ID #%s.', 'wpsso-organization-place' ), $org_id ) . ' ';
 
-					$notice_msg .= sprintf( __( 'Organization ID #%s does not exist.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg .= sprintf( __( 'Organization ID #%s does not exist.', 'wpsso-organization-place' ), $org_id ) . ' ';
 
-					$notice_msg .= __( 'Please select a different organization.',
-						'wpsso-organization-place' );
+					$notice_msg .= __( 'Please select a different organization.', 'wpsso-organization-place' );
 
 					$wpsso->notice->err( $notice_msg );
 				}
@@ -205,7 +211,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$place_names             = $wpsso->util->get_form_cache( 'place_names', $add_none = true );
 			$hide_news_media_class   = $wpsso->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
 			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
 			$awards_max              = SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 );
@@ -224,12 +229,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				_x( 'Organization Information', 'metabox title', 'wpsso' ) .
 				'</h5></td>';
 			
-			$table_rows[ 'org_place_id' ] = $tr_hide_html .
-				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-org_place_id' ) .
-				'<td>' . $form->get_select( 'org_place_id', $place_names,
-					$css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
-
 			$table_rows[ 'org_url' ] = $tr_hide_html .
 				$form->get_th_html( _x( 'Organization WebSite URL', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_url' ) .
@@ -277,7 +276,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					$css_class = 'medium', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
 
-			$table_rows[ 'org_award' ] = ''.
+			$table_rows[ 'org_award' ] = $tr_hide_html .
 				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso' ),
 					$css_class = 'medium', $css_id = 'meta-org_award' ) .
 				'<td>' . $form->get_input_multi( 'org_award', $css_class = 'wide', $css_id = '',

@@ -162,6 +162,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
 				WpssoOpmOrg::check_org_image_sizes( $md_opts );
+
+			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
 			}
 
 			return $md_opts;

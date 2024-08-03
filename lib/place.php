@@ -35,16 +35,21 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$wpsso->debug->mark();
 			}
 
+			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'place';
+
 			static $local_cache = array();
 
 			if ( isset( $local_cache[ $schema_type ] ) ) {
+
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->log( 'returning cache entry for "' . $schema_type . '"' );
+				}
 
 				return $local_cache[ $schema_type ];
 			}
 
 			$local_cache[ $schema_type ] = array();
-
-			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'place';
 
 			$children = $wpsso->schema->get_schema_type_children( $schema_type );
 
@@ -53,7 +58,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			foreach ( $place_ids as $post_id ) {
 
 				$place_opts = $wpsso->post->get_options( $post_id );
-				$def_name   = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
+				$def_name   = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), 'place-' . $post_id );
 				$def_type   = $wpsso->cf[ 'opt' ][ 'place_md_defaults' ][ 'place_schema_type' ];
 				$place_name = empty( $place_opts[ 'place_name' ] ) ? $def_name : $place_opts[ 'place_name' ];
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
@@ -66,13 +71,18 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				}
 			}
 
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'saving cache entry for "' . $schema_type . '"' );
+			}
+
 			return $local_cache[ $schema_type ];
 		}
 
 		/*
 		 * Get a specific place id.
 		 */
-		public static function get_id( $place_id, $mod = false, $opt_key = false ) {
+		public static function get_id( $place_id, $mod = false, $opt_key = false, $id_prefix = 'place' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -109,9 +119,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 					);
 				}
 
-			} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
+			} elseif ( 0 === strpos( $place_id, $id_prefix . '-' ) ) {
 
-				$post_id  = substr( $place_id, 6 );
+				$post_id = substr( $place_id, strlen( $id_prefix ) + 1 );
+
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
@@ -120,25 +131,25 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
-					$place_page_link = get_edit_post_link( $post_id );
+					$place_page_link = get_edit_post_link( $post_mod[ 'id' ] );
 
-					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
+					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.', 'wpsso-organization-place' ), $place_id ) . ' ';
+
 					$notice_msg .= $place_page_link ? '<a href="' . $place_page_link . '">' : '';
-					$notice_msg .= sprintf( __( 'Please publish place ID #%s or select a different place.',
-						'wpsso-organization-place' ), $post_id );
+
+					$notice_msg .= sprintf( __( 'Please publish place ID #%s or select a different place.', 'wpsso-organization-place' ), $place_id );
+
 					$notice_msg .= $place_page_link ? '</a>' : '';
 
 					$wpsso->notice->err( $notice_msg );
 
 				} else {
 
-					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
-					$notice_msg .= sprintf( __( 'Place ID #%s does not exist.',
-						'wpsso-organization-place' ), $post_id ) . ' ';
-					$notice_msg .= __( 'Please select a different place.',
-						'wpsso-organization-place' );
+					$notice_msg = sprintf( __( 'Unable to provide information for place ID #%s.', 'wpsso-organization-place' ), $place_id ) . ' ';
+
+					$notice_msg .= sprintf( __( 'Place ID #%s does not exist.', 'wpsso-organization-place' ), $place_id ) . ' ';
+
+					$notice_msg .= __( 'Please select a different place.', 'wpsso-organization-place' );
 
 					$wpsso->notice->err( $notice_msg );
 				}
@@ -147,6 +158,8 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			if ( ! empty( $place_opts ) ) {
 
 				$place_opts[ 'place_id' ] = $place_id;
+
+				$place_opts[ 'place_url' ] = isset( $place_opts[ 'org_url' ] ) ? $place_opts[ 'org_url' ] : '';
 
 				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );	// Complete the array.
 

@@ -35,18 +35,42 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		public function filter_form_cache_place_names_custom( $mixed ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			$custom = array( 'custom' => _x( '[Custom Place]', 'option value', 'wpsso-organization-place' ) );
 
 			$place_names = $this->filter_form_cache_place_names( $mixed );	// Always returns an array.
 
-			return $custom + $place_names;
+			$place_names_custom = $custom + $place_names;
+			
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'place_names_custom', $place_names_custom );
+			}
+
+			return $place_names_custom;
 		}
 
 		public function filter_form_cache_place_names( $mixed ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			$place_names = WpssoOpmPlace::get_names( $schema_type = '' );
 
-			return is_array( $mixed ) ? $mixed + $place_names : $place_names;
+			$place_names = is_array( $mixed ) ? $mixed + $place_names : $place_names;
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'place_names', $place_names);
+			}
+
+			return $place_names;
 		}
 
 		public function filter_mb_place_rows( $table_rows, $form, $head_info, $mod ) {

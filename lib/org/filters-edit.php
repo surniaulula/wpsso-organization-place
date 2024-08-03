@@ -33,13 +33,26 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_form_cache_org_names( $mixed ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			$org_names = WpssoOpmOrg::get_names( $schema_type = '' );
 
-			return is_array( $mixed ) ? $mixed + $org_names : $org_names;
+			$org_names = is_array( $mixed ) ? $mixed + $org_names : $org_names;
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'org_names', $org_names);
+			}
+
+			return $org_names;
 		}
 
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
+			$place_names      = $this->p->util->get_form_cache( 'place_names', $add_none = true );
 			$strict_org_types = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );	// Use strict for Google.
 			$org_type_msg     = $this->p->msgs->get( 'info-meta-org-schema-type' );
 
@@ -57,6 +70,12 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Organization Description', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_desc' ) .
 				'<td>' . $form->get_textarea( 'org_desc' ) . '</td>';
+
+			$table_rows[ 'org_place_id' ] = '' .
+				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_place_id' ) .
+				'<td>' . $form->get_select( 'org_place_id', $place_names,
+					$css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
 
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),

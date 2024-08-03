@@ -26,6 +26,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
+				'get_organization_options'        => 3,
 				'get_place_options'               => 3,
 				'get_post_defaults'               => 3,
 				'get_post_options'                => 3,
@@ -33,6 +34,30 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				'option_type'                     => 2,
 				'plugin_upgrade_advanced_exclude' => 1,
 			) );
+		}
+
+		public function filter_get_organization_options( $org_opts, $mod, $org_id ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			if ( false === $org_opts ) {	// First come, first served.
+
+				if ( 0 === strpos( $org_id, 'place-' ) ) {
+
+					$org_opts = WpssoOpmOrg::get_id( $org_id, $mod, $opt_key = false, $id_prefix = 'place' );
+
+					$org_opts[ 'org_name' ]        = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_name' );
+					$org_opts[ 'org_name_alt' ]    = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_name_alt' );
+					$org_opts[ 'org_desc' ]        = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_desc' );
+					$org_opts[ 'org_schema_type' ] = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_schema_type' );
+					$org_opts[ 'org_place_id' ]    = 'none';	// Just in case.
+				}
+			}
+
+			return $org_opts;
 		}
 
 		public function filter_get_place_options( $place_opts, $mod, $place_id ) {
@@ -73,9 +98,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			 *
 			 * If the default place schema type is an organization, check the organization default options as well.
 			 */
+			$is_org_child = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' );
+
 			foreach ( array(
-				'org_is' => $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
-					$this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+				'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
 				'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
 			) as $opt_prefix => $is_defaults ) {
 
@@ -136,7 +162,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
+			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
 				$place_id = 'place-' . $mod[ 'id' ];
 
@@ -159,9 +189,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				 *
 				 * If the default place schema type is an organization, check the organization default options as well.
 				 */
+				$is_org_child = $this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
+
 				foreach ( array(
-					'org_is' => $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ?
-						$this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+					'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
 					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
 				) as $opt_prefix => $is_defaults ) {
 
@@ -187,7 +218,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					}
 				}
 
-				if ( $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' ) ) {
+				if ( $is_org_child ) {
 				
 					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
@@ -196,13 +227,13 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 	
 				WpssoOpmPlace::check_place_image_sizes( $md_opts );
 
-			} else {
+			} else {	// Not an organization or place post type.
 
 				$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
 
 				if ( 'custom' !== $place_id ) {
 
-					$md_opts = SucomUtil::preg_grep_keys( '/^place_/', $md_opts, $invert = true );
+					$md_opts = SucomUtil::preg_grep_keys( '/^(org|place)_/', $md_opts, $invert = true );
 				}
 			}
 
