@@ -138,12 +138,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.4 (TBD)**
+**Version 3.0.0-dev.5 (2024/08/03)**
 
 * **New Features**
-	* If a Schema Place sub-type is also a Schema Organization sub-type:
-		* Add the place to organization selects.
-		* Add checkboxes in the place editing page for organization options.
+	* If a Schema Place sub-type is also a Schema Organization sub-type, add Organization options to the Place editing page.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -153,7 +151,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.23.0-dev.4.
+	* WPSSO Core v17.23.0-dev.5.
 
 **Version 2.4.1 (2024/08/01)**
 
@@ -247,9 +245,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-dev.4 =
+= 3.0.0-dev.5 =
 
-(TBD) If a Schema Place sub-type is also a Schema Organization sub-type: Add organization selects, add checkboxes for organization options.
+(2024/08/03) If a Schema Place sub-type is also a Schema Organization sub-type, add Organization options to the Place editing page.
 
 = 2.4.1 =
 
