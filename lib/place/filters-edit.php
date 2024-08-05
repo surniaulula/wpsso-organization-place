@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$place_names = $this->filter_form_cache_place_names( $mixed );	// Always returns an array.
 
 			$place_names_custom = $custom + $place_names;
-			
+
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->log_arr( 'place_names_custom', $place_names_custom );

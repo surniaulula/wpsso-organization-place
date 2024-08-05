@@ -228,7 +228,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'Organization Information', 'metabox title', 'wpsso' ) .
 				'</h5></td>';
-			
+
 			$table_rows[ 'org_url' ] = $tr_hide_html .
 				$form->get_th_html( _x( 'Organization WebSite URL', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_url' ) .

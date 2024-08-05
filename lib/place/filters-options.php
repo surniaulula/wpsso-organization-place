@@ -108,9 +108,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				foreach ( $is_defaults as $opts_key => $opts_label ) {
 
 					if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
-	
+
 						$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
-	
+
 					} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
 				}
 			}
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$place_id = 'place-' . $mod[ 'id' ];
 
 				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-				
+
 				$md_opts = array_merge( $md_defs, $md_opts );
 
 				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
@@ -197,34 +197,34 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				) as $opt_prefix => $is_defaults ) {
 
 					foreach ( $is_defaults as $opts_key => $opts_label ) {
-	
+
 						if ( empty( $md_opts[ $opt_prefix . '_' . $opts_key ] ) ) {	// Checkbox is unchecked.
-	
+
 							if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
-	
+
 								$this->p->options[ $opts_key ] = 'none';
-							
+
 								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
 							}
-	
+
 						} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
-	
+
 							$this->p->options[ $opts_key ] = $place_id;
-						
+
 							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
 						}
-	
+
 						unset( $md_opts[ $opt_prefix . '_' . $opts_key ] );
 					}
 				}
 
 				if ( $is_org_child ) {
-				
+
 					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
 					WpssoOpmOrg::check_org_image_sizes( $md_opts, $name_key = 'place_name' );
 				}
-	
+
 				WpssoOpmPlace::check_place_image_sizes( $md_opts );
 
 			} else {	// Not an organization or place post type.

@@ -122,7 +122,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$org_id = 'org-' . $mod[ 'id' ];
 
 				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-				
+
 				$md_opts = array_merge( $md_defs, $md_opts );
 
 				if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
@@ -145,14 +145,14 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 						if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
 							$this->p->options[ $opts_key ] = 'none';
-						
+
 							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
 						}
 
 					} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
 
 						$this->p->options[ $opts_key ] = $org_id;
-					
+
 						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
 					}
 
