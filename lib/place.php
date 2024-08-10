@@ -312,7 +312,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				return;
 			}
 
-			$mt_images = $wpsso->media->get_mt_opts_images( $md_opts, $size_names = 'schema', $img_pre = 'place_img' );
+			$mt_images = $wpsso->media->get_mt_opts_images( $md_opts, $size_names = 'schema', $img_prefix = 'place_img' );
 		}
 	}
 }

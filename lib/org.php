@@ -359,15 +359,15 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			 *	'og:image:size_name' => null,
 			 * );
 			 */
-			foreach ( array ( 'org_logo', 'org_banner' ) as $img_pre ) {
+			foreach ( array ( 'org_logo', 'org_banner' ) as $img_prefix ) {
 
-				$mt_single_image = $wpsso->media->get_mt_img_pre_url( $md_opts, $img_pre );
+				$mt_single_image = $wpsso->media->get_mt_img_pre_url( $md_opts, $img_prefix );
 
 				$first_image_url = SucomUtil::get_first_mt_media_url( $mt_single_image );
 
 				if ( empty( $first_image_url ) ) {
 
-					if ( 'org_logo' === $img_pre ) {
+					if ( 'org_logo' === $img_prefix ) {
 
 						// translators: %s is the organization name.
 						$notice_msg = sprintf( __( 'The "%s" organization logo image URL is missing and required.',
@@ -375,7 +375,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 						$wpsso->notice->err( $notice_msg );
 
-					} elseif ( 'org_banner' === $img_pre ) {
+					} elseif ( 'org_banner' === $img_prefix ) {
 
 						// translators: %s is the organization name.
 						$notice_msg = sprintf( __( 'The "%s" organization banner image URL is missing and required.',
@@ -392,7 +392,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					$image_dims   = $image_width . 'x' . $image_height . 'px';
 					$notice_key   = 'invalid-image-dimensions-' . $image_dims . '-' . $first_image_url;
 
-					if ( 'org_logo' === $img_pre ) {
+					if ( 'org_logo' === $img_prefix ) {
 
 						$min_width    = $wpsso->cf[ 'head' ][ 'limit_min' ][ 'org_logo_width' ];
 						$min_height   = $wpsso->cf[ 'head' ][ 'limit_min' ][ 'org_logo_height' ];
@@ -423,7 +423,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 							$wpsso->notice->err( $notice_msg, null, $notice_key );
 						}
 
-					} elseif ( 'org_banner' === $img_pre ) {
+					} elseif ( 'org_banner' === $img_prefix ) {
 
 						$min_width     = $wpsso->cf[ 'head' ][ 'limit' ][ 'org_banner_width' ];
 						$min_height    = $wpsso->cf[ 'head' ][ 'limit' ][ 'org_banner_height' ];
