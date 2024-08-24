@@ -15,7 +15,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
  * Tested Up To: 6.6.1
- * Version: 3.0.0
+ * Version: 3.1.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -41,10 +41,7 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 
 	class WpssoOpm extends WpssoAbstractAddOn {
 
-		public $filters;	// WpssoOpmFilters class object.
-		public $post;		// WpssoOpmPost class object.
-
-		protected $p;		// Wpsso class object.
+		protected $p;	// Wpsso class object.
 
 		private static $instance = null;	// WpssoOpm class object.
 
@@ -70,12 +67,8 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 
 		/*
 		 * Called by Wpsso->set_objects() which runs at init priority 10.
-		 *
-		 * Require library files with functions or static methods in require_libs().
-		 *
-		 * Require library files with dynamic methods and instantiate the class object in init_objects().
 		 */
-		public function init_objects() {
+		public function init_objects_preloader() {
 
 			$this->p =& Wpsso::get_instance();
 
@@ -89,13 +82,8 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 				return;	// Stop here.
 			}
 
-			require_once WPSSOOPM_PLUGINDIR . 'lib/filters.php';
-
-			$this->filters = new WpssoOpmFilters( $this->p, $this );
-
-			require_once WPSSOOPM_PLUGINDIR . 'lib/post.php';
-
-			$this->post = new WpssoOpmPost( $this->p, $this );	// Depends on WpssoPost and WpssoAbstractWpMeta.
+			new WpssoOpmFilters( $this->p, $this );
+			new WpssoOpmPost( $this->p, $this );
 		}
 	}
 
