@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.6.1
-Stable Tag: 3.0.0
+Stable Tag: 3.1.0
 
 Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
 
@@ -168,96 +168,6 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.8.
 	* WPSSO Core v17.23.0.
 
-**Version 2.4.1 (2024/08/01)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed saving Organizations and Places as defaults.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.22.0.
-
-**Version 2.4.0 (2024/04/23)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.18.0.
-
-**Version 2.3.0 (2024/02/21)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.14.0.
-
-**Version 2.2.0 (2024/01/14)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed `SucomUtil::get_multi_key_locale()` to `SucomUtil::get_key_values_multi()`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.9.0.
-
-**Version 2.1.0 (2024/01/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.8.0.
-
-**Version 2.0.0 (2023/11/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a new Edit Organization &gt; Organization Awards option.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.0.0.
-
 == Upgrade Notice ==
 
 = 3.1.0 =
@@ -267,28 +177,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 3.0.0 =
 
 (2024/08/03) If a Schema Place sub-type is also a Schema Organization sub-type, add Organization options to the Place editing page.
-
-= 2.4.1 =
-
-(2024/08/01) Fixed saving Organizations and Places as defaults.
-
-= 2.4.0 =
-
-(2024/04/23) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
-
-= 2.3.0 =
-
-(2024/02/21) Updated the SSO Orgs &gt; Organization Schema Type select to remove Schema Place sub-types for Google.
-
-= 2.2.0 =
-
-(2024/01/14) Renamed `SucomUtil::get_multi_key_locale()` to `SucomUtil::get_key_values_multi()`.
-
-= 2.1.0 =
-
-(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
-
-= 2.0.0 =
-
-(2023/11/08) Added a new Edit Organization &gt; Organization Awards option. Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
