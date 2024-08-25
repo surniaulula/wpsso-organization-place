@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.1.0-dev.1 (2024/08/24)**
+**Version 3.1.0-b.1 (2024/08/25)**
 
 * **New Features**
 	* None.
@@ -151,7 +151,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v18.5.0-dev.1.
+	* WPSSO Core v18.5.0-b.1.
 
 **Version 3.0.0 (2024/08/03)**
 
@@ -260,9 +260,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.1.0-dev.1 =
+= 3.1.0-b.1 =
 
-(2024/08/24) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
+(2024/08/25) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
 
 = 3.0.0 =
 
