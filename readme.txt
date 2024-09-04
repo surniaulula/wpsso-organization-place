@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-dev.1 (TBD)**
+**Version 3.2.0-dev.1 (2024/08/04)**
 
 * **New Features**
 	* None.
@@ -147,11 +147,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v18.6.0.
+	* WPSSO Core v18.7.0-dev.1.
 
 **Version 3.1.0 (2024/08/25)**
 
@@ -187,7 +187,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.2.0-dev.1 =
 
-(TBD) None.
+(2024/08/04) Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
 
 = 3.1.0 =
 
