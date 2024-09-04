@@ -15,7 +15,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
  * Tested Up To: 6.6.1
- * Version: 3.1.0
+ * Version: 3.2.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -83,7 +83,10 @@ if ( ! class_exists( 'WpssoOpm' ) ) {
 			}
 
 			new WpssoOpmFilters( $this->p, $this );
-			new WpssoOpmPost( $this->p, $this );
+
+			$classname = apply_filters( 'wpssoopm_load_lib', false, 'post' );
+
+			if ( is_string( $classname ) && class_exists( $classname ) ) new $classname( $this->p, $this );
 		}
 	}
 
