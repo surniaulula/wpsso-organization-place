@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.6.0',
+							'min_version'   => '18.7.0-dev.1',
 						),
 					),
 
@@ -59,6 +59,11 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
+						'integ' => array(
+							'admin' => array(
+								'post' => 'Post Metabox',
+							),
+						),
 					),
 				),
 			),
