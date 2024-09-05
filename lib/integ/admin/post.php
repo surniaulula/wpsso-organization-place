@@ -10,6 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
+/*
+ * WpssoOpmIntegAdminPost extends the WpssoPost class, which extends the WpssoAbstractWpMeta class.
+ */
 if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) ) {
 
 	class WpssoOpmIntegAdminPost extends WpssoPost {
@@ -151,6 +154,9 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 			$opts     = $this->get_options( $post_obj->ID );
 			$def_opts = $this->get_defaults( $post_obj->ID );
 
+			/*
+			 * $this->form property is inherited from the WpssoPost and WpssoAbstractWpMeta classes.
+			 */
 			$this->form = new SucomForm( $this->p, WPSSO_META_NAME, $opts, $def_opts, $this->p->id );
 
 			wp_nonce_field( WpssoAdmin::get_nonce_action(), WPSSO_NONCE_NAME );
