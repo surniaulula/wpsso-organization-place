@@ -42,12 +42,11 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 		 */
 		public function add_wp_callbacks() {
 
-			if ( is_admin() ) {	// Just in case.
+			if ( is_admin() ) return;	// Just in case.
 
-				if ( ! empty( $_GET ) || 'post-new' === basename( $_SERVER[ 'PHP_SELF' ], '.php' ) ) {
+			if ( ! empty( $_GET ) || 'post-new' === basename( $_SERVER[ 'PHP_SELF' ], '.php' ) ) {
 
-					add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 2 );
-				}
+				add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 2 );
 			}
 		}
 
