@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 3.0.0\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-08-03 11:57-0700\n"
+"PO-Revision-Date: 2024-09-05 15:45-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.4\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:243
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:235
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:262
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:254
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -84,6 +84,16 @@ msgstr "Emplacement de travail par défaut"
 #: lib/filters-upgrade.php:208
 msgid "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s."
 msgstr "%1$s \"%2$s\" ID #%3$s des réglages d'extension a été converti en type d'article %4$s ID #%5$s."
+
+#: lib/integ/admin/post.php:83
+msgctxt "metabox title"
+msgid "Organization"
+msgstr "Organisation"
+
+#: lib/integ/admin/post.php:104
+msgctxt "metabox title"
+msgid "Place"
+msgstr "Endroit"
 
 #: lib/org/filters-edit.php:60
 msgctxt "option label"
@@ -493,16 +503,6 @@ msgstr "L'endroit ID #%s n'existe pas."
 #: lib/place.php:152
 msgid "Please select a different place."
 msgstr "Veuillez sélectionner un autre endroit."
-
-#: lib/post.php:89
-msgctxt "metabox title"
-msgid "Organization"
-msgstr "Organisation"
-
-#: lib/post.php:110
-msgctxt "metabox title"
-msgid "Place"
-msgstr "Endroit"
 
 #: lib/register.php:163
 msgctxt "post type general name"
