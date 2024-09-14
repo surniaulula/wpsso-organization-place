@@ -9,8 +9,8 @@ Assets URI: https://surniaulula.github.io/wpsso-organization-place/assets/
 Tags: organization, place, location, local seo, local business
 Contributors: jsmoriss
 Requires Plugins: wpsso
-Requires PHP: 7.2.34
-Requires At Least: 5.8
+Requires PHP: 7.4.33
+Requires At Least: 5.9
 Tested Up To: 6.6.2
 Stable Tag: 3.2.0
 
@@ -149,51 +149,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
 * **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v18.7.0.
-
-**Version 3.1.0 (2024/08/25)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v18.5.0.
-
-**Version 3.0.0 (2024/08/03)**
-
-* **New Features**
-	* If a Schema Place sub-type is also a Schema Organization sub-type, add Organization options to the Place editing page.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new `WpssoOpmOrg::add_mb_org_rows()` method.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.23.0.
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.7.3.
 
 == Upgrade Notice ==
 
 = 3.2.0 =
 
 (2024/09/07) Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
-
-= 3.1.0 =
-
-(2024/08/25) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
-
-= 3.0.0 =
-
-(2024/08/03) If a Schema Place sub-type is also a Schema Organization sub-type, add Organization options to the Place editing page.
 
