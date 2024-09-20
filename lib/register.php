@@ -110,28 +110,25 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 
 		private function activate_plugin() {
 
-			if ( class_exists( 'Wpsso' ) ) {
+			/*
+			 * Register plugin install, activation, update times.
+			 */
+			if ( class_exists( 'WpssoUtilReg' ) ) {
 
-				/*
-				 * Register plugin install, activation, update times.
-				 */
-				if ( class_exists( 'WpssoUtilReg' ) ) {	// Since WPSSO Core v6.13.1.
+				$version = WpssoOpmConfig::get_version();
 
-					$version = WpssoOpmConfig::get_version();
-
-					WpssoUtilReg::update_ext_version( 'wpssoopm', $version );
-				}
-
-				self::register_org_post_type();
-
-				self::register_org_category_taxonomy();
-
-				self::register_place_post_type();
-
-				self::register_place_category_taxonomy();
-
-				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option, not the .htaccess file.
+				WpssoUtilReg::update_ext_version( 'wpssoopm', $version );
 			}
+
+			self::register_org_post_type();
+
+			self::register_org_category_taxonomy();
+
+			self::register_place_post_type();
+
+			self::register_place_category_taxonomy();
+
+			flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option, not the .htaccess file.
 		}
 
 		private function deactivate_plugin() {
