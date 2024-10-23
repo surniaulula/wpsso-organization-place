@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.1-dev.1 (2024/10/23)**
+**Version 3.2.1-rc.1 (2024/10/23)**
 
 * **New Features**
 	* None.
@@ -170,7 +170,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.2.1-dev.1 =
+= 3.2.1-rc.1 =
 
 (2024/10/23) Fixed an incorrect check for `is_admin()` in `WpssoOpmIntegAdminPost->add_wp_callbacks()`.
 
