@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.2.1-dev.1 (2024/10/23)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed an incorrect check for `is_admin()` in `WpssoOpmIntegAdminPost->add_wp_callbacks()`.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.15.0.
+
 **Version 3.2.0 (2024/09/07)**
 
 * **New Features**
@@ -154,6 +169,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 3.2.1-dev.1 =
+
+(2024/10/23) Fixed an incorrect check for `is_admin()` in `WpssoOpmIntegAdminPost->add_wp_callbacks()`.
 
 = 3.2.0 =
 
