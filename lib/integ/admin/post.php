@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 		 */
 		public function add_wp_callbacks() {
 
-			if ( is_admin() ) return;	// Just in case.
+			if ( ! is_admin() ) return;	// Just in case.
 
 			if ( ! empty( $_GET ) || 'post-new' === basename( $_SERVER[ 'PHP_SELF' ], '.php' ) ) {
 
