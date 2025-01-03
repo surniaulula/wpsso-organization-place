@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 							$md_opts[ $md_key ] = 1;
 
 						} else $md_opts[ $md_key ] = 0;
-			
+
 						if ( $this->p->debug->enabled ) {
 
 							$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
