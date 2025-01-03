@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.2.2-dev.1 (2025/01/02)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed default "Organization Is Default" checkbox values when editing an Organization.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.18.4.
+
 **Version 3.2.1 (2024/10/23)**
 
 * **New Features**
@@ -169,6 +184,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 3.2.2-dev.1 =
+
+(2025/01/02) Fixed default "Organization Is Default" checkbox values when editing an Organization.
 
 = 3.2.1 =
 
