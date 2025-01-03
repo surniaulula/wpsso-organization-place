@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.2-rc.1 (2025/01/02)**
+**Version 3.2.2 (2025/01/02)**
 
 * **New Features**
 	* None.
@@ -185,7 +185,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.2.2-rc.1 =
+= 3.2.2 =
 
 (2025/01/02) Fixed default "Organization Is Default" checkbox values when editing an Organization.
 
