@@ -85,33 +85,39 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$place_id = 'place-' . $mod[ 'id' ];
+			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
-			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
+				// Nothing to do.
 
-			$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
-			$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
-			$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
+			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
-			/*
-			 * Check if this place ID is in some default options.
-			 *
-			 * If the default place schema type is an organization, check the organization default options as well.
-			 */
-			$is_org_child = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' );
+				$place_id = 'place-' . $mod[ 'id' ];
+				$md_defs  = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
 
-			foreach ( array(
-				'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
-				'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
-			) as $opt_prefix => $is_defaults ) {
+				$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
+				$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
+				$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
 
-				foreach ( $is_defaults as $opts_key => $opts_label ) {
+				/*
+				 * Check if this place ID is in some default options.
+				 *
+				 * If the default place schema type is an organization, check the organization default options as well.
+				 */
+				$is_org_child = $this->p->schema->is_schema_type_child( $md_defs[ 'place_schema_type' ], 'organization' );
 
-					if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
+				foreach ( array(
+					'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
+				) as $opt_prefix => $is_defaults ) {
 
-						$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
+					foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-					} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
+						if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
+
+							$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
+
+						} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
+					}
 				}
 			}
 
@@ -125,14 +131,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
-
+			$place_id   = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
 			$place_type = false;
 
 			if ( 'custom' === $place_id ) {
 
-				$def_type = $this->p->cf[ 'opt' ][ 'place_md_defaults' ][ 'place_schema_type' ];
-
+				$def_type   = $this->p->cf[ 'opt' ][ 'place_md_defaults' ][ 'place_schema_type' ];
 				$place_type = empty( $md_opts[ 'place_schema_type' ] ) ? $def_type : $md_opts[ 'place_schema_type' ];
 
 			} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
@@ -169,10 +173,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
 				$place_id = 'place-' . $mod[ 'id' ];
-
-				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-
-				$md_opts = array_merge( $md_defs, $md_opts );
+				$md_defs  = $this->filter_get_post_defaults( array(), $post_id, $mod );
+				$md_opts  = array_merge( $md_defs, $md_opts );
 
 				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
 

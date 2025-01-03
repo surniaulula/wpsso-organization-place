@@ -60,20 +60,31 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$org_id = 'org-' . $mod[ 'id' ];
+			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
-			$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
+				$org_id  = 'org-' . $mod[ 'id' ];
+				$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
 
-			/*
-			 * Check if this organization ID is in some default options.
-			 */
-			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
+				/*
+				 * Check if this organization ID is in some default options.
+				 */
+				foreach ( array(
+					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
+				) as $opt_prefix => $is_defaults ) {
 
-				if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
+					foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-					$md_defs[ 'org_is_' . $opts_key ] = 1;
+						if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
 
-				} else $md_defs[ 'org_is_' . $opts_key ] = 0;
+							$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
+
+						} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
+					}
+				}
+
+			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
 			}
 
 			return $md_defs;
@@ -86,8 +97,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$org_id = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
-
+			$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
 			$org_type = false;
 
 			if ( 0 === strpos( $org_id, 'org-' ) ) {
@@ -119,10 +129,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
-				$org_id = 'org-' . $mod[ 'id' ];
-
+				$org_id  = 'org-' . $mod[ 'id' ];
 				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-
 				$md_opts = array_merge( $md_defs, $md_opts );
 
 				if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
@@ -138,25 +146,30 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				/*
 				 * Check if some default options need to be updated.
 				 */
-				foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
+				foreach ( array(
+					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
+				) as $opt_prefix => $is_defaults ) {
 
-					if ( empty( $md_opts[ 'org_is_' . $opts_key ] ) ) {	// Checkbox is unchecked.
+					foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-						if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
+						if ( empty( $md_opts[ $opt_prefix . '_' . $opts_key ] ) ) {	// Checkbox is unchecked.
 
-							$this->p->options[ $opts_key ] = 'none';
+							if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+								$this->p->options[ $opts_key ] = 'none';
+
+								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+							}
+
+						} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
+
+							$this->p->options[ $opts_key ] = $org_id;
+
+							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
 						}
 
-					} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
-
-						$this->p->options[ $opts_key ] = $org_id;
-
-						SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
+						unset( $md_opts[ $opt_prefix . '_' . $opts_key ] );
 					}
-
-					unset( $md_opts[ 'org_is_' . $opts_key ] );
 				}
 
 				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
