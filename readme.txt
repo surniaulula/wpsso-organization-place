@@ -138,6 +138,25 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.3.0-dev.1 (2025/01/03)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Moved setting the "Place Is Default" and "Organization Is Default" checkbox values from the defaults to the options array.
+	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_defaults()`.
+	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_options()`.
+	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_defaults()`.
+	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_options()`.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.18.4.
+
 **Version 3.2.2 (2025/01/02)**
 
 * **New Features**
@@ -147,6 +166,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* Fixed default "Organization Is Default" checkbox values when editing an Organization.
 * **Developer Notes**
+	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_defaults()` to check the post type before setting defaults.
 	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_defaults()` to check the post type before setting defaults.
 * **Requires At Least**
 	* PHP v7.4.33.
@@ -184,6 +204,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 3.3.0-dev.1 =
+
+(2025/01/03) Moved setting the "Place Is Default" and "Organization Is Default" checkbox values from the defaults to the options array.
 
 = 3.2.2 =
 
