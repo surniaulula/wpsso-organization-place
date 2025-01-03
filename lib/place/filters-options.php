@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			if ( 'custom' === $place_id ) {
 
-				$def_type   = $this->p->cf[ 'opt' ][ 'place_md_defaults' ][ 'place_schema_type' ];
+				$def_type   = $this->p->options[ 'schema_def_place_schema_type' ];
 				$place_type = empty( $md_opts[ 'place_schema_type' ] ) ? $def_type : $md_opts[ 'place_schema_type' ];
 
 			} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
