@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* Fixed default "Organization Is Default" checkbox values when editing an Organization.
 * **Developer Notes**
-	* None.
+	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_defaults()` to check the post type before setting defaults.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
