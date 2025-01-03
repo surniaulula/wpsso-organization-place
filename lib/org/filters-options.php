@@ -62,25 +62,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
-				$org_id  = 'org-' . $mod[ 'id' ];
 				$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
-
-				/*
-				 * Check if this organization ID is in some default options.
-				 */
-				foreach ( array(
-					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
-
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
-
-						if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
-
-							$md_defs[ $opt_prefix . '_' . $opts_key ] = 1;
-
-						} else $md_defs[ $opt_prefix . '_' . $opts_key ] = 0;
-					}
-				}
 
 			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
@@ -97,24 +79,57 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
-			$org_type = false;
+			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
 
-			if ( 0 === strpos( $org_id, 'org-' ) ) {
+				/*
+				 * Check if this organization ID is in some default options.
+				 */
+				$org_id = 'org-' . $mod[ 'id' ];
 
-				$org_type = WpssoOpmOrg::get_id( $org_id, $mod, 'org_schema_type' );
-			}
+				foreach ( array(
+					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
+				) as $opt_prefix => $is_defaults ) {
 
-			if ( $org_type ) {
+					foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-				$md_opts[ 'og_type' ]          = 'website';
-				$md_opts[ 'og_type:disabled' ] = true;
+						$md_key = $opt_prefix . '_' . $opts_key;
 
-				$md_opts[ 'schema_type' ]          = $org_type;
-				$md_opts[ 'schema_type:disabled' ] = true;
+						if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
 
-				$md_opts[ 'schema_place_id' ]          = 'none';
-				$md_opts[ 'schema_place_id:disabled' ] = true;
+							$md_opts[ $md_key ] = 1;
+
+						} else $md_opts[ $md_key ] = 0;
+
+						if ( $this->p->debug->enabled ) {
+
+							$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+						}
+					}
+				}
+
+			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
+			} else {
+
+				$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
+				$org_type = false;
+
+				if ( 0 === strpos( $org_id, 'org-' ) ) {
+
+					$org_type = WpssoOpmOrg::get_id( $org_id, $mod, 'org_schema_type' );
+				}
+
+				if ( $org_type ) {
+
+					$md_opts[ 'og_type' ]                  = 'website';
+					$md_opts[ 'og_type:disabled' ]         = true;
+					$md_opts[ 'schema_type' ]              = $org_type;
+					$md_opts[ 'schema_type:disabled' ]     = true;
+					$md_opts[ 'schema_place_id' ]          = 'none';
+					$md_opts[ 'schema_place_id:disabled' ] = true;
+				}
 			}
 
 			return $md_opts;
@@ -152,7 +167,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 					foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-						if ( empty( $md_opts[ $opt_prefix . '_' . $opts_key ] ) ) {	// Checkbox is unchecked.
+						$md_key = $opt_prefix . '_' . $opts_key;
+
+						if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
 
 							if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
@@ -168,7 +185,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
 						}
 
-						unset( $md_opts[ $opt_prefix . '_' . $opts_key ] );
+						unset( $md_opts[ $md_key ] );
 					}
 				}
 
