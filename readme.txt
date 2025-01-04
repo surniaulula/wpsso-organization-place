@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.0-rc.1 (2025/01/04)**
+**Version 3.3.0 (2025/01/04)**
 
 * **New Features**
 	* None.
@@ -205,7 +205,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.0-rc.1 =
+= 3.3.0 =
 
 (2025/01/04) Moved setting the "Place Is Default" and "Organization Is Default" checkbox values from the defaults to the options array.
 
