@@ -119,13 +119,13 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				 *
 				 * If the default place schema type is an organization, check the organization default options as well.
 				 */
-				$place_id     = 'place-' . $mod[ 'id' ];
-				$is_org_child = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case
+				$place_id    = 'place-' . $mod[ 'id' ];
+				$is_org_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case
 					$this->p->schema->is_schema_type_child( $this->p->options[ 'schema_def_place_schema_type' ], 'organization' ) :
 					$this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
 
 				foreach ( array(
-					'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+					'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
 					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
 				) as $opt_prefix => $is_defaults ) {
 
@@ -209,11 +209,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				 *
 				 * If the default place schema type is an organization, check the organization default options as well.
 				 */
-				$place_id     = 'place-' . $mod[ 'id' ];
-				$is_org_child = $this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
+				$place_id    = 'place-' . $mod[ 'id' ];
+				$is_org_type = $this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
 
 				foreach ( array(
-					'org_is'   => $is_org_child ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+					'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
 					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
 				) as $opt_prefix => $is_defaults ) {
 
@@ -241,7 +241,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					}
 				}
 
-				if ( $is_org_child ) {
+				if ( $is_org_type ) {
 
 					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
