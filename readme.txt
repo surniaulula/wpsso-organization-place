@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.1-dev.2 (2025/03/08)**
+**Version 3.3.1-rc.1 (2025/03/08)**
 
 * **New Features**
 	* None.
@@ -220,7 +220,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.1-dev.2 =
+= 3.3.1-rc.1 =
 
 (2025/03/08) Updated admin menu priority.
 
