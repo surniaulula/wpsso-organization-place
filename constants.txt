@@ -1,0 +1,20 @@
+
+/*
+ * Hard-coded / fixed constants. These values cannot be modified.
+ */
+WPSSOOPM_FILEPATH
+WPSSOOPM_PLUGINBASE
+WPSSOOPM_PLUGINDIR
+WPSSOOPM_PLUGINSLUG
+WPSSOOPM_URLPATH
+WPSSOOPM_VERSION
+WPSSOOPM_ORG_POST_TYPE
+WPSSOOPM_PLACE_POST_TYPE
+
+/*
+ * Define in your wp-config.php file to change the default value.
+ */
+WPSSOOPM_ORG_MENU_ORDER          = 20
+WPSSOOPM_ORG_CATEGORY_TAXONOMY   = false
+WPSSOOPM_PLACE_MENU_ORDER        = 20
+WPSSOOPM_PLACE_CATEGORY_TAXONOMY = false

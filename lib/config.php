@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '3.3.0',	// Plugin version.
+					'version'     => '3.3.1-dev.1',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.18.4',
+							'min_version'   => '18.19.5',
 						),
 					),
 
@@ -183,7 +183,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			define( 'WPSSOOPM_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-organization-place
 			define( 'WPSSOOPM_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
 			define( 'WPSSOOPM_VERSION', $info[ 'version' ] );
-
 			define( 'WPSSOOPM_ORG_POST_TYPE', 'organization' );
 			define( 'WPSSOOPM_PLACE_POST_TYPE', 'place' );
 
@@ -232,9 +231,9 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 *	80 – below Settings
 			 *	100 – below second separator
 			 */
-			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]          = 82;
+			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]          = 20;
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]   = false;
-			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]        = 82;
+			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]        = 20;
 			$var_const[ 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ] = false;
 
 			/*
