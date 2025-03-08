@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.3.1-dev.1 (2025/03/08)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated admin menu priority.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.19.5.
+
 **Version 3.3.0 (2025/01/04)**
 
 * **New Features**
@@ -204,6 +219,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 3.3.1-dev.1 =
+
+(2025/03/08) Updated admin menu priority.
 
 = 3.3.0 =
 
