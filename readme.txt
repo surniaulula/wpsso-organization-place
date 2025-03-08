@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.1-dev.1 (2025/03/08)**
+**Version 3.3.1-dev.2 (2025/03/08)**
 
 * **New Features**
 	* None.
@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated `WpssoOpmPlaceFiltersOptions->filter_get_post_options()` to check 'place_schema_type' before using its value.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
@@ -220,7 +220,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.1-dev.1 =
+= 3.3.1-dev.2 =
 
 (2025/03/08) Updated admin menu priority.
 
