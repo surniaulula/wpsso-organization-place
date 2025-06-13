@@ -138,6 +138,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.0.0-dev.1 (2025/06/13)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Moved the "Place Is Default" and "Organization Is Default" labels to the WPSSO Core plugin config.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v20.0.0-dev.1.
+
 **Version 3.3.1 (2025/03/08)**
 
 * **New Features**
@@ -219,6 +234,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 4.0.0-dev.1 =
+
+(2025/06/13) Moved the "Place Is Default" and "Organization Is Default" labels to the WPSSO Core plugin config.
 
 = 3.3.1 =
 
