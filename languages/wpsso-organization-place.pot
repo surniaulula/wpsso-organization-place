@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 4.0.0-dev.2\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 4.0.0-dev.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -86,160 +86,180 @@ msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
 
-#: lib/org.php:160 lib/org.php:173
+#: lib/org.php:163 lib/org.php:175
 msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
-#: lib/org.php:164
+#: lib/org.php:167
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
-#: lib/org.php:175
+#: lib/org.php:177
 msgid "Organization ID #%s does not exist."
 msgstr ""
 
-#: lib/org.php:177
+#: lib/org.php:179
 msgid "Please select a different organization."
 msgstr ""
 
-#: lib/org.php:220
+#: lib/org.php:223
 msgctxt "option label"
 msgid "Organization Is Default"
 msgstr ""
 
-#: lib/org.php:229
+#: lib/org.php:232
 msgctxt "metabox title"
 msgid "Organization Information"
 msgstr ""
 
-#: lib/org.php:233
+#: lib/org.php:236
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr ""
 
-#: lib/org.php:239
+#: lib/org.php:242
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr ""
 
-#: lib/org.php:245
+#: lib/org.php:248
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr ""
 
-#: lib/org.php:250
+#: lib/org.php:253
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr ""
 
-#: lib/org.php:255
+#: lib/org.php:258
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr ""
 
-#: lib/org.php:260
+#: lib/org.php:263
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr ""
 
-#: lib/org.php:265
+#: lib/org.php:268
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr ""
 
-#: lib/org.php:270
+#: lib/org.php:273
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr ""
 
-#: lib/org.php:275
+#: lib/org.php:278
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr ""
 
-#: lib/org.php:280
+#: lib/org.php:283
 msgctxt "option label"
 msgid "Organization Awards"
 msgstr ""
 
+#: lib/org.php:287
+msgctxt "option label"
+msgid "Offer Catalogs"
+msgstr ""
+
 #: lib/org.php:290
+msgctxt "option label"
+msgid "Catalog Name"
+msgstr ""
+
+#: lib/org.php:295
+msgctxt "option label"
+msgid "Catalog Description"
+msgstr ""
+
+#: lib/org.php:300
+msgctxt "option label"
+msgid "Catalog URL"
+msgstr ""
+
+#: lib/org.php:311
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr ""
 
-#: lib/org.php:294
+#: lib/org.php:315
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr ""
 
-#: lib/org.php:299
+#: lib/org.php:320
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr ""
 
-#: lib/org.php:304
+#: lib/org.php:325
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr ""
 
-#: lib/org.php:309
+#: lib/org.php:330
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr ""
 
-#: lib/org.php:318
+#: lib/org.php:339
 msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:373
+#: lib/org.php:394
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:381
+#: lib/org.php:402
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:404
+#: lib/org.php:425
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:408 lib/org.php:439
+#: lib/org.php:429 lib/org.php:460
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:416
+#: lib/org.php:437
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:420
+#: lib/org.php:441
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:435
+#: lib/org.php:456
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:447
+#: lib/org.php:468
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:451
+#: lib/org.php:472
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 

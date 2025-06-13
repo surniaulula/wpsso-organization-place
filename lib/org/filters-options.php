@@ -225,7 +225,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				case 'org_name':
 				case 'org_name_alt':
 				case 'org_desc':
-				case 'org_award':
+				case 'org_award':			// Organization Awards.
+				case 'org_offer_catalog':		// Offer Catalog Name.
+				case 'org_offer_catalog_text':		// Offer Catalog Description.
 
 					return 'ok_blank';
 
@@ -250,6 +252,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				case 'org_coverage_policy_url':		// Coverage Priorities Policy URL.
 				case 'org_no_bylines_policy_url':	// No Bylines Policy URL.
 				case 'org_sources_policy_url':		// Unnamed Sources Policy URL.
+				case 'org_offer_catalog_url':		// Offer Catalog URL.
 				case ( strpos( $base_key, '_url' ) && isset( $this->p->cf[ 'form' ][ 'social_accounts' ][ substr( $base_key, 4 ) ] ) ? true : false ):
 
 					return 'url';
