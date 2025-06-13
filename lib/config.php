@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '3.3.1',	// Plugin version.
-					'opt_version' => '2',		// Increment when changing default option values.
+					'version'     => '4.0.0-dev.1',	// Plugin version.
+					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Organization and Place Manager',
 					'desc'        => 'Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.20.0',
+							'min_version'   => '20.0.0-dev.1',
 						),
 					),
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_midday_open'              => 'none',
 					'place_season_from_date'         => '',
 					'place_season_to_date'           => '',
-					'place_service_radius'           => '',			// Service Radius.
+					'place_serv_radius'              => '',			// Service Radius.
 					'place_currencies_accepted'      => '',			// Currencies Accepted.
 					'place_payment_accepted'         => '',			// Payment Accepted.
 					'place_price_range'              => '',			// Price Range.
@@ -139,21 +139,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_cuisine'                  => '',			// Serves Cuisine.
 					'place_menu_url'                 => '',			// Food Menu URL.
 					'place_order_urls'               => '',			// Order Action URL(s).
-				),
-			),
-			'form' => array(
-				'org_is_defaults' => array(
-					'schema_def_pub_org_id'             => 'Default Publisher Org.',
-					'schema_def_prov_org_id'            => 'Default Provider Org.',
-					'schema_def_fund_org_id'            => 'Default Funder Org.',
-					'schema_def_event_performer_org_id' => 'Default Event Performer Org.',
-					'schema_def_event_organizer_org_id' => 'Default Event Organizer Org.',
-					'schema_def_event_fund_org_id'      => 'Default Event Funder Org.',
-					'schema_def_job_hiring_org_id'      => 'Default Job Hiring Org.',
-				),
-				'place_is_defaults' => array(
-					'schema_def_event_location_id' => 'Default Event Venue',
-					'schema_def_job_location_id'   => 'Default Job Location',
 				),
 			),
 		);

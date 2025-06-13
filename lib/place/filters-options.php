@@ -293,7 +293,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 					return 'not_blank';
 
-				case ( preg_match( '/^place_(latitude|longitude|altitude|service_radius|po_box_number)$/', $base_key ) ? true : false ):
+				case ( preg_match( '/^place_(latitude|longitude|altitude|serv_radius|po_box_number)$/', $base_key ) ? true : false ):
 
 					return 'blank_num';
 

@@ -174,7 +174,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 						unset(
 							$place_opts[ 'place_accept_res' ],	// Accepts Reservations.
-							$place_opts[ 'place_cuisine' ],	// Serves Cuisine.
+							$place_opts[ 'place_cuisine' ],		// Serves Cuisine.
 							$place_opts[ 'place_menu_url' ],	// Food Menu URL.
 							$place_opts[ 'place_order_urls' ]	// Order Action URL(s).
 						);
@@ -183,12 +183,12 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				} else {
 
 					unset(
-						$place_opts[ 'place_service_radius' ],	// Service Radius.
+						$place_opts[ 'place_serv_radius' ],		// Service Radius.
 						$place_opts[ 'place_currencies_accepted' ],	// Currencies Accepted.
 						$place_opts[ 'place_payment_accepted' ],	// Payment Accepted.
 						$place_opts[ 'place_price_range' ],		// Price Range.
 						$place_opts[ 'place_accept_res' ],		// Accepts Reservations.
-						$place_opts[ 'place_cuisine' ],		// Serves Cuisine.
+						$place_opts[ 'place_cuisine' ],			// Serves Cuisine.
 						$place_opts[ 'place_menu_url' ],		// Food Menu URL.
 						$place_opts[ 'place_order_urls' ]		// Order Action URL(s).
 					);

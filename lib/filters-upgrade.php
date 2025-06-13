@@ -29,9 +29,21 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'upgraded_options'    => 2,
-				'upgraded_md_options' => 1,
+				'rename_md_options_keys' => 1,
+				'upgraded_options'       => 2,
+				'upgraded_md_options'    => 1,
 			) );
+		}
+
+		public function filter_rename_md_options_keys( $rename_options ) {
+		
+			$rename_options[ 'wpssoopm' ] = array(
+				9 => array(
+					'place_service_radius' => 'place_serv_radius',
+				),
+			);
+
+			return $rename_options;
 		}
 
 		public function filter_upgraded_options( array $opts, $defs ) {
@@ -220,6 +232,7 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			foreach ( array(
 				'schema_pub_org_id',		// Publisher Org.
 				'schema_prov_org_id',		// Provider Org.
+				'schema_serv_prov_org_id',	// Provider Org.
 				'schema_movie_prodco_org_id',
 				'schema_event_organizer_org_id',
 				'schema_event_performer_org_id',

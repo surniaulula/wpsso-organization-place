@@ -207,7 +207,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 				'place_midday_open'         => 'place:opening_hours:midday:open',
 				'place_season_from_date'    => 'place:opening_hours:season:from_date',
 				'place_season_to_date'      => 'place:opening_hours:season:to_date',
-				'place_service_radius'      => 'place:business:service_radius',
+				'place_serv_radius'         => 'place:business:serv_radius',
 				'place_currencies_accepted' => 'place:business:currencies_accepted',
 				'place_payment_accepted'    => 'place:business:payment_accepted',
 				'place_price_range'         => 'place:business:price_range',
@@ -226,15 +226,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 
 						$mt_og[ $mt_name ] = SucomUtil::explode_csv( $place_opts[ $opt_key ] );
 
-					} else {
+					} else $mt_og[ $mt_name ] = $place_opts[ $opt_key ];
 
-						$mt_og[ $mt_name ] = $place_opts[ $opt_key ];
-					}
-
-				} else {
-
-					$mt_og[ $mt_name ] = '';
-				}
+				} else $mt_og[ $mt_name ] = '';
 			}
 
 			if ( $this->p->debug->enabled ) {

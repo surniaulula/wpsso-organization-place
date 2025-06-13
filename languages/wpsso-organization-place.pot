@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 3.3.1\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 4.0.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -40,52 +40,7 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:8
-msgctxt "option value"
-msgid "Default Publisher Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:9
-msgctxt "option value"
-msgid "Default Provider Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:10
-msgctxt "option value"
-msgid "Default Funder Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:11
-msgctxt "option value"
-msgid "Default Event Performer Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:12
-msgctxt "option value"
-msgid "Default Event Organizer Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:13
-msgctxt "option value"
-msgid "Default Event Funder Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:14
-msgctxt "option value"
-msgid "Default Job Hiring Org."
-msgstr ""
-
-#: gettext/gettext-lib-config.php:15
-msgctxt "option value"
-msgid "Default Event Venue"
-msgstr ""
-
-#: gettext/gettext-lib-config.php:16
-msgctxt "option value"
-msgid "Default Job Location"
-msgstr ""
-
-#: lib/filters-upgrade.php:208
+#: lib/filters-upgrade.php:220
 msgid ""
 "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s "
 "post type ID #%5$s."
@@ -452,7 +407,7 @@ msgstr ""
 
 #: lib/place/filters-edit.php:304
 msgctxt "option comment"
-msgid "meters from location"
+msgid "meters from coordinates"
 msgstr ""
 
 #: lib/place/filters-edit.php:307
