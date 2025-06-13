@@ -138,12 +138,16 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.2 (2025/06/13)**
+**Version 4.0.0-dev.3 (2025/06/13)**
 
 * **New Features**
-	* None.
+	* Added 'hasOfferCatalog' property for the Schema Organization type.
 * **Improvements**
-	* None.
+	* Added options in the SSO Orgs &gt; Edit Organization page:
+		* Offer Catalogs
+			* Catalog Name
+			* Catalog Description
+			* Catalog URL
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -151,7 +155,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v20.0.0-dev.2.
+	* WPSSO Core v20.0.0-dev.3.
 
 **Version 3.3.1 (2025/03/08)**
 
@@ -235,9 +239,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-dev.2 =
+= 4.0.0-dev.3 =
 
-(2025/06/13) Moved the "Place Is Default" and "Organization Is Default" labels to the WPSSO Core plugin config.
+(2025/06/13) Added 'hasOfferCatalog' property for the Schema Organization type.
 
 = 3.3.1 =
 
