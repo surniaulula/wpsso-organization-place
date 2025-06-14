@@ -26,7 +26,7 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <!-- /about -->
 
-**The Organization editing page includes:**
+**The SSO Organizations management page includes:**
 
 * Organization Name
 * Organization Alternate Name
@@ -42,6 +42,11 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 * Ethics Policy URL
 * Fact Checking Policy URL
 * Feedback Policy URL
+* Organization Awards
+* Offer Catalogs
+	* Catalog Name
+	* Catalog Description
+	* Catalog URL
 * News Media Organization:
 	* Masthead Page URL
 	* Coverage Priorities Policy URL
@@ -62,7 +67,7 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 	* X (Twitter) Business @username
 	* YouTube Business Channel URL
 
-**The Place editing page includes:**
+**The SSO Places management page includes:**
 
 * Place Name
 * Place Alternate Name
@@ -93,6 +98,22 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 	* Serves Cuisine
 	* Food Menu URL
 	* Order Action URL(s)
+
+**The SSO Services management page includes:**
+
+* Service Name
+* Service Alternate Name
+* Service Description
+* Service Schema Type
+* Service Provider Org.
+* Service Provider Person
+* Service Latitude
+* Service Longitude
+* Service Radius
+* Offer Catalogs
+	* Catalog Name
+	* Catalog Description
+	* Catalog URL
 
 <h3>WPSSO Core Required</h3>
 
@@ -138,10 +159,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.3 (2025/06/13)**
+**Version 4.0.0-dev.4 (2025/06/14)**
 
 * **New Features**
-	* Added 'hasOfferCatalog' property for the Schema Organization type.
+	* Added a new SSO Services management page:
+		* Service Name
+		* Service Alternate Name
+		* Service Description
+		* Service Schema Type
+		* Service Provider Org.
+		* Service Provider Person
+		* Service Latitude
+		* Service Longitude
+		* Service Radius
+		* Offer Catalogs
+			* Catalog Name
+			* Catalog Description
+			* Catalog URL
 * **Improvements**
 	* Added options in the SSO Orgs &gt; Edit Organization page:
 		* Offer Catalogs
@@ -151,11 +185,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Moved the "Place Is Default" and "Organization Is Default" labels to the WPSSO Core plugin config.
+	* Added a new `WPSSOOPM_SERVICE_POST_TYPE` constant.
+	* Added a new `WPSSOOPM_SERVICE_CATEGORY_TAXONOMY` constant.
+	* Added a new `WpssoOpmRegister::register_service_post_type()` method.
+	* Added a new `WpssoOpmRegister::register_service_category_taxonomy()` method.
+	* Added a new `WpssoOpmService` class.
+	* Added a new `WpssoOpmServiceFiltersEdit` class.
+	* Added a new `WpssoOpmServiceFiltersOptions` class.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v20.0.0-dev.3.
+	* WPSSO Core v20.0.0-dev.4.
 
 **Version 3.3.1 (2025/03/08)**
 
@@ -239,9 +279,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-dev.3 =
+= 4.0.0-dev.4 =
 
-(2025/06/13) Added 'hasOfferCatalog' property for the Schema Organization type.
+(2025/06/14) Added a new SSO Services management page.
 
 = 3.3.1 =
 
