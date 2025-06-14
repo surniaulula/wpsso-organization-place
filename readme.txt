@@ -1,5 +1,5 @@
-=== WPSSO Schema Organization, Place and Service Manager ===
-Plugin Name: WPSSO Schema Organization, Place and Service Manager
+=== WPSSO Schema Organization and Place Manager ===
+Plugin Name: WPSSO Schema Organization and Place Manager
 Plugin Slug: wpsso-organization-place
 Text Domain: wpsso-organization-place
 Domain Path: /languages
@@ -14,7 +14,7 @@ Requires At Least: 5.9
 Tested Up To: 6.8.1
 Stable Tag: 3.3.1
 
-Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.
+Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.
 
 == Description ==
 
@@ -22,9 +22,7 @@ Manage Organizations, Places, Local Businesses, and Services for Google, Faceboo
 
 **Manage any number of Organizations** for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).
 
-**Manage any number of Places, Local Businesses, Locations and Venues** for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).
-
-**Manage any number of Services** for Schema markup.
+**Manage any number of Places, Local Businesses, Venues, etc.** for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).
 
 <!-- /about -->
 
@@ -46,9 +44,9 @@ Manage Organizations, Places, Local Businesses, and Services for Google, Faceboo
 * Feedback Policy URL
 * Organization Awards
 * Offer Catalogs
-	* Catalog Name
-	* Catalog Description
-	* Catalog URL
+	* Offer Catalog Name
+	* Offer Catalog Description
+	* Offer Catalog URL
 * News Media Organization:
 	* Masthead Page URL
 	* Coverage Priorities Policy URL
@@ -101,32 +99,16 @@ Manage Organizations, Places, Local Businesses, and Services for Google, Faceboo
 	* Food Menu URL
 	* Order Action URL(s)
 
-**The SSO Services editing page includes:**
-
-* Service Name
-* Service Alternate Name
-* Service Description
-* Service Schema Type
-* Service Provider Org.
-* Service Provider Person
-* Service Latitude
-* Service Longitude
-* Service Radius
-* Offer Catalogs
-	* Catalog Name
-	* Catalog Description
-	* Catalog URL
-
 <h3>WPSSO Core Required</h3>
 
-WPSSO Schema Organization, Place and Service Manager is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
+WPSSO Schema Organization and Place Manager is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Schema Organization, Place and Service Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/).
-* [Uninstall the WPSSO Schema Organization, Place and Service Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/).
+* [Install the WPSSO Schema Organization and Place Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/).
+* [Uninstall the WPSSO Schema Organization and Place Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
@@ -161,44 +143,24 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.5 (2025/06/14)**
+**Version 4.0.0-dev.6 (2025/06/14)**
 
 * **New Features**
-	* Renamed the add-on to WPSSO Schema Organization, Place and Service Manager.
-	* Added a new SSO Services management page:
-		* Service Name
-		* Service Alternate Name
-		* Service Description
-		* Service Schema Type
-		* Service Provider Org.
-		* Service Provider Person
-		* Service Latitude
-		* Service Longitude
-		* Service Radius
-		* Offer Catalogs
-			* Catalog Name
-			* Catalog Description
-			* Catalog URL
+	* Renamed the add-on to WPSSO Schema Organization and Place Manager.
 * **Improvements**
 	* Added options in the SSO Orgs &gt; Edit Organization page:
 		* Offer Catalogs
-			* Catalog Name
-			* Catalog Description
-			* Catalog URL
+			* Organization Catalog Name
+			* Organization Catalog Description
+			* Organization Catalog URL
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added a new `WPSSOOPM_SERVICE_POST_TYPE` constant.
-	* Added a new `WPSSOOPM_SERVICE_CATEGORY_TAXONOMY` constant.
-	* Added a new `WpssoOpmRegister::register_service_post_type()` method.
-	* Added a new `WpssoOpmRegister::register_service_category_taxonomy()` method.
-	* Added a new `WpssoOpmService` class.
-	* Added a new `WpssoOpmServiceFiltersEdit` class.
-	* Added a new `WpssoOpmServiceFiltersOptions` class.
+	* None.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v20.0.0-dev.5.
+	* WPSSO Core v20.0.0-dev.6.
 
 **Version 3.3.1 (2025/03/08)**
 
@@ -282,9 +244,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-dev.5 =
+= 4.0.0-dev.6 =
 
-(2025/06/14) Renamed the add-on to WPSSO Schema Organization, Place and Service Manager. Added a new SSO Services management page.
+(2025/06/14) Renamed the add-on to WPSSO Schema Organization and Place Manager.
 
 = 3.3.1 =
 
