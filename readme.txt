@@ -14,7 +14,7 @@ Requires At Least: 5.9
 Tested Up To: 6.8.1
 Stable Tag: 3.3.1
 
-Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, and Pinterest.
+Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.
 
 == Description ==
 
