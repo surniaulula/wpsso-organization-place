@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: WPSSO Schema Organization, Place and Service Manager
+ * Plugin Name: WPSSO Schema Organization and Place Manager
  * Plugin Slug: wpsso-organization-place
  * Text Domain: wpsso-organization-place
  * Domain Path: /languages
@@ -10,12 +10,12 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.
+ * Description: Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.
  * Requires Plugins: wpsso
  * Requires PHP: 7.4.33
  * Requires At Least: 5.9
  * Tested Up To: 6.8.1
- * Version: 4.0.0-dev.5
+ * Version: 4.0.0-dev.6
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *

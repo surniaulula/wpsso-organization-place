@@ -214,7 +214,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$hide_news_media_class   = $wpsso->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
 			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
 			$awards_max              = SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 );
-			$offer_catalogs_max      = SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 20 );
+			$offer_catalogs_max      = SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 5 );
 			$is_defaults             = array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ], $wpsso->cf[ 'form' ][ 'place_is_defaults' ] );
 
 			$table_rows[ 'org_is_default' ] = $tr_hide_html .
@@ -278,24 +278,26 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'org_award' ] = $tr_hide_html .
-				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso-organization-place' ), $css_class = 'medium', $css_id = 'meta-org_award' ) .
+				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_award' ) .
 				'<td>' . $form->get_input_multi( 'org_award', $css_class = 'wide', $css_id = '', $awards_max, $show_first = 1 ) . '</td>';
 
 			$table_rows[ 'org_offer_catalogs' ] = $tr_hide_html .
-				$form->get_th_html( _x( 'Offer Catalogs', 'option label', 'wpsso-organization-place' ), $css_class = 'medium', $css_id = 'meta-org_offer_catalogs' ) .
+				$form->get_th_html( _x( 'Offer Catalogs', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_offer_catalogs' ) .
 				'<td>' . $form->get_mixed_multi( array(
 					'org_offer_catalog' => array(
-						'input_label' => _x( 'Catalog Name', 'option label', 'wpsso-organization-place' ),
+						'input_label' => _x( 'Offer Catalog Name', 'option label', 'wpsso-organization-place' ),
 						'input_type'  => 'text',
 						'input_class' => 'wide offer_catalog_name',
 					),
 					'org_offer_catalog_text' => array(
-						'input_label' => _x( 'Catalog Description', 'option label', 'wpsso-organization-place' ),
+						'input_label' => _x( 'Offer Catalog Description', 'option label', 'wpsso-organization-place' ),
 						'input_type'  => 'textarea',
 						'input_class' => 'wide offer_catalog_text',
 					),
 					'org_offer_catalog_url' => array(
-						'input_label' => _x( 'Catalog URL', 'option label', 'wpsso-organization-place' ),
+						'input_label' => _x( 'Offer Catalog URL', 'option label', 'wpsso-organization-place' ),
 						'input_type'  => 'text',
 						'input_class' => 'wide offer_catalog_url',
 					),

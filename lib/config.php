@@ -17,11 +17,11 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '4.0.0-dev.5',	// Plugin version.
+					'version'     => '4.0.0-dev.6',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
-					'name'        => 'WPSSO Schema Organization, Place and Service Manager',
-					'desc'        => 'Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.',
+					'name'        => 'WPSSO Schema Organization and Place Manager',
+					'desc'        => 'Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.',
 					'slug'        => 'wpsso-organization-place',
 					'base'        => 'wpsso-organization-place/wpsso-organization-place.php',
 					'update_auth' => '',		// No premium version.
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '20.0.0-dev.5',
+							'min_version'   => '20.0.0-dev.6',
 						),
 					),
 
@@ -140,26 +140,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_menu_url'                 => '',			// Food Menu URL.
 					'place_order_urls'               => '',			// Order Action URL(s).
 				),
-				'service_md_defaults' => array(
-					'service_name'                 => '',			// Service Name.
-					'service_name_alt'             => '',			// Service Altername Name.
-					'service_desc'                 => '',			// Service Description.
-					'service_schema_type'          => 'service',		// Service Schema Type.
-					'service_prov_org_id'          => 'none',		// Provider Org.
-					'service_prov_person_id'       => 'none',		// Provider Person.
-					'service_latitude'             => '',			// Service Latitude.
-					'service_longitude'            => '',			// Service Longitude.
-					'service_radius'               => '',			// Service Radius.
-					'service_offer_catalog_0'      => '',			// Offer Catalog Name.
-					'service_offer_catalog_1'      => '',			// Offer Catalog Name.
-					'service_offer_catalog_2'      => '',			// Offer Catalog Name.
-					'service_offer_catalog_text_0' => '',			// Offer Catalog Description.
-					'service_offer_catalog_text_1' => '',			// Offer Catalog Description.
-					'service_offer_catalog_text_2' => '',			// Offer Catalog Description.
-					'service_offer_catalog_url_0'  => '',			// Offer Catalog URL.
-					'service_offer_catalog_url_1'  => '',			// Offer Catalog URL.
-					'service_offer_catalog_url_2'  => '',			// Offer Catalog URL.
-				),
 			),
 		);
 
@@ -190,7 +170,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			define( 'WPSSOOPM_VERSION', $info[ 'version' ] );
 			define( 'WPSSOOPM_ORG_POST_TYPE', 'organization' );
 			define( 'WPSSOOPM_PLACE_POST_TYPE', 'place' );
-			define( 'WPSSOOPM_SERVICE_POST_TYPE', 'service' );
 
 			/*
 			 * Define variable constants.
@@ -241,8 +220,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]     = false;
 			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]          = 88;
 			$var_const[ 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ]   = false;
-			$var_const[ 'WPSSOOPM_SERVICE_MENU_ORDER' ]        = 90;
-			$var_const[ 'WPSSOOPM_SERVICE_CATEGORY_TAXONOMY' ] = false;
 
 			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
@@ -269,7 +246,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			require_once WPSSOOPM_PLUGINDIR . 'lib/org.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/place.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/register.php';
-			require_once WPSSOOPM_PLUGINDIR . 'lib/service.php';
 
 			add_filter( 'wpssoopm_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
 		}

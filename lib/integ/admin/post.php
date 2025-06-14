@@ -27,14 +27,12 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 			}
 
 			/*
-			 * Do not add the Document SSO metabox to the organization, place, or service post types.
+			 * Do not add the Document SSO metabox to the organization or place post types.
 			 */
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_ORG_POST_TYPE ]                   = 0;
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_ORG_POST_TYPE . ':disabled' ]     = true;
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_PLACE_POST_TYPE ]                 = 0;
 			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_PLACE_POST_TYPE . ':disabled' ]   = true;
-			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_SERVICE_POST_TYPE ]               = 0;
-			$this->p->options[ 'plugin_add_to_' . WPSSOOPM_SERVICE_POST_TYPE . ':disabled' ] = true;
 
 			/*
 			 * This hook is fired once WordPress, plugins, and the theme are fully loaded and instantiated.
@@ -118,27 +116,6 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 
 				add_meta_box( 'wpsso_' . $metabox_id, $metabox_title, array( $this, 'show_metabox_' . $metabox_id ),
 					$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
-
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $post_type ) {
-
-				$metabox_id    = 'service';
-				$metabox_title = _x( 'Service', 'metabox title', 'wpsso-organization-place' );
-				$metabox_screen  = $post_type;
-				$metabox_context = 'normal';
-				$metabox_prio    = 'default';
-				$callback_args   = array(	// Second argument passed to the callback function / method.
-					'metabox_id'                         => $metabox_id,
-					'metabox_title'                      => $metabox_title,
-					'__block_editor_compatible_meta_box' => true,
-				);
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'adding metabox id wpsso_' . $metabox_id . ' for screen ' . $metabox_screen );
-				}
-
-				add_meta_box( 'wpsso_' . $metabox_id, $metabox_title, array( $this, 'show_metabox_' . $metabox_id ),
-					$metabox_screen, $metabox_context, $metabox_prio, $callback_args );
 			}
 		}
 
@@ -160,16 +137,6 @@ if ( ! class_exists( 'WpssoOpmIntegAdminPost' ) && class_exists( 'WpssoPost' ) )
 		public function get_metabox_place( $post_obj ) {
 
 			return $this->get_metabox_id( $post_obj, $metabox_id = 'place' );
-		}
-
-		public function show_metabox_service( $post_obj ) {
-
-			$this->show_metabox_id( $post_obj, $metabox_id = 'service' );
-		}
-
-		public function get_metabox_service( $post_obj ) {
-
-			return $this->get_metabox_id( $post_obj, $metabox_id = 'service' );
 		}
 
 		private function show_metabox_id( $post_obj, $metabox_id ) {

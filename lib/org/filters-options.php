@@ -110,7 +110,6 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 					}
 
 				case WPSSOOPM_PLACE_POST_TYPE:
-				case WPSSOOPM_SERVICE_POST_TYPE:
 
 					break;	// Nothing to do.
 
@@ -132,8 +131,6 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 						$md_opts[ 'schema_type:disabled' ]       = true;
 						$md_opts[ 'schema_place_id' ]            = 'none';
 						$md_opts[ 'schema_place_id:disabled' ]   = true;
-						$md_opts[ 'schema_service_id' ]          = 'none';
-						$md_opts[ 'schema_service_id:disabled' ] = true;
 					}
 
 					break;
