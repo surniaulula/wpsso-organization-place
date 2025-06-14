@@ -1,5 +1,5 @@
-=== WPSSO Organization and Place Manager ===
-Plugin Name: WPSSO Organization and Place Manager
+=== WPSSO Schema Organization, Place and Service Manager ===
+Plugin Name: WPSSO Schema Organization, Place and Service Manager
 Plugin Slug: wpsso-organization-place
 Text Domain: wpsso-organization-place
 Domain Path: /languages
@@ -117,14 +117,14 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Organization and Place Manager (WPSSO OPM) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
+WPSSO Schema Organization, Place and Service Manager (WPSSO OPM) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Organization and Place Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/).
-* [Uninstall the WPSSO Organization and Place Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/).
+* [Install the WPSSO Schema Organization, Place and Service Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/).
+* [Uninstall the WPSSO Schema Organization, Place and Service Manager add-on](https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
@@ -162,6 +162,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 4.0.0-dev.4 (2025/06/14)**
 
 * **New Features**
+	* Renamed the add-on to WPSSO Schema Organization, Place and Service Manager.
 	* Added a new SSO Services management page:
 		* Service Name
 		* Service Alternate Name
@@ -281,7 +282,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.0.0-dev.4 =
 
-(2025/06/14) Added a new SSO Services management page.
+(2025/06/14) Renamed the add-on to WPSSO Schema Organization, Place and Service Manager. Added a new SSO Services management page.
 
 = 3.3.1 =
 
