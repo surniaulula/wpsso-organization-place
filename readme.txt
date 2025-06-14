@@ -161,7 +161,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.4 (2025/06/14)**
+**Version 4.0.0-dev.5 (2025/06/14)**
 
 * **New Features**
 	* Renamed the add-on to WPSSO Schema Organization, Place and Service Manager.
@@ -198,7 +198,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v20.0.0-dev.4.
+	* WPSSO Core v20.0.0-dev.5.
 
 **Version 3.3.1 (2025/03/08)**
 
@@ -282,7 +282,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-dev.4 =
+= 4.0.0-dev.5 =
 
 (2025/06/14) Renamed the add-on to WPSSO Schema Organization, Place and Service Manager. Added a new SSO Services management page.
 
