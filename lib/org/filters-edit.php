@@ -39,7 +39,6 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			}
 
 			$org_names = WpssoOpmOrg::get_names( $schema_type = '' );
-
 			$org_names = is_array( $mixed ) ? $mixed + $org_names : $org_names;
 
 			if ( $this->p->debug->enabled ) {

@@ -96,6 +96,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
 				$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
 				$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
+
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
 			}
 
 			return $md_defs;
@@ -148,6 +152,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					unset( $md_key );
 				}
 
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
 			} else {
 
 				$place_id   = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
@@ -172,6 +180,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 					$md_opts[ 'schema_type:disabled' ]            = true;
 					$md_opts[ 'schema_organization_id' ]          = 'none';
 					$md_opts[ 'schema_organization_id:disabled' ] = true;
+					$md_opts[ 'schema_service_id' ]               = 'none';
+					$md_opts[ 'schema_service_id:disabled' ]      = true;
 				}
 			}
 
@@ -250,6 +260,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 				WpssoOpmPlace::check_place_image_sizes( $md_opts );
 
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
 			} else {	// Not an organization or place post type.
 
 				$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
@@ -293,7 +307,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 					return 'not_blank';
 
-				case ( preg_match( '/^place_(latitude|longitude|altitude|serv_radius|po_box_number)$/', $base_key ) ? true : false ):
+				case ( preg_match( '/^place_(latitude|longitude|altitude|service_radius|po_box_number)$/', $base_key ) ? true : false ):
 
 					return 'blank_num';
 

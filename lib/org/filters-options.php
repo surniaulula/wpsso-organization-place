@@ -67,6 +67,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
 
 				// Nothing to do.
+
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
 			}
 
 			return $md_defs;
@@ -111,6 +115,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 				// Nothing to do.
 
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
 			} else {
 
 				$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
@@ -123,12 +131,14 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 				if ( $org_type ) {
 
-					$md_opts[ 'og_type' ]                  = 'website';
-					$md_opts[ 'og_type:disabled' ]         = true;
-					$md_opts[ 'schema_type' ]              = $org_type;
-					$md_opts[ 'schema_type:disabled' ]     = true;
-					$md_opts[ 'schema_place_id' ]          = 'none';
-					$md_opts[ 'schema_place_id:disabled' ] = true;
+					$md_opts[ 'og_type' ]                    = 'website';
+					$md_opts[ 'og_type:disabled' ]           = true;
+					$md_opts[ 'schema_type' ]                = $org_type;
+					$md_opts[ 'schema_type:disabled' ]       = true;
+					$md_opts[ 'schema_place_id' ]            = 'none';
+					$md_opts[ 'schema_place_id:disabled' ]   = true;
+					$md_opts[ 'schema_service_id' ]          = 'none';
+					$md_opts[ 'schema_service_id:disabled' ] = true;
 				}
 			}
 
@@ -194,6 +204,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				WpssoOpmOrg::check_org_image_sizes( $md_opts );
 
 			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+
+				// Nothing to do.
+
+			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
 
 				// Nothing to do.
 			}

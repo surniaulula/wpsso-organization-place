@@ -17,23 +17,20 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 		public function __construct() {
 
 			register_activation_hook( WPSSOOPM_FILEPATH, array( $this, 'network_activate' ) );
-
 			register_deactivation_hook( WPSSOOPM_FILEPATH, array( $this, 'network_deactivate' ) );
 
 			if ( is_multisite() ) {
 
 				add_action( 'wpmu_new_blog', array( $this, 'wpmu_new_blog' ), 10, 6 );
-
 				add_action( 'wpmu_activate_blog', array( $this, 'wpmu_activate_blog' ), 10, 5 );
 			}
 
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
-
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
-
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
-
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_post_type' ), WPSSOOPM_SERVICE_MENU_ORDER, 0 );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_category_taxonomy' ), WPSSOOPM_SERVICE_MENU_ORDER, 0 );
 		}
 
 		/*
@@ -121,12 +118,11 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			}
 
 			self::register_org_post_type();
-
 			self::register_org_category_taxonomy();
-
 			self::register_place_post_type();
-
 			self::register_place_category_taxonomy();
+			self::register_service_post_type();
+			self::register_service_category_taxonomy();
 
 			flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option, not the .htaccess file.
 		}
@@ -145,6 +141,13 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			if ( defined( 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ) && WPSSOOPM_PLACE_CATEGORY_TAXONOMY ) {
 
 				unregister_taxonomy( WPSSOOPM_PLACE_CATEGORY_TAXONOMY );
+			}
+
+			unregister_post_type( WPSSOOPM_SERVICE_POST_TYPE );
+
+			if ( defined( 'WPSSOOPM_SERVICE_CATEGORY_TAXONOMY' ) && WPSSOOPM_SERVICE_CATEGORY_TAXONOMY ) {
+
+				unregister_taxonomy( WPSSOOPM_SERVICE_CATEGORY_TAXONOMY );
 			}
 
 			flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option, not the .htaccess file.
@@ -319,10 +322,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 
 				$taxonomies = array( WPSSOOPM_PLACE_CATEGORY_TAXONOMY );
 
-			} else {
-
-				$taxonomies = array();
-			}
+			} else $taxonomies = array();
 
 			$args = array(
 				'label'               => _x( 'Place', 'post type label', 'wpsso-organization-place' ),
@@ -396,6 +396,126 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			);
 
 			register_taxonomy( WPSSOOPM_PLACE_CATEGORY_TAXONOMY, array( WPSSOOPM_PLACE_POST_TYPE ), $args );
+		}
+
+		public static function register_service_post_type() {
+
+			$is_public = false;
+
+			$labels = array(
+				'name'                     => _x( 'Services', 'post type general name', 'wpsso-organization-place' ),
+				'singular_name'            => _x( 'Service', 'post type singular name', 'wpsso-organization-place' ),
+				'add_new'                  => __( 'Add Service', 'wpsso-organization-place' ),
+				'add_new_item'             => __( 'Add Service', 'wpsso-organization-place' ),
+				'edit_item'                => __( 'Edit Service', 'wpsso-organization-place' ),
+				'new_item'                 => __( 'New Service', 'wpsso-organization-place' ),
+				'view_item'                => __( 'View Service', 'wpsso-organization-place' ),
+				'view_items'               => __( 'View Services', 'wpsso-organization-place' ),
+				'search_items'             => __( 'Search Services', 'wpsso-organization-place' ),
+				'not_found'                => __( 'No services found', 'wpsso-organization-place' ),
+				'not_found_in_trash'       => __( 'No services found in Trash', 'wpsso-organization-place' ),
+				'parent_item_colon'        => __( 'Parent Service:', 'wpsso-organization-place' ),
+				'all_items'                => __( 'All Services', 'wpsso-organization-place' ),
+				'archives'                 => __( 'Service Archives', 'wpsso-organization-place' ),
+				'attributes'               => __( 'Service Attributes', 'wpsso-organization-place' ),
+				'insert_into_item'         => __( 'Insert into service', 'wpsso-organization-place' ),
+				'uploaded_to_this_item'    => __( 'Uploaded to this service', 'wpsso-organization-place' ),
+				'featured_image'           => __( 'Service Image', 'wpsso-organization-place' ),
+				'set_featured_image'       => __( 'Set service image', 'wpsso-organization-place' ),
+				'remove_featured_image'    => __( 'Remove service image', 'wpsso-organization-place' ),
+				'use_featured_image'       => __( 'Use as service image', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO Services', 'admin menu name', 'wpsso-organization-place' ),
+				'filter_items_list'        => __( 'Filter services', 'wpsso-organization-place' ),
+				'items_list_navigation'    => __( 'Services list navigation', 'wpsso-organization-place' ),
+				'items_list'               => __( 'Services list', 'wpsso-organization-place' ),
+				'name_admin_bar'           => _x( 'Service', 'admin bar name', 'wpsso-organization-place' ),
+				'item_published'	   => __( 'Service published.', 'wpsso-organization-place' ),
+				'item_published_privately' => __( 'Service published privately.', 'wpsso-organization-place' ),
+				'item_reverted_to_draft'   => __( 'Service reverted to draft.', 'wpsso-organization-place' ),
+				'item_scheduled'           => __( 'Service scheduled.', 'wpsso-organization-place' ),
+				'item_updated'             => __( 'Service updated.', 'wpsso-organization-place' ),
+			);
+
+			$supports = false;
+
+			if ( defined( 'WPSSOOPM_SERVICE_CATEGORY_TAXONOMY' ) && WPSSOOPM_SERVICE_CATEGORY_TAXONOMY ) {
+
+				$taxonomies = array( WPSSOOPM_SERVICE_CATEGORY_TAXONOMY );
+
+			} else $taxonomies = array();
+
+			$args = array(
+				'label'               => _x( 'Service', 'post type label', 'wpsso-organization-place' ),
+				'labels'              => $labels,
+				'description'         => _x( 'Service', 'post type description', 'wpsso-organization-place' ),
+				'exclude_from_search' => false,	// Must be false for get_posts() queries.
+				'public'              => $is_public,
+				'publicly_queryable'  => $is_public,
+				'show_ui'             => true,
+				'show_in_nav_menus'   => true,
+				'show_in_menu'        => true,
+				'show_in_admin_bar'   => true,
+				'menu_position'       => WPSSOOPM_SERVICE_MENU_ORDER,
+				'menu_icon'           => 'dashicons-thumbs-up',
+				'capability_type'     => 'page',
+				'hierarchical'        => false,
+				'supports'            => $supports,
+				'taxonomies'          => $taxonomies,
+				'has_archive'         => 'services',
+				'can_export'          => true,
+				'show_in_rest'        => true,
+			);
+
+			register_post_type( WPSSOOPM_SERVICE_POST_TYPE, $args );
+		}
+
+		public static function register_service_category_taxonomy() {
+
+			if ( ! defined( 'WPSSOOPM_SERVICE_CATEGORY_TAXONOMY' ) || ! WPSSOOPM_SERVICE_CATEGORY_TAXONOMY ) {
+
+				return;
+			}
+
+			$is_public = false;
+
+			$labels = array(
+				'name'                       => __( 'Categories', 'wpsso-organization-place' ),
+				'singular_name'              => __( 'Category', 'wpsso-organization-place' ),
+				'menu_name'                  => _x( 'Categories', 'admin menu name', 'wpsso-organization-place' ),
+				'all_items'                  => __( 'All Categories', 'wpsso-organization-place' ),
+				'edit_item'                  => __( 'Edit Category', 'wpsso-organization-place' ),
+				'view_item'                  => __( 'View Category', 'wpsso-organization-place' ),
+				'update_item'                => __( 'Update Category', 'wpsso-organization-place' ),
+				'add_new_item'               => __( 'Add New Category', 'wpsso-organization-place' ),
+				'new_item_name'              => __( 'New Category Name', 'wpsso-organization-place' ),
+				'parent_item'                => __( 'Parent Category', 'wpsso-organization-place' ),
+				'parent_item_colon'          => __( 'Parent Category:', 'wpsso-organization-place' ),
+				'search_items'               => __( 'Search Categories', 'wpsso-organization-place' ),
+				'popular_items'              => __( 'Popular Categories', 'wpsso-organization-place' ),
+				'separate_items_with_commas' => __( 'Separate categories with commas', 'wpsso-organization-place' ),
+				'add_or_remove_items'        => __( 'Add or remove categories', 'wpsso-organization-place' ),
+				'choose_from_most_used'      => __( 'Choose from the most used', 'wpsso-organization-place' ),
+				'not_found'                  => __( 'No categories found.', 'wpsso-organization-place' ),
+				'back_to_items'              => __( '← Back to categories', 'wpsso-organization-place' ),
+			);
+
+			$args = array(
+				'label'              => _x( 'Categories', 'taxonomy label', 'wpsso-organization-place' ),
+				'labels'             => $labels,
+				'public'             => $is_public,
+				'publicly_queryable' => $is_public,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'show_in_nav_menus'  => true,
+				'show_in_rest'       => true,
+				'show_tagcloud'      => false,
+				'show_in_quick_edit' => true,
+				'show_admin_column'  => true,
+				'description'        => _x( 'Categories for Services', 'taxonomy description', 'wpsso-organization-place' ),
+				'hierarchical'       => true,
+			);
+
+			register_taxonomy( WPSSOOPM_SERVICE_CATEGORY_TAXONOMY, array( WPSSOOPM_SERVICE_POST_TYPE ), $args );
 		}
 	}
 }

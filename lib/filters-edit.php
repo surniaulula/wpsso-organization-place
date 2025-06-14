@@ -32,6 +32,10 @@ if ( ! class_exists( 'WpssoOpmFiltersEdit' ) ) {
 			require_once WPSSOOPM_PLUGINDIR . 'lib/place/filters-edit.php';
 
 			new WpssoOpmPlaceFiltersEdit( $plugin, $addon );
+
+			require_once WPSSOOPM_PLUGINDIR . 'lib/service/filters-edit.php';
+
+			new WpssoOpmServiceFiltersEdit( $plugin, $addon );
 		}
 	}
 }

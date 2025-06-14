@@ -33,27 +33,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			) );
 		}
 
-		public function filter_form_cache_place_names_custom( $mixed ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			$custom = array( 'custom' => _x( '[Custom Place]', 'option value', 'wpsso-organization-place' ) );
-
-			$place_names = $this->filter_form_cache_place_names( $mixed );	// Always returns an array.
-
-			$place_names_custom = $custom + $place_names;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->log_arr( 'place_names_custom', $place_names_custom );
-			}
-
-			return $place_names_custom;
-		}
-
 		public function filter_form_cache_place_names( $mixed ) {
 
 			if ( $this->p->debug->enabled ) {
@@ -62,7 +41,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			}
 
 			$place_names = WpssoOpmPlace::get_names( $schema_type = '' );
-
 			$place_names = is_array( $mixed ) ? $mixed + $place_names : $place_names;
 
 			if ( $this->p->debug->enabled ) {
@@ -71,6 +49,25 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			}
 
 			return $place_names;
+		}
+
+		public function filter_form_cache_place_names_custom( $mixed ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			$custom             = array( 'custom' => _x( '[Custom Place]', 'option value', 'wpsso-organization-place' ) );
+			$place_names        = $this->filter_form_cache_place_names( $mixed );	// Always returns an array.
+			$place_names_custom = $custom + $place_names;
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'place_names_custom', $place_names_custom );
+			}
+
+			return $place_names_custom;
 		}
 
 		public function filter_mb_place_rows( $table_rows, $form, $head_info, $mod ) {
@@ -297,10 +294,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				_x( 'Local Business Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
-			$table_rows[ 'place_serv_radius' ] = $tr_hide_local_business_html .
+			$table_rows[ 'place_service_radius' ] = $tr_hide_local_business_html .
 				$form->get_th_html( _x( 'Service Radius', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_serv_radius' ) .
-				'<td>' . $form->get_input( 'place_serv_radius', $css_class = 'short' ) . ' ' .
+					$css_class = 'medium', $css_id = 'meta-place_service_radius' ) .
+				'<td>' . $form->get_input( 'place_service_radius', $css_class = 'short' ) . ' ' .
 				_x( 'meters from coordinates', 'option comment', 'wpsso-organization-place' ) . '</td>';
 
 			$table_rows[ 'place_currencies_accepted' ] = $tr_hide_local_business_html .

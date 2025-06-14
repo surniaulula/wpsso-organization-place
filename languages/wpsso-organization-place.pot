@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 4.0.0-dev.3\n"
+"Project-Id-Version: WPSSO Organization and Place Manager 4.0.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -40,7 +40,7 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/filters-upgrade.php:220
+#: lib/filters-upgrade.php:217
 msgid ""
 "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s "
 "post type ID #%5$s."
@@ -56,779 +56,785 @@ msgctxt "metabox title"
 msgid "Place"
 msgstr ""
 
-#: lib/org/filters-edit.php:60
+#: lib/integ/admin/post.php:125
+msgctxt "metabox title"
+msgid "Service"
+msgstr ""
+
+#: lib/org/filters-edit.php:59
 msgctxt "option label"
 msgid "Organization Name"
 msgstr ""
 
-#: lib/org/filters-edit.php:65
+#: lib/org/filters-edit.php:64
 msgctxt "option label"
 msgid "Organization Alternate Name"
 msgstr ""
 
-#: lib/org/filters-edit.php:70
+#: lib/org/filters-edit.php:69
 msgctxt "option label"
 msgid "Organization Description"
 msgstr ""
 
-#: lib/org/filters-edit.php:75
+#: lib/org/filters-edit.php:74
 msgctxt "option label"
 msgid "Organization Location"
 msgstr ""
 
-#: lib/org/filters-edit.php:81
+#: lib/org/filters-edit.php:80
 msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr ""
 
-#: lib/org/filters-options.php:153 lib/org.php:61
+#: lib/org/filters-options.php:163 lib/org.php:61
 msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
 
-#: lib/org.php:163 lib/org.php:175
+#: lib/org.php:162 lib/org.php:174
 msgid "Unable to provide information for organization ID #%s."
 msgstr ""
 
-#: lib/org.php:167
+#: lib/org.php:166
 msgid "Please publish organization ID #%s or select a different organization."
 msgstr ""
 
-#: lib/org.php:177
+#: lib/org.php:176
 msgid "Organization ID #%s does not exist."
 msgstr ""
 
-#: lib/org.php:179
+#: lib/org.php:178
 msgid "Please select a different organization."
 msgstr ""
 
-#: lib/org.php:223
+#: lib/org.php:221
 msgctxt "option label"
 msgid "Organization Is Default"
 msgstr ""
 
-#: lib/org.php:232
+#: lib/org.php:230
 msgctxt "metabox title"
 msgid "Organization Information"
 msgstr ""
 
-#: lib/org.php:236
+#: lib/org.php:234
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr ""
 
-#: lib/org.php:242
+#: lib/org.php:240
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr ""
 
-#: lib/org.php:248
+#: lib/org.php:246
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr ""
 
-#: lib/org.php:253
+#: lib/org.php:251
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr ""
 
-#: lib/org.php:258
+#: lib/org.php:256
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr ""
 
-#: lib/org.php:263
+#: lib/org.php:261
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr ""
 
-#: lib/org.php:268
+#: lib/org.php:266
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr ""
 
-#: lib/org.php:273
+#: lib/org.php:271
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr ""
 
-#: lib/org.php:278
+#: lib/org.php:276
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr ""
 
-#: lib/org.php:283
+#: lib/org.php:281
 msgctxt "option label"
 msgid "Organization Awards"
 msgstr ""
 
-#: lib/org.php:287
+#: lib/org.php:285 lib/service/filters-edit.php:120
 msgctxt "option label"
 msgid "Offer Catalogs"
 msgstr ""
 
-#: lib/org.php:290
+#: lib/org.php:288 lib/service/filters-edit.php:124
 msgctxt "option label"
 msgid "Catalog Name"
 msgstr ""
 
-#: lib/org.php:295
+#: lib/org.php:293 lib/service/filters-edit.php:129
 msgctxt "option label"
 msgid "Catalog Description"
 msgstr ""
 
-#: lib/org.php:300
+#: lib/org.php:298 lib/service/filters-edit.php:134
 msgctxt "option label"
 msgid "Catalog URL"
 msgstr ""
 
-#: lib/org.php:311
+#: lib/org.php:309
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr ""
 
-#: lib/org.php:315
+#: lib/org.php:313
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr ""
 
-#: lib/org.php:320
+#: lib/org.php:318
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr ""
 
-#: lib/org.php:325
+#: lib/org.php:323
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr ""
 
-#: lib/org.php:330
+#: lib/org.php:328
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr ""
 
-#: lib/org.php:339
+#: lib/org.php:337
 msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:394
+#: lib/org.php:392
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:402
+#: lib/org.php:400
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:425
+#: lib/org.php:423
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:429 lib/org.php:460
+#: lib/org.php:427 lib/org.php:458
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:437
+#: lib/org.php:435
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:441
+#: lib/org.php:439
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:456
+#: lib/org.php:454
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:468
+#: lib/org.php:466
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:472
+#: lib/org.php:470
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 
-#: lib/place/filters-edit.php:43
+#: lib/place/filters-edit.php:61
 msgctxt "option value"
 msgid "[Custom Place]"
 msgstr ""
 
-#: lib/place/filters-edit.php:117
+#: lib/place/filters-edit.php:114
 msgctxt "option label"
 msgid "Place Name"
 msgstr ""
 
-#: lib/place/filters-edit.php:122
+#: lib/place/filters-edit.php:119
 msgctxt "option label"
 msgid "Place Alternate Name"
 msgstr ""
 
-#: lib/place/filters-edit.php:127
+#: lib/place/filters-edit.php:124
 msgctxt "option label"
 msgid "Place Description"
 msgstr ""
 
-#: lib/place/filters-edit.php:133
+#: lib/place/filters-edit.php:130
 msgctxt "option label"
 msgid "Place Schema Type"
 msgstr ""
 
-#: lib/place/filters-edit.php:148
+#: lib/place/filters-edit.php:145
 msgctxt "option label"
 msgid "Place Is Default"
 msgstr ""
 
-#: lib/place/filters-edit.php:160
+#: lib/place/filters-edit.php:157
 msgctxt "metabox title"
 msgid "Place Information"
 msgstr ""
 
-#: lib/place/filters-edit.php:164
+#: lib/place/filters-edit.php:161
 msgctxt "option label"
 msgid "Street Address"
 msgstr ""
 
-#: lib/place/filters-edit.php:169
+#: lib/place/filters-edit.php:166
 msgctxt "option label"
 msgid "P.O. Box Number"
 msgstr ""
 
-#: lib/place/filters-edit.php:174
+#: lib/place/filters-edit.php:171
 msgctxt "option label"
 msgid "City / Locality"
 msgstr ""
 
-#: lib/place/filters-edit.php:179
+#: lib/place/filters-edit.php:176
 msgctxt "option label"
 msgid "State / Province"
 msgstr ""
 
-#: lib/place/filters-edit.php:184
+#: lib/place/filters-edit.php:181
 msgctxt "option label"
 msgid "Zip / Postal Code"
 msgstr ""
 
-#: lib/place/filters-edit.php:189
+#: lib/place/filters-edit.php:186
 msgctxt "option label"
 msgid "Country"
 msgstr ""
 
-#: lib/place/filters-edit.php:194
+#: lib/place/filters-edit.php:191
 msgctxt "option label"
 msgid "Telephone"
 msgstr ""
 
-#: lib/place/filters-edit.php:201
+#: lib/place/filters-edit.php:198
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr ""
 
-#: lib/place/filters-edit.php:206
+#: lib/place/filters-edit.php:203
 msgctxt "option label"
 msgid "or Place Image URL"
 msgstr ""
 
-#: lib/place/filters-edit.php:212
+#: lib/place/filters-edit.php:209
 msgctxt "option label"
 msgid "Place Latitude"
 msgstr ""
 
-#: lib/place/filters-edit.php:215 lib/place/filters-edit.php:221
+#: lib/place/filters-edit.php:212 lib/place/filters-edit.php:218
+#: lib/service/filters-edit.php:105 lib/service/filters-edit.php:111
 msgctxt "option comment"
 msgid "decimal degrees"
 msgstr ""
 
-#: lib/place/filters-edit.php:218
+#: lib/place/filters-edit.php:215
 msgctxt "option label"
 msgid "Place Longitude"
 msgstr ""
 
-#: lib/place/filters-edit.php:224
+#: lib/place/filters-edit.php:221
 msgctxt "option label"
 msgid "Place Altitude"
 msgstr ""
 
-#: lib/place/filters-edit.php:227
+#: lib/place/filters-edit.php:224
 msgctxt "option comment"
 msgid "meters above sea level"
 msgstr ""
 
-#: lib/place/filters-edit.php:230
+#: lib/place/filters-edit.php:227
 msgctxt "option label"
 msgid "Place Timezone"
 msgstr ""
 
-#: lib/place/filters-edit.php:259
+#: lib/place/filters-edit.php:256
 msgid "Opens at"
 msgstr ""
 
-#: lib/place/filters-edit.php:261
+#: lib/place/filters-edit.php:258
 msgid "and closes at"
 msgstr ""
 
-#: lib/place/filters-edit.php:267
+#: lib/place/filters-edit.php:264
 msgid "Every Midday"
 msgstr ""
 
-#: lib/place/filters-edit.php:268
+#: lib/place/filters-edit.php:265
 msgid "Closes at"
 msgstr ""
 
-#: lib/place/filters-edit.php:270
+#: lib/place/filters-edit.php:267
 msgid "and re-opens at"
 msgstr ""
 
-#: lib/place/filters-edit.php:277
+#: lib/place/filters-edit.php:274
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr ""
 
-#: lib/place/filters-edit.php:282
+#: lib/place/filters-edit.php:279
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr ""
 
-#: lib/place/filters-edit.php:285
+#: lib/place/filters-edit.php:282
 msgid "Open from"
 msgstr ""
 
-#: lib/place/filters-edit.php:287
+#: lib/place/filters-edit.php:284
 msgid "until"
 msgstr ""
 
-#: lib/place/filters-edit.php:289
+#: lib/place/filters-edit.php:286
 msgid "inclusively"
 msgstr ""
 
-#: lib/place/filters-edit.php:297
+#: lib/place/filters-edit.php:294
 msgctxt "metabox title"
 msgid "Local Business Information"
 msgstr ""
 
-#: lib/place/filters-edit.php:301
+#: lib/place/filters-edit.php:298 lib/service/filters-edit.php:114
 msgctxt "option label"
 msgid "Service Radius"
 msgstr ""
 
-#: lib/place/filters-edit.php:304
+#: lib/place/filters-edit.php:301 lib/service/filters-edit.php:117
 msgctxt "option comment"
 msgid "meters from coordinates"
 msgstr ""
 
-#: lib/place/filters-edit.php:307
+#: lib/place/filters-edit.php:304
 msgctxt "option label"
 msgid "Currencies Accepted"
 msgstr ""
 
-#: lib/place/filters-edit.php:312
+#: lib/place/filters-edit.php:309
 msgctxt "option label"
 msgid "Payment Accepted"
 msgstr ""
 
-#: lib/place/filters-edit.php:317
+#: lib/place/filters-edit.php:314
 msgctxt "option label"
 msgid "Price Range"
 msgstr ""
 
-#: lib/place/filters-edit.php:326
+#: lib/place/filters-edit.php:323
 msgctxt "metabox title"
 msgid "Food Establishment Information"
 msgstr ""
 
-#: lib/place/filters-edit.php:330
+#: lib/place/filters-edit.php:327
 msgctxt "option label"
 msgid "Accepts Reservations"
 msgstr ""
 
-#: lib/place/filters-edit.php:335
+#: lib/place/filters-edit.php:332
 msgctxt "option label"
 msgid "Serves Cuisine"
 msgstr ""
 
-#: lib/place/filters-edit.php:340
+#: lib/place/filters-edit.php:337
 msgctxt "option label"
 msgid "Food Menu URL"
 msgstr ""
 
-#: lib/place/filters-edit.php:345
+#: lib/place/filters-edit.php:342
 msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
 
-#: lib/place/filters-options.php:199 lib/place.php:61
+#: lib/place/filters-options.php:209 lib/place.php:61
 msgctxt "option value"
 msgid "Place #%d"
 msgstr ""
 
-#: lib/place.php:136 lib/place.php:148
+#: lib/place.php:135 lib/place.php:147
 msgid "Unable to provide information for place ID #%s."
 msgstr ""
 
-#: lib/place.php:140
+#: lib/place.php:139
 msgid "Please publish place ID #%s or select a different place."
 msgstr ""
 
-#: lib/place.php:150
+#: lib/place.php:149
 msgid "Place ID #%s does not exist."
 msgstr ""
 
-#: lib/place.php:152
+#: lib/place.php:151
 msgid "Please select a different place."
 msgstr ""
 
-#: lib/register.php:160
+#: lib/register.php:163
 msgctxt "post type general name"
 msgid "Organizations"
 msgstr ""
 
-#: lib/register.php:161
+#: lib/register.php:164
 msgctxt "post type singular name"
 msgid "Organization"
 msgstr ""
 
-#: lib/register.php:162 lib/register.php:163
+#: lib/register.php:165 lib/register.php:166
 msgid "Add Organization"
 msgstr ""
 
-#: lib/register.php:164
+#: lib/register.php:167
 msgid "Edit Organization"
 msgstr ""
 
-#: lib/register.php:165
+#: lib/register.php:168
 msgid "New Organization"
 msgstr ""
 
-#: lib/register.php:166
+#: lib/register.php:169
 msgid "View Organization"
 msgstr ""
 
-#: lib/register.php:167
+#: lib/register.php:170
 msgid "View Organizations"
 msgstr ""
 
-#: lib/register.php:168
+#: lib/register.php:171
 msgid "Search Organizations"
 msgstr ""
 
-#: lib/register.php:169
+#: lib/register.php:172
 msgid "No organizations found"
 msgstr ""
 
-#: lib/register.php:170
+#: lib/register.php:173
 msgid "No organizations found in Trash"
 msgstr ""
 
-#: lib/register.php:171
+#: lib/register.php:174
 msgid "Parent Organization:"
 msgstr ""
 
-#: lib/register.php:172
+#: lib/register.php:175
 msgid "All Organizations"
 msgstr ""
 
-#: lib/register.php:173
+#: lib/register.php:176
 msgid "Organization Archives"
 msgstr ""
 
-#: lib/register.php:174
+#: lib/register.php:177
 msgid "Organization Attributes"
 msgstr ""
 
-#: lib/register.php:175
+#: lib/register.php:178
 msgid "Insert into organization"
 msgstr ""
 
-#: lib/register.php:176
+#: lib/register.php:179
 msgid "Uploaded to this organization"
 msgstr ""
 
-#: lib/register.php:177
+#: lib/register.php:180
 msgid "Organization Image"
 msgstr ""
 
-#: lib/register.php:178
+#: lib/register.php:181
 msgid "Set organization image"
 msgstr ""
 
-#: lib/register.php:179
+#: lib/register.php:182
 msgid "Remove organization image"
 msgstr ""
 
-#: lib/register.php:180
+#: lib/register.php:183
 msgid "Use as organization image"
 msgstr ""
 
-#: lib/register.php:181
+#: lib/register.php:184
 msgctxt "admin menu name"
 msgid "SSO Orgs"
 msgstr ""
 
-#: lib/register.php:182
+#: lib/register.php:185
 msgid "Filter organizations"
 msgstr ""
 
-#: lib/register.php:183
+#: lib/register.php:186
 msgid "Organizations list navigation"
 msgstr ""
 
-#: lib/register.php:184
+#: lib/register.php:187
 msgid "Organizations list"
 msgstr ""
 
-#: lib/register.php:185
+#: lib/register.php:188
 msgctxt "admin bar name"
 msgid "Organization"
 msgstr ""
 
-#: lib/register.php:186
+#: lib/register.php:189
 msgid "Organization published."
 msgstr ""
 
-#: lib/register.php:187
+#: lib/register.php:190
 msgid "Organization published privately."
 msgstr ""
 
-#: lib/register.php:188
+#: lib/register.php:191
 msgid "Organization reverted to draft."
 msgstr ""
 
-#: lib/register.php:189
+#: lib/register.php:192
 msgid "Organization scheduled."
 msgstr ""
 
-#: lib/register.php:190
+#: lib/register.php:193
 msgid "Organization updated."
 msgstr ""
 
-#: lib/register.php:205
+#: lib/register.php:208
 msgctxt "post type label"
 msgid "Organization"
 msgstr ""
 
-#: lib/register.php:207
+#: lib/register.php:210
 msgctxt "post type description"
 msgid "Organization"
 msgstr ""
 
-#: lib/register.php:239 lib/register.php:362
+#: lib/register.php:242 lib/register.php:362 lib/register.php:482
 msgid "Categories"
 msgstr ""
 
-#: lib/register.php:240 lib/register.php:363
+#: lib/register.php:243 lib/register.php:363 lib/register.php:483
 msgid "Category"
 msgstr ""
 
-#: lib/register.php:241 lib/register.php:364
+#: lib/register.php:244 lib/register.php:364 lib/register.php:484
 msgctxt "admin menu name"
 msgid "Categories"
 msgstr ""
 
-#: lib/register.php:242 lib/register.php:365
+#: lib/register.php:245 lib/register.php:365 lib/register.php:485
 msgid "All Categories"
 msgstr ""
 
-#: lib/register.php:243 lib/register.php:366
+#: lib/register.php:246 lib/register.php:366 lib/register.php:486
 msgid "Edit Category"
 msgstr ""
 
-#: lib/register.php:244 lib/register.php:367
+#: lib/register.php:247 lib/register.php:367 lib/register.php:487
 msgid "View Category"
 msgstr ""
 
-#: lib/register.php:245 lib/register.php:368
+#: lib/register.php:248 lib/register.php:368 lib/register.php:488
 msgid "Update Category"
 msgstr ""
 
-#: lib/register.php:246 lib/register.php:369
+#: lib/register.php:249 lib/register.php:369 lib/register.php:489
 msgid "Add New Category"
 msgstr ""
 
-#: lib/register.php:247 lib/register.php:370
+#: lib/register.php:250 lib/register.php:370 lib/register.php:490
 msgid "New Category Name"
 msgstr ""
 
-#: lib/register.php:248 lib/register.php:371
+#: lib/register.php:251 lib/register.php:371 lib/register.php:491
 msgid "Parent Category"
 msgstr ""
 
-#: lib/register.php:249 lib/register.php:372
+#: lib/register.php:252 lib/register.php:372 lib/register.php:492
 msgid "Parent Category:"
 msgstr ""
 
-#: lib/register.php:250 lib/register.php:373
+#: lib/register.php:253 lib/register.php:373 lib/register.php:493
 msgid "Search Categories"
 msgstr ""
 
-#: lib/register.php:251 lib/register.php:374
+#: lib/register.php:254 lib/register.php:374 lib/register.php:494
 msgid "Popular Categories"
 msgstr ""
 
-#: lib/register.php:252 lib/register.php:375
+#: lib/register.php:255 lib/register.php:375 lib/register.php:495
 msgid "Separate categories with commas"
 msgstr ""
 
-#: lib/register.php:253 lib/register.php:376
+#: lib/register.php:256 lib/register.php:376 lib/register.php:496
 msgid "Add or remove categories"
 msgstr ""
 
-#: lib/register.php:254 lib/register.php:377
+#: lib/register.php:257 lib/register.php:377 lib/register.php:497
 msgid "Choose from the most used"
 msgstr ""
 
-#: lib/register.php:255 lib/register.php:378
+#: lib/register.php:258 lib/register.php:378 lib/register.php:498
 msgid "No categories found."
 msgstr ""
 
-#: lib/register.php:256 lib/register.php:379
+#: lib/register.php:259 lib/register.php:379 lib/register.php:499
 msgid "← Back to categories"
 msgstr ""
 
-#: lib/register.php:260 lib/register.php:383
+#: lib/register.php:263 lib/register.php:383 lib/register.php:503
 msgctxt "taxonomy label"
 msgid "Categories"
 msgstr ""
 
-#: lib/register.php:271
+#: lib/register.php:274
 msgctxt "taxonomy description"
 msgid "Categories for Organizations"
 msgstr ""
 
-#: lib/register.php:283
+#: lib/register.php:286
 msgctxt "post type general name"
 msgid "Places"
 msgstr ""
 
-#: lib/register.php:284
+#: lib/register.php:287
 msgctxt "post type singular name"
 msgid "Place"
 msgstr ""
 
-#: lib/register.php:285 lib/register.php:286
+#: lib/register.php:288 lib/register.php:289
 msgid "Add Place"
 msgstr ""
 
-#: lib/register.php:287
+#: lib/register.php:290
 msgid "Edit Place"
 msgstr ""
 
-#: lib/register.php:288
+#: lib/register.php:291
 msgid "New Place"
 msgstr ""
 
-#: lib/register.php:289
+#: lib/register.php:292
 msgid "View Place"
 msgstr ""
 
-#: lib/register.php:290
+#: lib/register.php:293
 msgid "View Places"
 msgstr ""
 
-#: lib/register.php:291
+#: lib/register.php:294
 msgid "Search Places"
 msgstr ""
 
-#: lib/register.php:292
+#: lib/register.php:295
 msgid "No places found"
 msgstr ""
 
-#: lib/register.php:293
+#: lib/register.php:296
 msgid "No places found in Trash"
 msgstr ""
 
-#: lib/register.php:294
+#: lib/register.php:297
 msgid "Parent Place:"
 msgstr ""
 
-#: lib/register.php:295
+#: lib/register.php:298
 msgid "All Places"
 msgstr ""
 
-#: lib/register.php:296
+#: lib/register.php:299
 msgid "Place Archives"
 msgstr ""
 
-#: lib/register.php:297
+#: lib/register.php:300
 msgid "Place Attributes"
 msgstr ""
 
-#: lib/register.php:298
+#: lib/register.php:301
 msgid "Insert into place"
 msgstr ""
 
-#: lib/register.php:299
+#: lib/register.php:302
 msgid "Uploaded to this place"
 msgstr ""
 
-#: lib/register.php:300
+#: lib/register.php:303
 msgid "Place Image"
 msgstr ""
 
-#: lib/register.php:301
+#: lib/register.php:304
 msgid "Set place image"
 msgstr ""
 
-#: lib/register.php:302
+#: lib/register.php:305
 msgid "Remove place image"
 msgstr ""
 
-#: lib/register.php:303
+#: lib/register.php:306
 msgid "Use as place image"
 msgstr ""
 
-#: lib/register.php:304
+#: lib/register.php:307
 msgctxt "admin menu name"
 msgid "SSO Places"
 msgstr ""
 
-#: lib/register.php:305
+#: lib/register.php:308
 msgid "Filter places"
 msgstr ""
 
-#: lib/register.php:306
+#: lib/register.php:309
 msgid "Places list navigation"
 msgstr ""
 
-#: lib/register.php:307
+#: lib/register.php:310
 msgid "Places list"
 msgstr ""
 
-#: lib/register.php:308
+#: lib/register.php:311
 msgctxt "admin bar name"
 msgid "Place"
 msgstr ""
 
-#: lib/register.php:309
+#: lib/register.php:312
 msgid "Place published."
 msgstr ""
 
-#: lib/register.php:310
+#: lib/register.php:313
 msgid "Place published privately."
 msgstr ""
 
-#: lib/register.php:311
+#: lib/register.php:314
 msgid "Place reverted to draft."
 msgstr ""
 
-#: lib/register.php:312
+#: lib/register.php:315
 msgid "Place scheduled."
 msgstr ""
 
-#: lib/register.php:313
+#: lib/register.php:316
 msgid "Place updated."
 msgstr ""
 
@@ -845,6 +851,206 @@ msgstr ""
 #: lib/register.php:394
 msgctxt "taxonomy description"
 msgid "Categories for Places"
+msgstr ""
+
+#: lib/register.php:406
+msgctxt "post type general name"
+msgid "Services"
+msgstr ""
+
+#: lib/register.php:407
+msgctxt "post type singular name"
+msgid "Service"
+msgstr ""
+
+#: lib/register.php:408 lib/register.php:409
+msgid "Add Service"
+msgstr ""
+
+#: lib/register.php:410
+msgid "Edit Service"
+msgstr ""
+
+#: lib/register.php:411
+msgid "New Service"
+msgstr ""
+
+#: lib/register.php:412
+msgid "View Service"
+msgstr ""
+
+#: lib/register.php:413
+msgid "View Services"
+msgstr ""
+
+#: lib/register.php:414
+msgid "Search Services"
+msgstr ""
+
+#: lib/register.php:415
+msgid "No services found"
+msgstr ""
+
+#: lib/register.php:416
+msgid "No services found in Trash"
+msgstr ""
+
+#: lib/register.php:417
+msgid "Parent Service:"
+msgstr ""
+
+#: lib/register.php:418
+msgid "All Services"
+msgstr ""
+
+#: lib/register.php:419
+msgid "Service Archives"
+msgstr ""
+
+#: lib/register.php:420
+msgid "Service Attributes"
+msgstr ""
+
+#: lib/register.php:421
+msgid "Insert into service"
+msgstr ""
+
+#: lib/register.php:422
+msgid "Uploaded to this service"
+msgstr ""
+
+#: lib/register.php:423
+msgid "Service Image"
+msgstr ""
+
+#: lib/register.php:424
+msgid "Set service image"
+msgstr ""
+
+#: lib/register.php:425
+msgid "Remove service image"
+msgstr ""
+
+#: lib/register.php:426
+msgid "Use as service image"
+msgstr ""
+
+#: lib/register.php:427
+msgctxt "admin menu name"
+msgid "SSO Services"
+msgstr ""
+
+#: lib/register.php:428
+msgid "Filter services"
+msgstr ""
+
+#: lib/register.php:429
+msgid "Services list navigation"
+msgstr ""
+
+#: lib/register.php:430
+msgid "Services list"
+msgstr ""
+
+#: lib/register.php:431
+msgctxt "admin bar name"
+msgid "Service"
+msgstr ""
+
+#: lib/register.php:432
+msgid "Service published."
+msgstr ""
+
+#: lib/register.php:433
+msgid "Service published privately."
+msgstr ""
+
+#: lib/register.php:434
+msgid "Service reverted to draft."
+msgstr ""
+
+#: lib/register.php:435
+msgid "Service scheduled."
+msgstr ""
+
+#: lib/register.php:436
+msgid "Service updated."
+msgstr ""
+
+#: lib/register.php:448
+msgctxt "post type label"
+msgid "Service"
+msgstr ""
+
+#: lib/register.php:450
+msgctxt "post type description"
+msgid "Service"
+msgstr ""
+
+#: lib/register.php:514
+msgctxt "taxonomy description"
+msgid "Categories for Services"
+msgstr ""
+
+#: lib/service/filters-edit.php:60
+msgctxt "option label"
+msgid "Service Name"
+msgstr ""
+
+#: lib/service/filters-edit.php:65
+msgctxt "option label"
+msgid "Service Alternate Name"
+msgstr ""
+
+#: lib/service/filters-edit.php:70
+msgctxt "option label"
+msgid "Service Description"
+msgstr ""
+
+#: lib/service/filters-edit.php:75
+msgctxt "option label"
+msgid "Service Schema Type"
+msgstr ""
+
+#: lib/service/filters-edit.php:88
+msgctxt "option label"
+msgid "Service Provider Org."
+msgstr ""
+
+#: lib/service/filters-edit.php:95
+msgctxt "option label"
+msgid "Service Provider Person"
+msgstr ""
+
+#: lib/service/filters-edit.php:102
+msgctxt "option label"
+msgid "Service Latitude"
+msgstr ""
+
+#: lib/service/filters-edit.php:108
+msgctxt "option label"
+msgid "Service Longitude"
+msgstr ""
+
+#: lib/service/filters-options.php:174 lib/service.php:61
+msgctxt "option value"
+msgid "Service #%d"
+msgstr ""
+
+#: lib/service.php:119 lib/service.php:131
+msgid "Unable to provide information for service ID #%s."
+msgstr ""
+
+#: lib/service.php:123
+msgid "Please publish service ID #%s or select a different service."
+msgstr ""
+
+#: lib/service.php:133
+msgid "Service ID #%s does not exist."
+msgstr ""
+
+#: lib/service.php:135
+msgid "Please select a different service."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

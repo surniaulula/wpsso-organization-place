@@ -59,8 +59,9 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				$org_opts = $wpsso->post->get_options( $post_id );
 				$def_name = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), 'org-' . $post_id );
+				$def_type   = $wpsso->cf[ 'opt' ][ 'org_md_defaults' ][ 'org_schema_type' ];
 				$org_name = empty( $org_opts[ 'org_name' ] ) ? $def_name : $org_opts[ 'org_name' ];
-				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? 'organization' : $org_opts[ 'org_schema_type' ];
+				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? $def_type : $org_opts[ 'org_schema_type' ];
 
 				if ( in_array( $org_type, $children ) ) {
 
@@ -113,14 +114,12 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 			} elseif ( 0 === strpos( $org_id, $id_prefix . '-' ) ) {
 
-				$post_id = substr( $org_id, strlen( $id_prefix ) + 1 );
-
+				$post_id  = substr( $org_id, strlen( $id_prefix ) + 1 );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
-					$org_opts = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
-
+					$org_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
 					$org_sameas = array();
 
 					foreach ( SucomUtilOptions::get_opts_begin( $org_opts, 'org_sameas_' ) as $sameas_key => $sameas_url ) {
@@ -187,7 +186,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$org_opts[ 'org_id' ] = $org_id;
 
 				$org_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'org_md_defaults' ], $org_opts );	// Complete the array.
-
 				$org_opts = SucomUtil::preg_grep_keys( '/^org_/', $org_opts );
 			}
 

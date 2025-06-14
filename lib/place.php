@@ -121,8 +121,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			} elseif ( 0 === strpos( $place_id, $id_prefix . '-' ) ) {
 
-				$post_id = substr( $place_id, strlen( $id_prefix ) + 1 );
-
+				$post_id  = substr( $place_id, strlen( $id_prefix ) + 1 );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
@@ -157,12 +156,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			if ( ! empty( $place_opts ) ) {
 
-				$place_opts[ 'place_id' ] = $place_id;
-
+				$place_opts[ 'place_id' ]  = $place_id;
 				$place_opts[ 'place_url' ] = isset( $place_opts[ 'org_url' ] ) ? $place_opts[ 'org_url' ] : '';
 
 				$place_opts = array_merge( WpssoOpmConfig::$cf[ 'opt' ][ 'place_md_defaults' ], $place_opts );	// Complete the array.
-
 				$place_opts = SucomUtil::preg_grep_keys( '/^place_/', $place_opts );
 
 				/*
@@ -183,7 +180,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				} else {
 
 					unset(
-						$place_opts[ 'place_serv_radius' ],		// Service Radius.
+						$place_opts[ 'place_service_radius' ],		// Service Radius.
 						$place_opts[ 'place_currencies_accepted' ],	// Currencies Accepted.
 						$place_opts[ 'place_payment_accepted' ],	// Payment Accepted.
 						$place_opts[ 'place_price_range' ],		// Price Range.

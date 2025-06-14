@@ -38,9 +38,6 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 		public function filter_rename_md_options_keys( $rename_options ) {
 		
 			$rename_options[ 'wpssoopm' ] = array(
-				9 => array(
-					'place_service_radius' => 'place_serv_radius',
-				),
 			);
 
 			return $rename_options;
@@ -232,7 +229,6 @@ if ( ! class_exists( 'WpssoOpmFiltersUpgrade' ) ) {
 			foreach ( array(
 				'schema_pub_org_id',		// Publisher Org.
 				'schema_prov_org_id',		// Provider Org.
-				'schema_serv_prov_org_id',	// Provider Org.
 				'schema_movie_prodco_org_id',
 				'schema_event_organizer_org_id',
 				'schema_event_performer_org_id',
