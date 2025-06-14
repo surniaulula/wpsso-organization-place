@@ -60,17 +60,13 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
+				case WPSSOOPM_ORG_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'org_md_defaults' ] );
 
-				// Nothing to do.
-
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
-
-				// Nothing to do.
+					break;
 			}
 
 			return $md_defs;
@@ -83,63 +79,64 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				/*
-				 * Check if this organization ID is in some default options.
-				 */
-				$org_id = 'org-' . $mod[ 'id' ];
+				case WPSSOOPM_ORG_POST_TYPE:
 
-				foreach ( array(
-					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+					/*
+					 * Check if this organization ID is in some default options.
+					 */
+					$org_id = 'org-' . $mod[ 'id' ];
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+					foreach ( array(
+						'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-						if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-							$md_opts[ $md_key ] = 1;
+							if ( isset( $this->p->options[ $opts_key ] ) && $org_id === $this->p->options[ $opts_key ] ) {
 
-						} else $md_opts[ $md_key ] = 0;
+								$md_opts[ $md_key ] = 1;
 
-						if ( $this->p->debug->enabled ) {
+							} else $md_opts[ $md_key ] = 0;
 
-							$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+							if ( $this->p->debug->enabled ) {
+
+								$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+							}
 						}
 					}
-				}
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+				case WPSSOOPM_PLACE_POST_TYPE:
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-				// Nothing to do.
+					break;	// Nothing to do.
 
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+				default:
 
-				// Nothing to do.
+					$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
+					$org_type = false;
 
-			} else {
+					if ( 0 === strpos( $org_id, 'org-' ) ) {
 
-				$org_id   = isset( $md_opts[ 'schema_organization_id' ] ) ? $md_opts[ 'schema_organization_id' ] : 'none';
-				$org_type = false;
+						$org_type = WpssoOpmOrg::get_id( $org_id, $mod, 'org_schema_type' );
+					}
 
-				if ( 0 === strpos( $org_id, 'org-' ) ) {
+					if ( $org_type ) {
 
-					$org_type = WpssoOpmOrg::get_id( $org_id, $mod, 'org_schema_type' );
-				}
+						$md_opts[ 'og_type' ]                    = 'website';
+						$md_opts[ 'og_type:disabled' ]           = true;
+						$md_opts[ 'schema_type' ]                = $org_type;
+						$md_opts[ 'schema_type:disabled' ]       = true;
+						$md_opts[ 'schema_place_id' ]            = 'none';
+						$md_opts[ 'schema_place_id:disabled' ]   = true;
+						$md_opts[ 'schema_service_id' ]          = 'none';
+						$md_opts[ 'schema_service_id:disabled' ] = true;
+					}
 
-				if ( $org_type ) {
-
-					$md_opts[ 'og_type' ]                    = 'website';
-					$md_opts[ 'og_type:disabled' ]           = true;
-					$md_opts[ 'schema_type' ]                = $org_type;
-					$md_opts[ 'schema_type:disabled' ]       = true;
-					$md_opts[ 'schema_place_id' ]            = 'none';
-					$md_opts[ 'schema_place_id:disabled' ]   = true;
-					$md_opts[ 'schema_service_id' ]          = 'none';
-					$md_opts[ 'schema_service_id:disabled' ] = true;
-				}
+					break;
 			}
 
 			return $md_opts;
@@ -152,64 +149,60 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				$org_id  = 'org-' . $mod[ 'id' ];
-				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-				$md_opts = array_merge( $md_defs, $md_opts );
+				case WPSSOOPM_ORG_POST_TYPE:
 
-				if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
+					$org_id  = 'org-' . $mod[ 'id' ];
+					$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
+					$md_opts = array_merge( $md_defs, $md_opts );
 
-					$md_opts[ 'org_name' ] = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
-				}
+					if ( empty( $md_opts[ 'org_name' ] ) ) {	// Just in case.
 
-				/*
-				 * Always keep the post title, slug, and content updated.
-				 */
-				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
+						$md_opts[ 'org_name' ] = sprintf( _x( 'Organization #%d', 'option value', 'wpsso-organization-place' ), $post_id );
+					}
 
-				/*
-				 * Check if some default options need to be updated.
-				 */
-				foreach ( array(
-					'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+					/*
+					 * Always keep the post title, slug, and content updated.
+					 */
+					SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'org_name' ], $md_opts[ 'org_desc' ] );
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+					/*
+					 * Check if some default options need to be updated.
+					 */
+					foreach ( array(
+						'org_is' => $this->p->cf[ 'form' ][ 'org_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-						if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-							if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
+							if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
 
-								$this->p->options[ $opts_key ] = 'none';
+								if ( $org_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
-								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+									$this->p->options[ $opts_key ] = 'none';
+
+									SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+								}
+
+							} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
+
+								$this->p->options[ $opts_key ] = $org_id;
+
+								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
 							}
 
-						} elseif ( $org_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
-
-							$this->p->options[ $opts_key ] = $org_id;
-
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $org_id );	// Save changes.
+							unset( $md_opts[ $md_key ] );
 						}
-
-						unset( $md_opts[ $md_key ] );
 					}
-				}
 
-				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
+					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-				WpssoOpmOrg::check_org_image_sizes( $md_opts );
+					WpssoOpmOrg::check_org_image_sizes( $md_opts );
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
-
-				// Nothing to do.
-
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
-
-				// Nothing to do.
+					break;
 			}
 
 			return $md_opts;

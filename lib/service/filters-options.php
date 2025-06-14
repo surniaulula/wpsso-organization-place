@@ -60,20 +60,16 @@ if ( ! class_exists( 'WpssoOpmServiceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'service_md_defaults' ] );
 
-				// Nothing to do.
-			
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$md_defs[ 'service_prov_org_id' ]    = $this->p->options[ 'schema_def_serv_prov_org_id' ];
+					$md_defs[ 'service_prov_person_id' ] = $this->p->options[ 'schema_def_serv_prov_person_id' ];
 
-				$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'service_md_defaults' ] );
-				
-				$md_defs[ 'service_prov_org_id' ]    = $this->p->options[ 'schema_def_serv_prov_org_id' ];
-				$md_defs[ 'service_prov_person_id' ] = $this->p->options[ 'schema_def_serv_prov_person_id' ];
+					break;
 			}
 
 			return $md_defs;
@@ -86,63 +82,66 @@ if ( ! class_exists( 'WpssoOpmServiceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					/*
+					 * Check if this organization ID is in some default options.
+					 */
+					$service_id = 'service-' . $mod[ 'id' ];
 
-				// Nothing to do.
+					foreach ( array(
+						'service_is' => $this->p->cf[ 'form' ][ 'service_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-				/*
-				 * Check if this organization ID is in some default options.
-				 */
-				$service_id = 'service-' . $mod[ 'id' ];
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-				foreach ( array(
-					'service_is' => $this->p->cf[ 'form' ][ 'service_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+							if ( isset( $this->p->options[ $opts_key ] ) && $service_id === $this->p->options[ $opts_key ] ) {
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+								$md_opts[ $md_key ] = 1;
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+							} else $md_opts[ $md_key ] = 0;
 
-						if ( isset( $this->p->options[ $opts_key ] ) && $service_id === $this->p->options[ $opts_key ] ) {
+							if ( $this->p->debug->enabled ) {
 
-							$md_opts[ $md_key ] = 1;
-
-						} else $md_opts[ $md_key ] = 0;
-
-						if ( $this->p->debug->enabled ) {
-
-							$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+								$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+							}
 						}
 					}
-				}
 
-			} else {
+					break;
 
-				$service_id   = isset( $md_opts[ 'schema_service_id' ] ) ? $md_opts[ 'schema_service_id' ] : 'none';
-				$service_type = false;
+				case WPSSOOPM_ORG_POST_TYPE:
+				case WPSSOOPM_PLACE_POST_TYPE:
 
-				if ( 0 === strpos( $service_id, 'service-' ) ) {
+					break;	// Nothing to do.
 
-					$service_type = WpssoOpmService::get_id( $service_id, $mod, 'service_schema_type' );
-				}
+				default:
 
-				if ( $service_type ) {
+					$service_id   = isset( $md_opts[ 'schema_service_id' ] ) ? $md_opts[ 'schema_service_id' ] : 'none';
+					$service_type = false;
 
-					$md_opts[ 'og_type' ]                         = 'article';
-					$md_opts[ 'og_type:disabled' ]                = true;
-					$md_opts[ 'schema_type' ]                     = $service_type;
-					$md_opts[ 'schema_type:disabled' ]            = true;
-					$md_opts[ 'schema_organization_id' ]          = 'none';
-					$md_opts[ 'schema_organization_id:disabled' ] = true;
-					$md_opts[ 'schema_place_id' ]                 = 'none';
-					$md_opts[ 'schema_place_id:disabled' ]        = true;
-				}
+					if ( 0 === strpos( $service_id, 'service-' ) ) {
+
+						$service_type = WpssoOpmService::get_id( $service_id, $mod, 'service_schema_type' );
+					}
+
+					if ( $service_type ) {
+
+						$md_opts[ 'og_type' ]                         = 'article';
+						$md_opts[ 'og_type:disabled' ]                = true;
+						$md_opts[ 'schema_type' ]                     = $service_type;
+						$md_opts[ 'schema_type:disabled' ]            = true;
+						$md_opts[ 'schema_organization_id' ]          = 'none';
+						$md_opts[ 'schema_organization_id:disabled' ] = true;
+						$md_opts[ 'schema_place_id' ]                 = 'none';
+						$md_opts[ 'schema_place_id:disabled' ]        = true;
+					}
+
+					break;
 			}
 
 			return $md_opts;
@@ -155,63 +154,58 @@ if ( ! class_exists( 'WpssoOpmServiceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$service_id = 'service-' . $mod[ 'id' ];
+					$md_defs    = $this->filter_get_post_defaults( array(), $post_id, $mod );
+					$md_opts    = array_merge( $md_defs, $md_opts );
 
-				// Nothing to do.
+					if ( empty( $md_opts[ 'service_name' ] ) ) {	// Just in case.
 
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+						$md_opts[ 'service_name' ] = sprintf( _x( 'Service #%d', 'option value', 'wpsso-organization-place' ), $post_id );
+					}
 
-				$service_id  = 'service-' . $mod[ 'id' ];
-				$md_defs = $this->filter_get_post_defaults( array(), $post_id, $mod );
-				$md_opts = array_merge( $md_defs, $md_opts );
+					/*
+					 * Always keep the post title, slug, and content updated.
+					 */
+					SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'service_name' ], $md_opts[ 'service_desc' ] );
 
-				if ( empty( $md_opts[ 'service_name' ] ) ) {	// Just in case.
+					/*
+					 * Check if some default options need to be updated.
+					 */
+					foreach ( array(
+						'service_is' => $this->p->cf[ 'form' ][ 'service_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-					$md_opts[ 'service_name' ] = sprintf( _x( 'Service #%d', 'option value', 'wpsso-organization-place' ), $post_id );
-				}
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-				/*
-				 * Always keep the post title, slug, and content updated.
-				 */
-				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'service_name' ], $md_opts[ 'service_desc' ] );
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-				/*
-				 * Check if some default options need to be updated.
-				 */
-				foreach ( array(
-					'service_is' => $this->p->cf[ 'form' ][ 'service_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+							if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+								if ( $service_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+									$this->p->options[ $opts_key ] = 'none';
 
-						if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
+									SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+								}
 
-							if ( $service_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing organization ID.
+							} elseif ( $service_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
 
-								$this->p->options[ $opts_key ] = 'none';
+								$this->p->options[ $opts_key ] = $service_id;
 
-								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $service_id );	// Save changes.
 							}
 
-						} elseif ( $service_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing organization ID.
-
-							$this->p->options[ $opts_key ] = $service_id;
-
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $service_id );	// Save changes.
+							unset( $md_opts[ $md_key ] );
 						}
-
-						unset( $md_opts[ $md_key ] );
 					}
-				}
 
-				$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
+					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
+					break;
 			}
 
 			return $md_opts;

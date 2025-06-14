@@ -25,12 +25,15 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				add_action( 'wpmu_activate_blog', array( $this, 'wpmu_activate_blog' ), 10, 5 );
 			}
 
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ), WPSSOOPM_ORG_MENU_ORDER, 0 );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ), WPSSOOPM_PLACE_MENU_ORDER, 0 );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_post_type' ), WPSSOOPM_SERVICE_MENU_ORDER, 0 );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_category_taxonomy' ), WPSSOOPM_SERVICE_MENU_ORDER, 0 );
+			/*
+			 * Wpsso->set_objects() runs at init priority 10.
+			 */
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_category_taxonomy' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_post_type' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_service_category_taxonomy' ) );
 		}
 
 		/*

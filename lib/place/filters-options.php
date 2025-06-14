@@ -85,21 +85,17 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_PLACE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
 
-				$md_defs = array_merge( $md_defs, $this->p->cf[ 'opt' ][ 'place_md_defaults' ] );
+					$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
+					$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
+					$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
 
-				$md_defs[ 'place_schema_type' ] = $this->p->options[ 'schema_def_place_schema_type' ];
-				$md_defs[ 'place_country' ]     = $this->p->options[ 'schema_def_place_country' ];
-				$md_defs[ 'place_timezone' ]    = $this->p->options[ 'schema_def_place_timezone' ];
-
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
-
-				// Nothing to do.
+					break;
 			}
 
 			return $md_defs;
@@ -112,77 +108,80 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_PLACE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					/*
+					 * Check if this place ID is in some default options.
+					 *
+					 * If the default place schema type is an organization, check the organization default options as well.
+					 */
+					$place_id    = 'place-' . $mod[ 'id' ];
+					$is_org_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case
+						$this->p->schema->is_schema_type_child( $this->p->options[ 'schema_def_place_schema_type' ], 'organization' ) :
+						$this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
 
-				/*
-				 * Check if this place ID is in some default options.
-				 *
-				 * If the default place schema type is an organization, check the organization default options as well.
-				 */
-				$place_id    = 'place-' . $mod[ 'id' ];
-				$is_org_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case
-					$this->p->schema->is_schema_type_child( $this->p->options[ 'schema_def_place_schema_type' ], 'organization' ) :
-					$this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
+					foreach ( array(
+						'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+						'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-				foreach ( array(
-					'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
-					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+							if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
 
-						if ( isset( $this->p->options[ $opts_key ] ) && $place_id === $this->p->options[ $opts_key ] ) {
+								$md_opts[ $md_key ] = 1;
 
-							$md_opts[ $md_key ] = 1;
+							} else $md_opts[ $md_key ] = 0;
 
-						} else $md_opts[ $md_key ] = 0;
+							if ( $this->p->debug->enabled ) {
 
-						if ( $this->p->debug->enabled ) {
-
-							$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+								$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
+							}
 						}
+
+						unset( $md_key );
 					}
 
-					unset( $md_key );
-				}
+					break;
 
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+				case WPSSOOPM_ORG_POST_TYPE:
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-				// Nothing to do.
+					break;	// Nothing to do.
 
-			} else {
+				default:
 
-				$place_id   = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
-				$place_type = false;
+					$place_id   = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
+					$place_type = false;
 
-				if ( 'custom' === $place_id ) {
+					if ( 'custom' === $place_id ) {
 
-					$place_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case.
-						$this->p->options[ 'schema_def_place_schema_type' ] :
-						$md_opts[ 'place_schema_type' ];
+						$place_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case.
+							$this->p->options[ 'schema_def_place_schema_type' ] :
+							$md_opts[ 'place_schema_type' ];
 
-				} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
+					} elseif ( 0 === strpos( $place_id, 'place-' ) ) {
 
-					$place_type = WpssoOpmPlace::get_id( $place_id, $mod, 'place_schema_type' );
-				}
+						$place_type = WpssoOpmPlace::get_id( $place_id, $mod, 'place_schema_type' );
+					}
 
-				if ( $place_type ) {
+					if ( $place_type ) {
 
-					$md_opts[ 'og_type' ]                         = 'place';
-					$md_opts[ 'og_type:disabled' ]                = true;
-					$md_opts[ 'schema_type' ]                     = $place_type;
-					$md_opts[ 'schema_type:disabled' ]            = true;
-					$md_opts[ 'schema_organization_id' ]          = 'none';
-					$md_opts[ 'schema_organization_id:disabled' ] = true;
-					$md_opts[ 'schema_service_id' ]               = 'none';
-					$md_opts[ 'schema_service_id:disabled' ]      = true;
-				}
+						$md_opts[ 'og_type' ]                         = 'place';
+						$md_opts[ 'og_type:disabled' ]                = true;
+						$md_opts[ 'schema_type' ]                     = $place_type;
+						$md_opts[ 'schema_type:disabled' ]            = true;
+						$md_opts[ 'schema_organization_id' ]          = 'none';
+						$md_opts[ 'schema_organization_id:disabled' ] = true;
+						$md_opts[ 'schema_service_id' ]               = 'none';
+						$md_opts[ 'schema_service_id:disabled' ]      = true;
+					}
+
+					break;
 			}
 
 			return $md_opts;
@@ -195,83 +194,87 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( WPSSOOPM_ORG_POST_TYPE === $mod[ 'post_type' ] ) {
+			switch ( $mod[ 'post_type' ] ) {
 
-				// Nothing to do.
+				case WPSSOOPM_PLACE_POST_TYPE:
 
-			} elseif ( WPSSOOPM_PLACE_POST_TYPE === $mod[ 'post_type' ] ) {
+					$place_id = 'place-' . $mod[ 'id' ];
+					$md_defs  = $this->filter_get_post_defaults( array(), $post_id, $mod );
+					$md_opts  = array_merge( $md_defs, $md_opts );
 
-				$md_defs  = $this->filter_get_post_defaults( array(), $post_id, $mod );
-				$md_opts  = array_merge( $md_defs, $md_opts );
+					if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
 
-				if ( empty( $md_opts[ 'place_name' ] ) ) {	// Just in case.
+						$md_opts[ 'place_name' ] = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
+					}
 
-					$md_opts[ 'place_name' ] = sprintf( _x( 'Place #%d', 'option value', 'wpsso-organization-place' ), $post_id );
-				}
+					/*
+					 * Always keep the post title, slug, and content updated.
+					 */
+					SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
 
-				/*
-				 * Always keep the post title, slug, and content updated.
-				 */
-				SucomUtilWP::raw_update_post_title_content( $post_id, $md_opts[ 'place_name' ], $md_opts[ 'place_desc' ] );
+					/*
+					 * Check if some default options need to be updated.
+					 *
+					 * If the default place schema type is an organization, check the organization default options as well.
+					 */
+					$place_id    = 'place-' . $mod[ 'id' ];
+					$is_org_type = $this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
 
-				/*
-				 * Check if some default options need to be updated.
-				 *
-				 * If the default place schema type is an organization, check the organization default options as well.
-				 */
-				$place_id    = 'place-' . $mod[ 'id' ];
-				$is_org_type = $this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
+					foreach ( array(
+						'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
+						'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
+					) as $opt_prefix => $is_defaults ) {
 
-				foreach ( array(
-					'org_is'   => $is_org_type ? $this->p->cf[ 'form' ][ 'org_is_defaults' ] : array(),
-					'place_is' => $this->p->cf[ 'form' ][ 'place_is_defaults' ],
-				) as $opt_prefix => $is_defaults ) {
+						foreach ( $is_defaults as $opts_key => $opts_label ) {
 
-					foreach ( $is_defaults as $opts_key => $opts_label ) {
+							$md_key = $opt_prefix . '_' . $opts_key;
 
-						$md_key = $opt_prefix . '_' . $opts_key;
+							if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
 
-						if ( empty( $md_opts[ $md_key ] ) ) {	// Checkbox is unchecked.
+								if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
 
-							if ( $place_id === $this->p->options[ $opts_key ] ) {	// Maybe remove the existing place ID.
+									$this->p->options[ $opts_key ] = 'none';
 
-								$this->p->options[ $opts_key ] = 'none';
+									SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+								}
 
-								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, 'none' );	// Save changes.
+							} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
+
+								$this->p->options[ $opts_key ] = $place_id;
+
+								SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
 							}
 
-						} elseif ( $place_id !== $this->p->options[ $opts_key ] ) {	// Maybe change the existing place ID.
-
-							$this->p->options[ $opts_key ] = $place_id;
-
-							SucomUtilWP::update_options_key( WPSSO_OPTIONS_NAME, $opts_key, $place_id );	// Save changes.
+							unset( $md_opts[ $md_key ] );
 						}
-
-						unset( $md_opts[ $md_key ] );
 					}
-				}
 
-				if ( $is_org_type ) {
+					if ( $is_org_type ) {
 
-					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
+						$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-					WpssoOpmOrg::check_org_image_sizes( $md_opts, $name_key = 'place_name' );
-				}
+						WpssoOpmOrg::check_org_image_sizes( $md_opts, $name_key = 'place_name' );
+					}
 
-				WpssoOpmPlace::check_place_image_sizes( $md_opts );
+					WpssoOpmPlace::check_place_image_sizes( $md_opts );
 
-			} elseif ( WPSSOOPM_SERVICE_POST_TYPE === $mod[ 'post_type' ] ) {
+					break;
 
-				// Nothing to do.
+				case WPSSOOPM_ORG_POST_TYPE:
+				case WPSSOOPM_SERVICE_POST_TYPE:
 
-			} else {	// Not an organization or place post type.
+					break;	// Nothing to do.
 
-				$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
+				default:
 
-				if ( 'custom' !== $place_id ) {
+					$place_id = isset( $md_opts[ 'schema_place_id' ] ) ? $md_opts[ 'schema_place_id' ] : 'none';
 
-					$md_opts = SucomUtil::preg_grep_keys( '/^(org|place)_/', $md_opts, $invert = true );
-				}
+					if ( 'custom' !== $place_id ) {
+
+						$md_opts = SucomUtil::preg_grep_keys( '/^(org|place)_/', $md_opts, $invert = true );
+					}
+
+					break;
 			}
 
 			return $md_opts;

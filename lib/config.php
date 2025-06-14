@@ -20,7 +20,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'version'     => '4.0.0-dev.4',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
-					'name'        => 'WPSSO Organization and Place Manager',
+					'name'        => 'WPSSO Schema Organization, Place and Service Manager',
 					'desc'        => 'Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.',
 					'slug'        => 'wpsso-organization-place',
 					'base'        => 'wpsso-organization-place/wpsso-organization-place.php',
@@ -237,11 +237,11 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 *	80 – below Settings
 			 *	100 – below second separator
 			 */
-			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]            = 20;
+			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]            = 87;
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]     = false;
-			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]          = 20;
+			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]          = 88;
 			$var_const[ 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ]   = false;
-			$var_const[ 'WPSSOOPM_SERVICE_MENU_ORDER' ]        = 20;
+			$var_const[ 'WPSSOOPM_SERVICE_MENU_ORDER' ]        = 90;
 			$var_const[ 'WPSSOOPM_SERVICE_CATEGORY_TAXONOMY' ] = false;
 
 			/*
