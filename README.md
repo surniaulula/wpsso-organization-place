@@ -1,8 +1,8 @@
-<h1>WPSSO Schema Organization, Place and Service Manager</h1>
+<h1>WPSSO Schema Organization and Place Manager</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Schema Organization, Place and Service Manager</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Schema Organization and Place Manager</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.9 or newer</td></tr>
@@ -18,9 +18,7 @@
 
 <p><strong>Manage any number of Organizations</strong> for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).</p>
 
-<p><strong>Manage any number of Places, Local Businesses, Locations and Venues</strong> for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).</p>
-
-<p><strong>Manage any number of Services</strong> for Schema markup.</p>
+<p><strong>Manage any number of Places, Local Businesses, Venues, etc.</strong> for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).</p>
 
 <!-- /about -->
 
@@ -45,9 +43,9 @@
 <li>Offer Catalogs
 
 <ul>
-<li>Catalog Name</li>
-<li>Catalog Description</li>
-<li>Catalog URL</li>
+<li>Offer Catalog Name</li>
+<li>Offer Catalog Description</li>
+<li>Offer Catalog URL</li>
 </ul></li>
 <li>News Media Organization:
 
@@ -116,37 +114,16 @@
 </ul></li>
 </ul>
 
-<p><strong>The SSO Services editing page includes:</strong></p>
-
-<ul>
-<li>Service Name</li>
-<li>Service Alternate Name</li>
-<li>Service Description</li>
-<li>Service Schema Type</li>
-<li>Service Provider Org.</li>
-<li>Service Provider Person</li>
-<li>Service Latitude</li>
-<li>Service Longitude</li>
-<li>Service Radius</li>
-<li>Offer Catalogs
-
-<ul>
-<li>Catalog Name</li>
-<li>Catalog Description</li>
-<li>Catalog URL</li>
-</ul></li>
-</ul>
-
 <h3>WPSSO Core Required</h3>
 
-<p>WPSSO Schema Organization, Place and Service Manager is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>, which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
+<p>WPSSO Schema Organization and Place Manager is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>, which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
 
 <h2>Installation</h2>
 
 <h3 class="top">Install and Uninstall</h3>
 
 <ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/">Install the WPSSO Schema Organization, Place and Service Manager add-on</a>.</li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/">Uninstall the WPSSO Schema Organization, Place and Service Manager add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-organization-place/installation/install-the-plugin/">Install the WPSSO Schema Organization and Place Manager add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-organization-place/installation/uninstall-the-plugin/">Uninstall the WPSSO Schema Organization and Place Manager add-on</a>.</li>
 </ul>
 
