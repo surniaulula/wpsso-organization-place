@@ -14,19 +14,21 @@ Requires At Least: 5.9
 Tested Up To: 6.8.1
 Stable Tag: 3.3.1
 
-Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.
+Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, and Pinterest.
 
 == Description ==
 
 <!-- about -->
 
-**Manage any number of Organizations** for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.
+**Manage any number of Organizations** for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).
 
-**Manage any number of Places, Locations, and Venues** for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.
+**Manage any number of Places, Local Businesses, Locations and Venues** for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).
+
+**Manage any number of Services** for Schema markup.
 
 <!-- /about -->
 
-**The SSO Organizations management page includes:**
+**The SSO Organizations editing page includes:**
 
 * Organization Name
 * Organization Alternate Name
@@ -67,7 +69,7 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 	* X (Twitter) Business @username
 	* YouTube Business Channel URL
 
-**The SSO Places management page includes:**
+**The SSO Places editing page includes:**
 
 * Place Name
 * Place Alternate Name
@@ -99,7 +101,7 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 	* Food Menu URL
 	* Order Action URL(s)
 
-**The SSO Services management page includes:**
+**The SSO Services editing page includes:**
 
 * Service Name
 * Service Alternate Name
@@ -117,7 +119,7 @@ Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinte
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Schema Organization, Place and Service Manager (WPSSO OPM) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
+WPSSO Schema Organization, Place and Service Manager is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
@@ -130,8 +132,8 @@ WPSSO Schema Organization, Place and Service Manager (WPSSO OPM) is an add-on fo
 
 == Screenshots ==
 
-01. The Organization editing page.
-01. The Place editing page.
+01. The SSO Organization editing page.
+01. The SSO Place editing page.
 
 == Changelog ==
 

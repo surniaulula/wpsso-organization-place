@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Schema Organization, Place and Service Manager</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, and Pinterest.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.3.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.9 or newer</td></tr>
@@ -16,13 +16,15 @@
 
 <!-- about -->
 
-<p><strong>Manage any number of Organizations</strong> for Schema publisher, service provider, production company, event organizer, event performer (ie. a band), and job hiring organization properties.</p>
+<p><strong>Manage any number of Organizations</strong> for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).</p>
 
-<p><strong>Manage any number of Places, Locations, and Venues</strong> for Open Graph meta tags, Schema Place markup, organization location, event location, and job location properties.</p>
+<p><strong>Manage any number of Places, Local Businesses, Locations and Venues</strong> for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).</p>
+
+<p><strong>Manage any number of Services</strong> for Schema markup.</p>
 
 <!-- /about -->
 
-<p><strong>The SSO Organizations management page includes:</strong></p>
+<p><strong>The SSO Organizations editing page includes:</strong></p>
 
 <ul>
 <li>Organization Name</li>
@@ -74,7 +76,7 @@
 </ul></li>
 </ul>
 
-<p><strong>The SSO Places management page includes:</strong></p>
+<p><strong>The SSO Places editing page includes:</strong></p>
 
 <ul>
 <li>Place Name</li>
@@ -114,7 +116,7 @@
 </ul></li>
 </ul>
 
-<p><strong>The SSO Services management page includes:</strong></p>
+<p><strong>The SSO Services editing page includes:</strong></p>
 
 <ul>
 <li>Service Name</li>
@@ -137,7 +139,7 @@
 
 <h3>WPSSO Core Required</h3>
 
-<p>WPSSO Schema Organization, Place and Service Manager (WPSSO OPM) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>, which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
+<p>WPSSO Schema Organization, Place and Service Manager is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>, which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.</p>
 
 <h2>Installation</h2>
 
