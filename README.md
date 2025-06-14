@@ -22,7 +22,7 @@
 
 <!-- /about -->
 
-<p><strong>The Organization editing page includes:</strong></p>
+<p><strong>The SSO Organizations management page includes:</strong></p>
 
 <ul>
 <li>Organization Name</li>
@@ -39,6 +39,14 @@
 <li>Ethics Policy URL</li>
 <li>Fact Checking Policy URL</li>
 <li>Feedback Policy URL</li>
+<li>Organization Awards</li>
+<li>Offer Catalogs
+
+<ul>
+<li>Catalog Name</li>
+<li>Catalog Description</li>
+<li>Catalog URL</li>
+</ul></li>
 <li>News Media Organization:
 
 <ul>
@@ -66,7 +74,7 @@
 </ul></li>
 </ul>
 
-<p><strong>The Place editing page includes:</strong></p>
+<p><strong>The SSO Places management page includes:</strong></p>
 
 <ul>
 <li>Place Name</li>
@@ -103,6 +111,27 @@
 <li>Serves Cuisine</li>
 <li>Food Menu URL</li>
 <li>Order Action URL(s)</li>
+</ul></li>
+</ul>
+
+<p><strong>The SSO Services management page includes:</strong></p>
+
+<ul>
+<li>Service Name</li>
+<li>Service Alternate Name</li>
+<li>Service Description</li>
+<li>Service Schema Type</li>
+<li>Service Provider Org.</li>
+<li>Service Provider Person</li>
+<li>Service Latitude</li>
+<li>Service Longitude</li>
+<li>Service Radius</li>
+<li>Offer Catalogs
+
+<ul>
+<li>Catalog Name</li>
+<li>Catalog Description</li>
+<li>Catalog URL</li>
 </ul></li>
 </ul>
 
