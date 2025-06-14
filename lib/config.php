@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization, Place and Service Manager',
-					'desc'        => 'Manage Organizations (publisher, organizer, etc.) and Places for Facebook, Pinterest, and Google local business markup.',
+					'desc'        => 'Manage Organizations, Places, Local Businesses, and Services for Google, Facebook, Pinterest, and Schema markup.',
 					'slug'        => 'wpsso-organization-place',
 					'base'        => 'wpsso-organization-place/wpsso-organization-place.php',
 					'update_auth' => '',		// No premium version.

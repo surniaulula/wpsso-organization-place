@@ -32,8 +32,8 @@ msgstr ""
 #: gettext/gettext-lib-config.php:6
 msgctxt "plugin description"
 msgid ""
-"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
-"Pinterest, and Google local business markup."
+"Manage Organizations, Places, Local Businesses, and Services for Google, "
+"Facebook, Pinterest, and Schema markup."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:7
@@ -1064,8 +1064,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Manage Organizations (publisher, organizer, etc.) and Places for Facebook, "
-"Pinterest, and Google local business markup."
+"Manage Organizations, Places, Local Businesses, and Services for Google, "
+"Facebook, Pinterest, and Schema markup."
 msgstr ""
 
 #. Author of the plugin/theme
