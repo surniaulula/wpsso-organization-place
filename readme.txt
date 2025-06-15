@@ -150,9 +150,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* Added options in the SSO Orgs &gt; Edit Organization page:
 		* Offer Catalogs
-			* Organization Catalog Name
-			* Organization Catalog Description
-			* Organization Catalog URL
+			* Offer Catalog Name
+			* Offer Catalog Description
+			* Offer Catalog URL
 * **Bugfixes**
 	* None.
 * **Developer Notes**
