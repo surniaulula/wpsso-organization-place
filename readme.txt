@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.1 (2025/06/15)**
+**Version 5.0.0-dev.2 (2025/06/15)**
 
 * **New Features**
 	* None.
@@ -158,12 +158,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* WPSSOOPM_CONTACT_MENU_ORDER
 		* WPSSOOPM_CONTACT_POST_TYPE
 	* Added a new `WpssoOpmContact` class.
-	* Added a new `WpssoOpmRegister::register_contact_point_post_type()` method.
-	* Added a new `WpssoOpmRegister::register_contact_point_category_taxonomy()` method.
+	* Added a new `WpssoOpmContactFiltersEdit` class.
+	* Added a new `WpssoOpmContactFiltersOptions` class.
+	* Added a new `WpssoOpmRegister::register_contact_post_type()` method.
+	* Added a new `WpssoOpmRegister::register_contact_category_taxonomy()` method.
+	* Refactored the `WpssoOpmIntegAdminPost->add_meta_boxes()` method.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v20.1.0-dev.1.
+	* WPSSO Core v20.1.0-dev.2.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -266,9 +269,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.1 =
+= 5.0.0-dev.2 =
 
-(2025/06/15) Current development version.
+(2025/06/15) Current development version - see changelog for details.
 
 = 4.0.0 =
 
