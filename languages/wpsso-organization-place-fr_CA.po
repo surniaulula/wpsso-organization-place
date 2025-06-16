@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Organization and Place Manager 5.0.0\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-06-15 17:22-0700\n"
+"PO-Revision-Date: 2025-06-15 21:50-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -36,6 +36,31 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
+#: lib/contact/filters-edit.php:57
+msgctxt "option label"
+msgid "Contact Point Name"
+msgstr "Nom du point de contact"
+
+#: lib/contact/filters-edit.php:62
+msgctxt "option label"
+msgid "Contact Point Alt. Name"
+msgstr "Nom alt. du point de contact"
+
+#: lib/contact/filters-edit.php:67
+msgctxt "option label"
+msgid "Contact Point Description"
+msgstr "Description du point de contact"
+
+#: lib/contact/filters-edit.php:72
+msgctxt "option label"
+msgid "Contact Point Schema Type"
+msgstr "Type de Schéma du point de contact"
+
+#: lib/contact/filters-options.php:162
+msgctxt "option value"
+msgid "Contact Point #%d"
+msgstr "Point de contact #%d"
+
 #: lib/contact.php:61
 msgctxt "option value"
 msgid "Contact point #%d"
@@ -61,12 +86,17 @@ msgstr "Veuillez sélectionner un autre point de contact."
 msgid "%1$s \"%2$s\" ID #%3$s from the plugin settings has been converted to %4$s post type ID #%5$s."
 msgstr "%1$s \"%2$s\" ID #%3$s des réglages d'extension a été converti en type d'article %4$s ID #%5$s."
 
-#: lib/integ/admin/post.php:81
+#: lib/integ/admin/post.php:88
+msgctxt "metabox title"
+msgid "Contact Point"
+msgstr "Point de contact"
+
+#: lib/integ/admin/post.php:101
 msgctxt "metabox title"
 msgid "Organization"
 msgstr "Organisation"
 
-#: lib/integ/admin/post.php:102
+#: lib/integ/admin/post.php:114
 msgctxt "metabox title"
 msgid "Place"
 msgstr "Endroit"
@@ -96,7 +126,7 @@ msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr "Type de Schéma d'organisation"
 
-#: lib/org/filters-options.php:159 lib/org.php:61
+#: lib/org/filters-options.php:162 lib/org.php:61
 msgctxt "option value"
 msgid "Organization #%d"
 msgstr "Organisation #%d"
@@ -479,7 +509,7 @@ msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr "URL(s) d'action de commande"
 
-#: lib/place/filters-options.php:204 lib/place.php:61
+#: lib/place/filters-options.php:207 lib/place.php:61
 msgctxt "option value"
 msgid "Place #%d"
 msgstr "Endroit #%d"
@@ -939,8 +969,6 @@ msgid "Use as contact point image"
 msgstr "Utiliser comme image de point de contact"
 
 #: lib/register.php:430
-#| msgctxt "admin menu name"
-#| msgid "SSO Places"
 msgctxt "admin menu name"
 msgid "SSO Contacts"
 msgstr "SSO Contacts"
