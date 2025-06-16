@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0-dev.2',	// Plugin version.
+					'version'     => '5.0.0-dev.3',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '20.1.0-dev.2',
+							'min_version'   => '21.0.0-dev.3',
 						),
 					),
 
@@ -245,7 +245,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 */
 			$var_const[ 'WPSSOOPM_CONTACT_ARCHIVE_SLUG' ]      = 'contact_points';	// False, true, or archive slug.
 			$var_const[ 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ] = false;
-			$var_const[ 'WPSSOOPM_CONTACT_MENU_ORDER' ]        = 87;
+			$var_const[ 'WPSSOOPM_CONTACT_MENU_ORDER' ]        = 86;
 			$var_const[ 'WPSSOOPM_ORG_ARCHIVE_SLUG' ]          = 'organizations';	// False, true, or archive slug.
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]     = false;
 			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]            = 88;
