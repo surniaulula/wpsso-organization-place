@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.1 (TBD)**
+**Version 5.0.0-dev.1 (2025/06/15)**
 
 * **New Features**
 	* None.
@@ -152,7 +152,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added new constants:
+		* WPSSOOPM_CONTACT_ARCHIVE_SLUG
+		* WPSSOOPM_CONTACT_CATEGORY_TAXONOMY
+		* WPSSOOPM_CONTACT_MENU_ORDER
+		* WPSSOOPM_CONTACT_POST_TYPE
+	* Added a new `WpssoOpmContact` class.
+	* Added a new `WpssoOpmRegister::register_contact_point_post_type()` method.
+	* Added a new `WpssoOpmRegister::register_contact_point_category_taxonomy()` method.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
@@ -261,7 +268,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.0.0-dev.1 =
 
-(TBD) None.
+(2025/06/15) Current development version.
 
 = 4.0.0 =
 
