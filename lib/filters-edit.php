@@ -25,6 +25,10 @@ if ( ! class_exists( 'WpssoOpmFiltersEdit' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
+			require_once WPSSOOPM_PLUGINDIR . 'lib/contact/filters-edit.php';
+
+			new WpssoOpmContactFiltersEdit( $plugin, $addon );
+
 			require_once WPSSOOPM_PLUGINDIR . 'lib/org/filters-edit.php';
 
 			new WpssoOpmOrgFiltersEdit( $plugin, $addon );

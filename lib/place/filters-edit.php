@@ -316,7 +316,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td>' . $form->get_input( 'place_price_range' ) . '</td>';
 
 			/*
-			 * Food Establishment section.
+			 * Food Establishment.
 			 */
 			$table_rows[ 'subsection_food_establishment' ] = $tr_hide_food_establish_html .
 				'<td class="subsection" colspan="2"><h5>' .

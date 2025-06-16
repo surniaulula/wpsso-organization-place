@@ -109,6 +109,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 						}
 					}
 
+				case WPSSOOPM_CONTACT_POST_TYPE:
 				case WPSSOOPM_PLACE_POST_TYPE:
 
 					break;	// Nothing to do.
@@ -129,6 +130,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 						$md_opts[ 'og_type:disabled' ]           = true;
 						$md_opts[ 'schema_type' ]                = $org_type;
 						$md_opts[ 'schema_type:disabled' ]       = true;
+						$md_opts[ 'schema_contact_id' ]          = 'none';
+						$md_opts[ 'schema_contact_id:disabled' ] = true;
 						$md_opts[ 'schema_place_id' ]            = 'none';
 						$md_opts[ 'schema_place_id:disabled' ]   = true;
 					}
@@ -269,7 +272,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			return $type;
 		}
 
-		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
+		public function filter_plugin_upgrade_advanced_exclude( $opts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -278,10 +281,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			foreach ( $this->p->cf[ 'form' ][ 'org_is_defaults' ] as $opts_key => $opts_label ) {
 
-				$adv_exclude[] = $opts_key;
+				$opts[] = $opts_key;
 			}
 
-			return $adv_exclude;
+			return $opts;
 		}
 	}
 }

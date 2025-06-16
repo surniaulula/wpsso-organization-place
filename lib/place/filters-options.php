@@ -114,10 +114,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 					/*
 					 * Check if this place ID is in some default options.
-					 *
+					 */
+					$place_id = 'place-' . $mod[ 'id' ];
+
+					/*
 					 * If the default place schema type is an organization, check the organization default options as well.
 					 */
-					$place_id    = 'place-' . $mod[ 'id' ];
 					$is_org_type = empty( $md_opts[ 'place_schema_type' ] ) ?	// Just in case
 						$this->p->schema->is_schema_type_child( $this->p->options[ 'schema_def_place_schema_type' ], 'organization' ) :
 						$this->p->schema->is_schema_type_child( $md_opts[ 'place_schema_type' ], 'organization' );
@@ -142,12 +144,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 								$this->p->debug->log( 'setting ' . $md_key . ' = ' . $md_opts[ $md_key ] );
 							}
 						}
-
-						unset( $md_key );
 					}
 
 					break;
 
+				case WPSSOOPM_CONTACT_POST_TYPE:
 				case WPSSOOPM_ORG_POST_TYPE:
 
 					break;	// Nothing to do.
@@ -172,10 +173,12 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 						$md_opts[ 'og_type' ]                         = 'place';
 						$md_opts[ 'og_type:disabled' ]                = true;
-						$md_opts[ 'schema_type' ]                     = $place_type;
-						$md_opts[ 'schema_type:disabled' ]            = true;
+						$md_opts[ 'schema_contact_id' ]               = 'none';
+						$md_opts[ 'schema_contact_id:disabled' ]      = true;
 						$md_opts[ 'schema_organization_id' ]          = 'none';
 						$md_opts[ 'schema_organization_id:disabled' ] = true;
+						$md_opts[ 'schema_type' ]                     = $place_type;
+						$md_opts[ 'schema_type:disabled' ]            = true;
 					}
 
 					break;
@@ -340,7 +343,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 			return $type;
 		}
 
-		public function filter_plugin_upgrade_advanced_exclude( $adv_exclude ) {
+		public function filter_plugin_upgrade_advanced_exclude( $opts ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -349,10 +352,10 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			foreach ( $this->p->cf[ 'form' ][ 'place_is_defaults' ] as $opts_key => $opts_label ) {
 
-				$adv_exclude[] = $opts_key;
+				$opts[] = $opts_key;
 			}
 
-			return $adv_exclude;
+			return $opts;
 		}
 	}
 }

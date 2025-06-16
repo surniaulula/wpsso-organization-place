@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0-dev.1',	// Plugin version.
+					'version'     => '5.0.0-dev.2',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '20.1.0-dev.1',
+							'min_version'   => '20.1.0-dev.2',
 						),
 					),
 
@@ -79,20 +79,36 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'contact_schema_type' => 'contact.point',	// Contact Schema Type.
 				),
 				'org_md_defaults' => array(
-					'org_name'                   => '',
-					'org_name_alt'               => '',
-					'org_desc'                   => '',
-					'org_url'                    => '',
-					'org_logo_url'               => '',
-					'org_banner_url'             => '',
-					'org_place_id'               => 'none',
+					'org_name'                   => '',		// Organization Name.
+					'org_name_alt'               => '',		// Organization Alternate Name.
+					'org_desc'                   => '',		// Organization Description.
+					'org_place_id'               => 'none',		// Organization Location.
 					'org_schema_type'            => 'organization',	// Organiztion Schema Type.
+					'org_url'                    => '',		// Organization WebSite URL.
+					'org_logo_url'               => '',		// Organization Logo URL.
+					'org_banner_url'             => '',		// Organization Banner URL.
 					'org_pub_principles_url'     => '',		// Publishing Principles URL.
 					'org_corrections_policy_url' => '',		// Corrections Policy URL.
 					'org_diversity_policy_url'   => '',		// Diversity Policy URL.
 					'org_ethics_policy_url'      => '',		// Ethics Policy URL.
 					'org_fact_check_policy_url'  => '',		// Fact Checking Policy URL.
 					'org_feedback_policy_url'    => '',		// Feedback Policy URL.
+					'org_award_0'                => '',		// Organization Award.
+					'org_award_1'                => '',		// Organization Award.
+					'org_award_2'                => '',		// Organization Award.
+					'org_offer_catalog_0'        => '',		// Offer Catalog Name.
+					'org_offer_catalog_1'        => '',		// Offer Catalog Name.
+					'org_offer_catalog_2'        => '',		// Offer Catalog Name.
+					'org_offer_catalog_text_0'   => '',		// Offer Catalog Description.
+					'org_offer_catalog_text_1'   => '',		// Offer Catalog Description.
+					'org_offer_catalog_text_2'   => '',		// Offer Catalog Description.
+					'org_offer_catalog_url_0'    => '',		// Offer Catalog URL.
+					'org_offer_catalog_url_1'    => '',		// Offer Catalog URL.
+					'org_offer_catalog_url_2'    => '',		// Offer Catalog URL.
+
+					/*
+					 * News Media Organization.
+					 */
 					'org_masthead_url'           => '',		// Masthead Page URL.
 					'org_coverage_policy_url'    => '',		// Coverage Priorities Policy URL.
 					'org_no_bylines_policy_url'  => '',		// No Bylines Policy URL.
@@ -141,6 +157,10 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_currencies_accepted'      => '',			// Currencies Accepted.
 					'place_payment_accepted'         => '',			// Payment Accepted.
 					'place_price_range'              => '',			// Price Range.
+
+					/*
+					 * Food Establishment.
+					 */
 					'place_accept_res'               => 0,			// Accepts Reservations.
 					'place_cuisine'                  => '',			// Serves Cuisine.
 					'place_menu_url'                 => '',			// Food Menu URL.

@@ -28,8 +28,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			/*
 			 * Wpsso->set_objects() runs at init priority 10.
 			 */
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_point_post_type' ) );
-			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_point_category_taxonomy' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_post_type' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_category_taxonomy' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ) );
@@ -120,8 +120,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				WpssoUtilReg::update_ext_version( 'wpssoopm', $version );
 			}
 
-			self::register_contact_point_post_type();
-			self::register_contact_point_category_taxonomy();
+			self::register_contact_post_type();
+			self::register_contact_category_taxonomy();
 			self::register_org_post_type();
 			self::register_org_category_taxonomy();
 			self::register_place_post_type();
@@ -401,7 +401,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			register_taxonomy( WPSSOOPM_PLACE_CATEGORY_TAXONOMY, array( WPSSOOPM_PLACE_POST_TYPE ), $args );
 		}
 
-		public static function register_contact_point_post_type() {
+		public static function register_contact_post_type() {
 
 			$is_public = false;
 
@@ -472,7 +472,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			register_post_type( WPSSOOPM_CONTACT_POST_TYPE, $args );
 		}
 
-		public static function register_contact_point_category_taxonomy() {
+		public static function register_contact_category_taxonomy() {
 
 			if ( ! defined( 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ) || ! WPSSOOPM_CONTACT_CATEGORY_TAXONOMY ) {
 

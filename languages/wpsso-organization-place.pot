@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Schema Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-dev.1\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -40,6 +40,31 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
+#: lib/contact/filters-edit.php:57
+msgctxt "option label"
+msgid "Contact Point Name"
+msgstr ""
+
+#: lib/contact/filters-edit.php:62
+msgctxt "option label"
+msgid "Contact Point Alt. Name"
+msgstr ""
+
+#: lib/contact/filters-edit.php:67
+msgctxt "option label"
+msgid "Contact Point Description"
+msgstr ""
+
+#: lib/contact/filters-edit.php:72
+msgctxt "option label"
+msgid "Contact Point Schema Type"
+msgstr ""
+
+#: lib/contact/filters-options.php:162
+msgctxt "option value"
+msgid "Contact Point #%d"
+msgstr ""
+
 #: lib/contact.php:61
 msgctxt "option value"
 msgid "Contact point #%d"
@@ -68,12 +93,17 @@ msgid ""
 "post type ID #%5$s."
 msgstr ""
 
-#: lib/integ/admin/post.php:81
+#: lib/integ/admin/post.php:88
+msgctxt "metabox title"
+msgid "Contact Point"
+msgstr ""
+
+#: lib/integ/admin/post.php:101
 msgctxt "metabox title"
 msgid "Organization"
 msgstr ""
 
-#: lib/integ/admin/post.php:102
+#: lib/integ/admin/post.php:114
 msgctxt "metabox title"
 msgid "Place"
 msgstr ""
@@ -103,7 +133,7 @@ msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr ""
 
-#: lib/org/filters-options.php:159 lib/org.php:61
+#: lib/org/filters-options.php:162 lib/org.php:61
 msgctxt "option value"
 msgid "Organization #%d"
 msgstr ""
@@ -492,7 +522,7 @@ msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
 
-#: lib/place/filters-options.php:204 lib/place.php:61
+#: lib/place/filters-options.php:207 lib/place.php:61
 msgctxt "option value"
 msgid "Place #%d"
 msgstr ""

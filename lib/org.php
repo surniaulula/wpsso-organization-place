@@ -306,7 +306,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				), $css_class = '', $css_id = 'org_offer_catalogs', $offer_catalogs_max, $show_first = 1 ) . '</td>';
 
 			/*
-			 * News Media Organization section.
+			 * News Media Organization.
 			 */
 			$table_rows[ 'subsection_org_news_media' ] = $tr_hide_news_media_html .
 				'<td class="subsection" colspan="2"><h5>' .
@@ -334,7 +334,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';
 
 			/*
-			 * Organization Knowledge Graph section.
+			 * Organization Knowledge Graph.
 			 */
 			$table_rows[ 'subsection_org_knowledgegraph' ] = $tr_hide_html .
 				'<td colspan="2" class="subsection"><h5>' .
