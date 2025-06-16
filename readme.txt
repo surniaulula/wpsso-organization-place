@@ -171,7 +171,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 4.0.0 (2025/06/14)**
 
 * **New Features**
-	* Renamed the add-on to WPSSO Schema Organization and Place Manager.
+	* Renamed the add-on to "WPSSO Schema Organization and Place Manager".
 * **Improvements**
 	* Added options in the SSO Orgs &gt; Edit Organization page:
 		* Offer Catalogs
@@ -275,7 +275,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.0.0 =
 
-(2025/06/14) Renamed the add-on to WPSSO Schema Organization and Place Manager.
+(2025/06/14) Renamed the add-on to "WPSSO Schema Organization and Place Manager".
 
 = 3.3.1 =
 
