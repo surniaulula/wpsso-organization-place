@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '4.0.0',	// Plugin version.
+					'version'     => '5.0.0-dev.1',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '20.0.0',
+							'min_version'   => '20.1.0-dev.1',
 						),
 					),
 
@@ -72,6 +72,12 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 * Additional add-on setting options.
 			 */
 			'opt' => array(
+				'contact_md_defaults' => array(
+					'contact_name'        => '',
+					'contact_name_alt'    => '',
+					'contact_desc'        => '',
+					'contact_schema_type' => 'contact.point',	// Contact Schema Type.
+				),
 				'org_md_defaults' => array(
 					'org_name'                   => '',
 					'org_name_alt'               => '',
@@ -80,17 +86,17 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'org_logo_url'               => '',
 					'org_banner_url'             => '',
 					'org_place_id'               => 'none',
-					'org_schema_type'            => 'organization',
-					'org_pub_principles_url'     => '',			// Publishing Principles URL.
-					'org_corrections_policy_url' => '',			// Corrections Policy URL.
-					'org_diversity_policy_url'   => '',			// Diversity Policy URL.
-					'org_ethics_policy_url'      => '',			// Ethics Policy URL.
-					'org_fact_check_policy_url'  => '',			// Fact Checking Policy URL.
-					'org_feedback_policy_url'    => '',			// Feedback Policy URL.
-					'org_masthead_url'           => '',			// Masthead Page URL.
-					'org_coverage_policy_url'    => '',			// Coverage Priorities Policy URL.
-					'org_no_bylines_policy_url'  => '',			// No Bylines Policy URL.
-					'org_sources_policy_url'     => '',			// Unnamed Sources Policy URL.
+					'org_schema_type'            => 'organization',	// Organiztion Schema Type.
+					'org_pub_principles_url'     => '',		// Publishing Principles URL.
+					'org_corrections_policy_url' => '',		// Corrections Policy URL.
+					'org_diversity_policy_url'   => '',		// Diversity Policy URL.
+					'org_ethics_policy_url'      => '',		// Ethics Policy URL.
+					'org_fact_check_policy_url'  => '',		// Fact Checking Policy URL.
+					'org_feedback_policy_url'    => '',		// Feedback Policy URL.
+					'org_masthead_url'           => '',		// Masthead Page URL.
+					'org_coverage_policy_url'    => '',		// Coverage Priorities Policy URL.
+					'org_no_bylines_policy_url'  => '',		// No Bylines Policy URL.
+					'org_sources_policy_url'     => '',		// Unnamed Sources Policy URL.
 				),
 				'place_md_defaults' => array(
 					'place_name'                     => '',			// Place Name.
@@ -168,6 +174,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			define( 'WPSSOOPM_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-organization-place
 			define( 'WPSSOOPM_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
 			define( 'WPSSOOPM_VERSION', $info[ 'version' ] );
+			define( 'WPSSOOPM_CONTACT_POST_TYPE', 'contact_point' );
 			define( 'WPSSOOPM_ORG_POST_TYPE', 'organization' );
 			define( 'WPSSOOPM_PLACE_POST_TYPE', 'place' );
 
@@ -216,10 +223,15 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 *	80 – below Settings
 			 *	100 – below second separator
 			 */
-			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]            = 87;
+			$var_const[ 'WPSSOOPM_CONTACT_ARCHIVE_SLUG' ]      = 'contact_points';	// False, true, or archive slug.
+			$var_const[ 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ] = false;
+			$var_const[ 'WPSSOOPM_CONTACT_MENU_ORDER' ]        = 87;
+			$var_const[ 'WPSSOOPM_ORG_ARCHIVE_SLUG' ]          = 'organizations';	// False, true, or archive slug.
 			$var_const[ 'WPSSOOPM_ORG_CATEGORY_TAXONOMY' ]     = false;
-			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]          = 88;
+			$var_const[ 'WPSSOOPM_ORG_MENU_ORDER' ]            = 88;
+			$var_const[ 'WPSSOOPM_PLACE_ARCHIVE_SLUG' ]        = 'places';		// False, true, or archive slug.
 			$var_const[ 'WPSSOOPM_PLACE_CATEGORY_TAXONOMY' ]   = false;
+			$var_const[ 'WPSSOOPM_PLACE_MENU_ORDER' ]          = 89;
 
 			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
@@ -242,6 +254,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		 */
 		public static function require_libs( $plugin_file ) {
 
+			require_once WPSSOOPM_PLUGINDIR . 'lib/contact.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/org.php';
 			require_once WPSSOOPM_PLUGINDIR . 'lib/place.php';

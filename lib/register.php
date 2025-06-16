@@ -28,6 +28,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			/*
 			 * Wpsso->set_objects() runs at init priority 10.
 			 */
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_point_post_type' ) );
+			add_action( 'wpsso_init_options', array( __CLASS__, 'register_contact_point_category_taxonomy' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_post_type' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_org_category_taxonomy' ) );
 			add_action( 'wpsso_init_options', array( __CLASS__, 'register_place_post_type' ) );
@@ -118,6 +120,8 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				WpssoUtilReg::update_ext_version( 'wpssoopm', $version );
 			}
 
+			self::register_contact_point_post_type();
+			self::register_contact_point_category_taxonomy();
 			self::register_org_post_type();
 			self::register_org_category_taxonomy();
 			self::register_place_post_type();
@@ -127,6 +131,13 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 		}
 
 		private function deactivate_plugin() {
+
+			unregister_post_type( WPSSOOPM_CONTACT_POST_TYPE );
+
+			if ( defined( 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ) && WPSSOOPM_CONTACT_CATEGORY_TAXONOMY ) {
+
+				unregister_taxonomy( WPSSOOPM_CONTACT_CATEGORY_TAXONOMY );
+			}
 
 			unregister_post_type( WPSSOOPM_ORG_POST_TYPE );
 
@@ -199,7 +210,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			$args = array(
 				'label'               => _x( 'Organization', 'post type label', 'wpsso-organization-place' ),
 				'labels'              => $labels,
-				'description'         => _x( 'Organization', 'post type description', 'wpsso-organization-place' ),
+				'description'         => _x( 'Schema Organization', 'post type description', 'wpsso-organization-place' ),
 				'exclude_from_search' => false,	// Must be false for get_posts() queries.
 				'public'              => $is_public,
 				'publicly_queryable'  => $is_public,
@@ -213,7 +224,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'hierarchical'        => false,
 				'supports'            => $supports,
 				'taxonomies'          => $taxonomies,
-				'has_archive'         => 'orgs',
+				'has_archive'         => WPSSOOPM_ORG_ARCHIVE_SLUG,	// False, true, or archive slug.
 				'can_export'          => true,
 				'show_in_rest'        => true,
 			);
@@ -319,7 +330,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			$args = array(
 				'label'               => _x( 'Place', 'post type label', 'wpsso-organization-place' ),
 				'labels'              => $labels,
-				'description'         => _x( 'Location, place, or venue', 'post type description', 'wpsso-organization-place' ),
+				'description'         => _x( 'Schema Place', 'post type description', 'wpsso-organization-place' ),
 				'exclude_from_search' => false,	// Must be false for get_posts() queries.
 				'public'              => $is_public,
 				'publicly_queryable'  => $is_public,
@@ -333,7 +344,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'hierarchical'        => false,
 				'supports'            => $supports,
 				'taxonomies'          => $taxonomies,
-				'has_archive'         => 'places',
+				'has_archive'         => WPSSOOPM_PLACE_ARCHIVE_SLUG,	// False, true, or archive slug.
 				'can_export'          => true,
 				'show_in_rest'        => true,
 			);
@@ -388,6 +399,126 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 			);
 
 			register_taxonomy( WPSSOOPM_PLACE_CATEGORY_TAXONOMY, array( WPSSOOPM_PLACE_POST_TYPE ), $args );
+		}
+
+		public static function register_contact_point_post_type() {
+
+			$is_public = false;
+
+			$labels = array(
+				'name'                     => _x( 'Contact Points', 'post type general name', 'wpsso-organization-place' ),
+				'singular_name'            => _x( 'Contact Point', 'post type singular name', 'wpsso-organization-place' ),
+				'add_new'                  => __( 'Add Contact Point', 'wpsso-organization-place' ),
+				'add_new_item'             => __( 'Add Contact Point', 'wpsso-organization-place' ),
+				'edit_item'                => __( 'Edit Contact Point', 'wpsso-organization-place' ),
+				'new_item'                 => __( 'New Contact Point', 'wpsso-organization-place' ),
+				'view_item'                => __( 'View Contact Point', 'wpsso-organization-place' ),
+				'view_items'               => __( 'View Contact Points', 'wpsso-organization-place' ),
+				'search_items'             => __( 'Search Contact Points', 'wpsso-organization-place' ),
+				'not_found'                => __( 'No contact points found', 'wpsso-organization-place' ),
+				'not_found_in_trash'       => __( 'No contact points found in Trash', 'wpsso-organization-place' ),
+				'parent_item_colon'        => __( 'Parent Contact Point:', 'wpsso-organization-place' ),
+				'all_items'                => __( 'All Contact Points', 'wpsso-organization-place' ),
+				'archives'                 => __( 'Contact Point Archives', 'wpsso-organization-place' ),
+				'attributes'               => __( 'Contact Point Attributes', 'wpsso-organization-place' ),
+				'insert_into_item'         => __( 'Insert into contact point', 'wpsso-organization-place' ),
+				'uploaded_to_this_item'    => __( 'Uploaded to this contact point', 'wpsso-organization-place' ),
+				'featured_image'           => __( 'Contact Point Image', 'wpsso-organization-place' ),
+				'set_featured_image'       => __( 'Set contact point image', 'wpsso-organization-place' ),
+				'remove_featured_image'    => __( 'Remove contact point image', 'wpsso-organization-place' ),
+				'use_featured_image'       => __( 'Use as contact point image', 'wpsso-organization-place' ),
+				'menu_name'                => _x( 'SSO Contacts', 'admin menu name', 'wpsso-organization-place' ),
+				'filter_items_list'        => __( 'Filter contact points', 'wpsso-organization-place' ),
+				'items_list_navigation'    => __( 'Contact Points list navigation', 'wpsso-organization-place' ),
+				'items_list'               => __( 'Contact Points list', 'wpsso-organization-place' ),
+				'name_admin_bar'           => _x( 'Contact Point', 'admin bar name', 'wpsso-organization-place' ),
+				'item_published'	   => __( 'Contact Point published.', 'wpsso-organization-place' ),
+				'item_published_privately' => __( 'Contact Point published privately.', 'wpsso-organization-place' ),
+				'item_reverted_to_draft'   => __( 'Contact Point reverted to draft.', 'wpsso-organization-place' ),
+				'item_scheduled'           => __( 'Contact Point scheduled.', 'wpsso-organization-place' ),
+				'item_updated'             => __( 'Contact Point updated.', 'wpsso-organization-place' ),
+			);
+
+			$supports = false;
+
+			if ( defined( 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ) && WPSSOOPM_CONTACT_CATEGORY_TAXONOMY ) {
+
+				$taxonomies = array( WPSSOOPM_CONTACT_CATEGORY_TAXONOMY );
+
+			} else $taxonomies = array();
+
+			$args = array(
+				'label'               => _x( 'Contact Point', 'post type label', 'wpsso-organization-place' ),
+				'labels'              => $labels,
+				'description'         => _x( 'Schema Contact Points', 'post type description', 'wpsso-organization-place' ),
+				'exclude_from_search' => false,	// Must be false for get_posts() queries.
+				'public'              => $is_public,
+				'publicly_queryable'  => $is_public,
+				'show_ui'             => true,
+				'show_in_nav_menus'   => true,
+				'show_in_menu'        => true,
+				'show_in_admin_bar'   => true,
+				'menu_position'       => WPSSOOPM_CONTACT_MENU_ORDER,
+				'menu_icon'           => 'dashicons-location',
+				'capability_type'     => 'page',
+				'hierarchical'        => false,
+				'supports'            => $supports,
+				'taxonomies'          => $taxonomies,
+				'has_archive'         => WPSSOOPM_CONTACT_ARCHIVE_SLUG,	// False, true, or archive slug.
+				'can_export'          => true,
+				'show_in_rest'        => true,
+			);
+
+			register_post_type( WPSSOOPM_CONTACT_POST_TYPE, $args );
+		}
+
+		public static function register_contact_point_category_taxonomy() {
+
+			if ( ! defined( 'WPSSOOPM_CONTACT_CATEGORY_TAXONOMY' ) || ! WPSSOOPM_CONTACT_CATEGORY_TAXONOMY ) {
+
+				return;
+			}
+
+			$is_public = false;
+
+			$labels = array(
+				'name'                       => __( 'Categories', 'wpsso-organization-place' ),
+				'singular_name'              => __( 'Category', 'wpsso-organization-place' ),
+				'menu_name'                  => _x( 'Categories', 'admin menu name', 'wpsso-organization-place' ),
+				'all_items'                  => __( 'All Categories', 'wpsso-organization-place' ),
+				'edit_item'                  => __( 'Edit Category', 'wpsso-organization-place' ),
+				'view_item'                  => __( 'View Category', 'wpsso-organization-place' ),
+				'update_item'                => __( 'Update Category', 'wpsso-organization-place' ),
+				'add_new_item'               => __( 'Add New Category', 'wpsso-organization-place' ),
+				'new_item_name'              => __( 'New Category Name', 'wpsso-organization-place' ),
+				'parent_item'                => __( 'Parent Category', 'wpsso-organization-place' ),
+				'parent_item_colon'          => __( 'Parent Category:', 'wpsso-organization-place' ),
+				'search_items'               => __( 'Search Categories', 'wpsso-organization-place' ),
+				'popular_items'              => __( 'Popular Categories', 'wpsso-organization-place' ),
+				'separate_items_with_commas' => __( 'Separate categories with commas', 'wpsso-organization-place' ),
+				'add_or_remove_items'        => __( 'Add or remove categories', 'wpsso-organization-place' ),
+				'choose_from_most_used'      => __( 'Choose from the most used', 'wpsso-organization-place' ),
+				'not_found'                  => __( 'No categories found.', 'wpsso-organization-place' ),
+				'back_to_items'              => __( '← Back to categories', 'wpsso-organization-place' ),
+			);
+
+			$args = array(
+				'label'              => _x( 'Categories', 'taxonomy label', 'wpsso-organization-place' ),
+				'labels'             => $labels,
+				'public'             => $is_public,
+				'publicly_queryable' => $is_public,
+				'show_ui'            => true,
+				'show_in_menu'       => true,
+				'show_in_nav_menus'  => true,
+				'show_in_rest'       => true,
+				'show_tagcloud'      => false,
+				'show_in_quick_edit' => true,
+				'show_admin_column'  => true,
+				'description'        => _x( 'Categories for Contact Points', 'taxonomy description', 'wpsso-organization-place' ),
+				'hierarchical'       => true,
+			);
+
+			register_taxonomy( WPSSOOPM_CONTACT_CATEGORY_TAXONOMY, array( WPSSOOPM_CONTACT_POST_TYPE ), $args );
 		}
 	}
 }

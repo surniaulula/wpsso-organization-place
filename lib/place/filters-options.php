@@ -250,13 +250,14 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 						$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-						WpssoOpmOrg::check_org_image_sizes( $md_opts, $name_key = 'place_name' );
+						WpssoOpmOrg::check_image_sizes( $md_opts, $name_key = 'place_name' );
 					}
 
-					WpssoOpmPlace::check_place_image_sizes( $md_opts );
+					WpssoOpmPlace::check_image_sizes( $md_opts );
 
 					break;
 
+				case WPSSOOPM_CONTACT_POST_TYPE:
 				case WPSSOOPM_ORG_POST_TYPE:
 
 					break;	// Nothing to do.

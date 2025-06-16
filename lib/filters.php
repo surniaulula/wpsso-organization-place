@@ -33,10 +33,6 @@ if ( ! class_exists( 'WpssoOpmFilters' ) ) {
 
 			require_once WPSSOOPM_PLUGINDIR . 'lib/filters-options.php';
 
-			/*
-			 * Instantiates the WpssoOpmOrgFiltersOptions, WpssoOpmPlaceFiltersOptions, and WpssoOpmPlaceFiltersOptions
-			 * classes.
-			 */
 			new WpssoOpmFiltersOptions( $plugin, $addon );
 
 			require_once WPSSOOPM_PLUGINDIR . 'lib/filters-upgrade.php';
@@ -47,10 +43,6 @@ if ( ! class_exists( 'WpssoOpmFilters' ) ) {
 
 				require_once WPSSOOPM_PLUGINDIR . 'lib/filters-edit.php';
 
-				/*
-				 * Instantiates the WpssoOpmOrgFiltersEdit, WpssoOpmPlaceFiltersEdit, and
-				 * WpssoOpmServiceFiltersEdit classes.
-				 */
 				new WpssoOpmFiltersEdit( $plugin, $addon );
 			}
 

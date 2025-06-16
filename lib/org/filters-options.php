@@ -197,7 +197,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 					$mod[ 'obj' ]->md_keys_multi_renum( $md_opts );
 
-					WpssoOpmOrg::check_org_image_sizes( $md_opts );
+					WpssoOpmOrg::check_image_sizes( $md_opts );
 
 					break;
 			}

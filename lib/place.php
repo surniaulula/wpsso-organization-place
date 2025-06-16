@@ -292,7 +292,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			return false;
 		}
 
-		public static function check_place_image_sizes( $md_opts ) {
+		/*
+		 * See WpssoOpmPlaceFiltersOptions->filter_save_post_options().
+		 */
+		public static function check_image_sizes( $md_opts ) {
 
 			$wpsso =& Wpsso::get_instance();
 

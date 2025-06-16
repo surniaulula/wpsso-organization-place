@@ -86,6 +86,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 		/*
 		 * Get a specific organization id.
+		 *
+		 * See WpssoOpmPlaceFiltersOptions->filter_get_organization_options().
 		 */
 		public static function get_id( $org_id, $mixed = 'current', $opt_key = false, $id_prefix = 'org' ) {
 
@@ -350,7 +352,11 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			}
 		}
 
-		public static function check_org_image_sizes( $md_opts, $name_key = 'org_name' ) {
+		/*
+		 * See WpssoOpmOrgFiltersOptions->filter_save_post_options().
+		 * See WpssoOpmPlaceFiltersOptions->filter_save_post_options().
+		 */
+		public static function check_image_sizes( $md_opts, $name_key = 'org_name' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -367,19 +373,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				return;
 			}
 
-			/*
-			 * Returns an image array:
-			 *
-			 * array(
-			 *	'og:image:url'       => null,
-			 *	'og:image:width'     => null,
-			 *	'og:image:height'    => null,
-			 *	'og:image:cropped'   => null,
-			 *	'og:image:id'        => null,
-			 *	'og:image:alt'       => null,
-			 *	'og:image:size_name' => null,
-			 * );
-			 */
 			foreach ( array ( 'org_logo', 'org_banner' ) as $img_prefix ) {
 
 				$mt_single_image = $wpsso->media->get_mt_img_pre_url( $md_opts, $img_prefix );
