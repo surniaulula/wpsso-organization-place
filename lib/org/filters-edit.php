@@ -73,8 +73,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_place_id' ) .
-				'<td>' . $form->get_select( 'org_place_id', $place_names,
-					$css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
+				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
 
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),

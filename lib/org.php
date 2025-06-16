@@ -25,6 +25,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 		/*
 		 * Return an associative array of organization IDs and names.
+		 *
+		 * See WpssoOpmOrgFiltersEdit->filter_form_cache_org_names().
 		 */
 		public static function get_names( $schema_type = '' ) {
 
@@ -52,8 +54,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$local_cache[ $schema_type ] = array();
 
 			$children = $wpsso->schema->get_schema_type_children( $schema_type );
-
-			$org_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
+			$org_ids  = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
 
 			foreach ( $org_ids as $post_id ) {
 
@@ -213,11 +214,13 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$hide_news_media_class   = $wpsso->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
-			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
+			$contact_names           = $wpsso->util->get_form_cache( 'contact_names', $add_none = true );
+			$is_defaults             = array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ], $wpsso->cf[ 'form' ][ 'place_is_defaults' ] );
+			$contacts_max            = SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACTS_MAX', 5 );
 			$awards_max              = SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 );
 			$offer_catalogs_max      = SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 5 );
-			$is_defaults             = array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ], $wpsso->cf[ 'form' ][ 'place_is_defaults' ] );
+			$hide_news_media_class   = $wpsso->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
+			$tr_hide_news_media_html = '<tr class="' . $hide_news_media_class . '" style="display:none;">';
 
 			$table_rows[ 'org_is_default' ] = $tr_hide_html .
 				$form->get_th_html( _x( 'Organization Is Default', 'option label', 'wpsso-organization-place' ),
@@ -278,6 +281,12 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$form->get_th_html( _x( 'Feedback Policy URL', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_feedback_policy_url' ) .
 				'<td>' . $form->get_input( 'org_feedback_policy_url', $css_class = 'wide' ) . '</td>';
+
+			$table_rows[ 'org_contact_id' ] = $tr_hide_html .
+				$form->get_th_html( _x( 'Organization Contact Points', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_contact_id' ) .
+				'<td>' . $form->get_select_multi( 'org_contact_id', $contact_names, $css_class = 'wide', $css_id = '', $is_assoc = true,
+					$contacts_max, $show_first = 1 ) . '</td>';
 
 			$table_rows[ 'org_award' ] = $tr_hide_html .
 				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso-organization-place' ),

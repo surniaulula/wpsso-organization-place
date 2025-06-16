@@ -25,6 +25,8 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 		/*
 		 * Return an associative array of place IDs and names.
+		 *
+		 * See WpssoOpmPlaceFiltersEdit->filter_form_cache_place_names().
 		 */
 		public static function get_names( $schema_type = '' ) {
 
@@ -51,8 +53,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			$local_cache[ $schema_type ] = array();
 
-			$children = $wpsso->schema->get_schema_type_children( $schema_type );
-
+			$children  = $wpsso->schema->get_schema_type_children( $schema_type );
 			$place_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_PLACE_POST_TYPE ) );
 
 			foreach ( $place_ids as $post_id ) {

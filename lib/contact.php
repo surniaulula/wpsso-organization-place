@@ -25,6 +25,8 @@ if ( ! class_exists( 'WpssoOpmContact' ) ) {
 
 		/*
 		 * Return an associative array of contact point IDs and names.
+		 *
+		 * See WpssoOpmContactFiltersEdit->filter_form_cache_contact_names().
 		 */
 		public static function get_names( $schema_type = '' ) {
 
@@ -51,9 +53,8 @@ if ( ! class_exists( 'WpssoOpmContact' ) ) {
 
 			$local_cache[ $schema_type ] = array();
 
-			$children = $wpsso->schema->get_schema_type_children( $schema_type );
-
-			$contact_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_PLACE_POST_TYPE ) );
+			$children    = $wpsso->schema->get_schema_type_children( $schema_type );
+			$contact_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_CONTACT_POST_TYPE ) );
 
 			foreach ( $contact_ids as $post_id ) {
 

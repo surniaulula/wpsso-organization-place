@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0-dev.3',	// Plugin version.
+					'version'     => '5.0.0-dev.5',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '21.0.0-dev.3',
+							'min_version'   => '21.0.0-dev.5',
 						),
 					),
 
@@ -93,6 +93,9 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'org_ethics_policy_url'      => '',		// Ethics Policy URL.
 					'org_fact_check_policy_url'  => '',		// Fact Checking Policy URL.
 					'org_feedback_policy_url'    => '',		// Feedback Policy URL.
+					'org_contact_id_0'           => 'none',		// Organization Contact Point.
+					'org_contact_id_1'           => 'none',		// Organization Contact Point.
+					'org_contact_id_2'           => 'none',		// Organization Contact Point.
 					'org_award_0'                => '',		// Organization Award.
 					'org_award_1'                => '',		// Organization Award.
 					'org_award_2'                => '',		// Organization Award.
