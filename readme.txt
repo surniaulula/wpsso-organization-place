@@ -146,6 +146,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 5.0.0-dev.8 (2025/06/16)**
 
 * **New Features**
+	* Added a new "SSO Contacts" menu item to manage Schema Contact Points:
+		* Contact Point Name
+		* Contact Point Alt. Name	
+		* Contact Point Description
+		* Contact Point Schema Type
 	* Added new options in the SSO Orgs &gt; Edit Organization page:
 		* Organization Contact Points
 * **Improvements**
