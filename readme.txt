@@ -26,6 +26,26 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 
 <!-- /about -->
 
+**The SSO Contacts editing page includes:**
+
+* Contact Point Name
+* Contact Point Alternate Name
+* Contact Point Description
+* Contact Point Schema Type
+* Contact Point Telephone
+* Contact Point Fax
+* Contact Point Email
+* Postal Address:
+	* Street Address
+	* P.O. Box Number
+	* City / Locality
+	* State / Province
+	* Zip / Postal Code
+	* Country
+* Opening Hours:
+	* Open Days / Hours
+	* Seasonal Dates
+
 **The SSO Organizations editing page includes:**
 
 * Organization Name
@@ -43,7 +63,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Fact Checking Policy URL
 * Feedback Policy URL
 * Organization Awards
-* Offer Catalogs
+* Offer Catalogs:
 	* Offer Catalog Name
 	* Offer Catalog Description
 	* Offer Catalog URL
@@ -73,21 +93,23 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Place Alternate Name
 * Place Description
 * Place Schema Type
+* Place Telephone
+* Place Fax
 * Street Address
 * P.O. Box Number
 * City / Locality
 * State / Province
 * Zip / Postal Code
 * Country
-* Telephone
+* Place Image ID
+* or Place Image URL
 * Place Latitude
 * Place Longitude
 * Place Altitude
-* Place Image ID
-* or Place Image URL
 * Place Timezone
-* Open Days / Hours
-* Seasonal Dates
+* Opening Hours:
+	* Open Days / Hours
+	* Seasonal Dates
 * Local Business:
 	* Service Radius
 	* Currencies Accepted
@@ -143,7 +165,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.8 (2025/06/16)**
+**Version 5.0.0-dev.9 (2025/06/17)**
 
 * **New Features**
 	* Added a new "SSO Contacts" menu item to manage Schema Contact Points:
@@ -151,6 +173,19 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* Contact Point Alt. Name	
 		* Contact Point Description
 		* Contact Point Schema Type
+		* Contact Point Telephone
+		* Contact Point Fax
+		* Contact Point Email
+		* Postal Address:
+			* Street Address
+			* P.O. Box Number
+			* City / Locality
+			* State / Province
+			* Zip / Postal Code
+			* Country
+		* Opening Hours:
+			* Open Days / Hours
+			* Seasonal Dates
 	* Added new options in the SSO Orgs &gt; Edit Organization page:
 		* Organization Contact Points
 * **Improvements**
@@ -172,7 +207,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0-dev.8.
+	* WPSSO Core v21.0.0-dev.9.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -275,9 +310,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.8 =
+= 5.0.0-dev.9 =
 
-(2025/06/16) Current development version - see changelog for details.
+(2025/06/17) Current development version - see changelog for details.
 
 = 4.0.0 =
 
