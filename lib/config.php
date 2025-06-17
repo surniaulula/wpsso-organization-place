@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0-dev.8',	// Plugin version.
+					'version'     => '5.0.0-dev.9',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '21.0.0-dev.8',
+							'min_version'   => '21.0.0-dev.9',
 						),
 					),
 
@@ -73,10 +73,19 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 */
 			'opt' => array(
 				'contact_md_defaults' => array(
-					'contact_name'        => '',
-					'contact_name_alt'    => '',
-					'contact_desc'        => '',
-					'contact_schema_type' => 'contact.point',	// Contact Schema Type.
+					'contact_name'           => '',
+					'contact_name_alt'       => '',
+					'contact_desc'           => '',
+					'contact_schema_type'    => 'contact.point',	// Contact Point Schema Type.
+					'contact_phone'          => '',			// Contact Point Telephone.
+					'contact_fax'            => '',			// Contact Point Fax.
+					'contact_email'          => '',			// Contact Point Email.
+					'contact_street_address' => '',			// Street Address.
+					'contact_po_box_number'  => '',			// P.O. Box Number.
+					'contact_city'           => '',			// City.
+					'contact_region'         => '',			// State / Province.
+					'contact_postal_code'    => '',			// Zip / Postal Code.
+					'contact_country'        => 'none',		// Country.
 				),
 				'org_md_defaults' => array(
 					'org_name'                   => '',		// Organization Name.
@@ -122,13 +131,14 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_name_alt'                 => '',			// Place Altername Name.
 					'place_desc'                     => '',			// Place Description.
 					'place_schema_type'              => 'local.business',	// Place Schema Type.
+					'place_phone'                    => '',			// Place Telephone.
+					'place_fax'                      => '',			// Place Fax.
 					'place_street_address'           => '',			// Street Address.
 					'place_po_box_number'            => '',			// P.O. Box Number.
 					'place_city'                     => '',			// City.
 					'place_region'                   => '',			// State / Province.
 					'place_postal_code'              => '',			// Zip / Postal Code.
 					'place_country'                  => 'none',		// Country.
-					'place_phone'                    => '',			// Telephone.
 					'place_latitude'                 => '',			// Place Latitude.
 					'place_longitude'                => '',			// Place Longitude.
 					'place_altitude'                 => '',			// Place Altitude.

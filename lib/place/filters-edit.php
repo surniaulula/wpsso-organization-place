@@ -93,19 +93,19 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 			if ( $is_custom ) {
 
-				$tr_hide_place_html            = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
-				$tr_hide_local_business_html   = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
-				$tr_hide_food_establish_html   = '<tr class="hide_schema_place_id ' . $hide_food_establish_class . '" style="display:none;">';
-				$tr_hide_org_html              = '<tr class="hide_schema_place_id ' . $hide_org_class . '" style="display:none;">';
-				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_show_unhide_rows' );
+				$tr_hide_place_html          = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
+				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
+				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_org_html            = '<tr class="hide_schema_place_id ' . $hide_org_class . '" style="display:none;">';
+				$schema_type_event_names     = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 
 			} else {
 
-				$tr_hide_place_html            = '';
-				$tr_hide_local_business_html   = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
-				$tr_hide_food_establish_html   = '<tr class="' . $hide_food_establish_class . '" style="display:none;">';
-				$tr_hide_org_html              = '<tr class="' . $hide_org_class . '" style="display:none;">';
-				$place_schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
+				$tr_hide_place_html          = '';
+				$tr_hide_local_business_html = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
+				$tr_hide_food_establish_html = '<tr class="' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_org_html            = '<tr class="' . $hide_org_class . '" style="display:none;">';
+				$schema_type_event_names     = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
 
 			if ( ! $is_custom ) {
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Place Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_schema_type' ) .
 				'<td>' . $form->get_select( 'place_schema_type', $place_types, $css_class = 'schema_type', $css_id = '',
-					$is_assoc = true, $is_disabled = false, $selected = false, $place_schema_type_event_names,
+					$is_assoc = true, $is_disabled = false, $selected = false, $schema_type_event_names,
 						$event_args = array(
 							'json_var' => 'schema_place_types',
 							'exp_secs'  => WPSSO_CACHE_SELECT_JSON_EXP_SECS,	// Create and read from a javascript URL.
@@ -156,6 +156,16 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'Place Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
+
+			$table_rows[ 'place_phone' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Place Telephone', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_phone' ) .
+				'<td>' . $form->get_input( 'place_phone' ) . '</td>';
+
+			$table_rows[ 'place_fax' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Place Fax', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_fax' ) .
+				'<td>' . $form->get_input( 'place_fax' ) . '</td>';
 
 			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),
@@ -186,11 +196,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Country', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_country' ) .
 				'<td>' . $form->get_select_country( 'place_country' ) . '</td>';
-
-			$table_rows[ 'place_phone' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Telephone', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_phone' ) .
-				'<td>' . $form->get_input( 'place_phone' ) . '</td>';
 
 			if ( ! $is_custom ) {
 
@@ -229,17 +234,15 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td>' . $form->get_select_timezone( 'place_timezone' ) . '</td>';
 
 			/*
-			 * Example $business_weekdays = array(
-			 *	'sunday'         => 'Sunday',
-			 *	'monday'         => 'Monday',
-			 *	'tuesday'        => 'Tuesday',
-			 *	'wednesday'      => 'Wednesday',
-			 *	'thursday'       => 'Thursday',
-			 *	'friday'         => 'Friday',
-			 *	'saturday'       => 'Saturday',
-			 *	'publicholidays' => 'Public Holidays',
-			 * );
+			 * Opening hours section.
+			 *
+			 * See https://schema.org/OpeningHoursSpecification.
 			 */
+			$table_rows[ 'subsection_opening_hours' ] = $tr_hide_place_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Opening Hours Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
+
 			$open_close_html = '<table class="business_hours">';
 
 			foreach ( $business_weekdays as $day_name => $day_label ) {

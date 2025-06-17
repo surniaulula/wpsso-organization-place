@@ -134,25 +134,25 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 			 * place:name
 			 * place:name_alt
 			 * place:description
+			 * place:telephone
 			 * place:street_address
 			 * place:po_box_number
 			 * place:locality
 			 * place:region
 			 * place:postal_code
 			 * place:country_name
-			 * place:telephone
 			 */
 			foreach ( array(
 				'place_name'           => 'place:name',
 				'place_name_alt'       => 'place:name_alt',
 				'place_desc'           => 'place:description',
+				'place_phone'          => 'place:telephone',
 				'place_street_address' => 'place:street_address',
 				'place_po_box_number'  => 'place:po_box_number',
 				'place_city'           => 'place:locality',
 				'place_region'         => 'place:region',
 				'place_postal_code'    => 'place:postal_code',
 				'place_country'        => 'place:country_name',
-				'place_phone'          => 'place:telephone',
 			) as $key => $mt_name ) {
 
 				$mt_og[ $mt_name ] = isset( $place_opts[ $key ] ) && 'none' !== $place_opts[ $key ] ? $place_opts[ $key ] : '';

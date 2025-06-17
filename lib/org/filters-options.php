@@ -262,6 +262,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 					return 'ok_blank';
 
+				case 'org_contact_id':
 				case 'org_place_id':
 				case 'org_schema_type':
 
