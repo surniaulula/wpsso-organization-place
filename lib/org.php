@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 		 *
 		 * See WpssoOpmPlaceFiltersOptions->filter_get_organization_options().
 		 */
-		public static function get_id( $org_id, $mixed = 'current', $opt_key = false, $id_prefix = 'org' ) {
+		public static function get_id( $org_id, $mixed = 'current', $opt_key = false, $post_id_prefix = 'org' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -115,9 +115,9 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				$org_opts = WpssoSchema::get_site_organization( $mixed );
 
-			} elseif ( 0 === strpos( $org_id, $id_prefix . '-' ) ) {
+			} elseif ( 0 === strpos( $org_id, $post_id_prefix . '-' ) ) {
 
-				$post_id  = substr( $org_id, strlen( $id_prefix ) + 1 );
+				$post_id  = substr( $org_id, strlen( $post_id_prefix ) + 1 );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
@@ -152,11 +152,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 						$org_opts[ 'org_sameas' ] = $org_sameas;
 					}
-
-					/*
-					 * Combine multiple options with a common prefix to an array of values.
-					 */
-					$post_mod[ 'obj' ]->md_keys_multi_array( $org_opts, 'org_award', 'org_awards' );
 
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 

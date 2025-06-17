@@ -83,7 +83,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 		/*
 		 * Get a specific place id.
 		 */
-		public static function get_id( $place_id, $mod = false, $opt_key = false, $id_prefix = 'place' ) {
+		public static function get_id( $place_id, $mod = false, $opt_key = false, $post_id_prefix = 'place' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -120,9 +120,9 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 					);
 				}
 
-			} elseif ( 0 === strpos( $place_id, $id_prefix . '-' ) ) {
+			} elseif ( 0 === strpos( $place_id, $post_id_prefix . '-' ) ) {
 
-				$post_id  = substr( $place_id, strlen( $id_prefix ) + 1 );
+				$post_id  = substr( $place_id, strlen( $post_id_prefix ) + 1 );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {

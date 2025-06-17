@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 				if ( 0 === strpos( $org_id, 'place-' ) ) {
 
-					$org_opts = WpssoOpmOrg::get_id( $org_id, $mod, $opt_key = false, $id_prefix = 'place' );
+					$org_opts = WpssoOpmOrg::get_id( $org_id, $mod, $opt_key = false, $post_id_prefix = 'place' );
 
 					$org_opts[ 'org_name' ]        = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_name' );
 					$org_opts[ 'org_name_alt' ]    = WpssoOpmPlace::get_id( $org_id, $mod, $opt_key = 'place_name_alt' );

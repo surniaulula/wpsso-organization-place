@@ -27,6 +27,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'get_organization_options'        => 3,
+				'get_place_options'               => 3,
 				'get_post_defaults'               => 3,
 				'get_post_options'                => 3,
 				'save_post_options'               => 3,
@@ -51,6 +52,29 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 			}
 
 			return $org_opts;
+		}
+
+		public function filter_get_place_options( $place_opts, $mod, $place_id ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			if ( false === $place_opts ) {	// First come, first served.
+
+				if ( 0 === strpos( $place_id, 'org-' ) ) {
+
+					$place_opts = WpssoOpmPlace::get_id( $place_id, $mod, $opt_key = false, $post_id_prefix = 'org' );
+
+					$place_opts[ 'place_name' ]        = WpssoOpmOrg::get_id( $place_id, $mod, $opt_key = 'org_name' );
+					$place_opts[ 'place_name_alt' ]    = WpssoOpmOrg::get_id( $place_id, $mod, $opt_key = 'org_name_alt' );
+					$place_opts[ 'place_desc' ]        = WpssoOpmOrg::get_id( $place_id, $mod, $opt_key = 'org_desc' );
+					$place_opts[ 'place_schema_type' ] = WpssoOpmOrg::get_id( $place_id, $mod, $opt_key = 'org_schema_type' );
+				}
+			}
+
+			return $place_opts;
 		}
 
 		public function filter_get_post_defaults( array $md_defs, $post_id, array $mod ) {

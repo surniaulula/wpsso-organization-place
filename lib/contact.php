@@ -83,7 +83,7 @@ if ( ! class_exists( 'WpssoOpmContact' ) ) {
 		/*
 		 * Get a specific contact point id.
 		 */
-		public static function get_id( $contact_id, $mod = false, $opt_key = false, $id_prefix = 'contact' ) {
+		public static function get_id( $contact_id, $mod = false, $opt_key = false ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -104,9 +104,9 @@ if ( ! class_exists( 'WpssoOpmContact' ) ) {
 
 				return false === $opt_key ? $contact_opts : null;
 
-			} elseif ( 0 === strpos( $contact_id, $id_prefix . '-' ) ) {
+			} elseif ( 0 === strpos( $contact_id, 'contact-' ) ) {
 
-				$post_id  = substr( $contact_id, strlen( $id_prefix ) + 1 );
+				$post_id  = substr( $contact_id, strlen( 'contact-' ) );
 				$post_mod = $wpsso->post->get_mod( $post_id );
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
