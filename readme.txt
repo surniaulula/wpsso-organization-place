@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.6 (2025/06/16)**
+**Version 5.0.0-dev.7 (2025/06/16)**
 
 * **New Features**
 	* Added new options in the SSO Orgs &gt; Edit Organization page:
@@ -167,7 +167,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0-dev.6.
+	* WPSSO Core v21.0.0-dev.7.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -270,7 +270,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.6 =
+= 5.0.0-dev.7 =
 
 (2025/06/16) Current development version - see changelog for details.
 
