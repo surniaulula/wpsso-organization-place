@@ -459,7 +459,7 @@ if ( ! class_exists( 'WpssoOpmRegister' ) ) {
 				'show_in_menu'        => true,
 				'show_in_admin_bar'   => true,
 				'menu_position'       => WPSSOOPM_CONTACT_MENU_ORDER,
-				'menu_icon'           => 'dashicons-location',
+				'menu_icon'           => 'dashicons-id-alt',
 				'capability_type'     => 'page',
 				'hierarchical'        => false,
 				'supports'            => $supports,
