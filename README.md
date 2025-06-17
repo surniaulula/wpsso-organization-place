@@ -22,6 +22,34 @@
 
 <!-- /about -->
 
+<p><strong>The SSO Contacts editing page includes:</strong></p>
+
+<ul>
+<li>Contact Point Name</li>
+<li>Contact Point Alternate Name</li>
+<li>Contact Point Description</li>
+<li>Contact Point Schema Type</li>
+<li>Contact Point Telephone</li>
+<li>Contact Point Fax</li>
+<li>Contact Point Email</li>
+<li>Postal Address:
+
+<ul>
+<li>Street Address</li>
+<li>P.O. Box Number</li>
+<li>City / Locality</li>
+<li>State / Province</li>
+<li>Zip / Postal Code</li>
+<li>Country</li>
+</ul></li>
+<li>Opening Hours:
+
+<ul>
+<li>Open Days / Hours</li>
+<li>Seasonal Dates</li>
+</ul></li>
+</ul>
+
 <p><strong>The SSO Organizations editing page includes:</strong></p>
 
 <ul>
@@ -40,7 +68,7 @@
 <li>Fact Checking Policy URL</li>
 <li>Feedback Policy URL</li>
 <li>Organization Awards</li>
-<li>Offer Catalogs
+<li>Offer Catalogs:
 
 <ul>
 <li>Offer Catalog Name</li>
@@ -81,21 +109,26 @@
 <li>Place Alternate Name</li>
 <li>Place Description</li>
 <li>Place Schema Type</li>
+<li>Place Telephone</li>
+<li>Place Fax</li>
 <li>Street Address</li>
 <li>P.O. Box Number</li>
 <li>City / Locality</li>
 <li>State / Province</li>
 <li>Zip / Postal Code</li>
 <li>Country</li>
-<li>Telephone</li>
+<li>Place Image ID</li>
+<li>or Place Image URL</li>
 <li>Place Latitude</li>
 <li>Place Longitude</li>
 <li>Place Altitude</li>
-<li>Place Image ID</li>
-<li>or Place Image URL</li>
 <li>Place Timezone</li>
+<li>Opening Hours:
+
+<ul>
 <li>Open Days / Hours</li>
 <li>Seasonal Dates</li>
+</ul></li>
 <li>Local Business:
 
 <ul>
