@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Schema Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-b.1\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
