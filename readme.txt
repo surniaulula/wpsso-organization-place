@@ -20,9 +20,11 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 
 <!-- about -->
 
-**Manage any number of Organizations** for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).
+**Manage Schema Contact Points** for Schema markup, including origanization contact points - for example, a customer service department or mailing address.
 
-**Manage any number of Places, Local Businesses, Venues, etc.** for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).
+**Manage Schema Organizations** for Schema markup, including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.
+
+**Manage Schema Places (ie. Local Businesses, Venues, etc.)** for Facebook Open Graph meta tags and Schema markup, including organization locations, event locations, job locations, etc.
 
 <!-- /about -->
 
@@ -62,6 +64,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Ethics Policy URL
 * Fact Checking Policy URL
 * Feedback Policy URL
+* Organization Contact Points
 * Organization Awards
 * Offer Catalogs:
 	* Offer Catalog Name
@@ -165,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-rc.1 (2025/06/18)**
+**Version 5.0.0 (2025/06/18)**
 
 * **New Features**
 	* Added a new "SSO Contacts" menu item to manage Schema Contact Points:
@@ -207,7 +210,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0-rc.1.
+	* WPSSO Core v21.0.0.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -310,7 +313,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-rc.1 =
+= 5.0.0 =
 
 (2025/06/18) Added a new "SSO Contacts" menu item to manage Schema Contact Points.
 
