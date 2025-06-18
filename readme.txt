@@ -165,7 +165,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-b.1 (2025/06/18)**
+**Version 5.0.0-rc.1 (2025/06/18)**
 
 * **New Features**
 	* Added a new "SSO Contacts" menu item to manage Schema Contact Points:
@@ -207,7 +207,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0-b.1.
+	* WPSSO Core v21.0.0-rc.1.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -310,7 +310,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-b.1 =
+= 5.0.0-rc.1 =
 
 (2025/06/18) Added a new "SSO Contacts" menu item to manage Schema Contact Points.
 
