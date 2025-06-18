@@ -16,9 +16,11 @@
 
 <!-- about -->
 
-<p><strong>Manage any number of Organizations</strong> for Schema markup (including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.).</p>
+<p><strong>Manage Schema Contact Points</strong> for Schema markup, including origanization contact points - for example, a customer service department or mailing address.</p>
 
-<p><strong>Manage any number of Places, Local Businesses, Venues, etc.</strong> for Facebook Open Graph meta tags and Schema markup (including organization locations, event locations, job locations, etc).</p>
+<p><strong>Manage Schema Organizations</strong> for Schema markup, including publishers, service providers, production companies, event organizers, event performers, job hiring organizations, etc.</p>
+
+<p><strong>Manage Schema Places (ie. Local Businesses, Venues, etc.)</strong> for Facebook Open Graph meta tags and Schema markup, including organization locations, event locations, job locations, etc.</p>
 
 <!-- /about -->
 
@@ -67,6 +69,7 @@
 <li>Ethics Policy URL</li>
 <li>Fact Checking Policy URL</li>
 <li>Feedback Policy URL</li>
+<li>Organization Contact Points</li>
 <li>Organization Awards</li>
 <li>Offer Catalogs:
 
