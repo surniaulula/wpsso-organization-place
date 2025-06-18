@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0-dev.9',	// Plugin version.
+					'version'     => '5.0.0-dev.10',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '21.0.0-dev.9',
+							'min_version'   => '21.0.0-dev.10',
 						),
 					),
 
@@ -73,19 +73,39 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			 */
 			'opt' => array(
 				'contact_md_defaults' => array(
-					'contact_name'           => '',
-					'contact_name_alt'       => '',
-					'contact_desc'           => '',
-					'contact_schema_type'    => 'contact.point',	// Contact Point Schema Type.
-					'contact_phone'          => '',			// Contact Point Telephone.
-					'contact_fax'            => '',			// Contact Point Fax.
-					'contact_email'          => '',			// Contact Point Email.
-					'contact_street_address' => '',			// Street Address.
-					'contact_po_box_number'  => '',			// P.O. Box Number.
-					'contact_city'           => '',			// City.
-					'contact_region'         => '',			// State / Province.
-					'contact_postal_code'    => '',			// Zip / Postal Code.
-					'contact_country'        => 'none',		// Country.
+					'contact_name'                     => '',
+					'contact_name_alt'                 => '',
+					'contact_desc'                     => '',
+					'contact_schema_type'              => 'contact.point',	// Contact Point Schema Type.
+					'contact_phone'                    => '',		// Contact Point Telephone.
+					'contact_fax'                      => '',		// Contact Point Fax.
+					'contact_email'                    => '',		// Contact Point Email.
+					'contact_street_address'           => '',		// Street Address.
+					'contact_po_box_number'            => '',		// P.O. Box Number.
+					'contact_city'                     => '',		// City.
+					'contact_region'                   => '',		// State / Province.
+					'contact_postal_code'              => '',		// Zip / Postal Code.
+					'contact_country'                  => 'none',		// Country.
+					'contact_day_sunday_open'          => 'none',
+					'contact_day_sunday_close'         => 'none',
+					'contact_day_monday_open'          => 'none',
+					'contact_day_monday_close'         => 'none',
+					'contact_day_tuesday_open'         => 'none',
+					'contact_day_tuesday_close'        => 'none',
+					'contact_day_wednesday_open'       => 'none',
+					'contact_day_wednesday_close'      => 'none',
+					'contact_day_thursday_open'        => 'none',
+					'contact_day_thursday_close'       => 'none',
+					'contact_day_friday_open'          => 'none',
+					'contact_day_friday_close'         => 'none',
+					'contact_day_saturday_open'        => 'none',
+					'contact_day_saturday_close'       => 'none',
+					'contact_day_publicholidays_open'  => 'none',
+					'contact_day_publicholidays_close' => 'none',
+					'contact_midday_close'             => 'none',
+					'contact_midday_open'              => 'none',
+					'contact_season_from_date'         => '',
+					'contact_season_to_date'           => '',
 				),
 				'org_md_defaults' => array(
 					'org_name'                   => '',		// Organization Name.

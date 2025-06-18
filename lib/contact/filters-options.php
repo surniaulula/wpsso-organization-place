@@ -232,12 +232,34 @@ if ( ! class_exists( 'WpssoOpmContactFiltersOptions' ) ) {
 				case 'contact_name':
 				case 'contact_name_alt':
 				case 'contact_desc':
+				case 'contact_phone':
+				case 'contact_fax':
+				case 'contact_email':
+				case 'contact_street_address':
+				case 'contact_city':
+				case 'contact_state':
+				case 'contact_postal_code':
+				case 'contact_zipcode':
+				case 'contact_price_range':
 
 					return 'ok_blank';
 
+				case 'contact_country':
 				case 'contact_schema_type':
 
 					return 'not_blank';
+
+				case 'contact_po_box_number':
+
+					return 'blank_num';
+
+				case ( preg_match( '/^contact_(day_[a-z]+|midday)_(open|close)$/', $base_key ) ? true : false ):
+
+					return 'time';	// Empty or 'none' string, or time as hh:mm or hh:mm:ss.
+
+				case ( preg_match( '/^contact_season_(from|to)_date$/', $base_key ) ? true : false ):
+
+					return 'date';	// Empty or 'none' string, or date as yyyy-mm-dd.
 
 				case ( 0 === strpos( $base_key, 'contact_is_' ) ? true : false ):
 

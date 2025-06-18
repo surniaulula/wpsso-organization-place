@@ -301,20 +301,37 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOptions' ) ) {
 
 			switch ( $base_key ) {
 
-				case ( preg_match( '/^place_(name|name_alt|desc|phone|street_address|city|state|postal_code|zipcode)$/', $base_key ) ? true : false ):
-				case ( preg_match( '/^place_(phone|price_range|cuisine)$/', $base_key ) ? true : false ):
+				case 'place_name':
+				case 'place_name_alt':
+				case 'place_desc':
+				case 'place_phone':
+				case 'place_fax':
+				case 'place_email':
+				case 'place_street_address':
+				case 'place_city':
+				case 'place_state':
+				case 'place_postal_code':
+				case 'place_zipcode':
+				case 'place_price_range':
+				case 'place_cuisine':
 
 					return 'ok_blank';
 
-				case ( preg_match( '/^place_(country|schema_type)$/', $base_key ) ? true : false ):
+				case 'place_country':
+				case 'place_schema_type':
 
 					return 'not_blank';
 
-				case ( preg_match( '/^place_(latitude|longitude|altitude|service_radius|po_box_number)$/', $base_key ) ? true : false ):
+				case 'place_latitude':
+				case 'place_longitude':
+				case 'place_altitude':
+				case 'place_service_radius':
+				case 'place_po_box_number':
 
 					return 'blank_num';
 
-				case ( preg_match( '/^place_(currencies_accepted|payment_accepted)$/', $base_key ) ? true : false ):
+				case 'place_currencies_accepted':
+				case 'place_payment_accepted':
 
 					return 'csv_blank';
 

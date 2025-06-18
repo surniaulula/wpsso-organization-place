@@ -59,22 +59,22 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 			$schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 
 			$table_rows[ 'contact_name' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Name', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Name', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_name' ) .
 				'<td>' . $form->get_input( 'contact_name', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'contact_name_alt' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Alt. Name', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Alternate Name', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_name_alt' ) .
 				'<td>' . $form->get_input( 'contact_name_alt', $css_class = 'wide' ) . '</td>';
 
 			$table_rows[ 'contact_desc' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Description', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Description', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_desc' ) .
 				'<td>' . $form->get_textarea( 'contact_desc' ) . '</td>';
 
 			$table_rows[ 'contact_schema_type' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Schema Type', 'option label', 'wpsso-contactanization-place' ),
+				$form->get_th_html( _x( 'Contact Schema Type', 'option label', 'wpsso-contactanization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_schema_type' ) .
 				'<td>' . $form->get_select( 'contact_schema_type', $contact_types, $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
@@ -87,17 +87,17 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 					) . '</td>';
 
 			$table_rows[ 'contact_phone' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Telephone', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Telephone', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_phone' ) .
 				'<td>' . $form->get_input( 'contact_phone' ) . '</td>';
 
 			$table_rows[ 'contact_fax' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Fax', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Fax', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_fax' ) .
 				'<td>' . $form->get_input( 'contact_fax' ) . '</td>';
 
 			$table_rows[ 'contact_email' ] = $tr_hide_contact_html .
-				$form->get_th_html( _x( 'Contact Point Email', 'option label', 'wpsso-organization-place' ),
+				$form->get_th_html( _x( 'Contact Email', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_email' ) .
 				'<td>' . $form->get_input( 'contact_email' ) . '</td>';
 

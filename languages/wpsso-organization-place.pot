@@ -2,7 +2,8 @@
 # This file is distributed under the same license as the WPSSO Schema Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-dev.9\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0-"
+"dev.10\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -42,37 +43,37 @@ msgstr ""
 
 #: lib/contact/filters-edit.php:62
 msgctxt "option label"
-msgid "Contact Point Name"
+msgid "Contact Name"
 msgstr ""
 
 #: lib/contact/filters-edit.php:67
 msgctxt "option label"
-msgid "Contact Point Alt. Name"
+msgid "Contact Alternate Name"
 msgstr ""
 
 #: lib/contact/filters-edit.php:72
 msgctxt "option label"
-msgid "Contact Point Description"
+msgid "Contact Description"
 msgstr ""
 
 #: lib/contact/filters-edit.php:77
 msgctxt "option label"
-msgid "Contact Point Schema Type"
+msgid "Contact Schema Type"
 msgstr ""
 
 #: lib/contact/filters-edit.php:90
 msgctxt "option label"
-msgid "Contact Point Telephone"
+msgid "Contact Telephone"
 msgstr ""
 
 #: lib/contact/filters-edit.php:95
 msgctxt "option label"
-msgid "Contact Point Fax"
+msgid "Contact Fax"
 msgstr ""
 
 #: lib/contact/filters-edit.php:100
 msgctxt "option label"
-msgid "Contact Point Email"
+msgid "Contact Email"
 msgstr ""
 
 #: lib/contact/filters-edit.php:109

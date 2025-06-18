@@ -211,7 +211,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 			$contact_names           = $wpsso->util->get_form_cache( 'contact_names', $add_none = true );
 			$is_defaults             = array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ], $wpsso->cf[ 'form' ][ 'place_is_defaults' ] );
-			$contacts_max            = SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACTS_MAX', 5 );
+			$contacts_max            = SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACT_POINTS_MAX', 5 );
 			$awards_max              = SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 );
 			$offer_catalogs_max      = SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 5 );
 			$hide_news_media_class   = $wpsso->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' );
