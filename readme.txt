@@ -28,13 +28,13 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 
 **The SSO Contacts editing page includes:**
 
-* Contact Point Name
-* Contact Point Alternate Name
-* Contact Point Description
-* Contact Point Schema Type
-* Contact Point Telephone
-* Contact Point Fax
-* Contact Point Email
+* Contact Name
+* Contact Alternate Name
+* Contact Description
+* Contact Schema Type
+* Contact Telephone
+* Contact Fax
+* Contact Email
 * Postal Address:
 	* Street Address
 	* P.O. Box Number
@@ -83,7 +83,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 	* Soundcloud Business Page URL
 	* TikTok Business Page URL
 	* Tumblr Business Page URL
-	* Wikipedia Organization Page URL
+	* Wikipedia Org. Page URL
 	* X (Twitter) Business @username
 	* YouTube Business Channel URL
 
@@ -165,17 +165,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.9 (2025/06/17)**
+**Version 5.0.0-dev.10 (2025/06/17)**
 
 * **New Features**
 	* Added a new "SSO Contacts" menu item to manage Schema Contact Points:
-		* Contact Point Name
-		* Contact Point Alt. Name	
-		* Contact Point Description
-		* Contact Point Schema Type
-		* Contact Point Telephone
-		* Contact Point Fax
-		* Contact Point Email
+		* Contact Name
+		* Contact Alt. Name	
+		* Contact Description
+		* Contact Schema Type
+		* Contact Telephone
+		* Contact Fax
+		* Contact Email
 		* Postal Address:
 			* Street Address
 			* P.O. Box Number
@@ -207,7 +207,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0-dev.9.
+	* WPSSO Core v21.0.0-dev.10.
 
 **Version 4.0.0 (2025/06/14)**
 
@@ -310,7 +310,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.9 =
+= 5.0.0-dev.10 =
 
 (2025/06/17) Current development version - see changelog for details.
 
