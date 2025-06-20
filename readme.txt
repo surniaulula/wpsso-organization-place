@@ -168,6 +168,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.1.0-dev.1 (2025/06/20)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Refactored the `WpssoOpmOrg::add_mb_org_rows()` method to optimize select arrays.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v21.0.0.
+
 **Version 5.0.0 (2025/06/18)**
 
 * **New Features**
@@ -312,6 +327,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 5.1.0-dev.1 =
+
+(2025/06/20) Refactored the `WpssoOpmOrg::add_mb_org_rows()` method to optimize select arrays.
 
 = 5.0.0 =
 
