@@ -51,9 +51,16 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
-			$place_names      = $this->p->util->get_form_cache( 'place_names', $add_none = true );
-			$strict_org_types = $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false );	// Use strict for Google.
-			$org_type_msg     = $this->p->msgs->get( 'info-meta-org-schema-type' );
+			$args = array(
+				'select' => array(
+					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
+					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
+					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
+					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
+				),
+				'tr_class_org' => '',
+				'tr_class_org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+			);
 
 			$table_rows[ 'org_name' ] = '' .
 				$form->get_th_html( _x( 'Organization Name', 'option label', 'wpsso-organization-place' ),
@@ -73,12 +80,12 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_place_id' ] = '' .
 				$form->get_th_html( _x( 'Organization Location', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_place_id' ) .
-				'<td>' . $form->get_select( 'org_place_id', $place_names, $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
+				'<td>' . $form->get_select( 'org_place_id', $args[ 'select' ][ 'place' ], $css_class = 'wide', $css_id = '', $is_assoc = true ) . '</td>';
 
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_schema_type' ) .
-				'<td>' . $form->get_select( 'org_schema_type', $strict_org_types, $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'org_schema_type', $args[ 'select' ][ 'org_types' ], $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
 						$event_args = array(
 							'json_var' => 'schema_org_types',
@@ -86,9 +93,9 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 							'is_transl' => true,					// No label translation required.
 							'is_sorted' => true,					// No label sorting required.
 						)
-					) . $org_type_msg . '</td>';
+					) . $this->p->msgs->get( 'info-meta-org-schema-type' ) . '</td>';
 
-			WpssoOpmOrg::add_mb_org_rows( $table_rows, $form, $head_info, $mod );
+			WpssoOpmOrg::add_mb_org_rows( $table_rows, $form, $head_info, $mod, $args );
 
 			return $table_rows;
 		}

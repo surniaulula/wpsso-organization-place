@@ -85,18 +85,26 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
-			$place_types               = $this->p->util->get_form_cache( 'place_types_select', $add_none = false );
-			$business_weekdays         = $this->p->cf[ 'form' ][ 'weekdays' ];
+			$args = array(
+				'select' => array(
+					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
+					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
+					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
+					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
+				),
+				'tr_class_org' => ( $is_custom ? 'hide_schema_place_id ' : '' ) .
+					$this->p->schema->get_children_css_class( 'organization', 'hide_place_schema_type' ),
+				'tr_class_org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+			);
+
 			$hide_local_business_class = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
 			$hide_food_establish_class = $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' );
-			$hide_org_class            = $this->p->schema->get_children_css_class( 'organization', 'hide_place_schema_type' );
 
 			if ( $is_custom ) {
 
 				$tr_hide_place_html          = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
 				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
 				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $hide_food_establish_class . '" style="display:none;">';
-				$tr_hide_org_html            = '<tr class="hide_schema_place_id ' . $hide_org_class . '" style="display:none;">';
 				$schema_type_event_names     = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 
 			} else {
@@ -104,7 +112,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$tr_hide_place_html          = '';
 				$tr_hide_local_business_html = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
 				$tr_hide_food_establish_html = '<tr class="' . $hide_food_establish_class . '" style="display:none;">';
-				$tr_hide_org_html            = '<tr class="' . $hide_org_class . '" style="display:none;">';
 				$schema_type_event_names     = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
 
@@ -129,7 +136,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$table_rows[ 'place_schema_type' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Place Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_schema_type' ) .
-				'<td>' . $form->get_select( 'place_schema_type', $place_types, $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'place_schema_type', $args[ 'select' ][ 'place_types' ], $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, $schema_type_event_names,
 						$event_args = array(
 							'json_var' => 'schema_place_types',
@@ -147,7 +154,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					'<td>' . $form->get_checklist( 'place_is', $this->p->cf[ 'form' ][ 'place_is_defaults' ] ) . '</td>';
 			}
 
-			WpssoOpmOrg::add_mb_org_rows( $table_rows, $form, $head_info, $mod, $tr_hide_org_html );
+			WpssoOpmOrg::add_mb_org_rows( $table_rows, $form, $head_info, $mod, $args );
 
 			/*
 			 * Place section.
@@ -245,7 +252,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 			$open_close_html = '<table class="business_hours">';
 
-			foreach ( $business_weekdays as $day_name => $day_label ) {
+			foreach ( $this->p->cf[ 'form' ][ 'weekdays' ] as $day_name => $day_label ) {
 
 				$day_opt_pre   = 'place_day_' . $day_name;
 				$open_opt_key  = $day_opt_pre . '_open';

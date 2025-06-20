@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.0.0',	// Plugin version.
+					'version'     => '5.1.0-dev.1',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
