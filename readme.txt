@@ -168,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-dev.1 (2025/06/20)**
+**Version 5.1.0-rc.1 (2025/06/20)**
 
 * **New Features**
 	* None.
@@ -328,7 +328,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-dev.1 =
+= 5.1.0-rc.1 =
 
 (2025/06/20) Refactored the `WpssoOpmOrg::add_mb_org_rows()` method to optimize select arrays.
 
