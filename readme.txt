@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.4.33
 Requires At Least: 6.0
-Tested Up To: 6.9
+Tested Up To: 6.9.2
 Stable Tag: 5.1.0
 
 Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.
