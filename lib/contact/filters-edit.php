@@ -187,7 +187,7 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 			$table_rows[ 'contact_season_dates' ] = $tr_hide_contact_html .
 				$form->get_th_html( _x( 'Seasonal Dates', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_season_dates' ) .
-				'<td><p style="margin-bottom:0;">' .
+				'<td><p style="margin:0;">' .
 				__( 'Open from', 'wpsso-organization-place' ) . ' ' .	// Keep it short for translations.
 				$form->get_input_date( 'contact_season_from_date' ) . ' ' .
 				__( 'until', 'wpsso-organization-place' ) . ' ' .	// Keep it short for translations.
