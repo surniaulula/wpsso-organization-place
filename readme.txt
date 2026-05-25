@@ -168,12 +168,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.1-dev.1 (2026/05/24)**
+**Version 5.2.0-dev.2 (2026/05/25)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added information about open/close hours under the "Opening Hours Information" section.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -343,9 +343,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.1-dev.1 =
+= 5.2.0-dev.2 =
 
-(2026/05/24) None.
+(2026/05/25) Added information about open/close hours under the "Opening Hours Information" section.
 
 = 5.1.0 =
 
