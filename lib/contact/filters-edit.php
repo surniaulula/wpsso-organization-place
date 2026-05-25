@@ -147,7 +147,9 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 			$table_rows[ 'subsection_opening_hours' ] = $tr_hide_contact_html .
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'Opening Hours Information', 'metabox title', 'wpsso-organization-place' ) .
-				'</h5></td>';
+				'</h5><p class="status-msg centered">' .
+				__( 'If the value for the closes property is less than the value for the opens property then the hour range is assumed to span over the next day.', 'wpsso-organization-place' ) .
+				'</p></td>';
 
 			$open_close_html = '<table class="business_hours">';
 

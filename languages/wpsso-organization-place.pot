@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Schema Organization and Place Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.1.0\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.1.1-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-"
 "organization-place\n"
 "POT-Creation-Date: 2026-MO-DA HO:MI+ZONE\n"
@@ -115,45 +115,51 @@ msgctxt "metabox title"
 msgid "Opening Hours Information"
 msgstr ""
 
-#: lib/contact/filters-edit.php:165 lib/place/filters-edit.php:266
-msgid "Opens at"
+#: lib/contact/filters-edit.php:151 lib/place/filters-edit.php:252
+msgid ""
+"If the value for the closes property is less than the value for the opens "
+"property then the hour range is assumed to span over the next day."
 msgstr ""
 
 #: lib/contact/filters-edit.php:167 lib/place/filters-edit.php:268
+msgid "Opens at"
+msgstr ""
+
+#: lib/contact/filters-edit.php:169 lib/place/filters-edit.php:270
 msgid "and closes at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:173 lib/place/filters-edit.php:274
+#: lib/contact/filters-edit.php:175 lib/place/filters-edit.php:276
 msgid "Every Midday"
 msgstr ""
 
-#: lib/contact/filters-edit.php:174 lib/place/filters-edit.php:275
+#: lib/contact/filters-edit.php:176 lib/place/filters-edit.php:277
 msgid "Closes at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:176 lib/place/filters-edit.php:277
+#: lib/contact/filters-edit.php:178 lib/place/filters-edit.php:279
 msgid "and re-opens at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:183 lib/place/filters-edit.php:284
+#: lib/contact/filters-edit.php:185 lib/place/filters-edit.php:286
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr ""
 
-#: lib/contact/filters-edit.php:188 lib/place/filters-edit.php:289
+#: lib/contact/filters-edit.php:190 lib/place/filters-edit.php:291
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr ""
 
-#: lib/contact/filters-edit.php:191 lib/place/filters-edit.php:292
+#: lib/contact/filters-edit.php:193 lib/place/filters-edit.php:294
 msgid "Open from"
 msgstr ""
 
-#: lib/contact/filters-edit.php:193 lib/place/filters-edit.php:294
+#: lib/contact/filters-edit.php:195 lib/place/filters-edit.php:296
 msgid "until"
 msgstr ""
 
-#: lib/contact/filters-edit.php:195 lib/place/filters-edit.php:296
+#: lib/contact/filters-edit.php:197 lib/place/filters-edit.php:298
 msgid "inclusively"
 msgstr ""
 
@@ -502,57 +508,57 @@ msgctxt "option label"
 msgid "Place Timezone"
 msgstr ""
 
-#: lib/place/filters-edit.php:304
+#: lib/place/filters-edit.php:306
 msgctxt "metabox title"
 msgid "Local Business Information"
 msgstr ""
 
-#: lib/place/filters-edit.php:308
+#: lib/place/filters-edit.php:310
 msgctxt "option label"
 msgid "Service Radius"
 msgstr ""
 
-#: lib/place/filters-edit.php:311
+#: lib/place/filters-edit.php:313
 msgctxt "option comment"
 msgid "meters from coordinates"
 msgstr ""
 
-#: lib/place/filters-edit.php:314
+#: lib/place/filters-edit.php:316
 msgctxt "option label"
 msgid "Currencies Accepted"
 msgstr ""
 
-#: lib/place/filters-edit.php:319
+#: lib/place/filters-edit.php:321
 msgctxt "option label"
 msgid "Payment Accepted"
 msgstr ""
 
-#: lib/place/filters-edit.php:324
+#: lib/place/filters-edit.php:326
 msgctxt "option label"
 msgid "Price Range"
 msgstr ""
 
-#: lib/place/filters-edit.php:333
+#: lib/place/filters-edit.php:335
 msgctxt "metabox title"
 msgid "Food Establishment Information"
 msgstr ""
 
-#: lib/place/filters-edit.php:337
+#: lib/place/filters-edit.php:339
 msgctxt "option label"
 msgid "Accepts Reservations"
 msgstr ""
 
-#: lib/place/filters-edit.php:342
+#: lib/place/filters-edit.php:344
 msgctxt "option label"
 msgid "Serves Cuisine"
 msgstr ""
 
-#: lib/place/filters-edit.php:347
+#: lib/place/filters-edit.php:349
 msgctxt "option label"
 msgid "Food Menu URL"
 msgstr ""
 
-#: lib/place/filters-edit.php:352
+#: lib/place/filters-edit.php:354
 msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr ""
