@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.0.0\n"
+"Project-Id-Version: WPSSO Schema Organization and Place Manager 5.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-organization-place\n"
-"POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-06-18 12:25-0700\n"
+"POT-Creation-Date: 2026-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-05-25 13:46-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:235
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -36,120 +36,124 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: lib/contact/filters-edit.php:62
+#: lib/contact/filters-edit.php:61
 msgctxt "option label"
 msgid "Contact Name"
 msgstr "Nom du contact"
 
-#: lib/contact/filters-edit.php:67
+#: lib/contact/filters-edit.php:66
 msgctxt "option label"
 msgid "Contact Alternate Name"
 msgstr "Autre nom du contact"
 
-#: lib/contact/filters-edit.php:72
+#: lib/contact/filters-edit.php:71
 msgctxt "option label"
 msgid "Contact Description"
 msgstr "Description du contact"
 
-#: lib/contact/filters-edit.php:77
+#: lib/contact/filters-edit.php:76
 msgctxt "option label"
 msgid "Contact Schema Type"
 msgstr "Type de Schéma du contact"
 
-#: lib/contact/filters-edit.php:90
+#: lib/contact/filters-edit.php:89
 msgctxt "option label"
 msgid "Contact Telephone"
 msgstr "Téléphone du contact"
 
-#: lib/contact/filters-edit.php:95
+#: lib/contact/filters-edit.php:94
 msgctxt "option label"
 msgid "Contact Fax"
 msgstr "Fax du contact"
 
-#: lib/contact/filters-edit.php:100
+#: lib/contact/filters-edit.php:99
 msgctxt "option label"
 msgid "Contact Email"
 msgstr "Courriel du contact"
 
-#: lib/contact/filters-edit.php:109
+#: lib/contact/filters-edit.php:108
 msgctxt "metabox title"
 msgid "Postal Address Information"
 msgstr "Informations sur l'adresse postale"
 
-#: lib/contact/filters-edit.php:113 lib/place/filters-edit.php:171
+#: lib/contact/filters-edit.php:112 lib/place/filters-edit.php:178
 msgctxt "option label"
 msgid "Street Address"
 msgstr "Adresse de rue"
 
-#: lib/contact/filters-edit.php:118 lib/place/filters-edit.php:176
+#: lib/contact/filters-edit.php:117 lib/place/filters-edit.php:183
 msgctxt "option label"
 msgid "P.O. Box Number"
 msgstr "Num. boîte postale"
 
-#: lib/contact/filters-edit.php:123 lib/place/filters-edit.php:181
+#: lib/contact/filters-edit.php:122 lib/place/filters-edit.php:188
 msgctxt "option label"
 msgid "City / Locality"
 msgstr "Ville / localité"
 
-#: lib/contact/filters-edit.php:128 lib/place/filters-edit.php:186
+#: lib/contact/filters-edit.php:127 lib/place/filters-edit.php:193
 msgctxt "option label"
 msgid "State / Province"
 msgstr "État / Province"
 
-#: lib/contact/filters-edit.php:133 lib/place/filters-edit.php:191
+#: lib/contact/filters-edit.php:132 lib/place/filters-edit.php:198
 msgctxt "option label"
 msgid "Zip / Postal Code"
 msgstr "Zip / code postal"
 
-#: lib/contact/filters-edit.php:138 lib/place/filters-edit.php:196
+#: lib/contact/filters-edit.php:137 lib/place/filters-edit.php:203
 msgctxt "option label"
 msgid "Country"
 msgstr "Pays"
 
-#: lib/contact/filters-edit.php:149 lib/place/filters-edit.php:243
+#: lib/contact/filters-edit.php:148 lib/place/filters-edit.php:250
 msgctxt "metabox title"
 msgid "Opening Hours Information"
 msgstr "Informations sur les heures d’ouverture"
 
-#: lib/contact/filters-edit.php:165 lib/place/filters-edit.php:259
+#: lib/contact/filters-edit.php:150 lib/place/filters-edit.php:252
+msgid "If the \"closes at\" time is less than the \"opens at\" time, then the hour range is assumed to span over to the next day."
+msgstr "Si l'heure de fermeture est inférieure à l'heure d'ouverture, la plage horaire est supposée s'étendre jusqu'au jour suivant."
+
+#: lib/contact/filters-edit.php:167 lib/place/filters-edit.php:269
 msgid "Opens at"
 msgstr "Ouvre à"
 
-#: lib/contact/filters-edit.php:167 lib/place/filters-edit.php:261
+#: lib/contact/filters-edit.php:169 lib/place/filters-edit.php:271
 msgid "and closes at"
 msgstr "et ferme à"
 
-#: lib/contact/filters-edit.php:173 lib/place/filters-edit.php:267
+#: lib/contact/filters-edit.php:175 lib/place/filters-edit.php:277
 msgid "Every Midday"
 msgstr "Chaque mi-journée"
 
-#: lib/contact/filters-edit.php:174 lib/place/filters-edit.php:268
+#: lib/contact/filters-edit.php:176 lib/place/filters-edit.php:278
 msgid "Closes at"
 msgstr "Ferme à"
 
-#: lib/contact/filters-edit.php:176 lib/place/filters-edit.php:270
+#: lib/contact/filters-edit.php:178 lib/place/filters-edit.php:280
 msgid "and re-opens at"
 msgstr "et rouvre à"
 
-#: lib/contact/filters-edit.php:183 lib/place/filters-edit.php:277
+#: lib/contact/filters-edit.php:185 lib/place/filters-edit.php:287
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr "Jours / heures d'ouverture"
 
-#: lib/contact/filters-edit.php:188 lib/place/filters-edit.php:282
+#: lib/contact/filters-edit.php:190 lib/place/filters-edit.php:292
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr "Dates saisonnières"
 
-#: lib/contact/filters-edit.php:191 lib/place/filters-edit.php:285
+#: lib/contact/filters-edit.php:193 lib/place/filters-edit.php:295
 msgid "Open from"
 msgstr "Ouvert de"
 
-#: lib/contact/filters-edit.php:193 lib/place/filters-edit.php:287
+#: lib/contact/filters-edit.php:195 lib/place/filters-edit.php:297
 msgid "until"
 msgstr "jusqu’à"
 
-#: lib/contact/filters-edit.php:195 lib/place/filters-edit.php:289
+#: lib/contact/filters-edit.php:197 lib/place/filters-edit.php:299
 msgid "inclusively"
 msgstr "inclusivement"
 
@@ -198,27 +202,27 @@ msgctxt "metabox title"
 msgid "Place"
 msgstr "Endroit"
 
-#: lib/org/filters-edit.php:59
+#: lib/org/filters-edit.php:66
 msgctxt "option label"
 msgid "Organization Name"
 msgstr "Nom de l'organisation"
 
-#: lib/org/filters-edit.php:64
+#: lib/org/filters-edit.php:71
 msgctxt "option label"
 msgid "Organization Alternate Name"
 msgstr "Autre nom de l'organisation"
 
-#: lib/org/filters-edit.php:69
+#: lib/org/filters-edit.php:76
 msgctxt "option label"
 msgid "Organization Description"
 msgstr "Description de l'organisation"
 
-#: lib/org/filters-edit.php:74
+#: lib/org/filters-edit.php:81
 msgctxt "option label"
 msgid "Organization Location"
 msgstr "Emplacement de l'organisation"
 
-#: lib/org/filters-edit.php:79
+#: lib/org/filters-edit.php:86
 msgctxt "option label"
 msgid "Organization Schema Type"
 msgstr "Type de Schéma d'organisation"
@@ -244,163 +248,163 @@ msgstr "L'organisation ID #%s n'existe pas."
 msgid "Please select a different organization."
 msgstr "Veuillez sélectionner une autre organisation."
 
-#: lib/org.php:221
+#: lib/org.php:217
 msgctxt "option label"
 msgid "Organization Is Default"
 msgstr "L'organisation est défaut"
 
-#: lib/org.php:230
+#: lib/org.php:227
 msgctxt "metabox title"
 msgid "Organization Information"
 msgstr "Informations d'organisation"
 
-#: lib/org.php:234
+#: lib/org.php:231
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr "URL du site de l'organisation"
 
-#: lib/org.php:240
+#: lib/org.php:237
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr "URL logo de organisation"
 
-#: lib/org.php:246
+#: lib/org.php:243
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr "URL bannière d'organisation"
 
-#: lib/org.php:251
+#: lib/org.php:248
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr "URL des principes de publication"
 
-#: lib/org.php:256
+#: lib/org.php:253
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr "URL politique de correction"
 
-#: lib/org.php:261
+#: lib/org.php:258
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr "URL politique de diversité"
 
-#: lib/org.php:266
+#: lib/org.php:263
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr "URL politique d'éthique"
 
-#: lib/org.php:271
+#: lib/org.php:268
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr "URL politique de vérification des faits"
 
-#: lib/org.php:276
+#: lib/org.php:273
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr "URL politique de commentaires"
 
-#: lib/org.php:281
+#: lib/org.php:278
 msgctxt "option label"
 msgid "Organization Contact Points"
 msgstr "Points de contact de l'organisation"
 
-#: lib/org.php:287
+#: lib/org.php:284
 msgctxt "option label"
 msgid "Organization Awards"
 msgstr "Prix ​​de l'organisation"
 
-#: lib/org.php:292
+#: lib/org.php:290
 msgctxt "option label"
 msgid "Offer Catalogs"
 msgstr "Catalogues d’offres"
 
-#: lib/org.php:296
+#: lib/org.php:294
 msgctxt "option label"
 msgid "Offer Catalog Name"
 msgstr "Nom du catalogue d'offres"
 
-#: lib/org.php:301
+#: lib/org.php:299
 msgctxt "option label"
 msgid "Offer Catalog Description"
 msgstr "Description du catalogue d'offres"
 
-#: lib/org.php:306
+#: lib/org.php:304
 msgctxt "option label"
 msgid "Offer Catalog URL"
 msgstr "URL du catalogue d'offres"
 
-#: lib/org.php:317
+#: lib/org.php:316
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr "Informations d'organisation des médias d'information"
 
-#: lib/org.php:321
+#: lib/org.php:320
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr "URL page d'en-tête administratif"
 
-#: lib/org.php:326
+#: lib/org.php:325
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr "URL politique de priorités de couverture"
 
-#: lib/org.php:331
+#: lib/org.php:330
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr "URL politique de non-signature"
 
-#: lib/org.php:336
+#: lib/org.php:335
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr "URL politique de sources sans nom"
 
-#: lib/org.php:345
+#: lib/org.php:344
 msgctxt "metabox title"
 msgid "Organization Knowledge Graph"
 msgstr "Knowledge Graph de l'organisation"
 
 #. translators: %s is the organization name.
-#: lib/org.php:391
+#: lib/org.php:390
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr "L'URL de l'image logo de l'organisation \"%s\" est manquante et obligatoire."
 
 #. translators: %s is the organization name.
-#: lib/org.php:399
+#: lib/org.php:398
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr "L'URL de l'image bannière de l'organisation \"%s\" est manquante et obligatoire."
 
 #. translators: %s is the organization name.
-#: lib/org.php:422
+#: lib/org.php:421
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr "Les dimensions de l'image logo de l'organisation \"%s\" ne peuvent pas être déterminées."
 
 #. translators: %s is the image URL.
-#: lib/org.php:426 lib/org.php:457
+#: lib/org.php:425 lib/org.php:456
 msgid "Please make sure this site can access %s using the PHP getimagesize() function."
 msgstr "Assurez-vous que ce site peut accéder à %s en utilisant la fonction PHP getimagesize()."
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:434
+#: lib/org.php:433
 msgid "The \"%1$s\" organization logo image dimensions are %2$s and must be greater than %3$s."
 msgstr "Les dimensions de l'image logo de l'organisation \"%1$s\" sont %2$s et doivent être supérieures à %3$s."
 
 #. translators: %s is the image URL.
-#: lib/org.php:438
+#: lib/org.php:437
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr "Veuillez corriger l'image logo %s ou sélectionner une autre image logo."
 
 #. translators: %s is the organization name.
-#: lib/org.php:453
+#: lib/org.php:452
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr "Les dimensions de l'image bannière de l'organisation \"%s\" ne peuvent pas être déterminées."
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:465
+#: lib/org.php:464
 msgid "The \"%1$s\" organization banner image dimensions are %2$s and must be exactly %3$s."
 msgstr "Les dimensions de l'image bannière de l'organisation \"%1$s\" sont %2$s et doivent être exactement %3$s."
 
 #. translators: %s is the image URL.
-#: lib/org.php:469
+#: lib/org.php:468
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr "Veuillez corriger l'image bannière %s ou sélectionner une autre image bannière."
 
@@ -409,137 +413,137 @@ msgctxt "option value"
 msgid "[Custom Place]"
 msgstr "[Endroit personnalisé]"
 
-#: lib/place/filters-edit.php:114
+#: lib/place/filters-edit.php:121
 msgctxt "option label"
 msgid "Place Name"
 msgstr "Nom de l'endroit"
 
-#: lib/place/filters-edit.php:119
+#: lib/place/filters-edit.php:126
 msgctxt "option label"
 msgid "Place Alternate Name"
 msgstr "Autre nom de l'endroit"
 
-#: lib/place/filters-edit.php:124
+#: lib/place/filters-edit.php:131
 msgctxt "option label"
 msgid "Place Description"
 msgstr "Description de l'endroit"
 
-#: lib/place/filters-edit.php:130
+#: lib/place/filters-edit.php:137
 msgctxt "option label"
 msgid "Place Schema Type"
 msgstr "Type de Schéma d'endroit"
 
-#: lib/place/filters-edit.php:145
+#: lib/place/filters-edit.php:152
 msgctxt "option label"
 msgid "Place Is Default"
 msgstr "L'endroit est défaut"
 
-#: lib/place/filters-edit.php:157
+#: lib/place/filters-edit.php:164
 msgctxt "metabox title"
 msgid "Place Information"
 msgstr "Informations sur l'endroit"
 
-#: lib/place/filters-edit.php:161
+#: lib/place/filters-edit.php:168
 msgctxt "option label"
 msgid "Place Telephone"
 msgstr "Téléphone de l'endroit"
 
-#: lib/place/filters-edit.php:166
+#: lib/place/filters-edit.php:173
 msgctxt "option label"
 msgid "Place Fax"
 msgstr "Fax de l'endroit"
 
-#: lib/place/filters-edit.php:203
+#: lib/place/filters-edit.php:210
 msgctxt "option label"
 msgid "Place Image ID"
 msgstr "ID d'image de l'endroit"
 
-#: lib/place/filters-edit.php:208
+#: lib/place/filters-edit.php:215
 msgctxt "option label"
 msgid "or Place Image URL"
 msgstr "ou URL d'image de l'endroit"
 
-#: lib/place/filters-edit.php:214
+#: lib/place/filters-edit.php:221
 msgctxt "option label"
 msgid "Place Latitude"
 msgstr "Latitude de l'endroit"
 
-#: lib/place/filters-edit.php:217 lib/place/filters-edit.php:223
+#: lib/place/filters-edit.php:224 lib/place/filters-edit.php:230
 msgctxt "option comment"
 msgid "decimal degrees"
 msgstr "degrés décimaux"
 
-#: lib/place/filters-edit.php:220
+#: lib/place/filters-edit.php:227
 msgctxt "option label"
 msgid "Place Longitude"
 msgstr "Longitude de l'endroit"
 
-#: lib/place/filters-edit.php:226
+#: lib/place/filters-edit.php:233
 msgctxt "option label"
 msgid "Place Altitude"
 msgstr "Altitude de l'endroit"
 
-#: lib/place/filters-edit.php:229
+#: lib/place/filters-edit.php:236
 msgctxt "option comment"
 msgid "meters above sea level"
 msgstr "mètres au-dessus du niveau de mer"
 
-#: lib/place/filters-edit.php:232
+#: lib/place/filters-edit.php:239
 msgctxt "option label"
 msgid "Place Timezone"
 msgstr "Fuseau horaire de l'endroit"
 
-#: lib/place/filters-edit.php:297
+#: lib/place/filters-edit.php:307
 msgctxt "metabox title"
 msgid "Local Business Information"
 msgstr "Informations d'entreprise locale"
 
-#: lib/place/filters-edit.php:301
+#: lib/place/filters-edit.php:311
 msgctxt "option label"
 msgid "Service Radius"
 msgstr "Rayon de service"
 
-#: lib/place/filters-edit.php:304
+#: lib/place/filters-edit.php:314
 msgctxt "option comment"
 msgid "meters from coordinates"
 msgstr "mètres des coordonnées"
 
-#: lib/place/filters-edit.php:307
+#: lib/place/filters-edit.php:317
 msgctxt "option label"
 msgid "Currencies Accepted"
 msgstr "Devises acceptées"
 
-#: lib/place/filters-edit.php:312
+#: lib/place/filters-edit.php:322
 msgctxt "option label"
 msgid "Payment Accepted"
 msgstr "Paiement accepté"
 
-#: lib/place/filters-edit.php:317
+#: lib/place/filters-edit.php:327
 msgctxt "option label"
 msgid "Price Range"
 msgstr "Échelle de prix"
 
-#: lib/place/filters-edit.php:326
+#: lib/place/filters-edit.php:336
 msgctxt "metabox title"
 msgid "Food Establishment Information"
 msgstr "Informations d'établissement alimentaire"
 
-#: lib/place/filters-edit.php:330
+#: lib/place/filters-edit.php:340
 msgctxt "option label"
 msgid "Accepts Reservations"
 msgstr "Accepte des réservations"
 
-#: lib/place/filters-edit.php:335
+#: lib/place/filters-edit.php:345
 msgctxt "option label"
 msgid "Serves Cuisine"
 msgstr "Cuisine servie"
 
-#: lib/place/filters-edit.php:340
+#: lib/place/filters-edit.php:350
 msgctxt "option label"
 msgid "Food Menu URL"
 msgstr "URL du menu alimentaire"
 
-#: lib/place/filters-edit.php:345
+#: lib/place/filters-edit.php:355
 msgctxt "option label"
 msgid "Order Action URL(s)"
 msgstr "URL(s) d'action de commande"

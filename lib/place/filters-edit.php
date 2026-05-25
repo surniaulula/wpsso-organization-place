@@ -249,7 +249,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'Opening Hours Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5><p class="status-msg centered">' .
-				__( 'If the value for the closes property is less than the value for the opens property then the hour range is assumed to span over the next day.', 'wpsso-organization-place' ) .
+				__( 'If the "closes at" time is less than the "opens at" time, then the hour range is assumed to span over to the next day.',
+					'wpsso-organization-place' ) .
 				'</p></td>';
 
 			$open_close_html = '<table class="business_hours">';
