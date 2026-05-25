@@ -184,13 +184,11 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersOg' ) ) {
 			/*
 			 * Internal meta tags.
 			 */
-			$business_weekdays = $this->p->cf[ 'form' ][ 'weekdays' ];
-
-			foreach ( $business_weekdays as $day_name => $day_label ) {
+			foreach ( $this->p->cf[ 'form' ][ 'weekdays' ] as $day_key => $day_label ) {
 
 				foreach ( array(
-					'place_day_' . $day_name . '_open'  => 'place:opening_hours:day:' . $day_name . ':open',
-					'place_day_' . $day_name . '_close' => 'place:opening_hours:day:' . $day_name . ':close',
+					'place_day_' . $day_key . '_open'  => 'place:opening_hours:day:' . $day_key . ':open',
+					'place_day_' . $day_key . '_close' => 'place:opening_hours:day:' . $day_key . ':close',
 				) as $opt_key => $mt_name ) {
 
 					if ( ! empty( $place_opts[ $opt_key ] ) && 'none' !== $place_opts[ $opt_key ] ) {

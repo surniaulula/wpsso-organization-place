@@ -254,9 +254,9 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 			$open_close_html = '<table class="business_hours">';
 
-			foreach ( $this->p->cf[ 'form' ][ 'weekdays' ] as $day_name => $day_label ) {
+			foreach ( $this->p->cf[ 'form' ][ 'weekdays' ] as $day_key => $day_label ) {
 
-				$day_opt_pre   = 'place_day_' . $day_name;
+				$day_opt_pre   = 'place_day_' . $day_key;
 				$open_opt_key  = $day_opt_pre . '_open';
 				$close_opt_key = $day_opt_pre . '_close';
 

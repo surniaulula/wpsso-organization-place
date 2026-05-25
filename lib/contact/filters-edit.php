@@ -52,7 +52,6 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 		public function filter_mb_contact_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$contact_types           = $this->p->util->get_form_cache( 'contact_types_select', $add_none = false );	// Use strict for Google.
-			$business_weekdays       = $this->p->cf[ 'form' ][ 'weekdays' ];
 			$hide_postal_class       = $this->p->schema->get_children_css_class( 'postal.address', 'hide_contact_schema_type' );
 			$tr_hide_contact_html    = '';
 			$tr_hide_postal_html     = '<tr class="' . $hide_postal_class . '" style="display:none;">';
@@ -153,9 +152,9 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 
 			$open_close_html = '<table class="business_hours">';
 
-			foreach ( $business_weekdays as $day_name => $day_label ) {
+			foreach ( $this->p->cf[ 'form' ][ 'weekdays' ] as $day_key => $day_label ) {
 
-				$day_opt_pre   = 'contact_day_' . $day_name;
+				$day_opt_pre   = 'contact_day_' . $day_key;
 				$open_opt_key  = $day_opt_pre . '_open';
 				$close_opt_key = $day_opt_pre . '_close';
 

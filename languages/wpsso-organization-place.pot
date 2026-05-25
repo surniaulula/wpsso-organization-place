@@ -40,126 +40,126 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/contact/filters-edit.php:62
+#: lib/contact/filters-edit.php:61
 msgctxt "option label"
 msgid "Contact Name"
 msgstr ""
 
-#: lib/contact/filters-edit.php:67
+#: lib/contact/filters-edit.php:66
 msgctxt "option label"
 msgid "Contact Alternate Name"
 msgstr ""
 
-#: lib/contact/filters-edit.php:72
+#: lib/contact/filters-edit.php:71
 msgctxt "option label"
 msgid "Contact Description"
 msgstr ""
 
-#: lib/contact/filters-edit.php:77
+#: lib/contact/filters-edit.php:76
 msgctxt "option label"
 msgid "Contact Schema Type"
 msgstr ""
 
-#: lib/contact/filters-edit.php:90
+#: lib/contact/filters-edit.php:89
 msgctxt "option label"
 msgid "Contact Telephone"
 msgstr ""
 
-#: lib/contact/filters-edit.php:95
+#: lib/contact/filters-edit.php:94
 msgctxt "option label"
 msgid "Contact Fax"
 msgstr ""
 
-#: lib/contact/filters-edit.php:100
+#: lib/contact/filters-edit.php:99
 msgctxt "option label"
 msgid "Contact Email"
 msgstr ""
 
-#: lib/contact/filters-edit.php:109
+#: lib/contact/filters-edit.php:108
 msgctxt "metabox title"
 msgid "Postal Address Information"
 msgstr ""
 
-#: lib/contact/filters-edit.php:113 lib/place/filters-edit.php:178
+#: lib/contact/filters-edit.php:112 lib/place/filters-edit.php:178
 msgctxt "option label"
 msgid "Street Address"
 msgstr ""
 
-#: lib/contact/filters-edit.php:118 lib/place/filters-edit.php:183
+#: lib/contact/filters-edit.php:117 lib/place/filters-edit.php:183
 msgctxt "option label"
 msgid "P.O. Box Number"
 msgstr ""
 
-#: lib/contact/filters-edit.php:123 lib/place/filters-edit.php:188
+#: lib/contact/filters-edit.php:122 lib/place/filters-edit.php:188
 msgctxt "option label"
 msgid "City / Locality"
 msgstr ""
 
-#: lib/contact/filters-edit.php:128 lib/place/filters-edit.php:193
+#: lib/contact/filters-edit.php:127 lib/place/filters-edit.php:193
 msgctxt "option label"
 msgid "State / Province"
 msgstr ""
 
-#: lib/contact/filters-edit.php:133 lib/place/filters-edit.php:198
+#: lib/contact/filters-edit.php:132 lib/place/filters-edit.php:198
 msgctxt "option label"
 msgid "Zip / Postal Code"
 msgstr ""
 
-#: lib/contact/filters-edit.php:138 lib/place/filters-edit.php:203
+#: lib/contact/filters-edit.php:137 lib/place/filters-edit.php:203
 msgctxt "option label"
 msgid "Country"
 msgstr ""
 
-#: lib/contact/filters-edit.php:149 lib/place/filters-edit.php:250
+#: lib/contact/filters-edit.php:148 lib/place/filters-edit.php:250
 msgctxt "metabox title"
 msgid "Opening Hours Information"
 msgstr ""
 
-#: lib/contact/filters-edit.php:151 lib/place/filters-edit.php:252
+#: lib/contact/filters-edit.php:150 lib/place/filters-edit.php:252
 msgid ""
 "If the value for the closes property is less than the value for the opens "
 "property then the hour range is assumed to span over the next day."
 msgstr ""
 
-#: lib/contact/filters-edit.php:167 lib/place/filters-edit.php:268
+#: lib/contact/filters-edit.php:166 lib/place/filters-edit.php:268
 msgid "Opens at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:169 lib/place/filters-edit.php:270
+#: lib/contact/filters-edit.php:168 lib/place/filters-edit.php:270
 msgid "and closes at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:175 lib/place/filters-edit.php:276
+#: lib/contact/filters-edit.php:174 lib/place/filters-edit.php:276
 msgid "Every Midday"
 msgstr ""
 
-#: lib/contact/filters-edit.php:176 lib/place/filters-edit.php:277
+#: lib/contact/filters-edit.php:175 lib/place/filters-edit.php:277
 msgid "Closes at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:178 lib/place/filters-edit.php:279
+#: lib/contact/filters-edit.php:177 lib/place/filters-edit.php:279
 msgid "and re-opens at"
 msgstr ""
 
-#: lib/contact/filters-edit.php:185 lib/place/filters-edit.php:286
+#: lib/contact/filters-edit.php:184 lib/place/filters-edit.php:286
 msgctxt "option label"
 msgid "Open Days / Hours"
 msgstr ""
 
-#: lib/contact/filters-edit.php:190 lib/place/filters-edit.php:291
+#: lib/contact/filters-edit.php:189 lib/place/filters-edit.php:291
 msgctxt "option label"
 msgid "Seasonal Dates"
 msgstr ""
 
-#: lib/contact/filters-edit.php:193 lib/place/filters-edit.php:294
+#: lib/contact/filters-edit.php:192 lib/place/filters-edit.php:294
 msgid "Open from"
 msgstr ""
 
-#: lib/contact/filters-edit.php:195 lib/place/filters-edit.php:296
+#: lib/contact/filters-edit.php:194 lib/place/filters-edit.php:296
 msgid "until"
 msgstr ""
 
-#: lib/contact/filters-edit.php:197 lib/place/filters-edit.php:298
+#: lib/contact/filters-edit.php:196 lib/place/filters-edit.php:298
 msgid "inclusively"
 msgstr ""
 
