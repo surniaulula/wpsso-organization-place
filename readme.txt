@@ -168,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.0-dev.2 (2026/05/25)**
+**Version 5.2.0-dev.3 (2026/05/25)**
 
 * **New Features**
 	* None.
@@ -343,7 +343,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.2.0-dev.2 =
+= 5.2.0-dev.3 =
 
 (2026/05/25) Added information about open/close hours under the "Opening Hours Information" section.
 
