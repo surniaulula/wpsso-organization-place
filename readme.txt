@@ -168,7 +168,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.0-rc.1 (2026/05/26)**
+**Version 5.2.0 (2026/05/26)**
 
 * **New Features**
 	* None.
@@ -242,108 +242,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.9.
 	* WPSSO Core v21.0.0.
 
-**Version 4.0.0 (2025/06/14)**
-
-* **New Features**
-	* Renamed the add-on to "WPSSO Schema Organization and Place Manager".
-* **Improvements**
-	* Added options in the SSO Orgs &gt; Edit Organization page:
-		* Offer Catalogs
-			* Offer Catalog Name
-			* Offer Catalog Description
-			* Offer Catalog URL
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v20.0.0.
-
-**Version 3.3.1 (2025/03/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated admin menu priority.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated `WpssoOpmPlaceFiltersOptions->filter_get_post_options()` to check 'place_schema_type' before using its value.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.20.0.
-
-**Version 3.3.0 (2025/01/04)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Moved setting the "Place Is Default" and "Organization Is Default" checkbox values from the defaults to the options array.
-	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_defaults()`.
-	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_options()`.
-	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_defaults()`.
-	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_options()`.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.18.4.
-
-**Version 3.2.2 (2025/01/02)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed default "Organization Is Default" checkbox values when editing an Organization.
-* **Developer Notes**
-	* Refactored `WpssoOpmOrgFiltersOptions->filter_get_post_defaults()` to check the post type before setting defaults.
-	* Refactored `WpssoOpmPlaceFiltersOptions->filter_get_post_defaults()` to check the post type before setting defaults.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.18.4.
-
-**Version 3.2.1 (2024/10/23)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed an incorrect check for `is_admin()` in `WpssoOpmIntegAdminPost->add_wp_callbacks()`.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.15.0.
-
-**Version 3.2.0 (2024/09/07)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.10.0.
-
 == Upgrade Notice ==
 
-= 5.2.0-rc.1 =
+= 5.2.0 =
 
 (2026/05/26) Added information about open/close hours under the "Opening Hours Information" section.
 
@@ -354,28 +255,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 5.0.0 =
 
 (2025/06/18) Added a new "SSO Contacts" menu item to manage Schema Contact Points.
-
-= 4.0.0 =
-
-(2025/06/14) Renamed the add-on to "WPSSO Schema Organization and Place Manager".
-
-= 3.3.1 =
-
-(2025/03/08) Updated admin menu priority.
-
-= 3.3.0 =
-
-(2025/01/04) Moved setting the "Place Is Default" and "Organization Is Default" checkbox values from the defaults to the options array.
-
-= 3.2.2 =
-
-(2025/01/02) Fixed default "Organization Is Default" checkbox values when editing an Organization.
-
-= 3.2.1 =
-
-(2024/10/23) Fixed an incorrect check for `is_admin()` in `WpssoOpmIntegAdminPost->add_wp_callbacks()`.
-
-= 3.2.0 =
-
-(2024/09/07) Renamed and moved the `WpssoOpmPost` class to `WpssoOpmIntegAdminPost`.
 
