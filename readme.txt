@@ -168,6 +168,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.3.0-dev.1 (2026/06/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added a new "Place Same-As URLs" option in the SSO Places editing page.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new `WpssoOpmPlaceFiltersEdit->filter_form_cache_admin_area_names()` method.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v6.0.
+	* WPSSO Core v22.3.0-dev.1.
+
 **Version 5.2.0 (2026/05/26)**
 
 * **New Features**
@@ -181,7 +196,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v21.0.0.
+	* WPSSO Core v22.1.3.
 
 **Version 5.1.0 (2025/06/22)**
 
@@ -243,6 +258,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v21.0.0.
 
 == Upgrade Notice ==
+
+= 5.3.0-dev.1 =
+
+(2026/06/09) Added a new "Place Same-As URLs" option in the SSO Places editing page.
 
 = 5.2.0 =
 
