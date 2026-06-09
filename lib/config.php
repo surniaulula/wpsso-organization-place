@@ -18,7 +18,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
 					'version'     => '5.3.0-dev.1',	// Plugin version.
-					'opt_version' => '10',		// Increment when changing default option values.
+					'opt_version' => '11',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
 					'desc'        => 'Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.',
