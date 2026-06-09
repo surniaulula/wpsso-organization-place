@@ -101,7 +101,9 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 				'<td>' . $form->get_input( 'contact_email' ) . '</td>';
 
 			/*
-			 * Postal Address section.
+			 * Postal address section.
+			 *
+			 * See https://schema.org/PostalAddress.
 			 */
 			$table_rows[ 'subsection_place' ] = $tr_hide_postal_html .
 				'<td class="subsection" colspan="2"><h5>' .

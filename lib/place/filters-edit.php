@@ -26,11 +26,30 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
+				'form_cache_admin_area_names'   => 1,
 				'form_cache_place_names'        => 1,
 				'form_cache_place_names_custom' => 1,
 				'mb_place_rows'                 => 4,
 				'mb_sso_edit_schema_rows'       => 4,
 			) );
+		}
+
+		public function filter_form_cache_admin_area_names( $mixed ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			$place_names = WpssoOpmPlace::get_names( $schema_type = 'administrative.area' );
+			$place_names = is_array( $mixed ) ? $mixed + $place_names : $place_names;
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'admin_area_names', $place_names);
+			}
+
+			return $place_names;
 		}
 
 		public function filter_form_cache_place_names( $mixed ) {
@@ -40,7 +59,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$place_names = WpssoOpmPlace::get_names( $schema_type = '' );
+			$place_names = WpssoOpmPlace::get_names( $schema_type = 'place' );
 			$place_names = is_array( $mixed ) ? $mixed + $place_names : $place_names;
 
 			if ( $this->p->debug->enabled ) {
@@ -84,6 +103,8 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 		}
 
 		private function get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
+
+			$sameas_url_max = SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 );
 
 			$args = array(
 				'select' => array(
@@ -174,36 +195,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 					$css_class = 'medium', $css_id = 'meta-place_fax' ) .
 				'<td>' . $form->get_input( 'place_fax' ) . '</td>';
 
-			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_street_address' ) .
-				'<td>' . $form->get_input( 'place_street_address', 'wide' ) . '</td>';
-
-			$table_rows[ 'place_po_box_number' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'P.O. Box Number', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_po_box_number' ) .
-				'<td>' . $form->get_input( 'place_po_box_number' ) . '</td>';
-
-			$table_rows[ 'place_city' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'City / Locality', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_city' ) .
-				'<td>' . $form->get_input( 'place_city' ) . '</td>';
-
-			$table_rows[ 'place_region' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'State / Province', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_region' ) .
-				'<td>' . $form->get_input( 'place_region' ) . '</td>';
-
-			$table_rows[ 'place_postal_code' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Zip / Postal Code', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_postal_code' ) .
-				'<td>' . $form->get_input( 'place_postal_code' ) . '</td>';
-
-			$table_rows[ 'place_country' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Country', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_country' ) .
-				'<td>' . $form->get_select_country( 'place_country' ) . '</td>';
-
 			if ( ! $is_custom ) {
 
 				$table_rows[ 'place_img_id' ] = $tr_hide_place_html .
@@ -239,6 +230,53 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Place Timezone', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_timezone' ) .
 				'<td>' . $form->get_select_timezone( 'place_timezone' ) . '</td>';
+
+			$table_rows[ 'place_sameas_url' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Place Same-As URLs', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_sameas_url' ) .
+				'<td>' . $form->get_input_multi( 'place_sameas_url', $css_class = 'wide', $css_id = '',
+					$sameas_url_max, $show_first = 1 ) . '</td>';
+
+			/*
+			 * Postal address section.
+			 *
+			 * See https://schema.org/PostalAddress.
+			 */
+			$table_rows[ 'subsection_postal_address' ] = $tr_hide_place_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Postal Address Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
+
+			$table_rows[ 'place_street_address' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Street Address', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_street_address' ) .
+				'<td>' . $form->get_input( 'place_street_address', 'wide' ) . '</td>';
+
+			$table_rows[ 'place_po_box_number' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'P.O. Box Number', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_po_box_number' ) .
+				'<td>' . $form->get_input( 'place_po_box_number' ) . '</td>';
+
+			$table_rows[ 'place_city' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'City / Locality', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_city' ) .
+				'<td>' . $form->get_input( 'place_city' ) . '</td>';
+
+			$table_rows[ 'place_region' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'State / Province', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_region' ) .
+				'<td>' . $form->get_input( 'place_region' ) . '</td>';
+
+			$table_rows[ 'place_postal_code' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Zip / Postal Code', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_postal_code' ) .
+				'<td>' . $form->get_input( 'place_postal_code' ) . '</td>';
+
+			$table_rows[ 'place_country' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Country', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_country' ) .
+				'<td>' . $form->get_select_country( 'place_country' ) . '</td>';
+
 
 			/*
 			 * Opening hours section.

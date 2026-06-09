@@ -37,7 +37,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'place';
+			if ( ! $schema_type || ! is_string( $schema_type ) ) {	// Just in case.
+			
+				$schema_type = 'place';
+			}
 
 			static $local_cache = array();
 
@@ -127,7 +130,19 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
-					$place_opts = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+					$place_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+					$place_sameas = array();
+
+					foreach ( SucomUtilOptions::get_opts_begin( $place_opts, 'place_sameas_' ) as $sameas_key => $sameas_url ) {
+
+						unset( $place_opts[ $sameas_key ] );
+
+						if ( empty( $sameas_url ) ) continue;
+
+						if ( filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) $place_sameas[] = $sameas_url;
+					}
+
+					if ( ! empty( $place_sameas ) ) $place_opts[ 'place_sameas' ] = $place_sameas;
 
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 

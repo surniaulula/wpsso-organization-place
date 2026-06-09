@@ -129,29 +129,17 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 						unset( $org_opts[ $sameas_key ] );
 
-						if ( empty( $sameas_url ) ) {
+						if ( empty( $sameas_url ) ) continue;
 
-							continue;
-
-						} elseif ( 'org_sameas_tc_site' === $sameas_key ) {	// Convert X (Twitter) username to a URL.
+						if ( 'org_sameas_tc_site' === $sameas_key ) {	// Convert X (Twitter) username to a URL.
 
 							$sameas_url = 'https://twitter.com/' . preg_replace( '/^@/', '', $sameas_url );
 						}
 
-						if ( false === filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) {	// Just in case.
-
-							if ( $wpsso->debug->enabled ) {
-
-								$wpsso->debug->log( 'skipping ' . $sameas_key . ': url "' . $sameas_url . '" is invalid' );
-							}
-
-						} else $org_sameas[] = $sameas_url;
+						if ( filter_var( $sameas_url, FILTER_VALIDATE_URL ) ) $org_sameas[] = $sameas_url;
 					}
 
-					if ( ! empty( $org_sameas ) ) {
-
-						$org_opts[ 'org_sameas' ] = $org_sameas;
-					}
+					if ( ! empty( $org_sameas ) ) $org_opts[ 'org_sameas' ] = $org_sameas;
 
 				} elseif ( ! empty( $post_mod[ 'post_status' ] ) ) {	// 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'.
 
@@ -200,6 +188,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			return $org_opts;
 		}
 
+		/*
+		 * See WpssoOpmOrgFiltersEdit->filter_mb_org_rows().
+		 * See WpssoOpmPlaceFiltersEdit->filter_mb_place_rows().
+		 */
 		public static function add_mb_org_rows( &$table_rows, $form, $head_info, $mod, $args = array() ) {	// Pass by reference is OK.
 
 			$wpsso =& Wpsso::get_instance();
