@@ -104,36 +104,38 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
-			$sameas_url_max = SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 );
 
 			$args = array(
-				'select' => array(
+				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 ),
+				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 ),
+				'select'         => array(
 					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
 					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
 					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
 					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
 					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
 				),
-				'tr_class_org' => ( $is_custom ? 'hide_schema_place_id ' : '' ) .
-					$this->p->schema->get_children_css_class( 'organization', 'hide_place_schema_type' ),
-				'tr_class_org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+				'tr_class' => array(
+					'org' => ( $is_custom ? 'hide_schema_place_id ' : '' ) .
+						$this->p->schema->get_children_css_class( 'organization', 'hide_place_schema_type' ),
+					'org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+					'local_business' => $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' ),
+					'food_establish' => $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' ),
+				),
 			);
-
-			$hide_local_business_class = $this->p->schema->get_children_css_class( 'local.business', 'hide_place_schema_type' );
-			$hide_food_establish_class = $this->p->schema->get_children_css_class( 'food.establishment', 'hide_place_schema_type' );
 
 			if ( $is_custom ) {
 
 				$tr_hide_place_html          = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
-				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $hide_local_business_class . '" style="display:none;">';
-				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'local_business' ] . '" style="display:none;">';
+				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'food_establish' ] . '" style="display:none;">';
 				$schema_type_event_names     = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 
 			} else {
 
 				$tr_hide_place_html          = '';
-				$tr_hide_local_business_html = '<tr class="' . $hide_local_business_class . '" style="display:none;">';
-				$tr_hide_food_establish_html = '<tr class="' . $hide_food_establish_class . '" style="display:none;">';
+				$tr_hide_local_business_html = '<tr class="' . $args[ 'tr_class' ][ 'local_business' ] . '" style="display:none;">';
+				$tr_hide_food_establish_html = '<tr class="' . $args[ 'tr_class' ][ 'food_establish' ] . '" style="display:none;">';
 				$schema_type_event_names     = array( 'on_focus_load_json', 'on_change_unhide_rows' );
 			}
 
@@ -236,7 +238,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Place Same-As URLs', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_sameas_url' ) .
 				'<td>' . $form->get_input_multi( 'place_sameas_url', $css_class = 'wide', $css_id = '',
-					$sameas_url_max, $show_first = 1 ) . '</td>';
+					$args[ 'sameas_url_max' ], $show_first = 1 ) . '</td>';
 
 			/*
 			 * Postal address section.

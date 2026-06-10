@@ -51,12 +51,20 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 
 		public function filter_mb_contact_rows( $table_rows, $form, $head_info, $mod ) {
 
-			$sameas_url_max          = SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 );
-			$contact_types           = $this->p->util->get_form_cache( 'contact_types_select', $add_none = false );	// Use strict for Google.
-			$hide_postal_class       = $this->p->schema->get_children_css_class( 'postal.address', 'hide_contact_schema_type' );
+			$args = array(
+				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 ),
+				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 ),
+				'select'         => array(
+					'admin_area'    => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
+					'contact_types' => $this->p->util->get_form_cache( 'contact_types_select', $add_none = false ),	// Use strict for Google.
+				),
+				'tr_class' => array(
+					'postal_addr' => $this->p->schema->get_children_css_class( 'postal.address', 'hide_contact_schema_type' ),
+				),
+			);
+
 			$tr_hide_contact_html    = '';
-			$tr_hide_postal_html     = '<tr class="' . $hide_postal_class . '" style="display:none;">';
-			$schema_type_event_names = array( 'on_focus_load_json', 'on_change_unhide_rows' );
+			$tr_hide_postal_html     = '<tr class="' . $args[ 'tr_class' ][ 'postal_addr' ] . '" style="display:none;">';
 
 			$table_rows[ 'contact_name' ] = $tr_hide_contact_html .
 				$form->get_th_html( _x( 'Contact Name', 'option label', 'wpsso-organization-place' ),
@@ -76,7 +84,7 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 			$table_rows[ 'contact_schema_type' ] = $tr_hide_contact_html .
 				$form->get_th_html( _x( 'Contact Schema Type', 'option label', 'wpsso-contactanization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_schema_type' ) .
-				'<td>' . $form->get_select( 'contact_schema_type', $contact_types, $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'contact_schema_type', $args[ 'select' ][ 'contact_types' ], $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
 						$event_args = array(
 							'json_var' => 'schema_contact_types',
@@ -105,7 +113,7 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Contact Same-As URLs', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_sameas_url' ) .
 				'<td>' . $form->get_input_multi( 'contact_sameas_url', $css_class = 'wide', $css_id = '',
-					$sameas_url_max, $show_first = 1 ) . '</td>';
+					$args[ 'sameas_url_max' ], $show_first = 1 ) . '</td>';
 
 			/*
 			 * Postal address section.
@@ -146,6 +154,40 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Country', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_country' ) .
 				'<td>' . $form->get_select_country( 'contact_country' ) . '</td>';
+
+			/*
+			 * Contact Service section.
+			 */
+			$table_rows[ 'subsection_contact_service' ] = $tr_hide_contact_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Service Area Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
+
+			$table_rows[ 'contact_service_latitude' ] = $tr_hide_contact_html .
+				$form->get_th_html( _x( 'Service Latitude', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-contact_service_latitude' ) .
+				'<td>' . $form->get_input( 'contact_service_latitude', $css_class = 'latitude' ) . ' ' .
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'contact_service_longitude' ] = $tr_hide_contact_html .
+				$form->get_th_html( _x( 'Service Longitude', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-contact_service_longitude' ) .
+				'<td>' . $form->get_input( 'contact_service_longitude', $css_class = 'longitude' ) . ' ' .
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'contact_service_radius' ] = $tr_hide_contact_html .
+				$form->get_th_html( _x( 'Service Radius', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-contact_service_radius' ) .
+				'<td>' . $form->get_input( 'contact_service_radius', $css_class = 'short' ) . ' ' .
+				_x( 'meters from coordinates', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'contact_service_area_id' ] = $tr_hide_contact_html .
+				$form->get_th_html( _x( 'Service Areas', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-contact_service_area_id' ) .
+				'<td>' . $form->get_select_multi( 'contact_service_area_id', $args[ 'select' ][ 'admin_area' ],
+					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'admin_area_max' ], $show_first = 1,
+						$is_disabled = false, $event_names = array( 'on_focus_load_json' ),
+							$event_args = array( 'json_var' => 'admin_area_names' ) ) . '</td>';
 
 			/*
 			 * Opening hours section.

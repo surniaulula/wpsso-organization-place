@@ -205,9 +205,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$admin_area_max          = SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 );
-			$tr_hide_org_html        = empty( $args[ 'tr_class_org' ] ) ? '' : '<tr class="' . $args[ 'tr_class_org' ] . '" style="display:none;">';
-			$tr_hide_news_media_html = '<tr class="' . $args[ 'tr_class_org_news_media' ] . '" style="display:none;">';
+			$tr_hide_org_html        = empty( $args[ 'tr_class' ][ 'org' ] ) ? '' : '<tr class="' . $args[ 'tr_class' ][ 'org' ] . '" style="display:none;">';
+			$tr_hide_news_media_html = '<tr class="' . $args[ 'tr_class' ][ 'org_news_media' ] . '" style="display:none;">';
 
 			$table_rows[ 'org_is_default' ] = $tr_hide_org_html .
 				$form->get_th_html( _x( 'Organization Is Default', 'option label', 'wpsso-organization-place' ),
@@ -305,11 +304,11 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX' ), $show_first = 1 ) . '</td>';
 
 			/*
-			 * Organization Service section.
+			 * Service Area section.
 			 */
 			$table_rows[ 'subsection_org_service' ] = $tr_hide_org_html .
 				'<td class="subsection" colspan="2"><h5>' .
-				_x( 'Organization Service Information', 'metabox title', 'wpsso-organization-place' ) .
+				_x( 'Service Area Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
 			$table_rows[ 'org_service_latitude' ] = $tr_hide_org_html .
@@ -334,12 +333,12 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$form->get_th_html( _x( 'Service Areas', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_service_area_id' ) .
 				'<td>' . $form->get_select_multi( 'org_service_area_id', $args[ 'select' ][ 'admin_area' ],
-					$css_class = 'wide', $css_id = '', $is_assoc = true, $admin_area_max, $show_first = 1,
+					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'admin_area_max' ], $show_first = 1,
 						$is_disabled = false, $event_names = array( 'on_focus_load_json' ),
 							$event_args = array( 'json_var' => 'admin_area_names' ) ) . '</td>';
 
 			/*
-			 * News Media Organization.
+			 * News Media section.
 			 */
 			$table_rows[ 'subsection_org_news_media' ] = $tr_hide_news_media_html .
 				'<td class="subsection" colspan="2"><h5>' .
@@ -367,21 +366,21 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				'<td>' . $form->get_input( 'org_sources_policy_url', $css_class = 'wide' ) . '</td>';
 
 			/*
-			 * Organization Knowledge Graph.
+			 * Knowledge Graph section.
 			 */
 			$table_rows[ 'subsection_org_knowledgegraph' ] = $tr_hide_org_html .
 				'<td colspan="2" class="subsection"><h5>' .
-				_x( 'Organization Knowledge Graph', 'metabox title', 'wpsso-organization-place' ) .
+				_x( 'Knowledge Graph Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
 			foreach ( WpssoConfig::get_social_accounts() as $key => $label ) {
 
-				$opt_key = 'org_sameas_' . $key;
+				$opt_key     = 'org_sameas_' . $key;
+				$input_class = strpos( $opt_key, '_url' ) ? 'wide' : '';
 
 				$table_rows[ $opt_key ] = $tr_hide_org_html .
-					$form->get_th_html( _x( $label, 'option value', 'wpsso-organization-place' ),
-						$css_class = 'medium nowrap', $opt_key ) .
-					'<td>' . $form->get_input( $opt_key, strpos( $opt_key, '_url' ) ? 'wide' : '' ) . '</td>';
+					$form->get_th_html( _x( $label, 'option value', 'wpsso-organization-place' ), $css_class = 'medium nowrap', $opt_key ) .
+					'<td>' . $form->get_input( $opt_key, $input_class ) . '</td>';
 			}
 		}
 

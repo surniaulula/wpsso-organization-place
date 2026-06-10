@@ -52,6 +52,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$args = array(
+				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 ),
+				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 ),
 				'select' => array(
 					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
 					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
@@ -59,8 +61,10 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
 					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
 				),
-				'tr_class_org' => '',
-				'tr_class_org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+				'tr_class' => array(
+					'org'            => '',
+					'org_news_media' => $this->p->schema->get_children_css_class( 'news.media.organization', 'hide_org_schema_type' ),
+				),
 			);
 
 			$table_rows[ 'org_name' ] = '' .

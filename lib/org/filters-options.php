@@ -152,12 +152,12 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersOptions' ) ) {
 
 						$md_opts[ 'og_type' ]                    = 'website';
 						$md_opts[ 'og_type:disabled' ]           = true;
-						$md_opts[ 'schema_type' ]                = $org_type;
-						$md_opts[ 'schema_type:disabled' ]       = true;
 						$md_opts[ 'schema_contact_id' ]          = 'none';
 						$md_opts[ 'schema_contact_id:disabled' ] = true;
 						$md_opts[ 'schema_place_id' ]            = 'none';
 						$md_opts[ 'schema_place_id:disabled' ]   = true;
+						$md_opts[ 'schema_type' ]                = $org_type;
+						$md_opts[ 'schema_type:disabled' ]       = true;
 					}
 
 					break;
