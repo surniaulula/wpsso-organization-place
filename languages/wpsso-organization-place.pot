@@ -115,39 +115,39 @@ msgctxt "option label"
 msgid "Country"
 msgstr ""
 
-#: lib/contact/filters-edit.php:163 lib/org.php:311
+#: lib/contact/filters-edit.php:163 lib/org.php:315
 msgctxt "metabox title"
 msgid "Service Area Information"
 msgstr ""
 
-#: lib/contact/filters-edit.php:167 lib/org.php:315
+#: lib/contact/filters-edit.php:167 lib/org.php:319
 msgctxt "option label"
 msgid "Service Latitude"
 msgstr ""
 
 #: lib/contact/filters-edit.php:170 lib/contact/filters-edit.php:176
-#: lib/org.php:318 lib/org.php:324 lib/place/filters-edit.php:209
+#: lib/org.php:322 lib/org.php:328 lib/place/filters-edit.php:209
 #: lib/place/filters-edit.php:215
 msgctxt "option comment"
 msgid "decimal degrees"
 msgstr ""
 
-#: lib/contact/filters-edit.php:173 lib/org.php:321
+#: lib/contact/filters-edit.php:173 lib/org.php:325
 msgctxt "option label"
 msgid "Service Longitude"
 msgstr ""
 
-#: lib/contact/filters-edit.php:179 lib/org.php:327
+#: lib/contact/filters-edit.php:179 lib/org.php:331
 msgctxt "option label"
 msgid "Service Radius"
 msgstr ""
 
-#: lib/contact/filters-edit.php:182 lib/org.php:330
+#: lib/contact/filters-edit.php:182 lib/org.php:334
 msgctxt "option comment"
 msgid "meters from coordinates"
 msgstr ""
 
-#: lib/contact/filters-edit.php:185 lib/org.php:333
+#: lib/contact/filters-edit.php:185 lib/org.php:337
 msgctxt "option label"
 msgid "Service Areas"
 msgstr ""
@@ -299,169 +299,169 @@ msgstr ""
 msgid "Please select a different organization."
 msgstr ""
 
-#: lib/org.php:212
+#: lib/org.php:215
 msgctxt "option label"
 msgid "Organization Is Default"
 msgstr ""
 
-#: lib/org.php:222
+#: lib/org.php:226
 msgctxt "metabox title"
 msgid "Organization Information"
 msgstr ""
 
-#: lib/org.php:226
+#: lib/org.php:230
 msgctxt "option label"
 msgid "Organization WebSite URL"
 msgstr ""
 
-#: lib/org.php:232
+#: lib/org.php:236
 msgctxt "option label"
 msgid "Organization Logo URL"
 msgstr ""
 
-#: lib/org.php:238
+#: lib/org.php:242
 msgctxt "option label"
 msgid "Organization Banner URL"
 msgstr ""
 
-#: lib/org.php:243
+#: lib/org.php:247
 msgctxt "option label"
 msgid "Publishing Principles URL"
 msgstr ""
 
-#: lib/org.php:248
+#: lib/org.php:252
 msgctxt "option label"
 msgid "Corrections Policy URL"
 msgstr ""
 
-#: lib/org.php:253
+#: lib/org.php:257
 msgctxt "option label"
 msgid "Diversity Policy URL"
 msgstr ""
 
-#: lib/org.php:258
+#: lib/org.php:262
 msgctxt "option label"
 msgid "Ethics Policy URL"
 msgstr ""
 
-#: lib/org.php:263
+#: lib/org.php:267
 msgctxt "option label"
 msgid "Fact Checking Policy URL"
 msgstr ""
 
-#: lib/org.php:268
+#: lib/org.php:272
 msgctxt "option label"
 msgid "Feedback Policy URL"
 msgstr ""
 
-#: lib/org.php:273
+#: lib/org.php:277
 msgctxt "option label"
 msgid "Organization Contact Points"
 msgstr ""
 
-#: lib/org.php:279
+#: lib/org.php:283
 msgctxt "option label"
 msgid "Organization Awards"
 msgstr ""
 
-#: lib/org.php:285
+#: lib/org.php:289
 msgctxt "option label"
 msgid "Offer Catalogs"
 msgstr ""
 
-#: lib/org.php:289
+#: lib/org.php:293
 msgctxt "option label"
 msgid "Offer Catalog Name"
 msgstr ""
 
-#: lib/org.php:294
+#: lib/org.php:298
 msgctxt "option label"
 msgid "Offer Catalog Description"
 msgstr ""
 
-#: lib/org.php:299
+#: lib/org.php:303
 msgctxt "option label"
 msgid "Offer Catalog URL"
 msgstr ""
 
-#: lib/org.php:345
+#: lib/org.php:349
 msgctxt "metabox title"
 msgid "News Media Organization Information"
 msgstr ""
 
-#: lib/org.php:349
+#: lib/org.php:353
 msgctxt "option label"
 msgid "Masthead Page URL"
 msgstr ""
 
-#: lib/org.php:354
+#: lib/org.php:358
 msgctxt "option label"
 msgid "Coverage Priorities Policy URL"
 msgstr ""
 
-#: lib/org.php:359
+#: lib/org.php:363
 msgctxt "option label"
 msgid "No Bylines Policy URL"
 msgstr ""
 
-#: lib/org.php:364
+#: lib/org.php:368
 msgctxt "option label"
 msgid "Unnamed Sources Policy URL"
 msgstr ""
 
-#: lib/org.php:373
+#: lib/org.php:377
 msgctxt "metabox title"
 msgid "Knowledge Graph Information"
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:419
+#: lib/org.php:423
 msgid "The \"%s\" organization logo image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:427
+#: lib/org.php:431
 msgid "The \"%s\" organization banner image URL is missing and required."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:450
+#: lib/org.php:454
 msgid "The \"%s\" organization logo image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:454 lib/org.php:485
+#: lib/org.php:458 lib/org.php:489
 msgid ""
 "Please make sure this site can access %s using the PHP getimagesize() "
 "function."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:462
+#: lib/org.php:466
 msgid ""
 "The \"%1$s\" organization logo image dimensions are %2$s and must be greater "
 "than %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:466
+#: lib/org.php:470
 msgid "Please correct the %s logo image or select a different logo image."
 msgstr ""
 
 #. translators: %s is the organization name.
-#: lib/org.php:481
+#: lib/org.php:485
 msgid "The \"%s\" organization banner image dimensions cannot be determined."
 msgstr ""
 
 #. translators: %1$s is the organization name.
-#: lib/org.php:493
+#: lib/org.php:497
 msgid ""
 "The \"%1$s\" organization banner image dimensions are %2$s and must be "
 "exactly %3$s."
 msgstr ""
 
 #. translators: %s is the image URL.
-#: lib/org.php:497
+#: lib/org.php:501
 msgid "Please correct the %s banner image or select a different banner image."
 msgstr ""
 

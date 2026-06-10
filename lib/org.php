@@ -208,11 +208,15 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$tr_hide_org_html        = empty( $args[ 'tr_class' ][ 'org' ] ) ? '' : '<tr class="' . $args[ 'tr_class' ][ 'org' ] . '" style="display:none;">';
 			$tr_hide_news_media_html = '<tr class="' . $args[ 'tr_class' ][ 'org_news_media' ] . '" style="display:none;">';
 
-			$table_rows[ 'org_is_default' ] = $tr_hide_org_html .
-				$form->get_th_html( _x( 'Organization Is Default', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-org_is_default' ) .
-				'<td>' . $form->get_checklist( 'org_is', array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ],
-					$wpsso->cf[ 'form' ][ 'place_is_defaults' ] ) ) . '</td>';
+
+			if ( empty( $args[ 'is_custom' ] ) ) {
+
+				$table_rows[ 'org_is_default' ] = $tr_hide_org_html .
+					$form->get_th_html( _x( 'Organization Is Default', 'option label', 'wpsso-organization-place' ),
+						$css_class = 'medium', $css_id = 'meta-org_is_default' ) .
+					'<td>' . $form->get_checklist( 'org_is', array_diff_key( $wpsso->cf[ 'form' ][ 'org_is_defaults' ],
+						$wpsso->cf[ 'form' ][ 'place_is_defaults' ] ) ) . '</td>';
+			}
 
 			/*
 			 * Organization section.

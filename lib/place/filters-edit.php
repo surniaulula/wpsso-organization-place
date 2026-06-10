@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 
 			$args = array(
-				'custom_place'   => $is_custom,
+				'is_custom'      => $is_custom ? true : false,
 				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 ),
 				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 ),
 				'select'         => array(
@@ -125,22 +125,22 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				),
 			);
 
-			if ( $args[ 'custom_place' ] ) {
-
-				$tr_hide_place_html          = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
-				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'local_business' ] . '" style="display:none;">';
-				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'food_establish' ] . '" style="display:none;">';
-				$schema_type_event_names     = array( 'on_focus_load_json', 'on_show_unhide_rows' );
-
-			} else {
+			if ( empty( $args[ 'is_custom' ] ) ) {
 
 				$tr_hide_place_html          = '';
 				$tr_hide_local_business_html = '<tr class="' . $args[ 'tr_class' ][ 'local_business' ] . '" style="display:none;">';
 				$tr_hide_food_establish_html = '<tr class="' . $args[ 'tr_class' ][ 'food_establish' ] . '" style="display:none;">';
 				$schema_type_event_names     = array( 'on_focus_load_json', 'on_change_unhide_rows' );
+
+			} else {
+
+				$tr_hide_place_html          = '<tr class="hide_schema_place_id hide_schema_place_id_custom" style="display:none;">';
+				$tr_hide_local_business_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'local_business' ] . '" style="display:none;">';
+				$tr_hide_food_establish_html = '<tr class="hide_schema_place_id ' . $args[ 'tr_class' ][ 'food_establish' ] . '" style="display:none;">';
+				$schema_type_event_names     = array( 'on_focus_load_json', 'on_show_unhide_rows' );
 			}
 
-			if ( ! $args[ 'custom_place' ] ) {
+			if ( empty( $args[ 'is_custom' ] ) ) {
 
 				$table_rows[ 'place_name' ] = $tr_hide_place_html .
 					$form->get_th_html( _x( 'Place Name', 'option label', 'wpsso-organization-place' ),
@@ -171,7 +171,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 						)
 					) . '</td>';
 
-			if ( ! $args[ 'custom_place' ] ) {
+			if ( empty( $args[ 'is_custom' ] ) ) {
 
 				$table_rows[ 'place_is_default' ] = $tr_hide_place_html .
 					$form->get_th_html( _x( 'Place Is Default', 'option label', 'wpsso-organization-place' ),
@@ -189,7 +189,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				_x( 'Place Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
-			if ( ! $args[ 'custom_place' ] ) {
+			if ( empty( $args[ 'is_custom' ] ) ) {
 
 				$table_rows[ 'place_img_id' ] = $tr_hide_place_html .
 					$form->get_th_html( _x( 'Place Image ID', 'option label', 'wpsso-organization-place' ),
