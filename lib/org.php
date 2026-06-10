@@ -123,6 +123,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
 					$org_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+
+					/*
+					 * Create a simple array of values for 'org_sameas'.
+					 */
 					$org_sameas = array();
 
 					foreach ( SucomUtilOptions::get_opts_begin( $org_opts, 'org_sameas_' ) as $sameas_key => $sameas_url ) {
@@ -201,8 +205,8 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$tr_hide_org_html = empty( $args[ 'tr_class_org' ] ) ? '' : '<tr class="' . $args[ 'tr_class_org' ] . '" style="display:none;">';
-
+			$admin_area_max          = SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 );
+			$tr_hide_org_html        = empty( $args[ 'tr_class_org' ] ) ? '' : '<tr class="' . $args[ 'tr_class_org' ] . '" style="display:none;">';
 			$tr_hide_news_media_html = '<tr class="' . $args[ 'tr_class_org_news_media' ] . '" style="display:none;">';
 
 			$table_rows[ 'org_is_default' ] = $tr_hide_org_html .
@@ -299,6 +303,40 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 					),
 				), $css_class = '', $css_id = 'org_offer_catalogs',
 					SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX' ), $show_first = 1 ) . '</td>';
+
+			/*
+			 * Organization Service section.
+			 */
+			$table_rows[ 'subsection_org_service' ] = $tr_hide_org_html .
+				'<td class="subsection" colspan="2"><h5>' .
+				_x( 'Organization Service Information', 'metabox title', 'wpsso-organization-place' ) .
+				'</h5></td>';
+
+			$table_rows[ 'org_service_latitude' ] = $tr_hide_org_html .
+				$form->get_th_html( _x( 'Service Latitude', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_service_latitude' ) .
+				'<td>' . $form->get_input( 'org_service_latitude', $css_class = 'latitude' ) . ' ' .
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'org_service_longitude' ] = $tr_hide_org_html .
+				$form->get_th_html( _x( 'Service Longitude', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_service_longitude' ) .
+				'<td>' . $form->get_input( 'org_service_longitude', $css_class = 'longitude' ) . ' ' .
+				_x( 'decimal degrees', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'org_service_radius' ] = $tr_hide_org_html .
+				$form->get_th_html( _x( 'Service Radius', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_service_radius' ) .
+				'<td>' . $form->get_input( 'org_service_radius', $css_class = 'short' ) . ' ' .
+				_x( 'meters from coordinates', 'option comment', 'wpsso-organization-place' ) . '</td>';
+
+			$table_rows[ 'org_service_area_id' ] = $tr_hide_org_html .
+				$form->get_th_html( _x( 'Service Areas', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-org_service_area_id' ) .
+				'<td>' . $form->get_select_multi( 'org_service_area_id', $args[ 'select' ][ 'admin_area' ],
+					$css_class = 'wide', $css_id = '', $is_assoc = true, $admin_area_max, $show_first = 1,
+						$is_disabled = false, $event_names = array( 'on_focus_load_json' ),
+							$event_args = array( 'json_var' => 'admin_area_names' ) ) . '</td>';
 
 			/*
 			 * News Media Organization.

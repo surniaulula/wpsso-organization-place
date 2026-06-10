@@ -51,6 +51,7 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 
 		public function filter_mb_contact_rows( $table_rows, $form, $head_info, $mod ) {
 
+			$sameas_url_max          = SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 );
 			$contact_types           = $this->p->util->get_form_cache( 'contact_types_select', $add_none = false );	// Use strict for Google.
 			$hide_postal_class       = $this->p->schema->get_children_css_class( 'postal.address', 'hide_contact_schema_type' );
 			$tr_hide_contact_html    = '';
@@ -99,6 +100,12 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Contact Email', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_email' ) .
 				'<td>' . $form->get_input( 'contact_email' ) . '</td>';
+
+			$table_rows[ 'contact_sameas_url' ] = $tr_hide_contact_html .
+				$form->get_th_html( _x( 'Contact Same-As URLs', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-contact_sameas_url' ) .
+				'<td>' . $form->get_input_multi( 'contact_sameas_url', $css_class = 'wide', $css_id = '',
+					$sameas_url_max, $show_first = 1 ) . '</td>';
 
 			/*
 			 * Postal address section.

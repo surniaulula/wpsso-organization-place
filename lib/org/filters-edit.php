@@ -53,6 +53,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 
 			$args = array(
 				'select' => array(
+					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
 					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
 					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
 					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),

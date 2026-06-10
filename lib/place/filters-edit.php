@@ -108,6 +108,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 			$args = array(
 				'select' => array(
+					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
 					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
 					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
 					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
@@ -185,16 +186,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				_x( 'Place Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
 
-			$table_rows[ 'place_phone' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Place Telephone', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_phone' ) .
-				'<td>' . $form->get_input( 'place_phone' ) . '</td>';
-
-			$table_rows[ 'place_fax' ] = $tr_hide_place_html .
-				$form->get_th_html( _x( 'Place Fax', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_fax' ) .
-				'<td>' . $form->get_input( 'place_fax' ) . '</td>';
-
 			if ( ! $is_custom ) {
 
 				$table_rows[ 'place_img_id' ] = $tr_hide_place_html .
@@ -230,6 +221,16 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Place Timezone', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_timezone' ) .
 				'<td>' . $form->get_select_timezone( 'place_timezone' ) . '</td>';
+
+			$table_rows[ 'place_phone' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Place Telephone', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_phone' ) .
+				'<td>' . $form->get_input( 'place_phone' ) . '</td>';
+
+			$table_rows[ 'place_fax' ] = $tr_hide_place_html .
+				$form->get_th_html( _x( 'Place Fax', 'option label', 'wpsso-organization-place' ),
+					$css_class = 'medium', $css_id = 'meta-place_fax' ) .
+				'<td>' . $form->get_input( 'place_fax' ) . '</td>';
 
 			$table_rows[ 'place_sameas_url' ] = $tr_hide_place_html .
 				$form->get_th_html( _x( 'Place Same-As URLs', 'option label', 'wpsso-organization-place' ),
@@ -344,12 +345,6 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				'<td class="subsection" colspan="2"><h5>' .
 				_x( 'Local Business Information', 'metabox title', 'wpsso-organization-place' ) .
 				'</h5></td>';
-
-			$table_rows[ 'place_service_radius' ] = $tr_hide_local_business_html .
-				$form->get_th_html( _x( 'Service Radius', 'option label', 'wpsso-organization-place' ),
-					$css_class = 'medium', $css_id = 'meta-place_service_radius' ) .
-				'<td>' . $form->get_input( 'place_service_radius', $css_class = 'short' ) . ' ' .
-				_x( 'meters from coordinates', 'option comment', 'wpsso-organization-place' ) . '</td>';
 
 			$table_rows[ 'place_currencies_accepted' ] = $tr_hide_local_business_html .
 				$form->get_th_html( _x( 'Currencies Accepted', 'option label', 'wpsso-organization-place' ),

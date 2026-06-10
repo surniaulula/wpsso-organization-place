@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssoopm' => array(			// Plugin acronym.
-					'version'     => '5.3.0-dev.1',	// Plugin version.
-					'opt_version' => '11',		// Increment when changing default option values.
+					'version'     => '6.0.0-dev.2',	// Plugin version.
+					'opt_version' => '12',		// Increment when changing default option values.
 					'short'       => 'WPSSO OPM',	// Short plugin name.
 					'name'        => 'WPSSO Schema Organization and Place Manager',
 					'desc'        => 'Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Facebook, Pinterest, and Schema markup.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '22.3.0-dev.1',
+							'min_version'   => '22.3.0-dev.2',
 						),
 					),
 
@@ -125,18 +125,28 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'org_contact_id_0'           => 'none',		// Organization Contact Point.
 					'org_contact_id_1'           => 'none',		// Organization Contact Point.
 					'org_contact_id_2'           => 'none',		// Organization Contact Point.
+					'org_contact_id_3'           => 'none',		// Organization Contact Point.
+					'org_contact_id_4'           => 'none',		// Organization Contact Point.
 					'org_award_0'                => '',		// Organization Award.
 					'org_award_1'                => '',		// Organization Award.
 					'org_award_2'                => '',		// Organization Award.
+					'org_award_3'                => '',		// Organization Award.
+					'org_award_4'                => '',		// Organization Award.
 					'org_offer_catalog_0'        => '',		// Offer Catalog Name.
 					'org_offer_catalog_1'        => '',		// Offer Catalog Name.
 					'org_offer_catalog_2'        => '',		// Offer Catalog Name.
+					'org_offer_catalog_3'        => '',		// Offer Catalog Name.
+					'org_offer_catalog_4'        => '',		// Offer Catalog Name.
 					'org_offer_catalog_text_0'   => '',		// Offer Catalog Description.
 					'org_offer_catalog_text_1'   => '',		// Offer Catalog Description.
 					'org_offer_catalog_text_2'   => '',		// Offer Catalog Description.
+					'org_offer_catalog_text_3'   => '',		// Offer Catalog Description.
+					'org_offer_catalog_text_4'   => '',		// Offer Catalog Description.
 					'org_offer_catalog_url_0'    => '',		// Offer Catalog URL.
 					'org_offer_catalog_url_1'    => '',		// Offer Catalog URL.
 					'org_offer_catalog_url_2'    => '',		// Offer Catalog URL.
+					'org_offer_catalog_url_3'    => '',		// Offer Catalog URL.
+					'org_offer_catalog_url_4'    => '',		// Offer Catalog URL.
 
 					/*
 					 * News Media Organization.
@@ -151,24 +161,26 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_name_alt'                 => '',			// Place Altername Name.
 					'place_desc'                     => '',			// Place Description.
 					'place_schema_type'              => 'local.business',	// Place Schema Type.
+					'place_img_id'                   => '',			// Place Image ID.
+					'place_img_id_lib'               => 'wp',
+					'place_img_url'                  => '',			// or Place Image URL.
+					'place_latitude'                 => '',			// Place Latitude.
+					'place_longitude'                => '',			// Place Longitude.
+					'place_altitude'                 => '',			// Place Altitude.
+					'place_timezone'                 => 'UTC',		// Place Timezone.
 					'place_phone'                    => '',			// Place Telephone.
 					'place_fax'                      => '',			// Place Fax.
+					'place_sameas_url_0'             => '',			// Place Same-As URLs.
+					'place_sameas_url_1'             => '',			// Place Same-As URLs.
+					'place_sameas_url_2'             => '',			// Place Same-As URLs.
+					'place_sameas_url_3'             => '',			// Place Same-As URLs.
+					'place_sameas_url_4'             => '',			// Place Same-As URLs.
 					'place_street_address'           => '',			// Street Address.
 					'place_po_box_number'            => '',			// P.O. Box Number.
 					'place_city'                     => '',			// City.
 					'place_region'                   => '',			// State / Province.
 					'place_postal_code'              => '',			// Zip / Postal Code.
 					'place_country'                  => 'none',		// Country.
-					'place_latitude'                 => '',			// Place Latitude.
-					'place_longitude'                => '',			// Place Longitude.
-					'place_altitude'                 => '',			// Place Altitude.
-					'place_timezone'                 => 'UTC',		// Place Timezone.
-					'place_sameas_url_0'             => '',			// Place Same-As URLs.
-					'place_sameas_url_1'             => '',			// Place Same-As URLs.
-					'place_sameas_url_2'             => '',			// Place Same-As URLs.
-					'place_img_id'                   => '',			// Place Image ID.
-					'place_img_id_lib'               => 'wp',
-					'place_img_url'                  => '',			// or Place Image URL.
 					'place_day_sunday_open'          => 'none',
 					'place_day_sunday_close'         => 'none',
 					'place_day_monday_open'          => 'none',
@@ -189,7 +201,6 @@ if ( ! class_exists( 'WpssoOpmConfig' ) ) {
 					'place_midday_open'              => 'none',
 					'place_season_from_date'         => '',
 					'place_season_to_date'           => '',
-					'place_service_radius'           => '',			// Service Radius.
 					'place_currencies_accepted'      => '',			// Currencies Accepted.
 					'place_payment_accepted'         => '',			// Payment Accepted.
 					'place_price_range'              => '',			// Price Range.

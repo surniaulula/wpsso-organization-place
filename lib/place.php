@@ -131,6 +131,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				if ( 'publish' === $post_mod[ 'post_status' ] ) {
 
 					$place_opts   = $post_mod[ 'obj' ]->get_options( $post_mod[ 'id' ] );
+
+					/*
+					 * Create a simple array of values for 'place_sameas'.
+					 */
 					$place_sameas = array();
 
 					foreach ( SucomUtilOptions::get_opts_begin( $place_opts, 'place_sameas_' ) as $sameas_key => $sameas_url ) {
