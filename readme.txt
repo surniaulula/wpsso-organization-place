@@ -37,6 +37,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Contact Telephone
 * Contact Fax
 * Contact Email
+* Contact Same-As URLs
 * Postal Address:
 	* Street Address
 	* P.O. Box Number
@@ -70,6 +71,11 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 	* Offer Catalog Name
 	* Offer Catalog Description
 	* Offer Catalog URL
+* Organization Service Information
+	* Service Latitude
+	* Service Longitude
+	* Service Radius
+	* Service Areas
 * News Media Organization:
 	* Masthead Page URL
 	* Coverage Priorities Policy URL
@@ -96,8 +102,6 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Place Alternate Name
 * Place Description
 * Place Schema Type
-* Place Telephone
-* Place Fax
 * Street Address
 * P.O. Box Number
 * City / Locality
@@ -110,6 +114,9 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 * Place Longitude
 * Place Altitude
 * Place Timezone
+* Place Telephone
+* Place Fax
+* Place Same-As URLs
 * Opening Hours:
 	* Open Days / Hours
 	* Seasonal Dates
@@ -168,11 +175,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.3.0-dev.1 (2026/06/09)**
+**Version 6.0.0-dev.2 (2026/06/10)**
 
 * **New Features**
 	* None.
 * **Improvements**
+	* Added a new "Contact Same-As URLs" option in the SSO Contacts editing page.
+	* Added a new "Organization Service Information" section in the SSO Organizations editing page:
+		* Service Latitude
+		* Service Longitude
+		* Service Radius
+		* Service Areas
 	* Added a new "Place Same-As URLs" option in the SSO Places editing page.
 * **Bugfixes**
 	* None.
@@ -181,7 +194,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v22.3.0-dev.1.
+	* WPSSO Core v22.3.0-dev.2.
 
 **Version 5.2.0 (2026/05/26)**
 
@@ -259,9 +272,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.3.0-dev.1 =
+= 6.0.0-dev.2 =
 
-(2026/06/09) Added a new "Place Same-As URLs" option in the SSO Places editing page.
+(2026/06/10) Added a new options the SSO Contacts, Organizations, and Places editing pages.
 
 = 5.2.0 =
 

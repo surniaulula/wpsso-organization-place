@@ -34,6 +34,7 @@
 <li>Contact Telephone</li>
 <li>Contact Fax</li>
 <li>Contact Email</li>
+<li>Contact Same-As URLs</li>
 <li>Postal Address:
 
 <ul>
@@ -78,6 +79,14 @@
 <li>Offer Catalog Description</li>
 <li>Offer Catalog URL</li>
 </ul></li>
+<li>Organization Service Information
+
+<ul>
+<li>Service Latitude</li>
+<li>Service Longitude</li>
+<li>Service Radius</li>
+<li>Service Areas</li>
+</ul></li>
 <li>News Media Organization:
 
 <ul>
@@ -112,8 +121,6 @@
 <li>Place Alternate Name</li>
 <li>Place Description</li>
 <li>Place Schema Type</li>
-<li>Place Telephone</li>
-<li>Place Fax</li>
 <li>Street Address</li>
 <li>P.O. Box Number</li>
 <li>City / Locality</li>
@@ -126,6 +133,9 @@
 <li>Place Longitude</li>
 <li>Place Altitude</li>
 <li>Place Timezone</li>
+<li>Place Telephone</li>
+<li>Place Fax</li>
+<li>Place Same-As URLs</li>
 <li>Opening Hours:
 
 <ul>
