@@ -52,8 +52,8 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$args = array(
-				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREA_MAX', 5 ),
-				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URL_MAX', 5 ),
+				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREAS_MAX', 5 ),
+				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
 				'select' => array(
 					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
 					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
