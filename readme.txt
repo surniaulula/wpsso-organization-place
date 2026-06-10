@@ -45,6 +45,11 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 	* State / Province
 	* Zip / Postal Code
 	* Country
+* Service Area Information
+	* Service Latitude
+	* Service Longitude
+	* Service Radius
+	* Service Areas
 * Opening Hours:
 	* Open Days / Hours
 	* Seasonal Dates
@@ -71,7 +76,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 	* Offer Catalog Name
 	* Offer Catalog Description
 	* Offer Catalog URL
-* Organization Service Information
+* Service Area Information
 	* Service Latitude
 	* Service Longitude
 	* Service Radius
@@ -81,7 +86,7 @@ Manage Organizations and Places (Local Businesses, Venues, etc.) for Google, Fac
 	* Coverage Priorities Policy URL
 	* No Bylines Policy URL
 	* Unnamed Sources Policy URL
-* Organization Knowledge Graph:
+* Knowledge Graph Information:
 	* Behance Business Page URL
 	* Facebook Business Page URL
 	* Instagram Business Page URL
@@ -175,17 +180,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-dev.2 (2026/06/10)**
+**Version 6.0.0-dev.3 (2026/06/10)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added a new "Contact Same-As URLs" option in the SSO Contacts editing page.
-	* Added a new "Organization Service Information" section in the SSO Organizations editing page:
+	* Added a new "Service Area Information" section in the SSO Contacts and SSO Organizations editing pages:
 		* Service Latitude
 		* Service Longitude
 		* Service Radius
 		* Service Areas
+	* Added a new "Contact Same-As URLs" option in the SSO Contacts editing page.
 	* Added a new "Place Same-As URLs" option in the SSO Places editing page.
 * **Bugfixes**
 	* None.
@@ -194,7 +199,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v22.3.0-dev.2.
+	* WPSSO Core v22.3.0-dev.3.
 
 **Version 5.2.0 (2026/05/26)**
 
@@ -272,7 +277,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.0.0-dev.2 =
+= 6.0.0-dev.3 =
 
 (2026/06/10) Added a new options the SSO Contacts, Organizations, and Places editing pages.
 

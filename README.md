@@ -45,6 +45,14 @@
 <li>Zip / Postal Code</li>
 <li>Country</li>
 </ul></li>
+<li>Service Area Information
+
+<ul>
+<li>Service Latitude</li>
+<li>Service Longitude</li>
+<li>Service Radius</li>
+<li>Service Areas</li>
+</ul></li>
 <li>Opening Hours:
 
 <ul>
@@ -79,7 +87,7 @@
 <li>Offer Catalog Description</li>
 <li>Offer Catalog URL</li>
 </ul></li>
-<li>Organization Service Information
+<li>Service Area Information
 
 <ul>
 <li>Service Latitude</li>
@@ -95,7 +103,7 @@
 <li>No Bylines Policy URL</li>
 <li>Unnamed Sources Policy URL</li>
 </ul></li>
-<li>Organization Knowledge Graph:
+<li>Knowledge Graph Information:
 
 <ul>
 <li>Behance Business Page URL</li>
