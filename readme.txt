@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-b.1 (2026/06/10)**
+**Version 6.0.0-rc.1 (2026/06/10)**
 
 * **New Features**
 	* None.
@@ -199,7 +199,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v22.3.0-b.1.
+	* WPSSO Core v22.3.0-rc.1.
 
 **Version 5.2.0 (2026/05/26)**
 
@@ -277,7 +277,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.0.0-b.1 =
+= 6.0.0-rc.1 =
 
 (2026/06/10) Added a new options the SSO Contacts, Organizations, and Places editing pages.
 
