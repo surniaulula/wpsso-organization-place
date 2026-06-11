@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0 (2026/06/10)**
+**Version 6.0.0 (2026/06/11)**
 
 * **New Features**
 	* None.
@@ -279,7 +279,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 6.0.0 =
 
-(2026/06/10) Added a new options the SSO Contacts, Organizations, and Places editing pages.
+(2026/06/11) Added a new options the SSO Contacts, Organizations, and Places editing pages.
 
 = 5.2.0 =
 
