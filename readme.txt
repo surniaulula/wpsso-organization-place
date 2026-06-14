@@ -180,6 +180,24 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.1.0-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new "$args[ 'max_multi' ]" element in "Edit Schema" filter methods.
+	* Added a new "$strict" argument to the `WpssoOpmPlace::get_names()` and `WpssoOpmOrg::get_names()` methods.
+	* Renamed `filter_form_cache_admin_area_names()` method to `filter_form_cache_service_areas_names()`.
+	* Updated the `filter_form_cache_service_areas_names()` method to include places (but not organization sub-types).
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v6.0.
+	* WPSSO Core v22.4.0-dev.1.
+
 **Version 6.0.0 (2026/06/11)**
 
 * **New Features**
@@ -276,6 +294,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v21.0.0.
 
 == Upgrade Notice ==
+
+= 6.1.0-dev.1 =
+
+(TBD) Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
 
 = 6.0.0 =
 
