@@ -52,10 +52,12 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 		public function filter_mb_contact_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$args = array(
-				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREAS_MAX', 5 ),
-				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
-				'select'         => array(
-					'admin_area'    => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
+				'max_multi' => array(
+					'sameas_url'    => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
+					'service_areas' => SucomUtil::get_const( 'WPSSO_SCHEMA_SERVICE_AREAS_MAX', 5 ),
+				),
+				'select' => array(
+					'service_areas' => $this->p->util->get_form_cache( 'service_areas_names', $add_none = true ),
 					'contact_types' => $this->p->util->get_form_cache( 'contact_types_select', $add_none = false ),	// Use strict for Google.
 				),
 				'tr_class' => array(
@@ -113,7 +115,7 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Contact Same-As URLs', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_sameas_url' ) .
 				'<td>' . $form->get_input_multi( 'contact_sameas_url', $css_class = 'wide', $css_id = '',
-					$args[ 'sameas_url_max' ], $show_first = 1 ) . '</td>';
+					$args[ 'max_multi' ][ 'sameas_url' ], $show_first = 1 ) . '</td>';
 
 			/*
 			 * Postal address section.
@@ -184,10 +186,10 @@ if ( ! class_exists( 'WpssoOpmContactFiltersEdit' ) ) {
 			$table_rows[ 'contact_service_area_id' ] = $tr_hide_contact_html .
 				$form->get_th_html( _x( 'Service Areas', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-contact_service_area_id' ) .
-				'<td>' . $form->get_select_multi( 'contact_service_area_id', $args[ 'select' ][ 'admin_area' ],
-					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'admin_area_max' ], $show_first = 1,
+				'<td>' . $form->get_select_multi( 'contact_service_area_id', $args[ 'select' ][ 'service_areas' ],
+					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'max_multi' ][ 'service_areas' ], $show_first = 1,
 						$is_disabled = false, $event_names = array( 'on_focus_load_json' ),
-							$event_args = array( 'json_var' => 'admin_area_names' ) ) . '</td>';
+							$event_args = array( 'json_var' => 'service_areas_names' ) ) . '</td>';
 
 			/*
 			 * Opening hours section.

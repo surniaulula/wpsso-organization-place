@@ -28,13 +28,16 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 		 *
 		 * See WpssoOpmPlaceFiltersEdit->filter_form_cache_place_names().
 		 */
-		public static function get_names( $schema_type = '' ) {
+		public static function get_names( $schema_type = '', $strict = false ) {
 
 			$wpsso =& Wpsso::get_instance();
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->mark();
+				$wpsso->debug->log_args( array(
+					'schema_type' => $schema_type,
+					'strict'      => $strict,
+				) );
 			}
 
 			if ( ! $schema_type || ! is_string( $schema_type ) ) {	// Just in case.
@@ -44,19 +47,20 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 
 			static $local_cache = array();
 
-			if ( isset( $local_cache[ $schema_type ] ) ) {
+			if ( isset( $local_cache[ $schema_type ][ $strict ] ) ) {
 
 				if ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->log( 'returning cache entry for "' . $schema_type . '"' );
 				}
 
-				return $local_cache[ $schema_type ];
+				return $local_cache[ $schema_type ][ $strict ];
 			}
 
-			$local_cache[ $schema_type ] = array();
+			$local_cache[ $schema_type ][ $strict ] = array();
 
-			$children  = $wpsso->schema->get_schema_type_children( $schema_type );
+			$sub_types = $wpsso->schema->get_schema_type_children( $schema_type );
+			$org_types = $wpsso->schema->get_schema_type_children( 'organization' );
 			$place_ids = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_PLACE_POST_TYPE ) );
 
 			foreach ( $place_ids as $post_id ) {
@@ -67,11 +71,14 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_name = empty( $place_opts[ 'place_name' ] ) ? $def_name : $place_opts[ 'place_name' ];
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
 
-				if ( in_array( $place_type, $children ) ) {
+				if ( in_array( $place_type, $sub_types ) ) {
 
-					list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $place_type );
+					if ( ! $strict || ! in_array( $place_type, $org_types ) ) {
 
-					$local_cache[ $schema_type ][ 'place-' . $post_id ] = sprintf( '%1$s [%2$s]', $place_name, $type_name );
+						list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $place_type );
+
+						$local_cache[ $schema_type ][ $strict ][ 'place-' . $post_id ] = sprintf( '%1$s [%2$s]', $place_name, $type_name );
+					}
 				}
 			}
 
@@ -80,7 +87,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$wpsso->debug->log( 'saving cache entry for "' . $schema_type . '"' );
 			}
 
-			return $local_cache[ $schema_type ];
+			return $local_cache[ $schema_type ][ $strict ];
 		}
 
 		/*

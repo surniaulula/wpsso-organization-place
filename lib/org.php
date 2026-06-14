@@ -28,33 +28,39 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 		 *
 		 * See WpssoOpmOrgFiltersEdit->filter_form_cache_org_names().
 		 */
-		public static function get_names( $schema_type = '' ) {
+		public static function get_names( $schema_type = '', $strict = false ) {
 
 			$wpsso =& Wpsso::get_instance();
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->mark();
+				$wpsso->debug->log_args( array(
+					'schema_type' => $schema_type,
+					'strict'      => $strict,
+				) );
 			}
 
-			if ( ! $schema_type || ! is_string( $schema_type ) ) $schema_type = 'organization';
+			if ( ! $schema_type || ! is_string( $schema_type ) ) {	// Just in case.
+			
+				$schema_type = 'organization';
+			}
 
 			static $local_cache = array();
 
-			if ( isset( $local_cache[ $schema_type ] ) ) {
+			if ( isset( $local_cache[ $schema_type ][ $strict ] ) ) {
 
 				if ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->log( 'returning cache entry for "' . $schema_type . '"' );
 				}
 
-				return $local_cache[ $schema_type ];
+				return $local_cache[ $schema_type ][ $strict ];
 			}
 
-			$local_cache[ $schema_type ] = array();
+			$local_cache[ $schema_type ][ $strict ] = array();
 
-			$children = $wpsso->schema->get_schema_type_children( $schema_type );
-			$org_ids  = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
+			$sub_types = $wpsso->schema->get_schema_type_children( $schema_type );
+			$org_ids   = WpssoPost::get_public_ids( array( 'post_type' => WPSSOOPM_ORG_POST_TYPE ) );
 
 			foreach ( $org_ids as $post_id ) {
 
@@ -64,25 +70,28 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$org_name = empty( $org_opts[ 'org_name' ] ) ? $def_name : $org_opts[ 'org_name' ];
 				$org_type = empty( $org_opts[ 'org_schema_type' ] ) ? $def_type : $org_opts[ 'org_schema_type' ];
 
-				if ( in_array( $org_type, $children ) ) {
+				if ( in_array( $org_type, $sub_types ) ) {
 
 					list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $org_type );
 
-					$local_cache[ $schema_type ][ 'org-' . $post_id ] = sprintf( '%1$s [%2$s]', $org_name, $type_name );
+					$local_cache[ $schema_type ][ $strict ][ 'org-' . $post_id ] = sprintf( '%1$s [%2$s]', $org_name, $type_name );
 				}
 			}
 
 			/*
 			 * Add places that are also sub-types of organization (or the requested schema type).
 			 */
-			$local_cache[ $schema_type ] = array_merge( $local_cache[ $schema_type ], WpssoOpmPlace::get_names( $schema_type ) );
+			if ( ! $strict ) {
+
+				$local_cache[ $schema_type ][ $strict ] = array_merge( $local_cache[ $schema_type ][ $strict ], WpssoOpmPlace::get_names( $schema_type ) );
+			}
 
 			if ( $wpsso->debug->enabled ) {
 
 				$wpsso->debug->log( 'saving cache entry for "' . $schema_type . '"' );
 			}
 
-			return $local_cache[ $schema_type ];
+			return $local_cache[ $schema_type ][ $strict ];
 		}
 
 		/*
@@ -208,7 +217,6 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$tr_hide_org_html        = empty( $args[ 'tr_class' ][ 'org' ] ) ? '' : '<tr class="' . $args[ 'tr_class' ][ 'org' ] . '" style="display:none;">';
 			$tr_hide_news_media_html = '<tr class="' . $args[ 'tr_class' ][ 'org_news_media' ] . '" style="display:none;">';
 
-
 			if ( empty( $args[ 'is_custom' ] ) ) {
 
 				$table_rows[ 'org_is_default' ] = $tr_hide_org_html .
@@ -277,13 +285,13 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 				$form->get_th_html( _x( 'Organization Contact Points', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_contact_id' ) .
 				'<td>' . $form->get_select_multi( 'org_contact_id', $args[ 'select' ][ 'contact' ], $css_class = 'wide', $css_id = '',
-					$is_assoc = true, SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACT_POINTS_MAX' ), $show_first = 1 ) . '</td>';
+					$is_assoc = true, $args[ 'max_multi' ][ 'contact_points' ], $show_first = 1 ) . '</td>';
 
 			$table_rows[ 'org_award' ] = $tr_hide_org_html .
 				$form->get_th_html( _x( 'Organization Awards', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_award' ) .
 				'<td>' . $form->get_input_multi( 'org_award', $css_class = 'wide', $css_id = '',
-					SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX' ), $show_first = 1 ) . '</td>';
+					$args[ 'max_multi' ][ 'awards' ], $show_first = 1 ) . '</td>';
 
 			$table_rows[ 'org_offer_catalogs' ] = $tr_hide_org_html .
 				$form->get_th_html( _x( 'Offer Catalogs', 'option label', 'wpsso-organization-place' ),
@@ -304,8 +312,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 						'input_type'  => 'text',
 						'input_class' => 'wide offer_catalog_url',
 					),
-				), $css_class = '', $css_id = 'org_offer_catalogs',
-					SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX' ), $show_first = 1 ) . '</td>';
+				), $css_class = '', $css_id = 'org_offer_catalogs', $args[ 'max_multi' ][ 'offer_catalogs' ], $show_first = 1 ) . '</td>';
 
 			/*
 			 * Service Area section.
@@ -336,10 +343,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			$table_rows[ 'org_service_area_id' ] = $tr_hide_org_html .
 				$form->get_th_html( _x( 'Service Areas', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_service_area_id' ) .
-				'<td>' . $form->get_select_multi( 'org_service_area_id', $args[ 'select' ][ 'admin_area' ],
-					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'admin_area_max' ], $show_first = 1,
+				'<td>' . $form->get_select_multi( 'org_service_area_id', $args[ 'select' ][ 'service_areas' ],
+					$css_class = 'wide', $css_id = '', $is_assoc = true, $args[ 'max_multi' ][ 'service_areas' ], $show_first = 1,
 						$is_disabled = false, $event_names = array( 'on_focus_load_json' ),
-							$event_args = array( 'json_var' => 'admin_area_names' ) ) . '</td>';
+							$event_args = array( 'json_var' => 'service_areas_names' ) ) . '</td>';
 
 			/*
 			 * News Media section.

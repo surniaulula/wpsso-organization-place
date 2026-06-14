@@ -52,14 +52,19 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 		public function filter_mb_org_rows( $table_rows, $form, $head_info, $mod ) {
 
 			$args = array(
-				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREAS_MAX', 5 ),
-				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
+				'max_multi' => array(
+					'awards'         => SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 ),
+					'contact_points' => SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACT_POINTS_MAX', 5 ),
+					'offer_catalogs' => SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 5 ),
+					'sameas_url'     => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
+					'service_areas'  => SucomUtil::get_const( 'WPSSO_SCHEMA_SERVICE_AREAS_MAX', 5 ),
+				),
 				'select' => array(
-					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
-					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
-					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
-					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
-					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
+					'service_areas'    => $this->p->util->get_form_cache( 'service_areas_names', $add_none = true ),
+					'contact'          => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
+					'org_types_strict' => $this->p->util->get_form_cache( 'org_types_select_strict', $add_none = false ),
+					'place'            => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
+					'place_types'      => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
 				),
 				'tr_class' => array(
 					'org'            => '',
@@ -90,7 +95,7 @@ if ( ! class_exists( 'WpssoOpmOrgFiltersEdit' ) ) {
 			$table_rows[ 'org_schema_type' ] = '' .
 				$form->get_th_html( _x( 'Organization Schema Type', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-org_schema_type' ) .
-				'<td>' . $form->get_select( 'org_schema_type', $args[ 'select' ][ 'org_types' ], $css_class = 'schema_type', $css_id = '',
+				'<td>' . $form->get_select( 'org_schema_type', $args[ 'select' ][ 'org_types_strict' ], $css_class = 'schema_type', $css_id = '',
 					$is_assoc = true, $is_disabled = false, $selected = false, array( 'on_focus_load_json', 'on_change_unhide_rows' ),
 						$event_args = array(
 							'json_var' => 'schema_org_types',

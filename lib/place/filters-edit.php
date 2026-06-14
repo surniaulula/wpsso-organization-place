@@ -26,30 +26,32 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'form_cache_admin_area_names'   => 1,
-				'form_cache_place_names'        => 1,
-				'form_cache_place_names_custom' => 1,
-				'mb_place_rows'                 => 4,
-				'mb_sso_edit_schema_rows'       => 4,
+				'form_cache_service_areas_names' => 1,
+				'form_cache_place_names'         => 1,
+				'form_cache_place_names_custom'  => 1,
+				'mb_place_rows'                  => 4,
+				'mb_sso_edit_schema_rows'        => 4,
 			) );
 		}
 
-		public function filter_form_cache_admin_area_names( $mixed ) {
+		public function filter_form_cache_service_areas_names( $mixed ) {
 
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->mark();
 			}
 
-			$place_names = WpssoOpmPlace::get_names( $schema_type = 'administrative.area' );
-			$place_names = is_array( $mixed ) ? $mixed + $place_names : $place_names;
+			$service_area_names = WpssoOpmPlace::get_names( $schema_type = 'administrative.area' ) +
+				WpssoOpmPlace::get_names( $schema_type = 'place', $strict = true );	// Exclude organizations.
+
+			$service_area_names = is_array( $mixed ) ? $mixed + $service_area_names : $service_area_names;
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log_arr( 'admin_area_names', $place_names);
+				$this->p->debug->log_arr( 'service_areas_names', $service_area_names );
 			}
 
-			return $place_names;
+			return $service_area_names;
 		}
 
 		public function filter_form_cache_place_names( $mixed ) {
@@ -104,17 +106,23 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 
 		private function get_mb_place_rows( $table_rows, $form, $head_info, $mod, $is_custom ) {
 
+			$excl_places = array( 'place-' . $mod[ 'id' ] );
 
 			$args = array(
-				'is_custom'      => $is_custom ? true : false,
-				'admin_area_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_ADMIN_AREAS_MAX', 5 ),
-				'sameas_url_max' => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
-				'select'         => array(
-					'admin_area'  => $this->p->util->get_form_cache( 'admin_area_names', $add_none = true ),
-					'contact'     => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
-					'org_types'   => $this->p->util->get_form_cache( 'strict_org_types_select', $add_none = false ),
-					'place'       => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
-					'place_types' => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
+				'is_custom' => $is_custom ? true : false,
+				'max_multi' => array(
+					'awards'         => SucomUtil::get_const( 'WPSSO_SCHEMA_AWARDS_MAX', 5 ),
+					'contact_points' => SucomUtil::get_const( 'WPSSO_SCHEMA_CONTACT_POINTS_MAX', 5 ),
+					'offer_catalogs' => SucomUtil::get_const( 'WPSSO_SCHEMA_OFFER_CATALOGS_MAX', 5 ),
+					'sameas_url'     => SucomUtil::get_const( 'WPSSO_SCHEMA_SAMEAS_URLS_MAX', 5 ),
+					'service_areas'  => SucomUtil::get_const( 'WPSSO_SCHEMA_SERVICE_AREAS_MAX', 5 ),
+				),
+				'select' => array(
+					'service_areas'    => $this->p->util->get_form_cache( 'service_areas_names', $add_none = true, $excl_places ),
+					'contact'          => $this->p->util->get_form_cache( 'contact_names', $add_none = true ),
+					'org_types_strict' => $this->p->util->get_form_cache( 'org_types_select_strict', $add_none = false ),
+					'place'            => $this->p->util->get_form_cache( 'place_names', $add_none = false ),
+					'place_types'      => $this->p->util->get_form_cache( 'place_types_select', $add_none = false ),
 				),
 				'tr_class' => array(
 					'org' => ( $is_custom ? 'hide_schema_place_id ' : '' ) .
@@ -239,7 +247,7 @@ if ( ! class_exists( 'WpssoOpmPlaceFiltersEdit' ) ) {
 				$form->get_th_html( _x( 'Place Same-As URLs', 'option label', 'wpsso-organization-place' ),
 					$css_class = 'medium', $css_id = 'meta-place_sameas_url' ) .
 				'<td>' . $form->get_input_multi( 'place_sameas_url', $css_class = 'wide', $css_id = '',
-					$args[ 'sameas_url_max' ], $show_first = 1 ) . '</td>';
+					$args[ 'max_multi' ][ 'sameas_url' ], $show_first = 1 ) . '</td>';
 
 			/*
 			 * Postal address section.
