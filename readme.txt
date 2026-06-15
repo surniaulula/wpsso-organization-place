@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.1.0-dev.1 (2026/06/14)**
+**Version 6.1.0-rc.1 (2026/06/15)**
 
 * **New Features**
 	* None.
@@ -196,7 +196,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v22.4.0-dev.1.
+	* WPSSO Core v22.4.0-rc.1.
 
 **Version 6.0.0 (2026/06/11)**
 
@@ -295,9 +295,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.1.0-dev.1 =
+= 6.1.0-rc.1 =
 
-(2026/06/14) Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
+(2026/06/15) Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
 
 = 6.0.0 =
 
