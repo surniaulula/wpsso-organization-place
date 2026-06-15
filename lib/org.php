@@ -26,6 +26,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 		/*
 		 * Return an associative array of organization IDs and names.
 		 *
+		 * The Organization editing page uses "strict" Schema types (ie. excludes Places), so if $strict = true here, we
+		 * don't need to exclude Organizations that are also Places. If $strict = false, we need to include Places that are
+		 * also Organizations.
+		 *
 		 * See WpssoOpmOrgFiltersEdit->filter_form_cache_org_names().
 		 */
 		public static function get_names( $schema_type = '', $strict = false ) {
@@ -72,6 +76,10 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 
 				if ( in_array( $org_type, $sub_types ) ) {
 
+					/*
+					 * The Organization editing page uses "strict" Schema types (ie. excludes Places), so if
+					 * $strict = true here, we don't need to exclude Organizations that are also Places.
+					 */
 					list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $org_type );
 
 					$local_cache[ $schema_type ][ $strict ][ 'org-' . $post_id ] = sprintf( '%1$s [%2$s]', $org_name, $type_name );
@@ -79,7 +87,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			}
 
 			/*
-			 * Add places that are also sub-types of organization (or the requested schema type).
+			 * If $strict = false, we need to include Places that are also Organizations.
 			 */
 			if ( ! $strict ) {
 

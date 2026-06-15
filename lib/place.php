@@ -26,6 +26,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 		/*
 		 * Return an associative array of place IDs and names.
 		 *
+		 * See WpssoOpmOrgFiltersEdit->filter_form_cache_org_names().
 		 * See WpssoOpmPlaceFiltersEdit->filter_form_cache_place_names().
 		 */
 		public static function get_names( $schema_type = '', $strict = false ) {
@@ -72,7 +73,10 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
 
 				if ( in_array( $place_type, $sub_types ) ) {
-
+					
+					/*
+					 * If $strict = true, remove Places that are also Organization sub-types.
+					 */
 					if ( ! $strict || ! in_array( $place_type, $org_types ) ) {
 
 						list( $type_context, $type_name, $type_path ) = $wpsso->schema->get_schema_type_url_parts_by_id( $place_type );
