@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.1.0-dev.1 (TBD)**
+**Version 6.1.0-dev.1 (2026/06/14)**
 
 * **New Features**
 	* None.
@@ -297,7 +297,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 6.1.0-dev.1 =
 
-(TBD) Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
+(2026/06/14) Added Schema Places to the "Service Areas" option (excluding Places that are also Organization sub-types).
 
 = 6.0.0 =
 
