@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoOpmOrg' ) ) {
 			}
 
 			if ( ! $schema_type || ! is_string( $schema_type ) ) {	// Just in case.
-			
+
 				$schema_type = 'organization';
 			}
 

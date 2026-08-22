@@ -42,7 +42,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 			}
 
 			if ( ! $schema_type || ! is_string( $schema_type ) ) {	// Just in case.
-			
+
 				$schema_type = 'place';
 			}
 
@@ -73,7 +73,7 @@ if ( ! class_exists( 'WpssoOpmPlace' ) ) {
 				$place_type = empty( $place_opts[ 'place_schema_type' ] ) ? $def_type : $place_opts[ 'place_schema_type' ];
 
 				if ( in_array( $place_type, $sub_types ) ) {
-					
+
 					/*
 					 * If $strict = true, remove Places that are also Organization sub-types.
 					 */
